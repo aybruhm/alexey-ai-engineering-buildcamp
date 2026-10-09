@@ -19,3 +19,5 @@ wheels/
 src/alexey_ai_engineering_buildcamp/week-1/homework/books/
 src/alexey_ai_engineering_buildcamp/week-1/homework/books_text/
 src/alexey_ai_engineering_buildcamp/week-2/homework/01-pulumi-faq-rag/docs/
+src/alexey_ai_engineering_buildcamp/week-2/homework/02-pdf-extraction-rag/output/*.json
+src/alexey_ai_engineering_buildcamp/week-2/homework/02-pdf-extraction-rag/db/*.sqlite*
