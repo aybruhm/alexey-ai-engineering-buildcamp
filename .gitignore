@@ -21,5 +21,7 @@ src/alexey_ai_engineering_buildcamp/week-1/homework/books_text/
 src/alexey_ai_engineering_buildcamp/week-2/homework/01-pulumi-docs-rag/docs/
 src/alexey_ai_engineering_buildcamp/week-2/homework/02-pdf-extraction-rag/output/*.json
 src/alexey_ai_engineering_buildcamp/week-2/homework/02-pdf-extraction-rag/db/*.sqlite*
-src/alexey_ai_engineering_buildcamp/week-2/homework/02-pdf-extraction-rag-with-elasticsearch/output/*.json
-src/alexey_ai_engineering_buildcamp/week-2/homework/02-pdf-extraction-rag-with-elasticsearch/db/*.sqlite*
+src/alexey_ai_engineering_buildcamp/week-2/homework/03-pdf-extraction-rag-with-elasticsearch/output/*.json
+src/alexey_ai_engineering_buildcamp/week-2/homework/03-pdf-extraction-rag-with-elasticsearch/db/*.sqlite*
+src/alexey_ai_engineering_buildcamp/week-2/homework/04-pdf-extraction-rag-with-qdrant/output/*.json
+src/alexey_ai_engineering_buildcamp/week-2/homework/04-pdf-extraction-rag-with-qdrant/db/*.sqlite*
