@@ -1,0 +1,164 @@
+{
+    "page": {
+        "page_number": 17,
+        "header": "Contents",
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "10 Lists 89"
+            },
+            {
+                "type": "table",
+                "caption": null,
+                "columns": [
+                    "Section",
+                    "Title",
+                    "Page"
+                ],
+                "rows": [
+                    [
+                        "10.1",
+                        "A list is a sequence",
+                        "89"
+                    ],
+                    [
+                        "10.2",
+                        "Lists are mutable",
+                        "90"
+                    ],
+                    [
+                        "10.3",
+                        "Traversing a list",
+                        "91"
+                    ],
+                    [
+                        "10.4",
+                        "List operations",
+                        "91"
+                    ],
+                    [
+                        "10.5",
+                        "List slices",
+                        "91"
+                    ],
+                    [
+                        "10.6",
+                        "List methods",
+                        "92"
+                    ],
+                    [
+                        "10.7",
+                        "Map, filter and reduce",
+                        "93"
+                    ],
+                    [
+                        "10.8",
+                        "Deleting elements",
+                        "94"
+                    ],
+                    [
+                        "10.9",
+                        "Lists and strings",
+                        "94"
+                    ],
+                    [
+                        "10.10",
+                        "Objects and values",
+                        "95"
+                    ],
+                    [
+                        "10.11",
+                        "Aliasing",
+                        "96"
+                    ],
+                    [
+                        "10.12",
+                        "List arguments",
+                        "97"
+                    ],
+                    [
+                        "10.13",
+                        "Debugging",
+                        "98"
+                    ],
+                    [
+                        "10.14",
+                        "Glossary",
+                        "100"
+                    ],
+                    [
+                        "10.15",
+                        "Exercises",
+                        "100"
+                    ]
+                ]
+            },
+            {
+                "type": "section_heading",
+                "title": "11 Dictionaries 103"
+            },
+            {
+                "type": "table",
+                "caption": null,
+                "columns": [
+                    "Section",
+                    "Title",
+                    "Page"
+                ],
+                "rows": [
+                    [
+                        "11.1",
+                        "A dictionary is a mapping",
+                        "103"
+                    ],
+                    [
+                        "11.2",
+                        "Dictionary as a collection of counters",
+                        "104"
+                    ],
+                    [
+                        "11.3",
+                        "Looping and dictionaries",
+                        "106"
+                    ],
+                    [
+                        "11.4",
+                        "Reverse lookup",
+                        "106"
+                    ],
+                    [
+                        "11.5",
+                        "Dictionaries and lists",
+                        "107"
+                    ],
+                    [
+                        "11.6",
+                        "Memos",
+                        "109"
+                    ],
+                    [
+                        "11.7",
+                        "Global variables",
+                        "110"
+                    ],
+                    [
+                        "11.8",
+                        "Debugging",
+                        "111"
+                    ],
+                    [
+                        "11.9",
+                        "Glossary",
+                        "112"
+                    ],
+                    [
+                        "11.10",
+                        "Exercises",
+                        "113"
+                    ]
+                ]
+            }
+        ]
+    },
+    "cost": 0.035070000000000004
+}

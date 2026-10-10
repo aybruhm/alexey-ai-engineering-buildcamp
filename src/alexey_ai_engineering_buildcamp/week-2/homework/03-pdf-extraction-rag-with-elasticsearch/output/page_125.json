@@ -1,0 +1,59 @@
+{
+    "page": {
+        "page_number": 103,
+        "header": null,
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "Chapter 11"
+            },
+            {
+                "type": "section_heading",
+                "title": "Dictionaries"
+            },
+            {
+                "type": "text",
+                "text": "This chapter presents another built-in type called a dictionary. Dictionaries are one of Python's best features; they are the building blocks of many efficient and elegant algorithms."
+            },
+            {
+                "type": "section_heading",
+                "title": "11.1 A dictionary is a mapping"
+            },
+            {
+                "type": "text",
+                "text": "A dictionary is like a list, but more general. In a list, the indices have to be integers; in a dictionary they can be (almost) any type.\n\nA dictionary contains a collection of indices, which are called keys, and a collection of values. Each key is associated with a single value. The association of a key and a value is called a key-value pair or sometimes an item.\n\nIn mathematical language, a dictionary represents a mapping from keys to values, so you can also say that each key \"maps to\" a value. As an example, we'll build a dictionary that maps from English to Spanish words, so the keys and the values are all strings.\n\nThe function dict creates a new dictionary with no items. Because dict is the name of a built-in function, you should avoid using it as a variable name."
+            },
+            {
+                "type": "block",
+                "code": ">>> eng2sp = dict()\n>>> eng2sp\n{}",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The squiggly-brackets, {}, represent an empty dictionary. To add items to the dictionary, you can use square brackets:"
+            },
+            {
+                "type": "block",
+                "code": ">>> eng2sp['one'] = 'uno'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This line creates an item that maps from the key 'one' to the value 'uno'. If we print the dictionary again, we see a key-value pair with a colon between the key and value:"
+            },
+            {
+                "type": "block",
+                "code": ">>> eng2sp\n{'one': 'uno'}",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This output format is also an input format. For example, you can create a new dictionary with three items:"
+            }
+        ]
+    },
+    "cost": 0.038290000000000005
+}

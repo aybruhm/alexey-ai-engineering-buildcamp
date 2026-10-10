@@ -1,0 +1,53 @@
+{
+    "page": {
+        "page_number": 58,
+        "header": "Chapter 6. Fruitful functions",
+        "blocks": [
+            {
+                "type": "block",
+                "code": "def fibonacci(n):\n    if n == 0:\n        return 0\n    elif  n == 1:\n        return 1\n    else:\n        return fibonacci(n-1) + fibonacci(n-2)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "If you try to follow the flow of execution here, even for fairly small values of n, your head explodes. But according to the leap of faith, if you assume that the two recursive calls work correctly, then it is clear that you get the right result by adding them together."
+            },
+            {
+                "type": "section_heading",
+                "title": "6.8 Checking types"
+            },
+            {
+                "type": "text",
+                "text": "What happens if we call factorial and give it 1.5 as an argument?"
+            },
+            {
+                "type": "block",
+                "code": ">>> factorial(1.5)\nRuntimeError: Maximum recursion depth exceeded",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "It looks like an infinite recursion. How can that be? The function has a base case—when n == 0. But if n is not an integer, we can miss the base case and recurse forever.\n\nIn the first recursive call, the value of n is 0.5. In the next, it is -0.5. From there, it gets smaller (more negative), but it will never be 0.\n\nWe have two choices. We can try to generalize the factorial function to work with floating-point numbers, or we can make factorial check the type of its argument. The first option is called the gamma function and it's a little beyond the scope of this book. So we'll go for the second.\n\nWe can use the built-in function isinstance to verify the type of the argument. While we're at it, we can also make sure the argument is positive:"
+            },
+            {
+                "type": "block",
+                "code": "def factorial(n):\n    if not isinstance(n, int):\n        print('Factorial is only defined for integers.')\n        return None\n    elif n < 0:\n        print('Factorial is not defined for negative integers.')\n        return None\n    elif n == 0:\n        return 1\n    else:\n        return n * factorial(n-1)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The first base case handles nonintegers; the second handles negative integers. In both cases, the program prints an error message and returns None to indicate that something went wrong:"
+            },
+            {
+                "type": "block",
+                "code": ">>> print(factorial('fred'))\nFactorial is only defined for integers.\nNone\n>>> print(factorial(-2))\nFactorial is not defined for negative integers.\nNone",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.042265
+}

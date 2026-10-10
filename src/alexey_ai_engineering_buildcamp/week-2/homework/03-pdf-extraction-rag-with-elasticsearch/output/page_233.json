@@ -1,0 +1,25 @@
+{
+    "page": {
+        "page_number": 211,
+        "header": null,
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "Index"
+            },
+            {
+                "type": "text",
+                "text": "abecedarian, 73, 84\nabs function, 52\nabsolute path, 139, 145\naccess, 90\naccumulator, 100\n  histogram, 127\n  list, 93\n  string, 175\n  sum, 93\nAckermann function, 61, 113\nadd method, 165\naddition with carrying, 68\nalgorithm, 67, 69, 130, 201\n  MD5, 146\n  square root, 69\naliasing, 95, 96, 100, 149, 151, 170\n  copying to avoid, 99\nall, 186\nalphabet, 37\nalternative execution, 41\nambiguity, 5\nanagram, 101\nanagram set, 123, 145\nanalysis of algorithms, 201, 209\nanalysis of primitives, 204\nand operator, 40\nany, 185\nappend method, 92, 97, 101, 174, 175\narc function, 31\nArchimedian spiral, 38\nargument, 17, 19, 21, 22, 26, 97\n  gather, 118\n  keyword, 33, 36, 191\n  list, 97\n  optional, 76, 79, 95, 107, 184\n  positional, 164, 169, 190\n  variable-length tuple, 118\nargument scatter, 118\narithmetic operator, 3\nassert statement, 159, 160\nassignment, 14, 63, 89"
+            },
+            {
+                "type": "text",
+                "text": "  augmented, 93, 100\n  item, 74, 90, 116\n  tuple, 116, 117, 119, 122\nassignment statement, 9\nattribute, 153, 169\n  __dict__, 168\n  class, 172, 180\n  initializing, 168\n  instance, 148, 153, 172, 180\nAttributeError, 152, 197\naugmented assignment, 93, 100\nAusten, Jane, 127\naverage case, 202\naverage cost, 208"
+            },
+            {
+                "type": "text",
+                "text": "badness, 203\nbase case, 44, 47\nbenchmarking, 133, 134\nBetterMap, 206\nbig, hairy expression, 199\nBig-Oh notation, 209\nbig-oh notation, 203\nbinary search, 101\nbingo, 123\nbirthday, 160\nbirthday paradox, 101\nbisect module, 101\nbisection search, 101, 205\nbisection, debugging by, 68\nbitwise operator, 3\nbody, 19, 26, 65\nbool type, 40\nboolean expression, 40, 47\nboolean function, 54\nboolean operator, 76\nborrowing, subtraction with, 68, 159\nbounded, 207\nbracket\n  squiggly, 103\nbracket operator, 71, 90, 116\nbranch, 41, 47"
+            }
+        ]
+    },
+    "cost": 0.05034
+}

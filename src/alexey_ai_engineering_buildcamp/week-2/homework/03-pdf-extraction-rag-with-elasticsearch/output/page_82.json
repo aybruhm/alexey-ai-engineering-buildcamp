@@ -1,0 +1,41 @@
+{
+    "page": {
+        "page_number": 60,
+        "header": "Chapter 6. Fruitful functions",
+        "blocks": [
+            {
+                "type": "block",
+                "code": "                factorial 4\n            factorial 3\n        factorial 2\n    factorial 1\nfactorial 0\nreturning 1\n    returning 1\n        returning 2\n            returning 6\n                returning 24",
+                "language": "text",
+                "description": "Indented scaffolding output showing the recursive calls of factorial and their return values."
+            },
+            {
+                "type": "text",
+                "text": "If you are confused about the flow of execution, this kind of output can be helpful. It takes some time to develop effective scaffolding, but a little bit of scaffolding can save a lot of debugging."
+            },
+            {
+                "type": "section_heading",
+                "title": "6.10 Glossary"
+            },
+            {
+                "type": "text",
+                "text": "temporary variable: A variable used to store an intermediate value in a complex calculation.\n\ndead code: Part of a program that can never run, often because it appears after a return statement.\n\nincremental development: A program development plan intended to avoid debugging by adding and testing only a small amount of code at a time.\n\nscaffolding: Code that is used during program development but is not part of the final version.\n\nguardian: A programming pattern that uses a conditional statement to check for and handle circumstances that might cause an error."
+            },
+            {
+                "type": "section_heading",
+                "title": "6.11 Exercises"
+            },
+            {
+                "type": "text",
+                "text": "Exercise 6.1. Draw a stack diagram for the following program. What does the program print?"
+            },
+            {
+                "type": "block",
+                "code": "def b(z):\n    prod = a(z, z)\n    print(z, prod)\n    return prod\n\ndef a(x, y):\n    x = x + 1\n    return x * y\n\ndef c(x, y, z):\n    total = x + y + z\n    square = b(total)**2\n    return square",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.036465
+}

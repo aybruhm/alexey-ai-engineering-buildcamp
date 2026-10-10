@@ -1,0 +1,47 @@
+{
+    "page": {
+        "page_number": 166,
+        "header": "Chapter 17. Classes and methods",
+        "blocks": [
+            {
+                "type": "block",
+                "code": "# inside class Time:\n\n    def __add__(self, other):\n        seconds = self.time_to_int() + other.time_to_int()\n        return int_to_time(seconds)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "And here is how you could use it:"
+            },
+            {
+                "type": "block",
+                "code": ">>> start = Time(9, 45)\n>>> duration = Time(1, 35)\n>>> print(start + duration)\n11:20:00",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "When you apply the + operator to Time objects, Python invokes __add__. When you print the result, Python invokes __str__. So there is a lot happening behind the scenes!\n\nChanging the behavior of an operator so that it works with programmer-defined types is called operator overloading. For every operator in Python there is a corresponding special method, like __add__. For more details, see http://docs.python.org/3/reference/datamodel.html#specialnames.\n\nAs an exercise, write an add method for the Point class."
+            },
+            {
+                "type": "section_heading",
+                "title": "17.8 Type-based dispatch"
+            },
+            {
+                "type": "text",
+                "text": "In the previous section we added two Time objects, but you also might want to add an integer to a Time object. The following is a version of __add__ that checks the type of other and invokes either add_time or increment:"
+            },
+            {
+                "type": "block",
+                "code": "# inside class Time:\n\n    def __add__(self, other):\n        if isinstance(other, Time):\n            return self.add_time(other)\n        else:\n            return self.increment(other)\n\n    def add_time(self, other):\n        seconds = self.time_to_int() + other.time_to_int()\n        return int_to_time(seconds)\n\n    def increment(self, seconds):\n        seconds += self.time_to_int()\n        return int_to_time(seconds)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The built-in function isinstance takes a value and a class object, and returns True if the value is an instance of the class.\n\nIf other is a Time object, __add__ invokes add_time. Otherwise it assumes that the parameter is a number and invokes increment. This operation is called a type-based dispatch because it dispatches the computation to different methods based on the type of the arguments.\n\nHere are examples that use the + operator with different types:"
+            }
+        ]
+    },
+    "cost": 0.04109
+}

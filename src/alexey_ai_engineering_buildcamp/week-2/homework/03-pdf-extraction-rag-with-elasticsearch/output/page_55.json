@@ -1,0 +1,41 @@
+{
+    "page": {
+        "page_number": 33,
+        "header": "4.6. Interface design",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "This example draws a 7-sided polygon with side length 70.\n\nIf you are using Python 2, the value of angle might be off because of integer division. A simple solution is to compute angle = 360.0 / n. Because the numerator is a floating-point number, the result is floating point.\n\nWhen a function has more than a few numeric arguments, it is easy to forget what they are, or what order they should be in. In that case it is often a good idea to include the names of the parameters in the argument list:"
+            },
+            {
+                "type": "block",
+                "code": "polygon(bob, n=7, length=70)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "These are called keyword arguments because they include the parameter names as \"keywords\" (not to be confused with Python keywords like while and def).\n\nThis syntax makes the program more readable. It is also a reminder about how arguments and parameters work: when you call a function, the arguments are assigned to the parameters."
+            },
+            {
+                "type": "section_heading",
+                "title": "4.6 Interface design"
+            },
+            {
+                "type": "text",
+                "text": "The next step is to write circle, which takes a radius, r, as a parameter. Here is a simple solution that uses polygon to draw a 50-sided polygon:"
+            },
+            {
+                "type": "block",
+                "code": "import math\n\ndef circle(t, r):\n    circumference = 2 * math.pi * r\n    n = 50\n    length = circumference / n\n    polygon(t, n, length)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The first line computes the circumference of a circle with radius r using the formula 2πr. Since we use math.pi, we have to import math. By convention, import statements are usually at the beginning of the script.\n\nn is the number of line segments in our approximation of a circle, so length is the length of each segment. Thus, polygon draws a 50-sided polygon that approximates a circle with radius r.\n\nOne limitation of this solution is that n is a constant, which means that for very big circles, the line segments are too long, and for small circles, we waste time drawing very small segments. One solution would be to generalize the function by taking n as a parameter. This would give the user (whoever calls circle) more control, but the interface would be less clean.\n\nThe interface of a function is a summary of how it is used: what are the parameters? What does the function do? And what is the return value? An interface is \"clean\" if it allows the caller to do what they want without dealing with unnecessary details.\n\nIn this example, r belongs in the interface because it specifies the circle to be drawn. n is less appropriate because it pertains to the details of how the circle should be rendered.\n\nRather than clutter up the interface, it is better to choose an appropriate value of n depending on circumference:"
+            }
+        ]
+    },
+    "cost": 0.042845
+}

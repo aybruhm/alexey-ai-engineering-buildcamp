@@ -1,0 +1,55 @@
+{
+    "page": {
+        "page_number": 89,
+        "header": null,
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "Chapter 10"
+            },
+            {
+                "type": "section_heading",
+                "title": "Lists"
+            },
+            {
+                "type": "text",
+                "text": "This chapter presents one of Python's most useful built-in types, lists. You will also learn more about objects and what can happen when you have more than one name for the same object."
+            },
+            {
+                "type": "section_heading",
+                "title": "10.1 A list is a sequence"
+            },
+            {
+                "type": "text",
+                "text": "Like a string, a **list** is a sequence of values. In a string, the values are characters; in a list, they can be any type. The values in a list are called **elements** or sometimes **items**.\n\nThere are several ways to create a new list; the simplest is to enclose the elements in square brackets ([ and ]):"
+            },
+            {
+                "type": "block",
+                "code": "[10, 20, 30, 40]\n['crunchy frog', 'ram bladder', 'lark vomit']",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The first example is a list of four integers. The second is a list of three strings. The elements of a list don't have to be the same type. The following list contains a string, a float, an integer, and (lo!) another list:"
+            },
+            {
+                "type": "block",
+                "code": "['spam', 2.0, 5, [10, 20]]",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "A list within another list is **nested**.\n\nA list that contains no elements is called an empty list; you can create one with empty brackets, [].\n\nAs you might expect, you can assign list values to variables:"
+            },
+            {
+                "type": "block",
+                "code": ">>> cheeses = ['Cheddar', 'Edam', 'Gouda']\n>>> numbers = [42, 123]\n>>> empty = []\n>>> print(cheeses, numbers, empty)\n['Cheddar', 'Edam', 'Gouda'] [42, 123] []",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.03612
+}

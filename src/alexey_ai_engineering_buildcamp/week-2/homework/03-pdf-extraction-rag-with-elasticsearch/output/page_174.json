@@ -1,0 +1,53 @@
+{
+    "page": {
+        "page_number": 152,
+        "header": "Chapter 15. Classes and objects",
+        "blocks": [
+            {
+                "type": "figure",
+                "caption": "Figure 15.3: Object diagram.",
+                "description": "Object diagram after a shallow copy: two Rectangle objects, box and box2, each with width 100.0 and height 200.0, whose corner attributes both refer to the same single Point object (x = 0.0, y = 0.0). This shows that copy.copy duplicates the Rectangle but shares the embedded Point.",
+                "figure_number": 3
+            },
+            {
+                "type": "block",
+                "code": ">>> p1 == p2\nFalse",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The is operator indicates that p1 and p2 are not the same object, which is what we expected. But you might have expected == to yield True because these points contain the same data. In that case, you will be disappointed to learn that for instances, the default behavior of the == operator is the same as the is operator; it checks object identity, not object equivalence. That’s because for programmer-defined types, Python doesn’t know what should be considered equivalent. At least, not yet.\n\nIf you use copy.copy to duplicate a Rectangle, you will find that it copies the Rectangle object but not the embedded Point."
+            },
+            {
+                "type": "block",
+                "code": ">>> box2 = copy.copy(box)\n>>> box2 is box\nFalse\n>>> box2.corner is box.corner\nTrue",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Figure 15.3 shows what the object diagram looks like. This operation is called a shallow copy because it copies the object and any references it contains, but not the embedded objects.\n\nFor most applications, this is not what you want. In this example, invoking grow_rectangle on one of the Rectangles would not affect the other, but invoking move_rectangle on either would affect both! This behavior is confusing and error-prone.\n\nFortunately, the copy module provides a method named deepcopy that copies not only the object but also the objects it refers to, and the objects they refer to, and so on. You will not be surprised to learn that this operation is called a deep copy."
+            },
+            {
+                "type": "block",
+                "code": ">>> box3 = copy.deepcopy(box)\n>>> box3 is box\nFalse\n>>> box3.corner is box.corner\nFalse",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "box3 and box are completely separate objects.\n\nAs an exercise, write a version of move_rectangle that creates and returns a new Rectangle instead of modifying the old one."
+            },
+            {
+                "type": "section_heading",
+                "title": "15.7 Debugging"
+            },
+            {
+                "type": "text",
+                "text": "When you start working with objects, you are likely to encounter some new exceptions. If you try to access an attribute that doesn’t exist, you get an AttributeError:"
+            }
+        ]
+    },
+    "cost": 0.044039999999999996
+}

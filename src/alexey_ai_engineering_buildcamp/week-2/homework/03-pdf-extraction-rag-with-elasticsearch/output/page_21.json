@@ -1,0 +1,95 @@
+{
+    "page": {
+        "page_number": 21,
+        "header": "Contents",
+        "blocks": [
+            {
+                "type": "table",
+                "caption": null,
+                "columns": [
+                    "Section",
+                    "Title",
+                    "Page"
+                ],
+                "rows": [
+                    [
+                        "19.7",
+                        "defaultdict",
+                        "188"
+                    ],
+                    [
+                        "19.8",
+                        "Named tuples",
+                        "189"
+                    ],
+                    [
+                        "19.9",
+                        "Gathering keyword args",
+                        "190"
+                    ],
+                    [
+                        "19.10",
+                        "Glossary",
+                        "191"
+                    ],
+                    [
+                        "19.11",
+                        "Exercises",
+                        "192"
+                    ],
+                    [
+                        "A",
+                        "Debugging",
+                        "193"
+                    ],
+                    [
+                        "A.1",
+                        "Syntax errors",
+                        "193"
+                    ],
+                    [
+                        "A.2",
+                        "Runtime errors",
+                        "195"
+                    ],
+                    [
+                        "A.3",
+                        "Semantic errors",
+                        "198"
+                    ],
+                    [
+                        "B",
+                        "Analysis of Algorithms",
+                        "201"
+                    ],
+                    [
+                        "B.1",
+                        "Order of growth",
+                        "202"
+                    ],
+                    [
+                        "B.2",
+                        "Analysis of basic Python operations",
+                        "204"
+                    ],
+                    [
+                        "B.3",
+                        "Analysis of search algorithms",
+                        "205"
+                    ],
+                    [
+                        "B.4",
+                        "Hashtables",
+                        "206"
+                    ],
+                    [
+                        "B.5",
+                        "Glossary",
+                        "209"
+                    ]
+                ]
+            }
+        ]
+    },
+    "cost": 0.028520000000000004
+}

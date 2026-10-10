@@ -1,0 +1,85 @@
+{
+    "page": {
+        "page_number": 185,
+        "header": "19.3. Generator expressions",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "We can rewrite it using a list comprehension"
+            },
+            {
+                "type": "block",
+                "code": "def only_upper(t):\n    return [s for s in t if s.isupper()]",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "List comprehensions are concise and easy to read, at least for simple expressions. And they are usually faster than the equivalent for loops, sometimes much faster. So if you are mad at me for not mentioning them earlier, I understand.\n\nBut, in my defense, list comprehensions are harder to debug because you can't put a print statement inside the loop. I suggest that you use them only if the computation is simple enough that you are likely to get it right the first time. And for beginners that means never."
+            },
+            {
+                "type": "section_heading",
+                "title": "19.3 Generator expressions"
+            },
+            {
+                "type": "text",
+                "text": "Generator expressions are similar to list comprehensions, but with parentheses instead of square brackets:"
+            },
+            {
+                "type": "block",
+                "code": ">>> g = (x**2 for x in range(5))\n>>> g\n<generator object <genexpr> at 0x7f4c45a786c0>",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The result is a generator object that knows how to iterate through a sequence of values. But unlike a list comprehension, it does not compute the values all at once; it waits to be asked. The built-in function next gets the next value from the generator:"
+            },
+            {
+                "type": "block",
+                "code": ">>> next(g)\n0\n>>> next(g)\n1",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "When you get to the end of the sequence, next raises a StopIteration exception. You can also use a for loop to iterate through the values:"
+            },
+            {
+                "type": "block",
+                "code": ">>> for val in g:\n...     print(val)\n4\n9\n16",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The generator object keeps track of where it is in the sequence, so the for loop picks up where next left off. Once the generator is exhausted, it continues to raise StopIteration:"
+            },
+            {
+                "type": "block",
+                "code": ">>> next(g)\nStopIteration",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Generator expressions are often used with functions like sum, max, and min:"
+            },
+            {
+                "type": "block",
+                "code": ">>> sum(x**2 for x in range(5))\n30",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "section_heading",
+                "title": "19.4 any and all"
+            },
+            {
+                "type": "text",
+                "text": "Python provides a built-in function, any, that takes a sequence of boolean values and returns True if any of the values are True. It works on lists:"
+            }
+        ]
+    },
+    "cost": 0.042565000000000006
+}

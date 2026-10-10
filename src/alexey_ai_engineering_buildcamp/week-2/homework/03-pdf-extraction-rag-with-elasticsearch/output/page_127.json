@@ -1,0 +1,39 @@
+{
+    "page": {
+        "page_number": 105,
+        "header": "11.2. Dictionary as a collection of counters",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "1. You could create 26 variables, one for each letter of the alphabet. Then you could traverse the string and, for each character, increment the corresponding counter, probably using a chained conditional.\n\n2. You could create a list with 26 elements. Then you could convert each character to a number (using the built-in function ord), use the number as an index into the list, and increment the appropriate counter.\n\n3. You could create a dictionary with characters as keys and counters as the corresponding values. The first time you see a character, you would add an item to the dictionary. After that you would increment the value of an existing item.\n\nEach of these options performs the same computation, but each of them implements that computation in a different way.\n\nAn implementation is a way of performing a computation; some implementations are better than others. For example, an advantage of the dictionary implementation is that we don't have to know ahead of time which letters appear in the string and we only have to make room for the letters that do appear.\n\nHere is what the code might look like:"
+            },
+            {
+                "type": "block",
+                "code": "def histogram(s):\n    d = dict()\n    for c in s:\n        if c not in d:\n            d[c] = 1\n        else:\n            d[c] += 1\n    return d",
+                "language": "python",
+                "description": "Builds a dictionary mapping each character in s to the number of times it appears."
+            },
+            {
+                "type": "text",
+                "text": "The name of the function is histogram, which is a statistical term for a collection of counters (or frequencies).\n\nThe first line of the function creates an empty dictionary. The for loop traverses the string. Each time through the loop, if the character c is not in the dictionary, we create a new item with key c and the initial value 1 (since we have seen this letter once). If c is already in the dictionary we increment d[c].\n\nHere's how it works:"
+            },
+            {
+                "type": "block",
+                "code": ">>> h = histogram('brontosaurus')\n>>> h\n{'a': 1, 'b': 1, 'o': 2, 'n': 1, 's': 2, 'r': 2, 'u': 2, 't': 1}",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The histogram indicates that the letters 'a' and 'b' appear once; 'o' appears twice, and so on.\n\nDictionaries have a method called get that takes a key and a default value. If the key appears in the dictionary, get returns the corresponding value; otherwise it returns the default value. For example:"
+            },
+            {
+                "type": "block",
+                "code": ">>> h = histogram('a')\n>>> h\n{'a': 1}\n>>> h.get('a', 0)",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.04202
+}

@@ -1,0 +1,39 @@
+{
+    "page": {
+        "page_number": 23,
+        "header": "3.9. Stack diagrams",
+        "blocks": [
+            {
+                "type": "figure",
+                "caption": "Figure 3.1: Stack diagram.",
+                "description": "A stack diagram with three frames. The __main__ frame holds line1 -> 'Bing tiddle ' and line2 -> 'tiddle bang.'. The cat_twice frame holds part1 -> 'Bing tiddle ', part2 -> 'tiddle bang.', and cat -> 'Bing tiddle tiddle bang.'. The print_twice frame holds bruce -> 'Bing tiddle tiddle bang.'. It shows how each function call has its own frame of local variables, with parameters referring to the same values as the arguments passed in.",
+                "figure_number": 1
+            },
+            {
+                "type": "block",
+                "code": ">>> print(cat)\nNameError: name 'cat' is not defined",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Parameters are also local. For example, outside print_twice, there is no such thing as bruce."
+            },
+            {
+                "type": "section_heading",
+                "title": "3.9 Stack diagrams"
+            },
+            {
+                "type": "text",
+                "text": "To keep track of which variables can be used where, it is sometimes useful to draw a stack diagram. Like state diagrams, stack diagrams show the value of each variable, but they also show the function each variable belongs to.\n\nEach function is represented by a frame. A frame is a box with the name of a function beside it and the parameters and variables of the function inside it. The stack diagram for the previous example is shown in Figure 3.1.\n\nThe frames are arranged in a stack that indicates which function called which, and so on. In this example, print_twice was called by cat_twice, and cat_twice was called by __main__, which is a special name for the topmost frame. When you create a variable outside of any function, it belongs to __main__.\n\nEach parameter refers to the same value as its corresponding argument. So, part1 has the same value as line1, part2 has the same value as line2, and bruce has the same value as cat.\n\nIf an error occurs during a function call, Python prints the name of the function, the name of the function that called it, and the name of the function that called that, all the way back to __main__.\n\nFor example, if you try to access cat from within print_twice, you get a NameError:"
+            },
+            {
+                "type": "block",
+                "code": "Traceback (innermost last):\n  File \"test.py\", line 13, in __main__\n    cat_twice(line1, line2)\n  File \"test.py\", line 5, in cat_twice\n    print_twice(cat)\n  File \"test.py\", line 9, in print_twice\n    print(cat)\nNameError: name 'cat' is not defined",
+                "language": "python",
+                "description": "A traceback showing the chain of function calls leading to the NameError."
+            }
+        ]
+    },
+    "cost": 0.044015
+}

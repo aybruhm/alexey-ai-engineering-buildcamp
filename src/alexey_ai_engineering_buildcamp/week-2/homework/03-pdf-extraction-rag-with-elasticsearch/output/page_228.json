@@ -1,0 +1,41 @@
+{
+    "page": {
+        "page_number": 206,
+        "header": "Appendix B. Analysis of Algorithms",
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "B.4 Hashtables"
+            },
+            {
+                "type": "text",
+                "text": "To explain how hashtables work and why their performance is so good, I start with a simple implementation of a map and gradually improve it until it's a hashtable.\n\nI use Python to demonstrate these implementations, but in real life you wouldn't write code like this in Python; you would just use a dictionary! So for the rest of this chapter, you have to imagine that dictionaries don't exist and you want to implement a data structure that maps from keys to values. The operations you have to implement are:"
+            },
+            {
+                "type": "text",
+                "text": "add(k, v): Add a new item that maps from key k to value v. With a Python dictionary, d, this operation is written d[k] = v.\n\nget(k): Look up and return the value that corresponds to key k. With a Python dictionary, d, this operation is written d[k] or d.get(k)."
+            },
+            {
+                "type": "text",
+                "text": "For now, I assume that each key only appears once. The simplest implementation of this interface uses a list of tuples, where each tuple is a key-value pair."
+            },
+            {
+                "type": "block",
+                "code": "class LinearMap:\n\n    def __init__(self):\n        self.items = []\n\n    def add(self, k, v):\n        self.items.append((k, v))\n\n    def get(self, k):\n        for key, val in self.items:\n            if key == k:\n                return val\n        raise KeyError",
+                "language": "python",
+                "description": "A map implemented as a list of key-value tuples; add is constant time, get is linear search."
+            },
+            {
+                "type": "text",
+                "text": "add appends a key-value tuple to the list of items, which takes constant time.\n\nget uses a for loop to search the list: if it finds the target key it returns the corresponding value; otherwise it raises a KeyError. So get is linear.\n\nAn alternative is to keep the list sorted by key. Then get could use a bisection search, which is O(log n). But inserting a new item in the middle of a list is linear, so this might not be the best option. There are other data structures that can implement add and get in log time, but that's still not as good as constant time, so let's move on.\n\nOne way to improve LinearMap is to break the list of key-value pairs into smaller lists. Here's an implementation called BetterMap, which is a list of 100 LinearMaps. As we'll see in a second, the order of growth for get is still linear, but BetterMap is a step on the path toward hashtables:"
+            },
+            {
+                "type": "block",
+                "code": "class BetterMap:\n\n    def __init__(self, n=100):\n        self.maps = []\n        for i in range(n):\n            self.maps.append(LinearMap())",
+                "language": "python",
+                "description": "BetterMap initializes a list of n LinearMaps (default 100)."
+            }
+        ]
+    },
+    "cost": 0.044565
+}

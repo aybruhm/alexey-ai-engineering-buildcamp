@@ -1,0 +1,79 @@
+{
+    "page": {
+        "page_number": 24,
+        "header": "Chapter 3. Functions",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "This list of functions is called a traceback. It tells you what program file the error occurred in, and what line, and what functions were executing at the time. It also shows the line of code that caused the error.\n\nThe order of the functions in the traceback is the same as the order of the frames in the stack diagram. The function that is currently running is at the bottom."
+            },
+            {
+                "type": "section_heading",
+                "title": "3.10 Fruitful functions and void functions"
+            },
+            {
+                "type": "text",
+                "text": "Some of the functions we have used, such as the math functions, return results; for lack of a better name, I call them fruitful functions. Other functions, like print_twice, perform an action but don't return a value. They are called void functions.\n\nWhen you call a fruitful function, you almost always want to do something with the result; for example, you might assign it to a variable or use it as part of an expression:"
+            },
+            {
+                "type": "block",
+                "code": "x = math.cos(radians)\ngolden = (math.sqrt(5) + 1) / 2",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "When you call a function in interactive mode, Python displays the result:"
+            },
+            {
+                "type": "block",
+                "code": ">>> math.sqrt(5)\n2.2360679774997898",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "But in a script, if you call a fruitful function all by itself, the return value is lost forever!"
+            },
+            {
+                "type": "block",
+                "code": "math.sqrt(5)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This script computes the square root of 5, but since it doesn't store or display the result, it is not very useful.\n\nVoid functions might display something on the screen or have some other effect, but they don't have a return value. If you assign the result to a variable, you get a special value called None."
+            },
+            {
+                "type": "block",
+                "code": ">>> result = print_twice('Bing')\nBing\nBing\n>>> print(result)\nNone",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The value None is not the same as the string 'None'. It is a special value that has its own type:"
+            },
+            {
+                "type": "block",
+                "code": ">>> type(None)\n<class 'NoneType'>",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The functions we have written so far are all void. We will start writing fruitful functions in a few chapters."
+            },
+            {
+                "type": "section_heading",
+                "title": "3.11 Why functions?"
+            },
+            {
+                "type": "text",
+                "text": "It may not be clear why it is worth the trouble to divide a program into functions. There are several reasons:"
+            }
+        ]
+    },
+    "cost": 0.04057
+}

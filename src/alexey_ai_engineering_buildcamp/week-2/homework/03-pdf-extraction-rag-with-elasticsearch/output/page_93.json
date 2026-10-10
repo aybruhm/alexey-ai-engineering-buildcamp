@@ -1,0 +1,61 @@
+{
+    "page": {
+        "page_number": 81,
+        "header": null,
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "Chapter 8 Strings"
+            },
+            {
+                "type": "text",
+                "text": "Strings are not like integers, floats, and booleans. A string is a sequence, which means it is an ordered collection of other values. In this chapter you'll see how to access the characters that make up a string, and you'll learn about some of the methods strings provide."
+            },
+            {
+                "type": "section_heading",
+                "title": "8.1 A string is a sequence"
+            },
+            {
+                "type": "text",
+                "text": "A string is a sequence of characters. You can access the characters one at a time with the bracket operator:"
+            },
+            {
+                "type": "block",
+                "code": ">>> fruit = 'banana'\n>>> letter = fruit[1]",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The second statement selects character number 1 from fruit and assigns it to letter.\n\nThe expression in brackets is called an index. The index indicates which character in the sequence you want (hence the name).\n\nBut you might not get what you expect:"
+            },
+            {
+                "type": "block",
+                "code": ">>> letter\n'a'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "For most people, the first letter of 'banana' is b, not a. But for computer scientists, the index is an offset from the beginning of the string, and the offset of the first letter is zero."
+            },
+            {
+                "type": "block",
+                "code": ">>> letter = fruit[0]\n>>> letter\n'b'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "So b is the 0th letter (“zero-eth”) of 'banana', a is the 1th letter (“one-eth”), and n is the 2th letter (“two-eth”).\n\nAs an index you can use an expression that contains variables and operators:"
+            },
+            {
+                "type": "block",
+                "code": ">>> i = 1\n>>> fruit[i]\n'a'\n>>> fruit[i+1]\n'n'",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.035570000000000004
+}

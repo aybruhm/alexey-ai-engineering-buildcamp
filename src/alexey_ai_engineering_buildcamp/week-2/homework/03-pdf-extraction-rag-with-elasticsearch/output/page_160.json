@@ -1,0 +1,87 @@
+{
+    "page": {
+        "page_number": 138,
+        "header": "Chapter 14. Files",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "If the file already exists, opening it in write mode clears out the old data and starts fresh, so be careful! If the file doesn't exist, a new one is created.\n\nopen returns a file object that provides methods for working with the file. The write method puts data into the file."
+            },
+            {
+                "type": "block",
+                "code": ">>> line1 = \"This here's the wattle,\\n\"\n>>> fout.write(line1)\n24",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The return value is the number of characters that were written. The file object keeps track of where it is, so if you call write again, it adds the new data to the end of the file."
+            },
+            {
+                "type": "block",
+                "code": ">>> line2 = \"the emblem of our land.\\n\"\n>>> fout.write(line2)\n24",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "When you are done writing, you should close the file."
+            },
+            {
+                "type": "block",
+                "code": ">>> fout.close()",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "If you don't close the file, it gets closed for you when the program ends."
+            },
+            {
+                "type": "section_heading",
+                "title": "14.3 Format operator"
+            },
+            {
+                "type": "text",
+                "text": "The argument of write has to be a string, so if we want to put other values in a file, we have to convert them to strings. The easiest way to do that is with str:"
+            },
+            {
+                "type": "block",
+                "code": ">>> x = 52\n>>> fout.write(str(x))",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "An alternative is to use the format operator, %. When applied to integers, % is the modulus operator. But when the first operand is a string, % is the format operator.\n\nThe first operand is the format string, which contains one or more format sequences, which specify how the second operand is formatted. The result is a string.\n\nFor example, the format sequence '%d' means that the second operand should be formatted as a decimal integer:"
+            },
+            {
+                "type": "block",
+                "code": ">>> camels = 42\n>>> '%d' % camels\n'42'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The result is the string '42', which is not to be confused with the integer value 42.\n\nA format sequence can appear anywhere in the string, so you can embed a value in a sentence:"
+            },
+            {
+                "type": "block",
+                "code": ">>> 'I have spotted %d camels.' % camels\n'I have spotted 42 camels.'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "If there is more than one format sequence in the string, the second argument has to be a tuple. Each format sequence is matched with an element of the tuple, in order.\n\nThe following example uses '%d' to format an integer, '%g' to format a floating-point number, and '%s' to format a string:"
+            },
+            {
+                "type": "block",
+                "code": ">>> 'In %d years I have spotted %g %s.' % (3, 0.1, 'camels')\n'In 3 years I have spotted 0.1 camels.'",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.04407
+}

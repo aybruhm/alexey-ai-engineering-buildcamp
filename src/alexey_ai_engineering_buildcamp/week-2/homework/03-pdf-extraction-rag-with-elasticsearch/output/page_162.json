@@ -1,0 +1,77 @@
+{
+    "page": {
+        "page_number": 140,
+        "header": "Chapter 14. Files",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "Similarly, os.path.isfile checks whether it's a file.\n\nos.listdir returns a list of the files (and other directories) in the given directory:"
+            },
+            {
+                "type": "block",
+                "code": ">>> os.listdir(cwd)\n['music', 'photos', 'memo.txt']",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "To demonstrate these functions, the following example \"walks\" through a directory, prints the names of all the files, and calls itself recursively on all the directories."
+            },
+            {
+                "type": "block",
+                "code": "def walk(dirname):\n    for name in os.listdir(dirname):\n        path = os.path.join(dirname, name)\n\n        if os.path.isfile(path):\n            print(path)\n        else:\n            walk(path)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "os.path.join takes a directory and a file name and joins them into a complete path.\n\nThe os module provides a function called walk that is similar to this one but more versatile. As an exercise, read the documentation and use it to print the names of the files in a given directory and its subdirectories. You can download my solution from https://thinkpython.com/code/walk.py."
+            },
+            {
+                "type": "section_heading",
+                "title": "14.5 Catching exceptions"
+            },
+            {
+                "type": "text",
+                "text": "A lot of things can go wrong when you try to read and write files. If you try to open a file that doesn't exist, you get an FileNotFoundError:"
+            },
+            {
+                "type": "block",
+                "code": ">>> fin = open('bad_file')\nFileNotFoundError: [Errno 2] No such file or directory: 'bad_file'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "If you don't have permission to access a file:"
+            },
+            {
+                "type": "block",
+                "code": ">>> fout = open('/etc/passwd', 'w')\nPermissionError: [Errno 13] Permission denied: '/etc/passwd'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "And if you try to open a directory for reading, you get"
+            },
+            {
+                "type": "block",
+                "code": ">>> fin = open('/home')\nIsADirectoryError: [Errno 21] Is a directory: '/home'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "To avoid these errors, you could use functions like os.path.exists and os.path.isfile, but it would take a lot of time and code to check all the possibilities (if \"Errno 21\" is any indication, there are at least 21 things that can go wrong).\n\nIt is better to go ahead and try—and deal with problems if they happen—which is exactly what the try statement does. The syntax is similar to an if...else statement:"
+            },
+            {
+                "type": "block",
+                "code": "try:\n    fin = open('bad_file')\nexcept:\n    print('Something went wrong.')",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.04332
+}

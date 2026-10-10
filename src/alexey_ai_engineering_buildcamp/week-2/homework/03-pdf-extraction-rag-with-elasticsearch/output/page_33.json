@@ -1,0 +1,59 @@
+{
+    "page": {
+        "page_number": 11,
+        "header": "2.4. Script mode",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "The first line is an assignment statement that gives a value to n. The second line is a print statement that displays the value of n.\n\nWhen you type a statement, the interpreter executes it, which means that it does whatever the statement says. In general, statements don't have values."
+            },
+            {
+                "type": "section_heading",
+                "title": "2.4 Script mode"
+            },
+            {
+                "type": "text",
+                "text": "So far we have run Python in interactive mode, which means that you interact directly with the interpreter. Interactive mode is a good way to get started, but if you are working with more than a few lines of code, it can be clumsy.\n\nThe alternative is to save code in a file called a script and then run the interpreter in script mode to execute the script. By convention, Python scripts have names that end with .py.\n\nIf you know how to create and run a script on your computer, you are ready to go. Otherwise I recommend using PythonAnywhere again. I have posted instructions for running in script mode at http://tinyurl.com/thinkpython2e.\n\nBecause Python provides both modes, you can test bits of code in interactive mode before you put them in a script. But there are differences between interactive mode and script mode that can be confusing.\n\nFor example, if you are using Python as a calculator, you might type"
+            },
+            {
+                "type": "block",
+                "code": ">>> miles = 26.2\n>>> miles * 1.61\n42.182",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The first line assigns a value to miles, but it has no visible effect. The second line is an expression, so the interpreter evaluates it and displays the result. It turns out that a marathon is about 42 kilometers.\n\nBut if you type the same code into a script and run it, you get no output at all. In script mode an expression, all by itself, has no visible effect. Python evaluates the expression, but it doesn't display the result. To display the result, you need a print statement like this:"
+            },
+            {
+                "type": "block",
+                "code": "miles = 26.2\nprint(miles * 1.61)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This behavior can be confusing at first. To check your understanding, type the following statements in the Python interpreter and see what they do:"
+            },
+            {
+                "type": "block",
+                "code": "5\nx = 5\nx + 1",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Now put the same statements in a script and run it. What is the output? Modify the script by transforming each expression into a print statement and then run it again."
+            },
+            {
+                "type": "section_heading",
+                "title": "2.5 Order of operations"
+            },
+            {
+                "type": "text",
+                "text": "When an expression contains more than one operator, the order of evaluation depends on the order of operations. For mathematical operators, Python follows mathematical convention. The acronym PEMDAS is a useful way to remember the rules:"
+            }
+        ]
+    },
+    "cost": 0.042945
+}

@@ -1,0 +1,43 @@
+{
+    "page": {
+        "page_number": 56,
+        "header": "Chapter 6. Fruitful functions",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "This definition says that the factorial of 0 is 1, and the factorial of any other value, n, is n multiplied by the factorial of n − 1.\n\nSo 3! is 3 times 2!, which is 2 times 1!, which is 1 times 0!. Putting it all together, 3! equals 3 times 2 times 1 times 1, which is 6.\n\nIf you can write a recursive definition of something, you can write a Python program to evaluate it. The first step is to decide what the parameters should be. In this case it should be clear that factorial takes an integer:"
+            },
+            {
+                "type": "block",
+                "code": "def factorial(n):",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "If the argument happens to be 0, all we have to do is return 1:"
+            },
+            {
+                "type": "block",
+                "code": "def factorial(n):\n    if n == 0:\n        return 1",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Otherwise, and this is the interesting part, we have to make a recursive call to find the factorial of n − 1 and then multiply it by n:"
+            },
+            {
+                "type": "block",
+                "code": "def factorial(n):\n    if n == 0:\n        return 1\n    else:\n        recurse = factorial(n-1)\n        result = n * recurse\n        return result",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The flow of execution for this program is similar to the flow of countdown in Section 5.8. If we call factorial with the value 3:\n\nSince 3 is not 0, we take the second branch and calculate the factorial of n-1...\n\nSince 2 is not 0, we take the second branch and calculate the factorial of n-1...\n\nSince 1 is not 0, we take the second branch and calculate the factorial of n-1...\n\nSince 0 equals 0, we take the first branch and return 1 without making any more recursive calls.\n\nThe return value, 1, is multiplied by n, which is 1, and the result is returned.\n\nThe return value, 1, is multiplied by n, which is 2, and the result is returned.\n\nThe return value (2) is multiplied by n, which is 3, and the result, 6, becomes the return value of the function call that started the whole process.\n\nFigure 6.1 shows what the stack diagram looks like for this sequence of function calls.\n\nThe return values are shown being passed back up the stack. In each frame, the return value is the value of result, which is the product of n and recurse.\n\nIn the last frame, the local variables recurse and result do not exist, because the branch that creates them does not run."
+            }
+        ]
+    },
+    "cost": 0.04192
+}

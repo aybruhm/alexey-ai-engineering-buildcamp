@@ -1,0 +1,47 @@
+{
+    "page": {
+        "page_number": 179,
+        "header": "18.10. Data encapsulation",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "So the shuffle method for this Hand is the one in Deck.\n\nfind_defining_class uses the mro method to get the list of class objects (types) that will be searched for methods. “MRO” stands for “method resolution order”, which is the sequence of classes Python searches to “resolve” a method name.\n\nHere’s a design suggestion: when you override a method, the interface of the new method should be the same as the old. It should take the same parameters, return the same type, and obey the same preconditions and postconditions. If you follow this rule, you will find that any function designed to work with an instance of a parent class, like a Deck, will also work with instances of child classes like a Hand and PokerHand.\n\nIf you violate this rule, which is called the “Liskov substitution principle”, your code will collapse like (sorry) a house of cards."
+            },
+            {
+                "type": "section_heading",
+                "title": "18.10 Data encapsulation"
+            },
+            {
+                "type": "text",
+                "text": "The previous chapters demonstrate a development plan we might call “object-oriented design”. We identified objects we needed—like Point, Rectangle and Time—and defined classes to represent them. In each case there is an obvious correspondence between the object and some entity in the real world (or at least a mathematical world).\n\nBut sometimes it is less obvious what objects you need and how they should interact. In that case you need a different development plan. In the same way that we discovered function interfaces by encapsulation and generalization, we can discover class interfaces by data encapsulation.\n\nMarkov analysis, from Section 13.8, provides a good example. If you download my code from https://thinkpython.com/code/markov.py, you’ll see that it uses two global variables—suffix_map and prefix—that are read and written from several functions."
+            },
+            {
+                "type": "block",
+                "code": "suffix_map = {}\nprefix = ()",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Because these variables are global, we can only run one analysis at a time. If we read two texts, their prefixes and suffixes would be added to the same data structures (which makes for some interesting generated text).\n\nTo run multiple analyses, and keep them separate, we can encapsulate the state of each analysis in an object. Here’s what that looks like:"
+            },
+            {
+                "type": "block",
+                "code": "class Markov:\n\n    def __init__(self):\n        self.suffix_map = {}\n        self.prefix = ()",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Next, we transform the functions into methods. For example, here’s process_word:"
+            },
+            {
+                "type": "block",
+                "code": "    def process_word(self, word, order=2):\n        if len(self.prefix) < order:\n            self.prefix += (word,)\n            return",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.04414
+}

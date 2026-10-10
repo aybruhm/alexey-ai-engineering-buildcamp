@@ -1,0 +1,77 @@
+{
+    "page": {
+        "page_number": 184,
+        "header": "Chapter 19. The Goodies",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "We can rewrite it like this:"
+            },
+            {
+                "type": "block",
+                "code": "def factorial(n):\n    return 1 if n == 0 else n * factorial(n-1)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Another use of conditional expressions is handling optional arguments. For example, here is the init method from GoodKangaroo (see Exercise 17.2):"
+            },
+            {
+                "type": "block",
+                "code": "    def __init__(self, name, contents=None):\n        self.name = name\n        if contents == None:\n            contents = []\n        self.pouch_contents = contents",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "We can rewrite this one like this:"
+            },
+            {
+                "type": "block",
+                "code": "    def __init__(self, name, contents=None):\n        self.name = name\n        self.pouch_contents = [] if contents == None else contents",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "In general, you can replace a conditional statement with a conditional expression if both branches contain simple expressions that are either returned or assigned to the same variable."
+            },
+            {
+                "type": "section_heading",
+                "title": "19.2 List comprehensions"
+            },
+            {
+                "type": "text",
+                "text": "In Section 10.7 we saw the map and filter patterns. For example, this function takes a list of strings, maps the string method capitalize to the elements, and returns a new list of strings:"
+            },
+            {
+                "type": "block",
+                "code": "def capitalize_all(t):\n    res = []\n    for s in t:\n        res.append(s.capitalize())\n    return res",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "We can write this more concisely using a list comprehension:"
+            },
+            {
+                "type": "block",
+                "code": "def capitalize_all(t):\n    return [s.capitalize() for s in t]",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The bracket operators indicate that we are constructing a new list. The expression inside the brackets specifies the elements of the list, and the for clause indicates what sequence we are traversing.\n\nThe syntax of a list comprehension is a little awkward because the loop variable, s in this example, appears in the expression before we get to the definition.\n\nList comprehensions can also be used for filtering. For example, this function selects only the elements of t that are upper case, and returns a new list:"
+            },
+            {
+                "type": "block",
+                "code": "def only_upper(t):\n    res = []\n    for s in t:\n        if s.isupper():\n            res.append(s)\n    return res",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.041965
+}

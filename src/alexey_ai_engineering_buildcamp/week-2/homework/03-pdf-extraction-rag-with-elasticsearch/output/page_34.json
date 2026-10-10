@@ -1,0 +1,49 @@
+{
+    "page": {
+        "page_number": 12,
+        "header": "Chapter 2. Variables, expressions and statements",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "• Parentheses have the highest precedence and can be used to force an expression to evaluate in the order you want. Since expressions in parentheses are evaluated first, 2 * (3-1) is 4, and (1+1)**(5-2) is 8. You can also use parentheses to make an expression easier to read, as in (minute * 100) / 60, even if it doesn't change the result.\n\n• Exponentiation has the next highest precedence, so 1 + 2**3 is 9, not 27, and 2 * 3**2 is 18, not 36.\n\n• Multiplication and Division have higher precedence than Addition and Subtraction. So 2*3-1 is 5, not 4, and 6+4/2 is 8, not 5.\n\n• Operators with the same precedence are evaluated from left to right (except exponentiation). So in the expression degrees / 2 * pi, the division happens first and the result is multiplied by pi. To divide by 2π, you can use parentheses or write degrees / 2 / pi.\n\nI don't work very hard to remember the precedence of operators. If I can't tell by looking at the expression, I use parentheses to make it obvious."
+            },
+            {
+                "type": "section_heading",
+                "title": "2.6 String operations"
+            },
+            {
+                "type": "text",
+                "text": "In general, you can't perform mathematical operations on strings, even if the strings look like numbers, so the following are illegal:"
+            },
+            {
+                "type": "block",
+                "code": "'chinese'-'food'    'eggs'/'easy'    'third'*'a charm'",
+                "language": "python",
+                "description": "Examples of illegal mathematical operations on strings."
+            },
+            {
+                "type": "text",
+                "text": "But there are two exceptions, + and *.\n\nThe + operator performs string concatenation, which means it joins the strings by linking them end-to-end. For example:"
+            },
+            {
+                "type": "block",
+                "code": ">>> first = 'throat'\n>>> second = 'warbler'\n>>> first + second\nthroatwarbler",
+                "language": "python",
+                "description": "String concatenation with the + operator."
+            },
+            {
+                "type": "text",
+                "text": "The * operator also works on strings; it performs repetition. For example, 'Spam'*3 is 'SpamSpamSpam'. If one of the values is a string, the other has to be an integer.\n\nThis use of + and * makes sense by analogy with addition and multiplication. Just as 4*3 is equivalent to 4+4+4, we expect 'Spam'*3 to be the same as 'Spam'+'Spam'+'Spam', and it is. On the other hand, there is a significant way in which string concatenation and repetition are different from integer addition and multiplication. Can you think of a property that addition has that string concatenation does not?"
+            },
+            {
+                "type": "section_heading",
+                "title": "2.7 Comments"
+            },
+            {
+                "type": "text",
+                "text": "As programs get bigger and more complicated, they get more difficult to read. Formal languages are dense, and it is often difficult to look at a piece of code and figure out what it is doing, or why."
+            }
+        ]
+    },
+    "cost": 0.045445
+}

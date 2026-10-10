@@ -1,0 +1,13 @@
+{
+    "page": {
+        "page_number": 114,
+        "header": "Chapter 11. Dictionaries",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "Write a program that lists all the words that solve the Puzzler. Solution: https://thinkpython.com/code/homophone.py."
+            }
+        ]
+    },
+    "cost": 0.022395
+}

@@ -1,0 +1,27 @@
+{
+    "page": {
+        "page_number": 209,
+        "header": "B.5. Glossary",
+        "blocks": [
+            {
+                "type": "figure",
+                "caption": "Figure B.1: The cost of a hashtable add.",
+                "description": "Left: a row of unit-cost add operations, with occasional towers of increasing height and increasing spacing representing the extra work of rehashing when the hashtable resizes. Right: the same total work after the towers are knocked over and spread across all adds, forming roughly two rows of boxes, showing the amortized cost per add is constant (total cost about 2n − 2).",
+                "figure_number": 1
+            },
+            {
+                "type": "text",
+                "text": "The extra work of rehashing appears as a sequence of increasingly tall towers with increasing space between them. Now if you knock over the towers, spreading the cost of resizing over all adds, you can see graphically that the total cost after n adds is 2n − 2.\n\nAn important feature of this algorithm is that when we resize the HashTable it grows geometrically; that is, we multiply the size by a constant. If you increase the size arithmetically—adding a fixed number each time—the average time per add is linear.\n\nYou can download my implementation of HashMap from https://thinkpython.com/code/Map.py, but remember that there is no reason to use it; if you want a map, just use a Python dictionary."
+            },
+            {
+                "type": "section_heading",
+                "title": "B.5 Glossary"
+            },
+            {
+                "type": "text",
+                "text": "analysis of algorithms: A way to compare algorithms in terms of their run time and/or space requirements.\n\nmachine model: A simplified representation of a computer used to describe algorithms.\n\nworst case: The input that makes a given algorithm run slowest (or require the most space).\n\nleading term: In a polynomial, the term with the highest exponent.\n\ncrossover point: The problem size where two algorithms require the same run time or space.\n\norder of growth: A set of functions that all grow in a way considered equivalent for purposes of analysis of algorithms. For example, all functions that grow linearly belong to the same order of growth.\n\nBig-Oh notation: Notation for representing an order of growth; for example, O(n) represents the set of functions that grow linearly.\n\nlinear: An algorithm whose run time is proportional to problem size, at least for large problem sizes.\n\nquadratic: An algorithm whose run time is proportional to n², where n is a measure of problem size.\n\nsearch: The problem of locating an element of a collection (like a list or dictionary) or determining that it is not present."
+            }
+        ]
+    },
+    "cost": 0.041890000000000004
+}

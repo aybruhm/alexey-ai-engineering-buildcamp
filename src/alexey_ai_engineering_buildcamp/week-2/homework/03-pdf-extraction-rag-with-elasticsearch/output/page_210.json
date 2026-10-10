@@ -1,0 +1,73 @@
+{
+    "page": {
+        "page_number": 188,
+        "header": "Chapter 19. The Goodies",
+        "blocks": [
+            {
+                "type": "block",
+                "code": ">>> count['d']\n0",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "We can use Counters to rewrite is_anagram from Exercise 10.6:"
+            },
+            {
+                "type": "block",
+                "code": "def is_anagram(word1, word2):\n    return Counter(word1) == Counter(word2)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "If two words are anagrams, they contain the same letters with the same counts, so their Counters are equivalent.\n\nCounters provide methods and operators to perform set-like operations, including addition, subtraction, union and intersection. And they provide an often-useful method, most_common, which returns a list of value-frequency pairs, sorted from most common to least:"
+            },
+            {
+                "type": "block",
+                "code": ">>> count = Counter('parrot')\n>>> for val, freq in count.most_common(3):\n...     print(val, freq)\nr 2\np 1\na 1",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "section_heading",
+                "title": "19.7 defaultdict"
+            },
+            {
+                "type": "text",
+                "text": "The collections module also provides defaultdict, which is like a dictionary except that if you access a key that doesn't exist, it can generate a new value on the fly.\n\nWhen you create a defaultdict, you provide a function that's used to create new values. A function used to create objects is sometimes called a factory. The built-in functions that create lists, sets, and other types can be used as factories:"
+            },
+            {
+                "type": "block",
+                "code": ">>> from collections import defaultdict\n>>> d = defaultdict(list)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Notice that the argument is list, which is a class object, not list(), which is a new list. The function you provide doesn't get called unless you access a key that doesn't exist."
+            },
+            {
+                "type": "block",
+                "code": ">>> t = d['new key']\n>>> t\n[]",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The new list, which we're calling t, is also added to the dictionary. So if we modify t, the change appears in d:"
+            },
+            {
+                "type": "block",
+                "code": ">>> t.append('new value')\n>>> d\ndefaultdict(<class 'list'>, {'new key': ['new value']})",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "If you are making a dictionary of lists, you can often write simpler code using defaultdict. In my solution to Exercise 12.2, which you can get from https://thinkpython.com/code/anagram_sets.py, I make a dictionary that maps from a sorted string of letters to the list of words that can be spelled with those letters. For example, 'opst' maps to the list ['opts', 'post', 'pots', 'spot', 'stop', 'tops'].\n\nHere's the original code:"
+            }
+        ]
+    },
+    "cost": 0.04414
+}

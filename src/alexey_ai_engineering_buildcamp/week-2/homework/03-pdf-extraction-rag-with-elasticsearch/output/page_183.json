@@ -1,0 +1,29 @@
+{
+    "page": {
+        "page_number": 169,
+        "header": null,
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "Chapter 17"
+            },
+            {
+                "type": "section_heading",
+                "title": "Classes and methods"
+            },
+            {
+                "type": "text",
+                "text": "Although we are using some of Python's object-oriented features, the programs from the last two chapters are not really object-oriented because they don't represent the relationships between programmer-defined types and the functions that operate on them. The next step is to transform those functions into methods that make the relationships explicit.\n\nCode examples from this chapter are available from https://thinkpython.com/code/Time2.py, and solutions to the exercises are in https://thinkpython.com/code/Point2_soln.py."
+            },
+            {
+                "type": "section_heading",
+                "title": "17.1 Object-oriented features"
+            },
+            {
+                "type": "text",
+                "text": "Python is an object-oriented programming language, which means that it provides features that support object-oriented programming, which has these defining characteristics:\n\n• Programs include class and method definitions.\n• Most of the computation is expressed in terms of operations on objects.\n• Objects often represent things in the real world, and methods often correspond to the ways things in the real world interact.\n\nFor example, the Time class defined in Chapter 16 corresponds to the way people record the time of day, and the functions we defined correspond to the kinds of things people do with times. Similarly, the Point and Rectangle classes in Chapter 15 correspond to the mathematical concepts of a point and a rectangle.\n\nSo far, we have not taken advantage of the features Python provides to support object-oriented programming. These features are not strictly necessary; most of them provide alternative syntax for things we have already done. But in many cases, the alternative is more concise and more accurately conveys the structure of the program.\n\nFor example, in Time1.py there is no obvious connection between the class definition and the function definitions that follow. With some examination, it is apparent that every function takes at least one Time object as an argument."
+            }
+        ]
+    },
+    "cost": 0.040095000000000006
+}

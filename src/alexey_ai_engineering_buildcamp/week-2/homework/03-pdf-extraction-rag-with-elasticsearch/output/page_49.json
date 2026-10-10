@@ -1,0 +1,63 @@
+{
+    "page": {
+        "page_number": 27,
+        "header": "3.14. Exercises",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "Exercise 3.2. A function object is a value you can assign to a variable or pass as an argument. For example, do_twice is a function that takes a function object as an argument and calls it twice:"
+            },
+            {
+                "type": "block",
+                "code": "def do_twice(f):\n    f()\n    f()",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Here's an example that uses do_twice to call a function named print_spam twice."
+            },
+            {
+                "type": "block",
+                "code": "def print_spam():\n    print('spam')\n\ndo_twice(print_spam)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "1. Type this example into a script and test it.\n\n2. Modify do_twice so that it takes two arguments, a function object and a value, and calls the function twice, passing the value as an argument.\n\n3. Copy the definition of print_twice from earlier in this chapter to your script.\n\n4. Use the modified version of do_twice to call print_twice twice, passing 'spam' as an argument.\n\n5. Define a new function called do_four that takes a function object and a value and calls the function four times, passing the value as a parameter. There should be only two statements in the body of this function, not four.\n\nSolution: https://thinkpython.com/code/do_four.py."
+            },
+            {
+                "type": "text",
+                "text": "Exercise 3.3. Note: This exercise should be done using only the statements and other features we have learned so far.\n\n1. Write a function that draws a grid like the following:"
+            },
+            {
+                "type": "block",
+                "code": "+ - - - - + - - - - +\n|         |         |\n|         |         |\n|         |         |\n|         |         |\n+ - - - - + - - - - +\n|         |         |\n|         |         |\n|         |         |\n|         |         |\n+ - - - - + - - - - +",
+                "language": "text",
+                "description": "Target output: a 2x2 grid drawn with plus signs, dashes, and vertical bars."
+            },
+            {
+                "type": "text",
+                "text": "Hint: to print more than one value on a line, you can print a comma-separated sequence of values:"
+            },
+            {
+                "type": "block",
+                "code": "print('+', '-')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "By default, print advances to the next line, but you can override that behavior and put a space at the end, like this:"
+            },
+            {
+                "type": "block",
+                "code": "print('+', end=' ')\nprint('-')",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.040045
+}

@@ -1,0 +1,27 @@
+{
+    "page": {
+        "page_number": 70,
+        "header": "Chapter 7. Iteration",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "Exercise 7.3. The mathematician Srinivasa Ramanujan found an infinite series that can be used to generate a numerical approximation of 1/π:"
+            },
+            {
+                "type": "block",
+                "code": "\\frac{1}{\\pi} = \\frac{2\\sqrt{2}}{9801} \\sum_{k=0}^{\\infty} \\frac{(4k)!(1103 + 26390k)}{(k!)^4 396^{4k}}",
+                "language": "latex",
+                "description": "Ramanujan's infinite series for 1/π; each term grows the precision rapidly."
+            },
+            {
+                "type": "text",
+                "text": "Write a function called estimate_pi that uses this formula to compute and return an estimate of π. It should use a while loop to compute terms of the summation until the last term is smaller than 1e-15 (which is Python notation for 10^{-15}). You can check the result by comparing it to math.pi."
+            },
+            {
+                "type": "text",
+                "text": "Solution: https://thinkpython.com/code/pi.py."
+            }
+        ]
+    },
+    "cost": 0.02942
+}

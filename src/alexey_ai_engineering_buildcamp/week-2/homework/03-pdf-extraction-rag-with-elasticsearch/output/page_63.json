@@ -1,0 +1,69 @@
+{
+    "page": {
+        "page_number": 41,
+        "header": "5.4. Conditional execution",
+        "blocks": [
+            {
+                "type": "block",
+                "code": ">>> 42 and True\nTrue",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This flexibility can be useful, but there are some subtleties to it that might be confusing. You might want to avoid it (unless you know what you are doing)."
+            },
+            {
+                "type": "section_heading",
+                "title": "5.4 Conditional execution"
+            },
+            {
+                "type": "text",
+                "text": "In order to write useful programs, we almost always need the ability to check conditions and change the behavior of the program accordingly. Conditional statements give us this ability. The simplest form is the if statement:"
+            },
+            {
+                "type": "block",
+                "code": "if x > 0:\n    print('x is positive')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The boolean expression after if is called the condition. If it is true, the indented statement runs. If not, nothing happens.\n\nif statements have the same structure as function definitions: a header followed by an indented body. Statements like this are called compound statements.\n\nThere is no limit on the number of statements that can appear in the body, but there has to be at least one. Occasionally, it is useful to have a body with no statements (usually as a place keeper for code you haven't written yet). In that case, you can use the pass statement, which does nothing."
+            },
+            {
+                "type": "block",
+                "code": "if x < 0:\n    pass          # TODO: need to handle negative values!",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "section_heading",
+                "title": "5.5 Alternative execution"
+            },
+            {
+                "type": "text",
+                "text": "A second form of the if statement is \"alternative execution\", in which there are two possibilities and the condition determines which one runs. The syntax looks like this:"
+            },
+            {
+                "type": "block",
+                "code": "if x % 2 == 0:\n    print('x is even')\nelse:\n    print('x is odd')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "If the remainder when x is divided by 2 is 0, then we know that x is even, and the program displays an appropriate message. If the condition is false, the second set of statements runs. Since the condition must be true or false, exactly one of the alternatives will run. The alternatives are called branches, because they are branches in the flow of execution."
+            },
+            {
+                "type": "section_heading",
+                "title": "5.6 Chained conditionals"
+            },
+            {
+                "type": "text",
+                "text": "Sometimes there are more than two possibilities and we need more than two branches. One way to express a computation like that is a chained conditional:"
+            }
+        ]
+    },
+    "cost": 0.041115
+}

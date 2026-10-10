@@ -1,0 +1,29 @@
+{
+    "page": {
+        "page_number": 0,
+        "header": null,
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "Appendix A"
+            },
+            {
+                "type": "section_heading",
+                "title": "Debugging"
+            },
+            {
+                "type": "text",
+                "text": "When you are debugging, you should distinguish among different kinds of errors in order to track them down more quickly:\n\n• Syntax errors are discovered by the interpreter when it is translating the source code into byte code. They indicate that there is something wrong with the structure of the program. Example: Omitting the colon at the end of a def statement generates the somewhat redundant message SyntaxError: invalid syntax.\n\n• Runtime errors are produced by the interpreter if something goes wrong while the program is running. Most runtime error messages include information about where the error occurred and what functions were executing. Example: An infinite recursion eventually causes the runtime error “maximum recursion depth exceeded”.\n\n• Semantic errors are problems with a program that runs without producing error messages but doesn’t do the right thing. Example: An expression may not be evaluated in the order you expect, yielding an incorrect result.\n\nThe first step in debugging is to figure out which kind of error you are dealing with. Although the following sections are organized by error type, some techniques are applicable in more than one situation."
+            },
+            {
+                "type": "section_heading",
+                "title": "A.1 Syntax errors"
+            },
+            {
+                "type": "text",
+                "text": "Syntax errors are usually easy to fix once you figure out what they are. Unfortunately, the error messages are often not helpful. The most common messages are SyntaxError: invalid syntax and SyntaxError: invalid token, neither of which is very informative.\n\nOn the other hand, the message does tell you where in the program the problem occurred. Actually, it tells you where Python noticed a problem, which is not necessarily where the error is. Sometimes the error is prior to the location of the error message, often on the preceding line."
+            }
+        ]
+    },
+    "cost": 0.037115
+}

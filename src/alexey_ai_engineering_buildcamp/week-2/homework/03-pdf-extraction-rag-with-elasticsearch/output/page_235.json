@@ -1,0 +1,17 @@
+{
+    "page": {
+        "page_number": 213,
+        "header": "Index",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "declaration, 110, 112\ndecrement, 64, 69\ndeep copy, 152, 153\ndeepcopy function, 152\ndef keyword, 19\ndefault value, 129, 134, 165\n  avoiding mutable, 170\ndefaultdict, 188\ndefinition\n  circular, 55\n  class, 147\n  function, 19\n  recursive, 124\ndel operator, 94\ndeletion, element of list, 94\ndelimiter, 95, 100\ndesigned development, 160\ndeterministic, 126, 134\ndevelopment plan, 36\n  data encapsulation, 179, 181\n  designed, 158\n  encapsulation and generalization, 35\n  incremental, 52, 193\n  prototype and patch, 156, 158\n  random walk programming, 134, 200\n  reduction, 85, 87\ndiagram\n  call graph, 112\n  class, 177, 181\n  object, 148, 150, 152, 153, 155, 173\n  stack, 23, 97\n  state, 9, 63, 78, 90, 96, 108, 120, 148, 150, 152, 155, 173\n__dict__ attribute, 168\ndict function, 103\ndictionary, 103, 112, 120, 197\n  initialize, 120\n  invert, 107\n  lookup, 106\n  looping with, 106\n  reverse lookup, 106\n  subtraction, 129\n  traversal, 120, 168\ndictionary methods, 204\n  dbm module, 141\ndictionary subtraction, 186\ndiff, 146\nDijkstra, Edsger, 87\ndir function, 197\ndirectory, 139, 145\n  walk, 140\n  working, 139\ndispatch\n  type-based, 167\ndispatch, type-based, 166\ndivisibility, 39\ndivision\n  floating-point, 39\n  floor, 39, 46, 47\ndivmod, 117, 158\ndocstring, 35, 37, 148\ndot notation, 18, 26, 76, 148, 162, 172\nDouble Day, 160\ndouble letters, 88\nDoyle, Arthur Conan, 25\nduplicate, 101, 113, 146, 187"
+            },
+            {
+                "type": "text",
+                "text": "element, 89, 100\nelement deletion, 94\nelif keyword, 42\nElkner, Jeff, v, vi\nellipses, 19\nelse keyword, 41\nemail address, 117\nembedded object, 150, 153, 170\n  copying, 152\nemotional debugging, 6, 200\nempty list, 89\nempty string, 79, 95\nencapsulation, 32, 36, 54, 69, 75, 177\nencode, 171, 180\nencrypt, 171\nend of line character, 144\nenumerate function, 119\nenumerate object, 119\nepsilon, 67\nequality and assignment, 63\nequivalence, 96, 152\nequivalent, 100\nerror\n  runtime, 13, 44, 46, 193\n  semantic, 13, 193, 198\n  shape, 122\n  syntax, 13, 193\nerror checking, 58\nerror message, 7, 13, 193\neval function, 69\nevaluate, 10\nexception, 13, 14, 193, 196\n  AttributeError, 152, 197"
+            }
+        ]
+    },
+    "cost": 0.05074
+}

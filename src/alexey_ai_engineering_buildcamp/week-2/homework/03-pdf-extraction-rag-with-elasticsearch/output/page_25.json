@@ -1,0 +1,95 @@
+{
+    "page": {
+        "page_number": 3,
+        "header": "1.3. The first program",
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "1.3 The first program"
+            },
+            {
+                "type": "text",
+                "text": "Traditionally, the first program you write in a new language is called “Hello, World!” because all it does is display the words “Hello, World!”. In Python, it looks like this:"
+            },
+            {
+                "type": "block",
+                "code": ">>> print('Hello, World!')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This is an example of a print statement, although it doesn’t actually print anything on paper. It displays a result on the screen. In this case, the result is the words"
+            },
+            {
+                "type": "block",
+                "code": "Hello, World!",
+                "language": "text",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The quotation marks in the program mark the beginning and end of the text to be displayed; they don’t appear in the result.\n\nThe parentheses indicate that print is a function. We’ll get to functions in Chapter 3.\n\nIn Python 2, the print statement is slightly different; it is not a function, so it doesn’t use parentheses."
+            },
+            {
+                "type": "block",
+                "code": ">>> print 'Hello, World!'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This distinction will make more sense soon, but that’s enough to get started."
+            },
+            {
+                "type": "section_heading",
+                "title": "1.4 Arithmetic operators"
+            },
+            {
+                "type": "text",
+                "text": "After “Hello, World”, the next step is arithmetic. Python provides operators, which are special symbols that represent computations like addition and multiplication.\n\nThe operators +, -, and * perform addition, subtraction, and multiplication, as in the following examples:"
+            },
+            {
+                "type": "block",
+                "code": ">>> 40 + 2\n42\n>>> 43 - 1\n42\n>>> 6 * 7\n42",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The operator / performs division:"
+            },
+            {
+                "type": "block",
+                "code": ">>> 84 / 2\n42.0",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "You might wonder why the result is 42.0 instead of 42. I’ll explain in the next section.\n\nFinally, the operator ** performs exponentiation; that is, it raises a number to a power:"
+            },
+            {
+                "type": "block",
+                "code": ">>> 6**2 + 6\n42",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "In some other languages, ^ is used for exponentiation, but in Python it is a bitwise operator called XOR. If you are not familiar with bitwise operators, the result will surprise you:"
+            },
+            {
+                "type": "block",
+                "code": ">>> 6 ^ 2\n4",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "I won’t cover bitwise operators in this book, but you can read about them at http://wiki.python.org/moin/BitwiseOperators."
+            }
+        ]
+    },
+    "cost": 0.04379
+}

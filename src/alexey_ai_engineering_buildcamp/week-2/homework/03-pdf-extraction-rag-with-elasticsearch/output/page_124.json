@@ -1,0 +1,17 @@
+{
+    "page": {
+        "page_number": 102,
+        "header": "Chapter 10. Lists",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "thinkpython.com/code/interlock.py. Credit: This exercise is inspired by an example at http://puzzlers.org."
+            },
+            {
+                "type": "text",
+                "text": "1. Write a program that finds all pairs of words that interlock. Hint: don't enumerate all pairs!\n\n2. Can you find any words that are three-way interlocked; that is, every third letter forms a word, starting from the first, second or third?"
+            }
+        ]
+    },
+    "cost": 0.024595000000000002
+}

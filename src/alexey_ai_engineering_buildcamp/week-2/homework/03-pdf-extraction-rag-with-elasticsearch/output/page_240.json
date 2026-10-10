@@ -1,0 +1,21 @@
+{
+    "page": {
+        "page_number": 218,
+        "header": "Index",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "object, 74, 79, 95, 96, 100\n  bytes, 141, 145\n  class, 147, 148, 153, 190\n  copying, 151\n  Counter, 187\n  database, 141\n  defaultdict, 188\n  embedded, 150, 153, 170\n  enumerate, 119\n  file, 83, 87\n  function, 27\n  generator, 185\n  module, 143\n  mutable, 151\n  namedtuple, 190\n  pipe, 145\n  printing, 162\n  set, 186\n  zip, 123\nobject diagram, 148, 150, 152, 153, 155, 173\nobject-oriented design, 169\nobject-oriented language, 169\nobject-oriented programming, 147, 161, 169, 176\nodometer, 88\nOlin College, v\nopen function, 83, 84, 137, 140, 141\noperand, 14\noperator, 7\n  and, 40\n  arithmetic, 3\n  bitwise, 3\n  boolean, 76\n  bracket, 71, 90, 116\n  del, 94\n  format, 138, 145, 197\n  in, 76, 85, 90, 104\n  is, 95, 152\n  logical, 40\n  modulus, 39, 47\n  not, 40\n  or, 40\n  overloading, 169\n  relational, 40, 173\n  slice, 73, 79, 91, 98, 116\n  string, 12\n  update, 93\noperator overloading, 166, 173\noptional argument, 76, 79, 95, 107, 184\noptional parameter, 129, 165"
+            },
+            {
+                "type": "text",
+                "text": "or operator, 40\norder of growth, 202, 209\norder of operations, 11, 14, 199\nos module, 139\nother (parameter name), 164\nOverflowError, 46\noverloading, 169\noverride, 129, 134, 165, 173, 176, 179"
+            },
+            {
+                "type": "text",
+                "text": "palindrome, 61, 80, 86, 88\nparameter, 21, 23, 26, 97\n  gather, 118\n  optional, 129, 165\n  other, 164\n  self, 163\nparent class, 176, 180\nparentheses\n  argument in, 17\n  empty, 19, 76\n  parameters in, 21, 22\n  parent class in, 176\n  tuples in, 115\nparse, 5, 7\npass statement, 41\npath, 139, 145\n  absolute, 139\n  relative, 139\npattern\n  filter, 93, 100, 184\n  guardian, 59, 60, 78\n  map, 93, 100\n  reduce, 93, 100\n  search, 75, 79, 85, 107, 186\n  swap, 116\npdb (Python debugger), 197\nPEMDAS, 11\npermission, file, 140\npersistence, 137, 145\npi, 18, 70\npickle module, 137, 142\npickling, 142\npie, 37\npipe, 142\npipe object, 145\nplain text, 83, 125\nplanned development, 158\npoetry, 5\nPoint class, 148, 165\npoint, mathematical, 147\npoker, 171, 181"
+            }
+        ]
+    },
+    "cost": 0.049065
+}

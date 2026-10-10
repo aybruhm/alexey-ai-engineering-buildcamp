@@ -1,0 +1,53 @@
+{
+    "page": {
+        "page_number": 189,
+        "header": "19.8. Named tuples",
+        "blocks": [
+            {
+                "type": "block",
+                "code": "def all_anagrams(filename):\n    d = {}\n    for line in open(filename):\n        word = line.strip().lower()\n        t = signature(word)\n        if t not in d:\n            d[t] = [word]\n        else:\n            d[t].append(word)\n    return d",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This can be simplified using setdefault, which you might have used in Exercise 11.2:"
+            },
+            {
+                "type": "block",
+                "code": "def all_anagrams(filename):\n    d = {}\n    for line in open(filename):\n        word = line.strip().lower()\n        t = signature(word)\n        d.setdefault(t, []).append(word)\n    return d",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This solution has the drawback that it makes a new list every time, regardless of whether it is needed. For lists, that's no big deal, but if the factory function is complicated, it might be.\n\nWe can avoid this problem and simplify the code using a defaultdict:"
+            },
+            {
+                "type": "block",
+                "code": "def all_anagrams(filename):\n    d = defaultdict(list)\n    for line in open(filename):\n        word = line.strip().lower()\n        t = signature(word)\n        d[t].append(word)\n    return d",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "My solution to Exercise 18.3, which you can download from https://thinkpython.com/code/PokerHandSoln.py, uses setdefault in the function has_straightflush. This solution has the drawback of creating a Hand object every time through the loop, whether it is needed or not. As an exercise, rewrite it using a defaultdict."
+            },
+            {
+                "type": "section_heading",
+                "title": "19.8 Named tuples"
+            },
+            {
+                "type": "text",
+                "text": "Many simple objects are basically collections of related values. For example, the Point object defined in Chapter 15 contains two numbers, x and y. When you define a class like this, you usually start with an init method and a str method:"
+            },
+            {
+                "type": "block",
+                "code": "class Point:\n\n    def __init__(self, x=0, y=0):\n        self.x = x\n        self.y = y\n\n    def __str__(self):\n        return '(%g, %g)' % (self.x, self.y)",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.04054000000000001
+}

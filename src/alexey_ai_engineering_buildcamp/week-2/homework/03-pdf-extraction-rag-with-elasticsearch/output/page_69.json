@@ -1,0 +1,35 @@
+{
+    "page": {
+        "page_number": 47,
+        "header": "5.13. Glossary",
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "5.13 Glossary"
+            },
+            {
+                "type": "text",
+                "text": "floor division: An operator, denoted //, that divides two numbers and rounds down (toward negative infinity) to an integer.\n\nmodulus operator: An operator, denoted with a percent sign (%), that works on integers and returns the remainder when one number is divided by another.\n\nboolean expression: An expression whose value is either True or False.\n\nrelational operator: One of the operators that compares its operands: ==, !=, >, <, >=, and <=.\n\nlogical operator: One of the operators that combines boolean expressions: and, or, and not.\n\nconditional statement: A statement that controls the flow of execution depending on some condition.\n\ncondition: The boolean expression in a conditional statement that determines which branch runs.\n\ncompound statement: A statement that consists of a header and a body. The header ends with a colon (:). The body is indented relative to the header.\n\nbranch: One of the alternative sequences of statements in a conditional statement.\n\nchained conditional: A conditional statement with a series of alternative branches.\n\nnested conditional: A conditional statement that appears in one of the branches of another conditional statement.\n\nreturn statement: A statement that causes a function to end immediately and return to the caller.\n\nrecursion: The process of calling the function that is currently executing.\n\nbase case: A conditional branch in a recursive function that does not make a recursive call.\n\ninfinite recursion: A recursion that doesn't have a base case, or never reaches it. Eventually, an infinite recursion causes a runtime error."
+            },
+            {
+                "type": "section_heading",
+                "title": "5.14 Exercises"
+            },
+            {
+                "type": "text",
+                "text": "Exercise 5.1. The time module provides a function, also named time, that returns the current Greenwich Mean Time in \"the epoch\", which is an arbitrary time used as a reference point. On UNIX systems, the epoch is 1 January 1970."
+            },
+            {
+                "type": "block",
+                "code": ">>> import time\n>>> time.time()\n1437746094.5735958",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Write a script that reads the current time and converts it to a time of day in hours, minutes, and seconds, plus the number of days since the epoch."
+            }
+        ]
+    },
+    "cost": 0.039745
+}

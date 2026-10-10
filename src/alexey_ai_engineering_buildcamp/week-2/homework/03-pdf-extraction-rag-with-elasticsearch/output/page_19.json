@@ -1,0 +1,195 @@
+{
+    "page": {
+        "page_number": 19,
+        "header": "Contents xix",
+        "blocks": [
+            {
+                "type": "table",
+                "caption": null,
+                "columns": [
+                    "Section",
+                    "Title",
+                    "Page"
+                ],
+                "rows": [
+                    [
+                        "14.6",
+                        "Databases",
+                        "141"
+                    ],
+                    [
+                        "14.7",
+                        "Pickling",
+                        "142"
+                    ],
+                    [
+                        "14.8",
+                        "Pipes",
+                        "142"
+                    ],
+                    [
+                        "14.9",
+                        "Writing modules",
+                        "143"
+                    ],
+                    [
+                        "14.10",
+                        "Debugging",
+                        "144"
+                    ],
+                    [
+                        "14.11",
+                        "Glossary",
+                        "145"
+                    ],
+                    [
+                        "14.12",
+                        "Exercises",
+                        "145"
+                    ]
+                ]
+            },
+            {
+                "type": "section_heading",
+                "title": "15 Classes and objects 147"
+            },
+            {
+                "type": "table",
+                "caption": null,
+                "columns": [
+                    "Section",
+                    "Title",
+                    "Page"
+                ],
+                "rows": [
+                    [
+                        "15.1",
+                        "Programmer-defined types",
+                        "147"
+                    ],
+                    [
+                        "15.2",
+                        "Attributes",
+                        "148"
+                    ],
+                    [
+                        "15.3",
+                        "Rectangles",
+                        "149"
+                    ],
+                    [
+                        "15.4",
+                        "Instances as return values",
+                        "150"
+                    ],
+                    [
+                        "15.5",
+                        "Objects are mutable",
+                        "151"
+                    ],
+                    [
+                        "15.6",
+                        "Copying",
+                        "151"
+                    ],
+                    [
+                        "15.7",
+                        "Debugging",
+                        "152"
+                    ],
+                    [
+                        "15.8",
+                        "Glossary",
+                        "153"
+                    ],
+                    [
+                        "15.9",
+                        "Exercises",
+                        "154"
+                    ]
+                ]
+            },
+            {
+                "type": "section_heading",
+                "title": "16 Classes and functions 155"
+            },
+            {
+                "type": "table",
+                "caption": null,
+                "columns": [
+                    "Section",
+                    "Title",
+                    "Page"
+                ],
+                "rows": [
+                    [
+                        "16.1",
+                        "Time",
+                        "155"
+                    ],
+                    [
+                        "16.2",
+                        "Pure functions",
+                        "156"
+                    ],
+                    [
+                        "16.3",
+                        "Modifiers",
+                        "157"
+                    ],
+                    [
+                        "16.4",
+                        "Prototyping versus planning",
+                        "158"
+                    ],
+                    [
+                        "16.5",
+                        "Debugging",
+                        "159"
+                    ],
+                    [
+                        "16.6",
+                        "Glossary",
+                        "160"
+                    ],
+                    [
+                        "16.7",
+                        "Exercises",
+                        "160"
+                    ]
+                ]
+            },
+            {
+                "type": "section_heading",
+                "title": "17 Classes and methods 161"
+            },
+            {
+                "type": "table",
+                "caption": null,
+                "columns": [
+                    "Section",
+                    "Title",
+                    "Page"
+                ],
+                "rows": [
+                    [
+                        "17.1",
+                        "Object-oriented features",
+                        "161"
+                    ],
+                    [
+                        "17.2",
+                        "Printing objects",
+                        "162"
+                    ],
+                    [
+                        "17.3",
+                        "Another example",
+                        "163"
+                    ]
+                ]
+            }
+        ]
+    },
+    "cost": 0.037544999999999995
+}

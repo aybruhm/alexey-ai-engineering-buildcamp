@@ -1,0 +1,37 @@
+{
+    "page": {
+        "page_number": 173,
+        "header": "18.3. Comparing cards",
+        "blocks": [
+            {
+                "type": "figure",
+                "caption": "Figure 18.1: Object diagram.",
+                "description": "Object diagram showing the Card class object (of type 'type') with attributes suit_names and rank_names each referring to a list object, and a Card instance card1 with attributes suit referring to 1 and rank referring to 11. It illustrates that class attributes are shared while each instance has its own instance attributes.",
+                "figure_number": 1
+            },
+            {
+                "type": "text",
+                "text": "Every card has its own suit and rank, but there is only one copy of suit_names and rank_names.\n\nPutting it all together, the expression Card.rank_names[self.rank] means \"use the attribute rank from the object self as an index into the list rank_names from the class Card, and select the appropriate string.\"\n\nThe first element of rank_names is None because there is no card with rank zero. By including None as a place-keeper, we get a mapping with the nice property that the index 2 maps to the string '2', and so on. To avoid this tweak, we could have used a dictionary instead of a list.\n\nWith the methods we have so far, we can create and print cards:"
+            },
+            {
+                "type": "block",
+                "code": ">>> card1 = Card(2, 11)\n>>> print(card1)\nJack of Hearts",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Figure 18.1 is a diagram of the Card class object and one Card instance. Card is a class object; its type is type. card1 is an instance of Card, so its type is Card. To save space, I didn't draw the contents of suit_names and rank_names."
+            },
+            {
+                "type": "section_heading",
+                "title": "18.3 Comparing cards"
+            },
+            {
+                "type": "text",
+                "text": "For built-in types, there are relational operators (<, >, ==, etc.) that compare values and determine when one is greater than, less than, or equal to another. For programmer-defined types, we can override the behavior of the built-in operators by providing a method named __lt__, which stands for \"less than\".\n\n__lt__ takes two parameters, self and other, and returns True if self is strictly less than other.\n\nThe correct ordering for cards is not obvious. For example, which is better, the 3 of Clubs or the 2 of Diamonds? One has a higher rank, but the other has a higher suit. In order to compare cards, you have to decide whether rank or suit is more important.\n\nThe answer might depend on what game you are playing, but to keep things simple, we'll make the arbitrary choice that suit is more important, so all of the Spades outrank all of the Diamonds, and so on."
+            }
+        ]
+    },
+    "cost": 0.04142
+}

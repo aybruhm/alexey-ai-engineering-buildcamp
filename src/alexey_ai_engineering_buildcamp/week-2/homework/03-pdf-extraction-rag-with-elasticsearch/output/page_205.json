@@ -1,0 +1,51 @@
+{
+    "page": {
+        "page_number": 0,
+        "header": null,
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "Chapter 19 The Goodies"
+            },
+            {
+                "type": "text",
+                "text": "One of my goals for this book has been to teach you as little Python as possible. When there were two ways to do something, I picked one and avoided mentioning the other. Or sometimes I put the second one into an exercise.\n\nNow I want to go back for some of the good bits that got left behind. Python provides a number of features that are not really necessary—you can write good code without them—but with them you can sometimes write code that's more concise, readable or efficient, and sometimes all three."
+            },
+            {
+                "type": "section_heading",
+                "title": "19.1 Conditional expressions"
+            },
+            {
+                "type": "text",
+                "text": "We saw conditional statements in Section 5.4. Conditional statements are often used to choose one of two values; for example:"
+            },
+            {
+                "type": "block",
+                "code": "if x > 0:\n    y = math.log(x)\nelse:\n    y = float('nan')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This statement checks whether x is positive. If so, it computes math.log. If not, math.log would raise a ValueError. To avoid stopping the program, we generate a \"NaN\", which is a special floating-point value that represents \"Not a Number\".\n\nWe can write this statement more concisely using a conditional expression:"
+            },
+            {
+                "type": "block",
+                "code": "y = math.log(x) if x > 0 else float('nan')",
+                "language": "python",
+                "description": "Conditional expression assigning log of x if x is positive, otherwise NaN."
+            },
+            {
+                "type": "text",
+                "text": "You can almost read this line like English: \"y gets log-x if x is greater than 0; otherwise it gets NaN\".\n\nRecursive functions can sometimes be rewritten using conditional expressions. For example, here is a recursive version of factorial:"
+            },
+            {
+                "type": "block",
+                "code": "def factorial(n):\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n-1)",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.03839
+}

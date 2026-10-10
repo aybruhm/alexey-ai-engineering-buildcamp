@@ -1,0 +1,33 @@
+{
+    "page": {
+        "page_number": 201,
+        "header": null,
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "Appendix B"
+            },
+            {
+                "type": "section_heading",
+                "title": "Analysis of Algorithms"
+            },
+            {
+                "type": "text",
+                "text": "This appendix is an edited excerpt from Think Complexity, by Allen B. Downey, also published by O'Reilly Media (2012). When you are done with this book, you might want to move on to that one."
+            },
+            {
+                "type": "text",
+                "text": "Analysis of algorithms is a branch of computer science that studies the performance of algorithms, especially their run time and space requirements. See http://en.wikipedia.org/wiki/Analysis_of_algorithms.\n\nThe practical goal of algorithm analysis is to predict the performance of different algorithms in order to guide design decisions.\n\nDuring the 2008 United States Presidential Campaign, candidate Barack Obama was asked to perform an impromptu analysis when he visited Google. Chief executive Eric Schmidt jokingly asked him for \"the most efficient way to sort a million 32-bit integers.\" Obama had apparently been tipped off, because he quickly replied, \"I think the bubble sort would be the wrong way to go.\" See http://www.youtube.com/watch?v=k4RRi_ntQc8.\n\nThis is true: bubble sort is conceptually simple but slow for large datasets. The answer Schmidt was probably looking for is \"radix sort\" (http://en.wikipedia.org/wiki/Radix_sort)¹.\n\nThe goal of algorithm analysis is to make meaningful comparisons between algorithms, but there are some problems:"
+            },
+            {
+                "type": "text",
+                "text": "• The relative performance of the algorithms might depend on characteristics of the hardware, so one algorithm might be faster on Machine A, another on Machine B. The general solution to this problem is to specify a machine model and analyze the number of steps, or operations, an algorithm requires under a given model.\n\n• Relative performance might depend on the details of the dataset. For example, some sorting algorithms run faster if the data are already partially sorted; other algorithms"
+            },
+            {
+                "type": "text",
+                "text": "¹But if you get a question like this in an interview, I think a better answer is, \"The fastest way to sort a million integers is to use whatever sort function is provided by the language I'm using. Its performance is good enough for the vast majority of applications, but if it turned out that my application was too slow, I would use a profiler to see where the time was being spent. If it looked like a faster sort algorithm would have a significant effect on performance, then I would look around for a good implementation of radix sort.\""
+            }
+        ]
+    },
+    "cost": 0.043340000000000004
+}

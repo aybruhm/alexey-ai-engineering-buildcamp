@@ -1,0 +1,33 @@
+{
+    "page": {
+        "page_number": 1,
+        "header": null,
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "Think Python"
+            },
+            {
+                "type": "text",
+                "text": "How to Think Like a Computer Scientist"
+            },
+            {
+                "type": "text",
+                "text": "2nd Edition, Version 2.4.0"
+            },
+            {
+                "type": "text",
+                "text": "Allen Downey"
+            },
+            {
+                "type": "text",
+                "text": "Green Tea Press"
+            },
+            {
+                "type": "text",
+                "text": "Needham, Massachusetts"
+            }
+        ]
+    },
+    "cost": 0.02638
+}

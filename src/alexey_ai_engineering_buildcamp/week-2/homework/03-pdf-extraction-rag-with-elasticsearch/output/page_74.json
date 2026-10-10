@@ -1,0 +1,63 @@
+{
+    "page": {
+        "page_number": 52,
+        "header": "Chapter 6. Fruitful functions",
+        "blocks": [
+            {
+                "type": "block",
+                "code": "def absolute_value(x):\n    if x < 0:\n        return -x\n    else:\n        return x",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Since these return statements are in an alternative conditional, only one runs.\n\nAs soon as a return statement runs, the function terminates without executing any subsequent statements. Code that appears after a return statement, or any other place the flow of execution can never reach, is called **dead code**.\n\nIn a fruitful function, it is a good idea to ensure that every possible path through the program hits a return statement. For example:"
+            },
+            {
+                "type": "block",
+                "code": "def absolute_value(x):\n    if x < 0:\n        return -x\n    if x > 0:\n        return x",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This function is incorrect because if x happens to be 0, neither condition is true, and the function ends without hitting a return statement. If the flow of execution gets to the end of a function, the return value is None, which is not the absolute value of 0."
+            },
+            {
+                "type": "block",
+                "code": ">>> print(absolute_value(0))\nNone",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "By the way, Python provides a built-in function called abs that computes absolute values.\n\nAs an exercise, write a compare function that takes two values, x and y, and returns 1 if x > y, 0 if x == y, and -1 if x < y."
+            },
+            {
+                "type": "section_heading",
+                "title": "6.2 Incremental development"
+            },
+            {
+                "type": "text",
+                "text": "As you write larger functions, you might find yourself spending more time debugging.\n\nTo deal with increasingly complex programs, you might want to try a process called **incremental development**. The goal of incremental development is to avoid long debugging sessions by adding and testing only a small amount of code at a time.\n\nAs an example, suppose you want to find the distance between two points, given by the coordinates (x1, y1) and (x2, y2). By the Pythagorean theorem, the distance is:"
+            },
+            {
+                "type": "block",
+                "code": "distance = \\sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}",
+                "language": "latex",
+                "description": "Euclidean distance between two points via the Pythagorean theorem."
+            },
+            {
+                "type": "text",
+                "text": "The first step is to consider what a distance function should look like in Python. In other words, what are the inputs (parameters) and what is the output (return value)?\n\nIn this case, the inputs are two points, which you can represent using four numbers. The return value is the distance represented by a floating-point value.\n\nImmediately you can write an outline of the function:"
+            },
+            {
+                "type": "block",
+                "code": "def distance(x1, y1, x2, y2):\n    return 0.0",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.044265
+}

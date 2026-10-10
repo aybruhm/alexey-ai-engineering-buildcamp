@@ -1,0 +1,67 @@
+{
+    "page": {
+        "page_number": 162,
+        "header": "Chapter 17. Classes and methods",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "This observation is the motivation for methods; a method is a function that is associated with a particular class. We have seen methods for strings, lists, dictionaries and tuples. In this chapter, we will define methods for programmer-defined types.\n\nMethods are semantically the same as functions, but there are two syntactic differences:\n\n• Methods are defined inside a class definition in order to make the relationship between the class and the method explicit.\n\n• The syntax for invoking a method is different from the syntax for calling a function.\n\nIn the next few sections, we will take the functions from the previous two chapters and transform them into methods. This transformation is purely mechanical; you can do it by following a sequence of steps. If you are comfortable converting from one form to another, you will be able to choose the best form for whatever you are doing."
+            },
+            {
+                "type": "section_heading",
+                "title": "17.2 Printing objects"
+            },
+            {
+                "type": "text",
+                "text": "In Chapter 16, we defined a class named Time and in Section 16.1, you wrote a function named print_time:"
+            },
+            {
+                "type": "block",
+                "code": "class Time:\n    \"\"\"Represents the time of day.\"\"\"\n\ndef print_time(time):\n    print('%.2d:%.2d:%.2d' % (time.hour, time.minute, time.second))",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "To call this function, you have to pass a Time object as an argument:"
+            },
+            {
+                "type": "block",
+                "code": ">>> start = Time()\n>>> start.hour = 9\n>>> start.minute = 45\n>>> start.second = 00\n>>> print_time(start)\n09:45:00",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "To make print_time a method, all we have to do is move the function definition inside the class definition. Notice the change in indentation."
+            },
+            {
+                "type": "block",
+                "code": "class Time:\n    def print_time(time):\n        print('%.2d:%.2d:%.2d' % (time.hour, time.minute, time.second))",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Now there are two ways to call print_time. The first (and less common) way is to use function syntax:"
+            },
+            {
+                "type": "block",
+                "code": ">>> Time.print_time(start)\n09:45:00",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "In this use of dot notation, Time is the name of the class, and print_time is the name of the method. start is passed as a parameter.\n\nThe second (and more concise) way is to use method syntax:"
+            },
+            {
+                "type": "block",
+                "code": ">>> start.print_time()\n09:45:00",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.041895
+}

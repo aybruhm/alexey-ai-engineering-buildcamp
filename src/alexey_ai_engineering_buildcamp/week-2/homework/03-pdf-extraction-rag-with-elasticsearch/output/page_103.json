@@ -1,0 +1,23 @@
+{
+    "page": {
+        "page_number": 81,
+        "header": "8.13. Exercises",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "chr, which converts numeric codes to characters. Letters of the alphabet are encoded in alphabetical order, so for example:"
+            },
+            {
+                "type": "block",
+                "code": ">>> ord('c') - ord('a')\n2",
+                "language": "python",
+                "description": "The difference between the numeric codes of 'c' and 'a' is 2, reflecting alphabetical ordering."
+            },
+            {
+                "type": "text",
+                "text": "Because 'c' is the two-eth letter of the alphabet. But beware: the numeric codes for upper case letters are different.\n\nPotentially offensive jokes on the Internet are sometimes encoded in ROT13, which is a Caesar cypher with rotation 13. If you are not easily offended, find and decode some of them. Solution: https://thinkpython.com/code/rotate.py."
+            }
+        ]
+    },
+    "cost": 0.028715
+}

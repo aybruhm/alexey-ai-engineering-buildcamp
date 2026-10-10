@@ -1,0 +1,71 @@
+{
+    "page": {
+        "page_number": 67,
+        "header": "7.6. Algorithms",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "The result is closer to the correct answer (√4 = 2). If we repeat the process with the new estimate, it gets even closer:"
+            },
+            {
+                "type": "block",
+                "code": ">>> x = y\n>>> y = (x + a/x) / 2\n>>> y\n2.00641025641",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "After a few more updates, the estimate is almost exact:"
+            },
+            {
+                "type": "block",
+                "code": ">>> x = y\n>>> y = (x + a/x) / 2\n>>> y\n2.00001024003\n>>> x = y\n>>> y = (x + a/x) / 2\n>>> y\n2.00000000003",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "In general we don't know ahead of time how many steps it takes to get to the right answer, but we know when we get there because the estimate stops changing:"
+            },
+            {
+                "type": "block",
+                "code": ">>> x = y\n>>> y = (x + a/x) / 2\n>>> y\n2.0\n>>> x = y\n>>> y = (x + a/x) / 2\n>>> y\n2.0",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "When y == x, we can stop. Here is a loop that starts with an initial estimate, x, and improves it until it stops changing:"
+            },
+            {
+                "type": "block",
+                "code": "while True:\n    print(x)\n    y = (x + a/x) / 2\n    if y == x:\n        break\n    x = y",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "For most values of a this works fine, but in general it is dangerous to test float equality. Floating-point values are only approximately right: most rational numbers, like 1/3, and irrational numbers, like √2, can't be represented exactly with a float.\n\nRather than checking whether x and y are exactly equal, it is safer to use the built-in function abs to compute the absolute value, or magnitude, of the difference between them:"
+            },
+            {
+                "type": "block",
+                "code": "    if abs(y-x) < epsilon:\n        break",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Where epsilon has a value like 0.0000001 that determines how close is close enough."
+            },
+            {
+                "type": "section_heading",
+                "title": "7.6 Algorithms"
+            },
+            {
+                "type": "text",
+                "text": "Newton's method is an example of an algorithm: it is a mechanical process for solving a category of problems (in this case, computing square roots)."
+            }
+        ]
+    },
+    "cost": 0.041465
+}

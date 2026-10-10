@@ -1,0 +1,49 @@
+{
+    "page": {
+        "page_number": 90,
+        "header": "Chapter 10. Lists",
+        "blocks": [
+            {
+                "type": "figure",
+                "caption": "Figure 10.1: State diagram.",
+                "description": "State diagram showing three variables referring to list objects. 'cheeses' refers to a list with indices 0, 1, 2 mapping to 'Cheddar', 'Edam', 'Gouda'. 'numbers' refers to a list where index 0 maps to 42 and index 1 previously mapped to 123 (crossed out, dotted arrow) and now maps to 5, illustrating reassignment of a list element. 'empty' refers to an empty list box with no elements.",
+                "figure_number": 1
+            },
+            {
+                "type": "section_heading",
+                "title": "10.2 Lists are mutable"
+            },
+            {
+                "type": "text",
+                "text": "The syntax for accessing the elements of a list is the same as for accessing the characters of a string—the bracket operator. The expression inside the brackets specifies the index. Remember that the indices start at 0:"
+            },
+            {
+                "type": "block",
+                "code": ">>> cheeses[0]\n'Cheddar'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Unlike strings, lists are mutable. When the bracket operator appears on the left side of an assignment, it identifies the element of the list that will be assigned."
+            },
+            {
+                "type": "block",
+                "code": ">>> numbers = [42, 123]\n>>> numbers[1] = 5\n>>> numbers\n[42, 5]",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The one-eth element of numbers, which used to be 123, is now 5.\n\nFigure 10.1 shows the state diagram for cheeses, numbers and empty.\n\nLists are represented by boxes with the word “list” outside and the elements of the list inside. cheeses refers to a list with three elements indexed 0, 1 and 2. numbers contains two elements; the diagram shows that the value of the second element has been reassigned from 123 to 5. empty refers to a list with no elements.\n\nList indices work the same way as string indices:\n\n• Any integer expression can be used as an index.\n• If you try to read or write an element that does not exist, you get an IndexError.\n• If an index has a negative value, it counts backward from the end of the list.\n\nThe in operator also works on lists."
+            },
+            {
+                "type": "block",
+                "code": ">>> cheeses = ['Cheddar', 'Edam', 'Gouda']\n>>> 'Edam' in cheeses\nTrue\n>>> 'Brie' in cheeses\nFalse",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.04107
+}

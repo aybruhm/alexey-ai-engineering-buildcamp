@@ -1,0 +1,25 @@
+{
+    "page": {
+        "page_number": 217,
+        "header": "Index",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "mapping, 112, 131\nMarkov analysis, 130\nmash-up, 132\nmath function, 18\nmatplotlib, 135\nmax function, 117, 118\nMcCloskey, Robert, 73\nmd5, 143\nMD5 algorithm, 146\nmd5sum, 146\nmembership\n  binary search, 101\n  bisection search, 101\n  dictionary, 104\n  list, 90\n  set, 113\nmemo, 109, 112\nmental model, 199\nmetaphor, method invocation, 163\nmetathesis, 123\nmethod, 36, 75, 161, 169\n  __cmp__, 173\n  __str__, 165, 174\n  add, 165\n  append, 92, 97, 101, 174, 175\n  close, 138, 141, 143\n  count, 79\n  extend, 92\n  get, 105\n  init, 164, 172, 174, 176\n  items, 120\n  join, 95, 175\n  mro, 179\n  pop, 94, 175\n  radd, 167\n  read, 143\n  readline, 83, 143\n  remove, 94\n  replace, 125\n  setdefault, 113\n  sort, 92, 99, 176\n  split, 95, 117\n  string, 79\n  strip, 84, 125\n  translate, 125\n  update, 120\n  values, 104\n  void, 92\nmethod resolution order, 179\nmethod syntax, 162"
+            },
+            {
+                "type": "text",
+                "text": "method, list, 92\nMeyers, Chris, vi\nmin function, 117, 118\nMoby Project, 83\nmodel, mental, 199\nmodifier, 157, 160\nmodule, 18, 26\n  bisect, 101\n  collections, 187, 188, 190\n  copy, 151\n  datetime, 160\n  dbm, 141\n  os, 139\n  pickle, 137, 142\n  pprint, 112\n  profile, 133\n  random, 101, 126, 175\n  reload, 144, 195\n  shelve, 142\n  string, 125\n  structshape, 122\n  time, 101\nmodule object, 18, 143\nmodule, writing, 143\nmodulus operator, 39, 47\nMonty Python and the Holy Grail, 156\nMP3, 146\nmro method, 179\nmultiline string, 35, 194\nmultiplicity (in class diagram), 178, 181\nmultiset, 187\nmutability, 74, 90, 92, 96, 111, 115, 121, 151\nmutable object, as default value, 170"
+            },
+            {
+                "type": "text",
+                "text": "name built-in variable, 144\nnamedtuple, 190\nNameError, 22, 197\nNaN, 183\nnatural language, 4, 7\nnegative index, 72\nnested conditional, 42, 47\nnested list, 89, 91, 100\nnewline, 45, 175\nNewton's method, 66\nNone special value, 24, 26, 52, 92, 94\nNoneType type, 24\nnot operator, 40\nnumber, random, 126"
+            },
+            {
+                "type": "text",
+                "text": "Obama, Barack, 201"
+            }
+        ]
+    },
+    "cost": 0.049015
+}

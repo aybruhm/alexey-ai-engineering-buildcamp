@@ -1,0 +1,17 @@
+{
+    "page": {
+        "page_number": 38,
+        "header": "Chapter 4. Case study: interface design",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "You can get a solution from https://thinkpython.com/code/letters.py; it also requires https://thinkpython.com/code/polygon.py."
+            },
+            {
+                "type": "text",
+                "text": "Exercise 4.5. Read about spirals at http://en.wikipedia.org/wiki/Spiral; then write a program that draws an Archimedian spiral (or one of the other kinds). Solution: https://thinkpython.com/code/spiral.py."
+            }
+        ]
+    },
+    "cost": 0.02492
+}

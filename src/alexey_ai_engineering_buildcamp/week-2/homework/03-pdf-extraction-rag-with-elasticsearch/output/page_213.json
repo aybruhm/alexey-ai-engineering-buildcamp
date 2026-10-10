@@ -1,0 +1,77 @@
+{
+    "page": {
+        "page_number": 191,
+        "header": "19.10. Glossary",
+        "blocks": [
+            {
+                "type": "block",
+                "code": ">>> printall(1, 2.0, '3')\n(1, 2.0, '3')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "But the * operator doesn't gather keyword arguments:"
+            },
+            {
+                "type": "block",
+                "code": ">>> printall(1, 2.0, third='3')\nTypeError: printall() got an unexpected keyword argument 'third'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "To gather keyword arguments, you can use the ** operator:"
+            },
+            {
+                "type": "block",
+                "code": "def printall(*args, **kwargs):\n    print(args, kwargs)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "You can call the keyword gathering parameter anything you want, but kwargs is a common choice. The result is a dictionary that maps from keywords to values:"
+            },
+            {
+                "type": "block",
+                "code": ">>> printall(1, 2.0, third='3')\n(1, 2.0) {'third': '3'}",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "If you have a dictionary of keywords and values, you can use the scatter operator, ** to call a function:"
+            },
+            {
+                "type": "block",
+                "code": ">>> d = dict(x=1, y=2)\n>>> Point(**d)\nPoint(x=1, y=2)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Without the scatter operator, the function would treat d as a single positional argument, so it would assign d to x and complain because there's nothing to assign to y:"
+            },
+            {
+                "type": "block",
+                "code": ">>> d = dict(x=1, y=2)\n>>> Point(d)\nTraceback (most recent call last):\n  File \"<stdin>\", line 1, in <module>\nTypeError: __new__() missing 1 required positional argument: 'y'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "When you are working with functions that have a large number of parameters, it is often useful to create and pass around dictionaries that specify frequently used options."
+            },
+            {
+                "type": "section_heading",
+                "title": "19.10 Glossary"
+            },
+            {
+                "type": "text",
+                "text": "conditional expression: An expression that has one of two values, depending on a condition.\n\nlist comprehension: An expression with a for loop in square brackets that yields a new list.\n\ngenerator expression: An expression with a for loop in parentheses that yields a generator object.\n\nmultiset: A mathematical entity that represents a mapping between the elements of a set and the number of times they appear.\n\nfactory: A function, usually passed as a parameter, used to create objects."
+            }
+        ]
+    },
+    "cost": 0.04249
+}

@@ -1,0 +1,25 @@
+{
+    "page": {
+        "page_number": 219,
+        "header": "Index",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "polygon function, 31\npolymorphism, 168, 169\npop method, 94, 175\npopen function, 142\nportability, 6\npositional argument, 164, 169, 190\npostcondition, 36, 59, 179\npprint module, 112\nprecedence, 199\nprecondition, 36, 37, 59, 179\nprefix, 131\npretty print, 112\nprint function, 3\nprint statement, 3, 7, 165, 197\nproblem solving, 1, 6\nprofile module, 133\nprogram, 1, 6\nprogram testing, 87\nprogrammer-defined function, 22, 129\nprogrammer-defined type, 147, 153, 155, 162, 165, 173\nProject Gutenberg, 125\nprompt, 2, 6, 45\nprose, 5\nprototype and patch, 156, 158, 160\npseudorandom, 126, 134\npure function, 156, 160\nPuzzler, 88, 113, 124\nPythagorean theorem, 52\nPython\n    running, 2\nPython 2, 2, 3, 33, 40, 45\nPython in a browser, 2\nPythonAnywhere, 2"
+            },
+            {
+                "type": "text",
+                "text": "quadratic, 209\nquadratic growth, 203\nquotation mark, 3, 4, 35, 74, 194"
+            },
+            {
+                "type": "text",
+                "text": "radd method, 167\nradian, 18\nradix sort, 201\nrage, 200\nraise statement, 107, 112, 159\nRamanujan, Srinivasa, 70\nrandint function, 101, 126\nrandom function, 126\nrandom module, 101, 126, 175\nrandom number, 126\nrandom text, 131\nrandom walk programming, 134, 200\nrank, 171\nread method, 143\nreadline method, 83, 143\nreassignment, 63, 68, 90, 110\nRectangle class, 149\nrecursion, 43, 47, 55, 57\n    base case, 44\n    infinite, 44, 58, 196\nrecursive definition, 56, 124\nred-black tree, 206\nreduce pattern, 93, 100\nreducible word, 113, 124\nreduction to a previously solved problem, 85\nreduction to a previously solved problem, 87\nredundancy, 5\nrefactoring, 34–36, 180\nreference, 96, 97, 100\n    aliasing, 96\nrehashing, 208\nrelational operator, 40, 173\nrelative path, 139, 145\nreload function, 144, 195\nremove method, 94\nrepetition, 30\n    list, 91\nreplace method, 125\nrepr function, 144\nrepresentation, 147, 149, 171\nreturn statement, 44, 51, 199\nreturn value, 17, 26, 51, 150\n    tuple, 117\nreverse lookup, 112\nreverse lookup, dictionary, 106\nreverse word pair, 101\nreversed function, 121\nrotation\n    letters, 113\nrotation, letter, 80\nrubber duck debugging, 134\nrunning pace, 8, 15, 160\nrunning Python, 2\nruntime error, 13, 44, 46, 193, 196\nRuntimeError, 45, 58"
+            },
+            {
+                "type": "text",
+                "text": "safe language, 13\nsanity check, 111\nscaffolding, 53, 60, 112"
+            }
+        ]
+    },
+    "cost": 0.05104
+}

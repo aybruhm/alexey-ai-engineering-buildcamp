@@ -1,0 +1,53 @@
+{
+    "page": {
+        "page_number": 9,
+        "header": null,
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "Chapter 2"
+            },
+            {
+                "type": "section_heading",
+                "title": "Variables, expressions and statements"
+            },
+            {
+                "type": "text",
+                "text": "One of the most powerful features of a programming language is the ability to manipulate variables. A variable is a name that refers to a value."
+            },
+            {
+                "type": "section_heading",
+                "title": "2.1 Assignment statements"
+            },
+            {
+                "type": "text",
+                "text": "An assignment statement creates a new variable and gives it a value:"
+            },
+            {
+                "type": "block",
+                "code": ">>> message = 'And now for something completely different'\n>>> n = 17\n>>> pi = 3.1415926535897932",
+                "language": "python",
+                "description": "Three assignment statements creating variables message, n, and pi."
+            },
+            {
+                "type": "text",
+                "text": "This example makes three assignments. The first assigns a string to a new variable named message; the second gives the integer 17 to n; the third assigns the (approximate) value of π to pi.\n\nA common way to represent variables on paper is to write the name with an arrow pointing to its value. This kind of figure is called a state diagram because it shows what state each of the variables is in (think of it as the variable's state of mind). Figure 2.1 shows the result of the previous example."
+            },
+            {
+                "type": "section_heading",
+                "title": "2.2 Variable names"
+            },
+            {
+                "type": "text",
+                "text": "Programmers generally choose names for their variables that are meaningful—they document what the variable is used for."
+            },
+            {
+                "type": "figure",
+                "caption": "Figure 2.1: State diagram.",
+                "description": "A state diagram showing each variable name with an arrow pointing to its value: message → 'And now for something completely different', n → 17, pi → 3.1415926535897932. It illustrates that variables are names referring to values.",
+                "figure_number": 1
+            }
+        ]
+    },
+    "cost": 0.03579
+}

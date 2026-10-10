@@ -1,0 +1,189 @@
+{
+    "page": {
+        "page_number": 18,
+        "header": "Contents",
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "12 Tuples 115"
+            },
+            {
+                "type": "table",
+                "caption": null,
+                "columns": [
+                    "Section",
+                    "Title",
+                    "Page"
+                ],
+                "rows": [
+                    [
+                        "12.1",
+                        "Tuples are immutable",
+                        "115"
+                    ],
+                    [
+                        "12.2",
+                        "Tuple assignment",
+                        "116"
+                    ],
+                    [
+                        "12.3",
+                        "Tuples as return values",
+                        "117"
+                    ],
+                    [
+                        "12.4",
+                        "Variable-length argument tuples",
+                        "118"
+                    ],
+                    [
+                        "12.5",
+                        "Lists and tuples",
+                        "118"
+                    ],
+                    [
+                        "12.6",
+                        "Dictionaries and tuples",
+                        "120"
+                    ],
+                    [
+                        "12.7",
+                        "Sequences of sequences",
+                        "121"
+                    ],
+                    [
+                        "12.8",
+                        "Debugging",
+                        "122"
+                    ],
+                    [
+                        "12.9",
+                        "Glossary",
+                        "122"
+                    ],
+                    [
+                        "12.10",
+                        "Exercises",
+                        "123"
+                    ]
+                ]
+            },
+            {
+                "type": "section_heading",
+                "title": "13 Case study: data structure selection 125"
+            },
+            {
+                "type": "table",
+                "caption": null,
+                "columns": [
+                    "Section",
+                    "Title",
+                    "Page"
+                ],
+                "rows": [
+                    [
+                        "13.1",
+                        "Word frequency analysis",
+                        "125"
+                    ],
+                    [
+                        "13.2",
+                        "Random numbers",
+                        "126"
+                    ],
+                    [
+                        "13.3",
+                        "Word histogram",
+                        "127"
+                    ],
+                    [
+                        "13.4",
+                        "Most common words",
+                        "128"
+                    ],
+                    [
+                        "13.5",
+                        "Optional parameters",
+                        "129"
+                    ],
+                    [
+                        "13.6",
+                        "Dictionary subtraction",
+                        "129"
+                    ],
+                    [
+                        "13.7",
+                        "Random words",
+                        "130"
+                    ],
+                    [
+                        "13.8",
+                        "Markov analysis",
+                        "130"
+                    ],
+                    [
+                        "13.9",
+                        "Data structures",
+                        "132"
+                    ],
+                    [
+                        "13.10",
+                        "Debugging",
+                        "133"
+                    ],
+                    [
+                        "13.11",
+                        "Glossary",
+                        "134"
+                    ],
+                    [
+                        "13.12",
+                        "Exercises",
+                        "134"
+                    ]
+                ]
+            },
+            {
+                "type": "section_heading",
+                "title": "14 Files 137"
+            },
+            {
+                "type": "table",
+                "caption": null,
+                "columns": [
+                    "Section",
+                    "Title",
+                    "Page"
+                ],
+                "rows": [
+                    [
+                        "14.1",
+                        "Persistence",
+                        "137"
+                    ],
+                    [
+                        "14.2",
+                        "Reading and writing",
+                        "137"
+                    ],
+                    [
+                        "14.3",
+                        "Format operator",
+                        "138"
+                    ],
+                    [
+                        "14.4",
+                        "Filenames and paths",
+                        "139"
+                    ],
+                    [
+                        "14.5",
+                        "Catching exceptions",
+                        "140"
+                    ]
+                ]
+            }
+        ]
+    },
+    "cost": 0.037720000000000004
+}

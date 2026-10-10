@@ -1,0 +1,17 @@
+{
+    "page": {
+        "page_number": 212,
+        "header": "Index",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "break statement, 66\nbubble sort, 201\nbug, 6, 7, 13\n    worst, 170\nbuilt-in function\n    any, 185, 186\nbytes object, 141, 145\n\ncalculator, 8, 15\ncall graph, 109, 112\nCar Talk, 88, 113, 124\nCard class, 172\ncard, playing, 171\ncarrying, addition with, 68, 156, 158\ncatch, 145\nchained conditional, 41, 47\ncharacter, 71\nchecksum, 143, 146\nchild class, 176, 180\nchoice function, 126\ncircle function, 31\ncircular definition, 55\nclass, 4, 147, 153\n    Card, 172\n    child, 176, 180\n    Deck, 174\n    Hand, 176\n    Kangaroo, 170\n    parent, 176\n    Point, 148, 165\n    Rectangle, 149\n    Time, 155\nclass attribute, 172, 180\nclass definition, 147\nclass diagram, 177, 181\nclass object, 148, 153, 190\nclose method, 138, 141, 143\n__cmp__ method, 173\nCollatz conjecture, 65\ncollections, 187, 188, 190\ncolon, 19, 194\ncomment, 12, 14\ncommutativity, 12, 167\ncompare function, 52\ncomparing algorithms, 201\ncomparison\n    string, 77\n    tuple, 116, 174\ncomparison sort, 205\ncomposition, 19, 22, 26, 54, 174"
+            },
+            {
+                "type": "text",
+                "text": "compound statement, 41, 47\nconcatenation, 12, 14, 22, 73, 74, 95\n    list, 91, 97, 101\ncondition, 41, 47, 65, 196\nconditional, 194\n    chained, 41, 47\n    nested, 42, 47\nconditional execution, 41\nconditional expression, 183, 191\nconditional statement, 41, 47, 55, 184\nconsistency check, 111, 158\nconstant time, 208\ncontributors, vii\nconversion\n    type, 17\ncopy\n    deep, 152\n    shallow, 152\n    slice, 74, 92\n    to avoid aliasing, 99\ncopy module, 151\ncopying objects, 151\ncount method, 79\nCounter, 187\ncounter, 75, 79, 104, 111\ncounting and looping, 75\nCreative Commons, vi\ncrossover point, 202, 209\ncrosswords, 83\ncumulative sum, 100\n\ndata encapsulation, 179, 181\ndata structure, 122, 123, 132\ndatabase, 141, 145\ndatabase object, 141\ndatetime module, 160\ndbm module, 141\ndead code, 52, 60, 198\ndebugger (pdb), 197\ndebugging, 6, 7, 13, 36, 46, 59, 77, 87, 98, 111, 122, 133, 144, 152, 159, 168, 178, 185, 193\n    by bisection, 68\n    emotional response, 6, 200\n    experimental, 25\n    rubber duck, 134\n    superstition, 200\ndeck, 171\nDeck class, 174\ndeck, playing cards, 174"
+            }
+        ]
+    },
+    "cost": 0.050615
+}

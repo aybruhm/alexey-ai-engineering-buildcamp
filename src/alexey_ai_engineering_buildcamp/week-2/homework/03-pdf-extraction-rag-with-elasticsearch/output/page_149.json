@@ -1,0 +1,43 @@
+{
+    "page": {
+        "page_number": 127,
+        "header": "13.3. Word histogram",
+        "blocks": [
+            {
+                "type": "block",
+                "code": ">>> t = ['a', 'a', 'b']\n>>> hist = histogram(t)\n>>> hist\n{'a': 2, 'b': 1}",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "your function should return 'a' with probability 2/3 and 'b' with probability 1/3."
+            },
+            {
+                "type": "section_heading",
+                "title": "13.3 Word histogram"
+            },
+            {
+                "type": "text",
+                "text": "You should attempt the previous exercises before you go on. You can download my solution from https://thinkpython.com/code/analyze_book1.py. You will also need https://thinkpython.com/code/emma.txt.\n\nHere is a program that reads a file and builds a histogram of the words in the file:"
+            },
+            {
+                "type": "block",
+                "code": "import string\n\ndef process_file(filename):\n    hist = dict()\n    fp = open(filename)\n    for line in fp:\n        process_line(line, hist)\n    return hist\n\ndef process_line(line, hist):\n    line = line.replace('-', ' ')\n\n    for word in line.split():\n        word = word.strip(string.punctuation + string.whitespace)\n        word = word.lower()\n        hist[word] = hist.get(word, 0) + 1\n\nhist = process_file('emma.txt')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This program reads emma.txt, which contains the text of Emma by Jane Austen.\n\nprocess_file loops through the lines of the file, passing them one at a time to process_line. The histogram hist is being used as an accumulator.\n\nprocess_line uses the string method replace to replace hyphens with spaces before using split to break the line into a list of strings. It traverses the list of words and uses strip and lower to remove punctuation and convert to lower case. (It is a shorthand to say that strings are “converted”; remember that strings are immutable, so methods like strip and lower return new strings.)\n\nFinally, process_line updates the histogram by creating a new item or incrementing an existing one.\n\nTo count the total number of words in the file, we can add up the frequencies in the histogram:"
+            },
+            {
+                "type": "block",
+                "code": "def total_words(hist):\n    return sum(hist.values())",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.040565000000000004
+}

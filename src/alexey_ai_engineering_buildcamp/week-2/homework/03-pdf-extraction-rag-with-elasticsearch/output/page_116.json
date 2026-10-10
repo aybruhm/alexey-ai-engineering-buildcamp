@@ -1,0 +1,75 @@
+{
+    "page": {
+        "page_number": 94,
+        "header": "Chapter 10. Lists",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "isupper is a string method that returns True if the string contains only upper case letters.\n\nAn operation like only_upper is called a filter because it selects some of the elements and filters out the others.\n\nMost common list operations can be expressed as a combination of map, filter and reduce."
+            },
+            {
+                "type": "section_heading",
+                "title": "10.8 Deleting elements"
+            },
+            {
+                "type": "text",
+                "text": "There are several ways to delete elements from a list. If you know the index of the element you want, you can use pop:"
+            },
+            {
+                "type": "block",
+                "code": ">>> t = ['a', 'b', 'c']\n>>> x = t.pop(1)\n>>> t\n['a', 'c']\n>>> x\n'b'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "pop modifies the list and returns the element that was removed. If you don't provide an index, it deletes and returns the last element.\n\nIf you don't need the removed value, you can use the del operator:"
+            },
+            {
+                "type": "block",
+                "code": ">>> t = ['a', 'b', 'c']\n>>> del t[1]\n>>> t\n['a', 'c']",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "If you know the element you want to remove (but not the index), you can use remove:"
+            },
+            {
+                "type": "block",
+                "code": ">>> t = ['a', 'b', 'c']\n>>> t.remove('b')\n>>> t\n['a', 'c']",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The return value from remove is None.\n\nTo remove more than one element, you can use del with a slice index:"
+            },
+            {
+                "type": "block",
+                "code": ">>> t = ['a', 'b', 'c', 'd', 'e', 'f']\n>>> del t[1:5]\n>>> t\n['a', 'f']",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "As usual, the slice selects all the elements up to but not including the second index."
+            },
+            {
+                "type": "section_heading",
+                "title": "10.9 Lists and strings"
+            },
+            {
+                "type": "text",
+                "text": "A string is a sequence of characters and a list is a sequence of values, but a list of characters is not the same as a string. To convert from a string to a list of characters, you can use list:"
+            },
+            {
+                "type": "block",
+                "code": ">>> s = 'spam'\n>>> t = list(s)\n>>> t\n['s', 'p', 'a', 'm']",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.04002
+}

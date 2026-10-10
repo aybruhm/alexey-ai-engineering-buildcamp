@@ -1,0 +1,41 @@
+{
+    "page": {
+        "page_number": 57,
+        "header": "6.6. Leap of faith",
+        "blocks": [
+            {
+                "type": "figure",
+                "caption": "Figure 6.1: Stack diagram.",
+                "description": "Stack diagram for computing factorial(3) recursively. The __main__ frame sits at the top, followed by four factorial frames: n=3 (recurse=2, result=6), n=2 (recurse=1, result=2), n=1 (recurse=1, result=1), and n=0 (base case, no recurse or result). Arrows on the right show return values passed up the stack: 1 from n=0, 1 from n=1, 2 from n=2, and 6 from n=3 back to __main__.",
+                "figure_number": 1
+            },
+            {
+                "type": "section_heading",
+                "title": "6.6 Leap of faith"
+            },
+            {
+                "type": "text",
+                "text": "Following the flow of execution is one way to read programs, but it can quickly become overwhelming. An alternative is what I call the “leap of faith”. When you come to a function call, instead of following the flow of execution, you assume that the function works correctly and returns the right result.\n\nIn fact, you are already practicing this leap of faith when you use built-in functions. When you call math.cos or math.exp, you don’t examine the bodies of those functions. You just assume that they work because the people who wrote the built-in functions were good programmers.\n\nThe same is true when you call one of your own functions. For example, in Section 6.4, we wrote a function called is_divisible that determines whether one number is divisible by another. Once we have convinced ourselves that this function is correct—by examining the code and testing—we can use the function without looking at the body again.\n\nThe same is true of recursive programs. When you get to the recursive call, instead of following the flow of execution, you should assume that the recursive call works (returns the correct result) and then ask yourself, “Assuming that I can find the factorial of n − 1, can I compute the factorial of n?” It is clear that you can, by multiplying by n.\n\nOf course, it’s a bit strange to assume that the function works correctly when you haven’t finished writing it, but that’s why it’s called a leap of faith!"
+            },
+            {
+                "type": "section_heading",
+                "title": "6.7 One more example"
+            },
+            {
+                "type": "text",
+                "text": "After factorial, the most common example of a recursively defined mathematical function is fibonacci, which has the following definition (see http://en.wikipedia.org/wiki/Fibonacci_number):"
+            },
+            {
+                "type": "block",
+                "code": "\\begin{aligned}\\text{fibonacci}(0) &= 0\\\\ \\text{fibonacci}(1) &= 1\\\\ \\text{fibonacci}(n) &= \\text{fibonacci}(n-1) + \\text{fibonacci}(n-2)\\end{aligned}",
+                "language": "latex",
+                "description": "Recursive definition of the Fibonacci sequence with base cases 0 and 1."
+            },
+            {
+                "type": "text",
+                "text": "Translated into Python, it looks like this:"
+            }
+        ]
+    },
+    "cost": 0.044445
+}

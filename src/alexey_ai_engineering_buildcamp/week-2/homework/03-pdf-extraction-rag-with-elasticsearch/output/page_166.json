@@ -1,0 +1,61 @@
+{
+    "page": {
+        "page_number": 144,
+        "header": "Chapter 14. Files",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "The module object provides linecount:"
+            },
+            {
+                "type": "block",
+                "code": ">>> wc.linecount('wc.py')\n7",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "So that’s how you write modules in Python.\n\nThe only problem with this example is that when you import the module it runs the test code at the bottom. Normally when you import a module, it defines new functions but it doesn’t run them.\n\nPrograms that will be imported as modules often use the following idiom:"
+            },
+            {
+                "type": "block",
+                "code": "if __name__ == '__main__':\n    print(linecount('wc.py'))",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "__name__ is a built-in variable that is set when the program starts. If the program is running as a script, __name__ has the value '__main__'; in that case, the test code runs. Otherwise, if the module is being imported, the test code is skipped.\n\nAs an exercise, type this example into a file named wc.py and run it as a script. Then run the Python interpreter and import wc. What is the value of __name__ when the module is being imported?\n\nWarning: If you import a module that has already been imported, Python does nothing. It does not re-read the file, even if it has changed.\n\nIf you want to reload a module, you can use the built-in function reload, but it can be tricky, so the safest thing to do is restart the interpreter and then import the module again."
+            },
+            {
+                "type": "section_heading",
+                "title": "14.10 Debugging"
+            },
+            {
+                "type": "text",
+                "text": "When you are reading and writing files, you might run into problems with whitespace. These errors can be hard to debug because spaces, tabs and newlines are normally invisible:"
+            },
+            {
+                "type": "block",
+                "code": ">>> s = '1 2\\t 3\\n 4'\n>>> print(s)\n1 2\t 3\n 4",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The built-in function repr can help. It takes any object as an argument and returns a string representation of the object. For strings, it represents whitespace characters with backslash sequences:"
+            },
+            {
+                "type": "block",
+                "code": ">>> print(repr(s))\n'1 2\\t 3\\n 4'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This can be helpful for debugging.\n\nOne other problem you might run into is that different systems use different characters to indicate the end of a line. Some systems use a newline, represented \\n. Others use a return character, represented \\r. Some use both. If you move files between different systems, these inconsistencies can cause problems.\n\nFor most systems, there are applications to convert from one format to another. You can find them (and read more about this issue) at http://en.wikipedia.org/wiki/Newline. Or, of course, you could write one yourself."
+            }
+        ]
+    },
+    "cost": 0.044065
+}

@@ -1,0 +1,39 @@
+{
+    "page": {
+        "page_number": 108,
+        "header": "Chapter 11. Dictionaries",
+        "blocks": [
+            {
+                "type": "figure",
+                "caption": "Figure 11.1: State diagram.",
+                "description": "State diagram showing two dictionaries. The variable hist refers to a dict mapping 'a'→1, 'p'→1, 'r'→2, 't'→1, 'o'→1. The variable inv refers to a dict whose key 1 maps to a list [ 'a', 'p', 't', 'o' ] (indices 0–3) and whose key 2 maps to a list ['r'] (index 0). Integer values are drawn inside the dict box while list values are drawn as separate boxes outside, illustrating the inverted histogram where each frequency maps to the list of letters with that frequency.",
+                "figure_number": 1
+            },
+            {
+                "type": "text",
+                "text": "Each time through the loop, key gets a key from d and val gets the corresponding value. If val is not in inverse, that means we haven't seen it before, so we create a new item and initialize it with a singleton (a list that contains a single element). Otherwise we have seen this value before, so we append the corresponding key to the list.\n\nHere is an example:"
+            },
+            {
+                "type": "block",
+                "code": ">>> hist = histogram('parrot')\n>>> hist\n{'a': 1, 'p': 1, 'r': 2, 't': 1, 'o': 1}\n>>> inverse = invert_dict(hist)\n>>> inverse\n{1: ['a', 'p', 't', 'o'], 2: ['r']}",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Figure 11.1 is a state diagram showing hist and inverse. A dictionary is represented as a box with the type dict above it and the key-value pairs inside. If the values are integers, floats or strings, I draw them inside the box, but I usually draw lists outside the box, just to keep the diagram simple.\n\nLists can be values in a dictionary, as this example shows, but they cannot be keys. Here's what happens if you try:"
+            },
+            {
+                "type": "block",
+                "code": ">>> t = [1, 2, 3]\n>>> d = dict()\n>>> d[t] = 'oops'\nTraceback (most recent call last):\n  File \"<stdin>\", line 1, in ?\nTypeError: list objects are unhashable",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "I mentioned earlier that a dictionary is implemented using a hashtable and that means that the keys have to be hashable.\n\nA hash is a function that takes a value (of any kind) and returns an integer. Dictionaries use these integers, called hash values, to store and look up key-value pairs.\n\nThis system works fine if the keys are immutable. But if the keys are mutable, like lists, bad things happen. For example, when you create a key-value pair, Python hashes the key and stores it in the corresponding location. If you modify the key and then hash it again, it would go to a different location. In that case you might have two entries for the same key, or you might not be able to find a key. Either way, the dictionary wouldn't work correctly.\n\nThat's why keys have to be hashable, and why mutable types like lists aren't. The simplest way to get around this limitation is to use tuples, which we will see in the next chapter."
+            }
+        ]
+    },
+    "cost": 0.04687
+}

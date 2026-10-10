@@ -1,0 +1,33 @@
+{
+    "page": {
+        "page_number": 80,
+        "header": "Chapter 8. Strings",
+        "blocks": [
+            {
+                "type": "block",
+                "code": ">>> fruit = 'banana'\n>>> fruit[0:5:2]\n'bnn'",
+                "language": "python",
+                "description": "Slicing with a step size of 2 selects every other character."
+            },
+            {
+                "type": "text",
+                "text": "A step size of -1 goes through the word backwards, so the slice [::-1] generates a reversed string.\n\nUse this idiom to write a one-line version of is_palindrome from Exercise 6.3."
+            },
+            {
+                "type": "text",
+                "text": "Exercise 8.4. The following functions are all intended to check whether a string contains any lowercase letters, but at least some of them are wrong. For each function, describe what the function actually does (assuming that the parameter is a string)."
+            },
+            {
+                "type": "block",
+                "code": "def any_lowercase1(s):\n    for c in s:\n        if c.islower():\n            return True\n        else:\n            return False\n\ndef any_lowercase2(s):\n    for c in s:\n        if 'c'.islower():\n            return 'True'\n        else:\n            return 'False'\n\ndef any_lowercase3(s):\n    for c in s:\n        flag = c.islower()\n    return flag\n\ndef any_lowercase4(s):\n    flag = False\n    for c in s:\n        flag = flag or c.islower()\n    return flag\n\ndef any_lowercase5(s):\n    for c in s:\n        if not c.islower():\n            return False\n    return True",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Exercise 8.5. A Caesar cypher is a weak form of encryption that involves “rotating” each letter by a fixed number of places. To rotate a letter means to shift it through the alphabet, wrapping around to the beginning if necessary, so ’A’ rotated by 3 is ’D’ and ’Z’ rotated by 1 is ’A’.\n\nTo rotate a word, rotate each letter by the same amount. For example, “cheer” rotated by 7 is “jolly” and “melon” rotated by -10 is “cubed”. In the movie 2001: A Space Odyssey, the ship computer is called HAL, which is IBM rotated by -1.\n\nWrite a function called rotate_word that takes a string and an integer as parameters, and returns a new string that contains the letters from the original string rotated by the given amount.\n\nYou might want to use the built-in function ord, which converts a character to a numeric code, and"
+            }
+        ]
+    },
+    "cost": 0.042215
+}

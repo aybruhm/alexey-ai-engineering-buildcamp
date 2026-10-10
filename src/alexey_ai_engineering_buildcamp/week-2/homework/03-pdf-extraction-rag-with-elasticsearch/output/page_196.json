@@ -1,0 +1,65 @@
+{
+    "page": {
+        "page_number": 174,
+        "header": "Chapter 18. Inheritance",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "With that decided, we can write __lt__:"
+            },
+            {
+                "type": "block",
+                "code": "# inside class Card:\n\n    def __lt__(self, other):\n        # check the suits\n        if self.suit < other.suit: return True\n        if self.suit > other.suit: return False\n\n        # suits are the same... check ranks\n        return self.rank < other.rank",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "You can write this more concisely using tuple comparison:"
+            },
+            {
+                "type": "block",
+                "code": "# inside class Card:\n\n    def __lt__(self, other):\n        t1 = self.suit, self.rank\n        t2 = other.suit, other.rank\n        return t1 < t2",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "As an exercise, write an __lt__ method for Time objects. You can use tuple comparison, but you also might consider comparing integers."
+            },
+            {
+                "type": "section_heading",
+                "title": "18.4 Decks"
+            },
+            {
+                "type": "text",
+                "text": "Now that we have Cards, the next step is to define Decks. Since a deck is made up of cards, it is natural for each Deck to contain a list of cards as an attribute.\n\nThe following is a class definition for Deck. The init method creates the attribute cards and generates the standard set of fifty-two cards:"
+            },
+            {
+                "type": "block",
+                "code": "class Deck:\n\n    def __init__(self):\n        self.cards = []\n        for suit in range(4):\n            for rank in range(1, 14):\n                card = Card(suit, rank)\n                self.cards.append(card)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The easiest way to populate the deck is with a nested loop. The outer loop enumerates the suits from 0 to 3. The inner loop enumerates the ranks from 1 to 13. Each iteration creates a new Card with the current suit and rank, and appends it to self.cards."
+            },
+            {
+                "type": "section_heading",
+                "title": "18.5 Printing the deck"
+            },
+            {
+                "type": "text",
+                "text": "Here is a __str__ method for Deck:"
+            },
+            {
+                "type": "block",
+                "code": "# inside class Deck:\n\n    def __str__(self):\n        res = []",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.04009
+}

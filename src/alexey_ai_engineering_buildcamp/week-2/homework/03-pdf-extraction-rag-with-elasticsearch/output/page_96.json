@@ -1,0 +1,71 @@
+{
+    "page": {
+        "page_number": 74,
+        "header": "Chapter 8. Strings",
+        "blocks": [
+            {
+                "type": "block",
+                "code": "'ban'\n>>> fruit[3:]\n'ana'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "If the first index is greater than or equal to the second the result is an empty string, represented by two quotation marks:"
+            },
+            {
+                "type": "block",
+                "code": ">>> fruit = 'banana'\n>>> fruit[3:3]\n''",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "An empty string contains no characters and has length 0, but other than that, it is the same as any other string.\n\nContinuing this example, what do you think fruit[:] means? Try it and see."
+            },
+            {
+                "type": "section_heading",
+                "title": "8.5 Strings are immutable"
+            },
+            {
+                "type": "text",
+                "text": "It is tempting to use the [] operator on the left side of an assignment, with the intention of changing a character in a string. For example:"
+            },
+            {
+                "type": "block",
+                "code": ">>> greeting = 'Hello, world!'\n>>> greeting[0] = 'J'\nTypeError: 'str' object does not support item assignment",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The “object” in this case is the string and the “item” is the character you tried to assign. For now, an object is the same thing as a value, but we will refine that definition later (Section 10.10).\n\nThe reason for the error is that strings are immutable, which means you can’t change an existing string. The best you can do is create a new string that is a variation on the original:"
+            },
+            {
+                "type": "block",
+                "code": ">>> greeting = 'Hello, world!'\n>>> new_greeting = 'J' + greeting[1:]\n>>> new_greeting\n'Jello, world!'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This example concatenates a new first letter onto a slice of greeting. It has no effect on the original string."
+            },
+            {
+                "type": "section_heading",
+                "title": "8.6 Searching"
+            },
+            {
+                "type": "text",
+                "text": "What does the following function do?"
+            },
+            {
+                "type": "block",
+                "code": "def find(word, letter):\n    index = 0\n    while index < len(word):\n        if word[index] == letter:\n            return index\n        index = index + 1\n    return -1",
+                "language": "python",
+                "description": "Returns the index of the first occurrence of letter in word, or -1 if not found."
+            }
+        ]
+    },
+    "cost": 0.040115
+}

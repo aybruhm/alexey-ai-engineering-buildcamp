@@ -1,0 +1,57 @@
+{
+    "page": {
+        "page_number": 149,
+        "header": "15.3. Rectangles",
+        "blocks": [
+            {
+                "type": "block",
+                "code": ">>> blank.y\n4.0\n>>> x = blank.x\n>>> x\n3.0",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The expression blank.x means, “Go to the object blank refers to and get the value of x.” In the example, we assign that value to a variable named x. There is no conflict between the variable x and the attribute x.\n\nYou can use dot notation as part of any expression. For example:"
+            },
+            {
+                "type": "block",
+                "code": ">>> '(%g, %g)' % (blank.x, blank.y)\n'(3.0, 4.0)'\n>>> distance = math.sqrt(blank.x**2 + blank.y**2)\n>>> distance\n5.0",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "You can pass an instance as an argument in the usual way. For example:"
+            },
+            {
+                "type": "block",
+                "code": "def print_point(p):\n    print('(%g, %g)' % (p.x, p.y))",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "print_point takes a point as an argument and displays it in mathematical notation. To invoke it, you can pass blank as an argument:"
+            },
+            {
+                "type": "block",
+                "code": ">>> print_point(blank)\n(3.0, 4.0)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Inside the function, p is an alias for blank, so if the function modifies p, blank changes.\n\nAs an exercise, write a function called distance_between_points that takes two Points as arguments and returns the distance between them."
+            },
+            {
+                "type": "section_heading",
+                "title": "15.3 Rectangles"
+            },
+            {
+                "type": "text",
+                "text": "Sometimes it is obvious what the attributes of an object should be, but other times you have to make decisions. For example, imagine you are designing a class to represent rectangles. What attributes would you use to specify the location and size of a rectangle? You can ignore angle; to keep things simple, assume that the rectangle is either vertical or horizontal.\n\nThere are at least two possibilities:\n\n• You could specify one corner of the rectangle (or the center), the width, and the height.\n\n• You could specify two opposing corners.\n\nAt this point it is hard to say whether either is better than the other, so we’ll implement the first one, just as an example.\n\nHere is the class definition:"
+            }
+        ]
+    },
+    "cost": 0.040765
+}

@@ -1,0 +1,61 @@
+{
+    "page": {
+        "page_number": 32,
+        "header": "Chapter 4. Case study: interface design",
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "4.4 Encapsulation"
+            },
+            {
+                "type": "text",
+                "text": "The first exercise asks you to put your square-drawing code into a function definition and then call the function, passing the turtle as a parameter. Here is a solution:"
+            },
+            {
+                "type": "block",
+                "code": "def square(t):\n    for i in range(4):\n        t.fd(100)\n        t.lt(90)\n\nsquare(bob)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The innermost statements, fd and lt are indented twice to show that they are inside the for loop, which is inside the function definition. The next line, square(bob), is flush with the left margin, which indicates the end of both the for loop and the function definition.\n\nInside the function, t refers to the same turtle bob, so t.lt(90) has the same effect as bob.lt(90). In that case, why not call the parameter bob? The idea is that t can be any turtle, not just bob, so you could create a second turtle and pass it as an argument to square:"
+            },
+            {
+                "type": "block",
+                "code": "alice = turtle.Turtle()\nsquare(alice)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Wrapping a piece of code up in a function is called encapsulation. One of the benefits of encapsulation is that it attaches a name to the code, which serves as a kind of documentation. Another advantage is that if you re-use the code, it is more concise to call a function twice than to copy and paste the body!"
+            },
+            {
+                "type": "section_heading",
+                "title": "4.5 Generalization"
+            },
+            {
+                "type": "text",
+                "text": "The next step is to add a length parameter to square. Here is a solution:"
+            },
+            {
+                "type": "block",
+                "code": "def square(t, length):\n    for i in range(4):\n        t.fd(length)\n        t.lt(90)\n\nsquare(bob, 100)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Adding a parameter to a function is called generalization because it makes the function more general: in the previous version, the square is always the same size; in this version it can be any size.\n\nThe next step is also a generalization. Instead of drawing squares, polygon draws regular polygons with any number of sides. Here is a solution:"
+            },
+            {
+                "type": "block",
+                "code": "def polygon(t, n, length):\n    angle = 360 / n\n    for i in range(n):\n        t.fd(length)\n        t.lt(angle)\n\npolygon(bob, 7, 70)",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.040870000000000004
+}

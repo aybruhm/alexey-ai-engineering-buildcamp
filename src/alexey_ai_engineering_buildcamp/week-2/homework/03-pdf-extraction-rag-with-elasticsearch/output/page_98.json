@@ -1,0 +1,77 @@
+{
+    "page": {
+        "page_number": 76,
+        "header": "Chapter 8. Strings",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "This form of dot notation specifies the name of the method, upper, and the name of the string to apply the method to, word. The empty parentheses indicate that this method takes no arguments.\n\nA method call is called an invocation; in this case, we would say that we are invoking upper on word.\n\nAs it turns out, there is a string method named find that is remarkably similar to the function we wrote:"
+            },
+            {
+                "type": "block",
+                "code": ">>> word = 'banana'\n>>> index = word.find('a')\n>>> index\n1",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "In this example, we invoke find on word and pass the letter we are looking for as a parameter.\n\nActually, the find method is more general than our function; it can find substrings, not just characters:"
+            },
+            {
+                "type": "block",
+                "code": ">>> word.find('na')\n2",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "By default, find starts at the beginning of the string, but it can take a second argument, the index where it should start:"
+            },
+            {
+                "type": "block",
+                "code": ">>> word.find('na', 3)\n4",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This is an example of an optional argument; find can also take a third argument, the index where it should stop:"
+            },
+            {
+                "type": "block",
+                "code": ">>> name = 'bob'\n>>> name.find('b', 1, 2)\n-1",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This search fails because b does not appear in the index range from 1 to 2, not including 2. Searching up to, but not including, the second index makes find consistent with the slice operator."
+            },
+            {
+                "type": "section_heading",
+                "title": "8.9 The in operator"
+            },
+            {
+                "type": "text",
+                "text": "The word in is a boolean operator that takes two strings and returns True if the first appears as a substring in the second:"
+            },
+            {
+                "type": "block",
+                "code": ">>> 'a' in 'banana'\nTrue\n>>> 'seed' in 'banana'\nFalse",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "For example, the following function prints all the letters from word1 that also appear in word2:"
+            },
+            {
+                "type": "block",
+                "code": "def in_both(word1, word2):\n    for letter in word1:\n        if letter in word2:\n            print(letter)",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.038919999999999996
+}

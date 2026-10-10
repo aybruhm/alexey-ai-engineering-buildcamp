@@ -1,0 +1,57 @@
+{
+    "page": {
+        "page_number": 34,
+        "header": "Chapter 4. Case study: interface design",
+        "blocks": [
+            {
+                "type": "block",
+                "code": "def circle(t, r):\n    circumference = 2 * math.pi * r\n    n = int(circumference / 3) + 3\n    length = circumference / n\n    polygon(t, n, length)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Now the number of segments is an integer near circumference/3, so the length of each segment is approximately 3, which is small enough that the circles look good, but big enough to be efficient, and acceptable for any size circle.\n\nAdding 3 to n guarantees that the polygon has at least 3 sides."
+            },
+            {
+                "type": "section_heading",
+                "title": "4.7 Refactoring"
+            },
+            {
+                "type": "text",
+                "text": "When I wrote circle, I was able to re-use polygon because a many-sided polygon is a good approximation of a circle. But arc is not as cooperative; we can't use polygon or circle to draw an arc.\n\nOne alternative is to start with a copy of polygon and transform it into arc. The result might look like this:"
+            },
+            {
+                "type": "block",
+                "code": "def arc(t, r, angle):\n    arc_length = 2 * math.pi * r * angle / 360\n    n = int(arc_length / 3) + 1\n    step_length = arc_length / n\n    step_angle = angle / n\n\n    for i in range(n):\n        t.fd(step_length)\n        t.lt(step_angle)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The second half of this function looks like polygon, but we can't re-use polygon without changing the interface. We could generalize polygon to take an angle as a third argument, but then polygon would no longer be an appropriate name! Instead, let's call the more general function polyline:"
+            },
+            {
+                "type": "block",
+                "code": "def polyline(t, n, length, angle):\n    for i in range(n):\n        t.fd(length)\n        t.lt(angle)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Now we can rewrite polygon and arc to use polyline:"
+            },
+            {
+                "type": "block",
+                "code": "def polygon(t, n, length):\n    angle = 360.0 / n\n    polyline(t, n, length, angle)\n\ndef arc(t, r, angle):\n    arc_length = 2 * math.pi * r * angle / 360\n    n = int(arc_length / 3) + 1\n    step_length = arc_length / n\n    step_angle = float(angle) / n\n    polyline(t, n, step_length, step_angle)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Finally, we can rewrite circle to use arc:"
+            }
+        ]
+    },
+    "cost": 0.041995000000000005
+}

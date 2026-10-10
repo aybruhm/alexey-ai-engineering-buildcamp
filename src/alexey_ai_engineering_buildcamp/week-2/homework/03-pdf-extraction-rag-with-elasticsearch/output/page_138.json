@@ -1,0 +1,93 @@
+{
+    "page": {
+        "page_number": 116,
+        "header": "Chapter 12. Tuples",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "If the argument is a sequence (string, list or tuple), the result is a tuple with the elements of the sequence:"
+            },
+            {
+                "type": "block",
+                "code": ">>> t = tuple('lupins')\n>>> t\n('l', 'u', 'p', 'i', 'n', 's')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Because tuple is the name of a built-in function, you should avoid using it as a variable name.\n\nMost list operators also work on tuples. The bracket operator indexes an element:"
+            },
+            {
+                "type": "block",
+                "code": ">>> t = ('a', 'b', 'c', 'd', 'e')\n>>> t[0]\n'a'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "And the slice operator selects a range of elements."
+            },
+            {
+                "type": "block",
+                "code": ">>> t[1:3]\n('b', 'c')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "But if you try to modify one of the elements of the tuple, you get an error:"
+            },
+            {
+                "type": "block",
+                "code": ">>> t[0] = 'A'\nTypeError: object doesn't support item assignment",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Because tuples are immutable, you can't modify the elements. But you can replace one tuple with another:"
+            },
+            {
+                "type": "block",
+                "code": ">>> t = ('A',) + t[1:]\n>>> t\n('A', 'b', 'c', 'd', 'e')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This statement makes a new tuple and then makes t refer to it.\n\nThe relational operators work with tuples and other sequences; Python starts by comparing the first element from each sequence. If they are equal, it goes on to the next elements, and so on, until it finds elements that differ. Subsequent elements are not considered (even if they are really big)."
+            },
+            {
+                "type": "block",
+                "code": ">>> (0, 1, 2) < (0, 3, 4)\nTrue\n>>> (0, 1, 2000000) < (0, 3, 4)\nTrue",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "section_heading",
+                "title": "12.2 Tuple assignment"
+            },
+            {
+                "type": "text",
+                "text": "It is often useful to swap the values of two variables. With conventional assignments, you have to use a temporary variable. For example, to swap a and b:"
+            },
+            {
+                "type": "block",
+                "code": ">>> temp = a\n>>> a = b\n>>> b = temp",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This solution is cumbersome; tuple assignment is more elegant:"
+            },
+            {
+                "type": "block",
+                "code": ">>> a, b = b, a",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.042145
+}

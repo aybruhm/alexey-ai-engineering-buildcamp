@@ -1,0 +1,61 @@
+{
+    "page": {
+        "page_number": 30,
+        "header": "Chapter 4. Case study: interface design",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "This means that bob refers to an object with type Turtle as defined in module turtle.\n\nmainloop tells the window to wait for the user to do something, although in this case there's not much for the user to do except close the window.\n\nOnce you create a Turtle, you can call a method to move it around the window. A method is similar to a function, but it uses slightly different syntax. For example, to move the turtle forward:"
+            },
+            {
+                "type": "block",
+                "code": "bob.fd(100)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The method, fd, is associated with the turtle object we're calling bob. Calling a method is like making a request: you are asking bob to move forward.\n\nThe argument of fd is a distance in pixels, so the actual size depends on your display.\n\nOther methods you can call on a Turtle are bk to move backward, lt for left turn, and rt right turn. The argument for lt and rt is an angle in degrees.\n\nAlso, each Turtle is holding a pen, which is either down or up; if the pen is down, the Turtle leaves a trail when it moves. The methods pu and pd stand for \"pen up\" and \"pen down\".\n\nTo draw a right angle, add these lines to the program (after creating bob and before calling mainloop):"
+            },
+            {
+                "type": "block",
+                "code": "bob.fd(100)\nbob.lt(90)\nbob.fd(100)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "When you run this program, you should see bob move east and then north, leaving two line segments behind.\n\nNow modify the program to draw a square. Don't go on until you've got it working!"
+            },
+            {
+                "type": "section_heading",
+                "title": "4.2 Simple repetition"
+            },
+            {
+                "type": "text",
+                "text": "Chances are you wrote something like this:"
+            },
+            {
+                "type": "block",
+                "code": "bob.fd(100)\nbob.lt(90)\n\nbob.fd(100)\nbob.lt(90)\n\nbob.fd(100)\nbob.lt(90)\n\nbob.fd(100)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "We can do the same thing more concisely with a for statement. Add this example to mypolygon.py and run it again:"
+            },
+            {
+                "type": "block",
+                "code": "for i in range(4):\n    print('Hello!')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "You should see something like this:"
+            }
+        ]
+    },
+    "cost": 0.040295
+}

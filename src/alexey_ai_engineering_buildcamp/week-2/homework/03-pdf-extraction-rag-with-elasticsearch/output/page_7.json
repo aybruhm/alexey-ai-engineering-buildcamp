@@ -1,0 +1,25 @@
+{
+    "page": {
+        "page_number": 7,
+        "header": "vii",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "Thanks to the editors at Lulu who worked on How to Think Like a Computer Scientist.\n\nThanks to the editors at O'Reilly Media who worked on Think Python.\n\nThanks to all the students who worked with earlier versions of this book and all the contributors (listed below) who sent in corrections and suggestions."
+            },
+            {
+                "type": "section_heading",
+                "title": "Contributor List"
+            },
+            {
+                "type": "text",
+                "text": "More than 100 sharp-eyed and thoughtful readers have sent in suggestions and corrections over the past few years. Their contributions, and enthusiasm for this project, have been a huge help.\n\nIf you have a suggestion or correction, please send email to feedback@thinkpython.com. If I make a change based on your feedback, I will add you to the contributor list (unless you ask to be omitted).\n\nIf you include at least part of the sentence the error appears in, that makes it easy for me to search. Page and section numbers are fine, too, but not quite as easy to work with. Thanks!"
+            },
+            {
+                "type": "text",
+                "text": "• Lloyd Hugh Allen sent in a correction to Section 8.4.\n• Yvon Boulianne sent in a correction of a semantic error in Chapter 5.\n• Fred Bremmer submitted a correction in Section 2.1.\n• Jonah Cohen wrote the Perl scripts to convert the LaTeX source for this book into beautiful HTML.\n• Michael Conlon sent in a grammar correction in Chapter 2 and an improvement in style in Chapter 1, and he initiated discussion on the technical aspects of interpreters.\n• Benoît Girard sent in a correction to a humorous mistake in Section 5.6.\n• Courtney Gleason and Katherine Smith wrote horsebet.py, which was used as a case study in an earlier version of the book. Their program can now be found on the website.\n• Lee Harr submitted more corrections than we have room to list here, and indeed he should be listed as one of the principal editors of the text.\n• James Kaylin is a student using the text. He has submitted numerous corrections.\n• David Kershaw fixed the broken catTwice function in Section 3.10.\n• Eddie Lam has sent in numerous corrections to Chapters 1, 2, and 3. He also fixed the Makefile so that it creates an index the first time it is run and helped us set up a versioning scheme.\n• Man-Yong Lee sent in a correction to the example code in Section 2.4.\n• David Mayo pointed out that the word “unconsciously\" in Chapter 1 needed to be changed to “subconsciously\".\n• Chris McAloon sent in several corrections to Sections 3.9 and 3.10.\n• Matthew J. Moelter has been a long-time contributor who sent in numerous corrections and suggestions to the book."
+            }
+        ]
+    },
+    "cost": 0.04448
+}

@@ -1,0 +1,71 @@
+{
+    "page": {
+        "page_number": 77,
+        "header": "8.10. String comparison",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "With well-chosen variable names, Python sometimes reads like English. You could read this loop, “for (each) letter in (the first) word, if (the) letter (appears) in (the second) word, print (the) letter.”\n\nHere’s what you get if you compare apples and oranges:"
+            },
+            {
+                "type": "block",
+                "code": ">>> in_both('apples', 'oranges')\na\ne\ns",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "section_heading",
+                "title": "8.10 String comparison"
+            },
+            {
+                "type": "text",
+                "text": "The relational operators work on strings. To see if two strings are equal:"
+            },
+            {
+                "type": "block",
+                "code": "if word == 'banana':\n    print('All right, bananas.')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Other relational operations are useful for putting words in alphabetical order:"
+            },
+            {
+                "type": "block",
+                "code": "if word < 'banana':\n    print('Your word, ' + word + ', comes before banana.')\nelif word > 'banana':\n    print('Your word, ' + word + ', comes after banana.')\nelse:\n    print('All right, bananas.')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Python does not handle uppercase and lowercase letters the same way people do. All the uppercase letters come before all the lowercase letters, so:"
+            },
+            {
+                "type": "block",
+                "code": "Your word, Pineapple, comes before banana.",
+                "language": "text",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "A common way to address this problem is to convert strings to a standard format, such as all lowercase, before performing the comparison. Keep that in mind in case you have to defend yourself against a man armed with a Pineapple."
+            },
+            {
+                "type": "section_heading",
+                "title": "8.11 Debugging"
+            },
+            {
+                "type": "text",
+                "text": "When you use indices to traverse the values in a sequence, it is tricky to get the beginning and end of the traversal right. Here is a function that is supposed to compare two words and return True if one of the words is the reverse of the other, but it contains two errors:"
+            },
+            {
+                "type": "block",
+                "code": "def is_reverse(word1, word2):\n    if len(word1) != len(word2):\n        return False\n\n    i = 0\n    j = len(word2)\n\n    while j > 0:\n        if word1[i] != word2[j]:\n            return False\n        i = i+1",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.039795
+}

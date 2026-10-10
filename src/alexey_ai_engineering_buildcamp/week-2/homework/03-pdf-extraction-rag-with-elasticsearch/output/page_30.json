@@ -1,0 +1,17 @@
+{
+    "page": {
+        "page_number": 8,
+        "header": "Chapter 1. The way of the program",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "4. In math notation, leading zeros are ok, as in 09. What happens if you try this in Python? What about 011?\n\n5. What happens if you have two values with no operator between them?"
+            },
+            {
+                "type": "text",
+                "text": "Exercise 1.2. Start the Python interpreter and use it as a calculator.\n\n1. How many seconds are there in 42 minutes 42 seconds?\n\n2. How many miles are there in 10 kilometers? Hint: there are 1.61 kilometers in a mile.\n\n3. If you run a 10 kilometer race in 42 minutes 42 seconds, what is your average pace (time per mile in minutes and seconds)? What is your average speed in miles per hour?"
+            }
+        ]
+    },
+    "cost": 0.027120000000000002
+}

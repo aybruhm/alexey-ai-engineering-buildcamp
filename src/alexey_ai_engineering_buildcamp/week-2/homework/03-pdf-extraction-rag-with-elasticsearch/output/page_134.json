@@ -1,0 +1,21 @@
+{
+    "page": {
+        "page_number": 112,
+        "header": "Chapter 11. Dictionaries",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "Format the output: Formatting debugging output can make it easier to spot an error. We saw an example in Section 6.9. Another tool you might find useful is the pprint module, which provides a pprint function that displays built-in types in a more human-readable format (pprint stands for \"pretty print\").\n\nAgain, time you spend building scaffolding can reduce the time you spend debugging."
+            },
+            {
+                "type": "section_heading",
+                "title": "11.9 Glossary"
+            },
+            {
+                "type": "text",
+                "text": "mapping: A relationship in which each element of one set corresponds to an element of another set.\n\ndictionary: A mapping from keys to their corresponding values.\n\nkey-value pair: The representation of the mapping from a key to a value.\n\nitem: In a dictionary, another name for a key-value pair.\n\nkey: An object that appears in a dictionary as the first part of a key-value pair.\n\nvalue: An object that appears in a dictionary as the second part of a key-value pair. This is more specific than our previous use of the word \"value\".\n\nimplementation: A way of performing a computation.\n\nhashtable: The algorithm used to implement Python dictionaries.\n\nhash function: A function used by a hashtable to compute the location for a key.\n\nhashable: A type that has a hash function. Immutable types like integers, floats and strings are hashable; mutable types like lists and dictionaries are not.\n\nlookup: A dictionary operation that takes a key and finds the corresponding value.\n\nreverse lookup: A dictionary operation that takes a value and finds one or more keys that map to it.\n\nraise statement: A statement that (deliberately) raises an exception.\n\nsingleton: A list (or other sequence) with a single element.\n\ncall graph: A diagram that shows every frame created during the execution of a program, with an arrow from each caller to each callee.\n\nmemo: A computed value stored to avoid unnecessary future computation.\n\nglobal variable: A variable defined outside a function. Global variables can be accessed from any function.\n\nglobal statement: A statement that declares a variable name global.\n\nflag: A boolean variable used to indicate whether a condition is true.\n\ndeclaration: A statement like global that tells the interpreter something about a variable."
+            }
+        ]
+    },
+    "cost": 0.040095000000000006
+}

@@ -1,0 +1,51 @@
+{
+    "page": {
+        "page_number": 61,
+        "header": "6.11. Exercises",
+        "blocks": [
+            {
+                "type": "block",
+                "code": "x = 1\ny = x + 1\nprint(c(x, y+3, x+y))",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Exercise 6.2. The Ackermann function, A(m, n), is defined:"
+            },
+            {
+                "type": "block",
+                "code": "A(m,n) = \\begin{cases} n+1 & \\text{if } m = 0 \\\\ A(m-1, 1) & \\text{if } m > 0 \\text{ and } n = 0 \\\\ A(m-1, A(m, n-1)) & \\text{if } m > 0 \\text{ and } n > 0. \\end{cases}",
+                "language": "latex",
+                "description": "Recursive definition of the Ackermann function."
+            },
+            {
+                "type": "text",
+                "text": "See http://en.wikipedia.org/wiki/Ackermann_function. Write a function named ack that evaluates the Ackermann function. Use your function to evaluate ack(3, 4), which should be 125. What happens for larger values of m and n? Solution: https://thinkpython.com/code/ackermann.py."
+            },
+            {
+                "type": "text",
+                "text": "Exercise 6.3. A palindrome is a word that is spelled the same backward and forward, like \"noon\" and \"redivider\". Recursively, a word is a palindrome if the first and last letters are the same and the middle is a palindrome.\n\nThe following are functions that take a string argument and return the first, last, and middle letters:"
+            },
+            {
+                "type": "block",
+                "code": "def first(word):\n    return word[0]\n\ndef last(word):\n    return word[-1]\n\ndef middle(word):\n    return word[1:-1]",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "We'll see how they work in Chapter 8.\n\n1. Type these functions into a file named palindrome.py and test them out. What happens if you call middle with a string with two letters? One letter? What about the empty string, which is written '' and contains no letters?\n\n2. Write a function called is_palindrome that takes a string argument and returns True if it is a palindrome and False otherwise. Remember that you can use the built-in function len to check the length of a string.\n\nSolution: https://thinkpython.com/code/palindrome_soln.py."
+            },
+            {
+                "type": "text",
+                "text": "Exercise 6.4. A number, a, is a power of b if it is divisible by b and a/b is a power of b. Write a function called is_power that takes parameters a and b and returns True if a is a power of b. Note: you will have to think about the base case."
+            },
+            {
+                "type": "text",
+                "text": "Exercise 6.5. The greatest common divisor (GCD) of a and b is the largest number that divides both of them with no remainder.\n\nOne way to find the GCD of two numbers is based on the observation that if r is the remainder when a is divided by b, then gcd(a, b) = gcd(b, r). As a base case, we can use gcd(a, 0) = a.\n\nWrite a function called gcd that takes parameters a and b and returns their greatest common divisor.\n\nCredit: This exercise is based on an example from Abelson and Sussman's Structure and Interpretation of Computer Programs."
+            }
+        ]
+    },
+    "cost": 0.046745
+}

@@ -1,0 +1,73 @@
+{
+    "page": {
+        "page_number": 93,
+        "header": "10.7. Map, filter and reduce",
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "10.7 Map, filter and reduce"
+            },
+            {
+                "type": "text",
+                "text": "To add up all the numbers in a list, you can use a loop like this:"
+            },
+            {
+                "type": "block",
+                "code": "def add_all(t):\n    total = 0\n    for x in t:\n        total += x\n    return total",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "total is initialized to 0. Each time through the loop, x gets one element from the list. The += operator provides a short way to update a variable. This augmented assignment statement,"
+            },
+            {
+                "type": "block",
+                "code": "total += x",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "is equivalent to"
+            },
+            {
+                "type": "block",
+                "code": "total = total + x",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "As the loop runs, total accumulates the sum of the elements; a variable used this way is sometimes called an accumulator.\n\nAdding up the elements of a list is such a common operation that Python provides it as a built-in function, sum:"
+            },
+            {
+                "type": "block",
+                "code": ">>> t = [1, 2, 3]\n>>> sum(t)\n6",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "An operation like this that combines a sequence of elements into a single value is sometimes called reduce.\n\nSometimes you want to traverse one list while building another. For example, the following function takes a list of strings and returns a new list that contains capitalized strings:"
+            },
+            {
+                "type": "block",
+                "code": "def capitalize_all(t):\n    res = []\n    for s in t:\n        res.append(s.capitalize())\n    return res",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "res is initialized with an empty list; each time through the loop, we append the next element. So res is another kind of accumulator.\n\nAn operation like capitalize_all is sometimes called a map because it “maps” a function (in this case the method capitalize) onto each of the elements in a sequence.\n\nAnother common operation is to select some of the elements from a list and return a sublist. For example, the following function takes a list of strings and returns a list that contains only the uppercase strings:"
+            },
+            {
+                "type": "block",
+                "code": "def only_upper(t):\n    res = []\n    for s in t:\n        if s.isupper():\n            res.append(s)\n    return res",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.039495
+}

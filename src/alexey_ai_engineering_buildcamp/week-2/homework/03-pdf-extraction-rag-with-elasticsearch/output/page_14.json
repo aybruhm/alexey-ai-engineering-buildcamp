@@ -1,0 +1,29 @@
+{
+    "page": {
+        "page_number": 0,
+        "header": null,
+        "blocks": [
+            {
+                "type": "text",
+                "text": "Copyright © 2015 Allen Downey."
+            },
+            {
+                "type": "text",
+                "text": "Green Tea Press\n9 Washburn Ave\nNeedham MA 02492"
+            },
+            {
+                "type": "text",
+                "text": "Permission is granted to copy, distribute, and/or modify this document under the terms of the Creative Commons Attribution-NonCommercial 3.0 Unported License, which is available at http://creativecommons.org/licenses/by-nc/3.0/."
+            },
+            {
+                "type": "text",
+                "text": "The original form of this book is LaTeX source code. Compiling this LaTeX source has the effect of generating a device-independent representation of a textbook, which can be converted to other formats and printed."
+            },
+            {
+                "type": "text",
+                "text": "The LaTeX source for this book is available from http://www.thinkpython.com"
+            }
+        ]
+    },
+    "cost": 0.02753
+}

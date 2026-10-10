@@ -1,0 +1,45 @@
+{
+    "page": {
+        "page_number": 75,
+        "header": "8.7. Looping and counting",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "In a sense, find is the inverse of the [] operator. Instead of taking an index and extracting the corresponding character, it takes a character and finds the index where that character appears. If the character is not found, the function returns -1.\n\nThis is the first example we have seen of a return statement inside a loop. If word[index] == letter, the function breaks out of the loop and returns immediately.\n\nIf the character doesn't appear in the string, the program exits the loop normally and returns -1.\n\nThis pattern of computation—traversing a sequence and returning when we find what we are looking for—is called a search.\n\nAs an exercise, modify find so that it has a third parameter, the index in word where it should start looking."
+            },
+            {
+                "type": "section_heading",
+                "title": "8.7 Looping and counting"
+            },
+            {
+                "type": "text",
+                "text": "The following program counts the number of times the letter a appears in a string:"
+            },
+            {
+                "type": "block",
+                "code": "word = 'banana'\ncount = 0\nfor letter in word:\n    if letter == 'a':\n        count = count + 1\nprint(count)",
+                "language": "python",
+                "description": "Counts occurrences of the letter 'a' in 'banana' using a counter variable."
+            },
+            {
+                "type": "text",
+                "text": "This program demonstrates another pattern of computation called a counter. The variable count is initialized to 0 and then incremented each time an a is found. When the loop exits, count contains the result—the total number of a's.\n\nAs an exercise, encapsulate this code in a function named count, and generalize it so that it accepts the string and the letter as arguments.\n\nThen rewrite the function so that instead of traversing the string, it uses the three-parameter version of find from the previous section."
+            },
+            {
+                "type": "section_heading",
+                "title": "8.8 String methods"
+            },
+            {
+                "type": "text",
+                "text": "Strings provide methods that perform a variety of useful operations. A method is similar to a function—it takes arguments and returns a value—but the syntax is different. For example, the method upper takes a string and returns a new string with all uppercase letters.\n\nInstead of the function syntax upper(word), it uses the method syntax word.upper()."
+            },
+            {
+                "type": "block",
+                "code": ">>> word = 'banana'\n>>> new_word = word.upper()\n>>> new_word\n'BANANA'",
+                "language": "python",
+                "description": "Calling the upper method on a string returns a new uppercase string."
+            }
+        ]
+    },
+    "cost": 0.040195
+}

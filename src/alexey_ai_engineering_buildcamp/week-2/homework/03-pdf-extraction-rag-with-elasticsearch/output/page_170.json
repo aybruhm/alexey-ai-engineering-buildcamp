@@ -1,0 +1,57 @@
+{
+    "page": {
+        "page_number": 148,
+        "header": "Chapter 15. Classes and objects",
+        "blocks": [
+            {
+                "type": "figure",
+                "caption": "Figure 15.1: Object diagram.",
+                "description": "An object diagram showing the variable blank referring to a Point object, which contains two attributes: x referring to the value 3.0 and y referring to the value 4.0.",
+                "figure_number": 1
+            },
+            {
+                "type": "text",
+                "text": "The header indicates that the new class is called Point. The body is a docstring that explains what the class is for. You can define variables and methods inside a class definition, but we will get back to that later.\n\nDefining a class named Point creates a class object."
+            },
+            {
+                "type": "block",
+                "code": ">>> Point\n<class '__main__.Point'>",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Because Point is defined at the top level, its “full name” is __main__.Point.\n\nThe class object is like a factory for creating objects. To create a Point, you call Point as if it were a function."
+            },
+            {
+                "type": "block",
+                "code": ">>> blank = Point()\n>>> blank\n<__main__.Point object at 0xb7e9d3ac>",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The return value is a reference to a Point object, which we assign to blank.\n\nCreating a new object is called instantiation, and the object is an instance of the class.\n\nWhen you print an instance, Python tells you what class it belongs to and where it is stored in memory (the prefix 0x means that the following number is in hexadecimal).\n\nEvery object is an instance of some class, so “object” and “instance” are interchangeable. But in this chapter I use “instance” to indicate that I am talking about a programmer-defined type."
+            },
+            {
+                "type": "section_heading",
+                "title": "15.2 Attributes"
+            },
+            {
+                "type": "text",
+                "text": "You can assign values to an instance using dot notation:"
+            },
+            {
+                "type": "block",
+                "code": ">>> blank.x = 3.0\n>>> blank.y = 4.0",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This syntax is similar to the syntax for selecting a variable from a module, such as math.pi or string.whitespace. In this case, though, we are assigning values to named elements of an object. These elements are called attributes.\n\nAs a noun, “AT-trib-ute” is pronounced with emphasis on the first syllable, as opposed to “a-TRIB-ute”, which is a verb.\n\nFigure 15.1 is a state diagram that shows the result of these assignments. A state diagram that shows an object and its attributes is called an object diagram.\n\nThe variable blank refers to a Point object, which contains two attributes. Each attribute refers to a floating-point number.\n\nYou can read the value of an attribute using the same syntax:"
+            }
+        ]
+    },
+    "cost": 0.04364
+}

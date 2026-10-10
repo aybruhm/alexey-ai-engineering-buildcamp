@@ -1,0 +1,59 @@
+{
+    "page": {
+        "page_number": 96,
+        "header": "Chapter 10. Lists",
+        "blocks": [
+            {
+                "type": "figure",
+                "caption": "Figure 10.3: State diagram.",
+                "description": "State diagram showing variables a and b each referring to a separate list object [1, 2, 3]; the two lists are equivalent but not identical.",
+                "figure_number": 3
+            },
+            {
+                "type": "figure",
+                "caption": "Figure 10.4: State diagram.",
+                "description": "State diagram showing variables a and b both referring to the same single list object [1, 2, 3], illustrating aliasing.",
+                "figure_number": 4
+            },
+            {
+                "type": "block",
+                "code": ">>> a = 'banana'\n>>> b = 'banana'\n>>> a is b\nTrue",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "In this example, Python only created one string object, and both a and b refer to it. But when you create two lists, you get two objects:"
+            },
+            {
+                "type": "block",
+                "code": ">>> a = [1, 2, 3]\n>>> b = [1, 2, 3]\n>>> a is b\nFalse",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "So the state diagram looks like Figure 10.3.\n\nIn this case we would say that the two lists are equivalent, because they have the same elements, but not identical, because they are not the same object. If two objects are identical, they are also equivalent, but if they are equivalent, they are not necessarily identical.\n\nUntil now, we have been using “object” and “value” interchangeably, but it is more precise to say that an object has a value. If you evaluate [1, 2, 3], you get a list object whose value is a sequence of integers. If another list has the same elements, we say it has the same value, but it is not the same object."
+            },
+            {
+                "type": "section_heading",
+                "title": "10.11 Aliasing"
+            },
+            {
+                "type": "text",
+                "text": "If a refers to an object and you assign b = a, then both variables refer to the same object:"
+            },
+            {
+                "type": "block",
+                "code": ">>> a = [1, 2, 3]\n>>> b = a\n>>> b is a\nTrue",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The state diagram looks like Figure 10.4.\n\nThe association of a variable with an object is called a reference. In this example, there are two references to the same object.\n\nAn object with more than one reference has more than one name, so we say that the object is aliased.\n\nIf the aliased object is mutable, changes made with one alias affect the other:"
+            }
+        ]
+    },
+    "cost": 0.04089
+}

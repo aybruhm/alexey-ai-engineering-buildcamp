@@ -1,0 +1,33 @@
+{
+    "page": {
+        "page_number": 101,
+        "header": "10.15. Exercises",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "Exercise 10.4. Write a function called chop that takes a list, modifies it by removing the first and last elements, and returns None. For example:"
+            },
+            {
+                "type": "block",
+                "code": ">>> t = [1, 2, 3, 4]\n>>> chop(t)\n>>> t\n[2, 3]",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Exercise 10.5. Write a function called is_sorted that takes a list as a parameter and returns True if the list is sorted in ascending order and False otherwise. For example:"
+            },
+            {
+                "type": "block",
+                "code": ">>> is_sorted([1, 2, 2])\nTrue\n>>> is_sorted(['b', 'a'])\nFalse",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Exercise 10.6. Two words are anagrams if you can rearrange the letters from one to spell the other. Write a function called is_anagram that takes two strings and returns True if they are anagrams.\n\nExercise 10.7. Write a function called has_duplicates that takes a list and returns True if there is any element that appears more than once. It should not modify the original list.\n\nExercise 10.8. This exercise pertains to the so-called Birthday Paradox, which you can read about at http://en.wikipedia.org/wiki/Birthday_paradox.\n\nIf there are 23 students in your class, what are the chances that two of them have the same birthday? You can estimate this probability by generating random samples of 23 birthdays and checking for matches. Hint: you can generate random birthdays with the randint function in the random module.\n\nYou can download my solution from https://thinkpython.com/code/birthday.py.\n\nExercise 10.9. Write a function that reads the file words.txt and builds a list with one element per word. Write two versions of this function, one using the append method and the other using the idiom t = t + [x]. Which one takes longer to run? Why?\n\nSolution: https://thinkpython.com/code/wordlist.py.\n\nExercise 10.10. To check whether a word is in the word list, you could use the in operator, but it would be slow because it searches through the words in order.\n\nBecause the words are in alphabetical order, we can speed things up with a bisection search (also known as binary search), which is similar to what you do when you look a word up in the dictionary (the book, not the data structure). You start in the middle and check to see whether the word you are looking for comes before the word in the middle of the list. If so, you search the first half of the list the same way. Otherwise you search the second half.\n\nEither way, you cut the remaining search space in half. If the word list has 113,809 words, it will take about 17 steps to find the word or conclude that it's not there.\n\nWrite a function called in_bisect that takes a sorted list and a target value and returns True if the word is in the list and False if it's not.\n\nOr you could read the documentation of the bisect module and use that! Solution: https://thinkpython.com/code/inlist.py.\n\nExercise 10.11. Two words are a \"reverse pair\" if each is the reverse of the other. Write a program that finds all the reverse pairs in the word list. Solution: https://thinkpython.com/code/reverse_pair.py.\n\nExercise 10.12. Two words \"interlock\" if taking alternating letters from each forms a new word. For example, \"shoe\" and \"cold\" interlock to form \"schooled\". Solution: https://"
+            }
+        ]
+    },
+    "cost": 0.05029
+}

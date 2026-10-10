@@ -1,0 +1,63 @@
+{
+    "page": {
+        "page_number": 73,
+        "header": "8.4. String slices",
+        "blocks": [
+            {
+                "type": "figure",
+                "caption": "Figure 8.1: Slice indices.",
+                "description": "The variable fruit refers to the string 'banana'. Index numbers 0 through 6 are placed between the characters (at the boundaries), illustrating that slice indices point between characters rather than at them.",
+                "figure_number": 1
+            },
+            {
+                "type": "text",
+                "text": "Each time through the loop, the next character in the string is assigned to the variable letter. The loop continues until no characters are left.\n\nThe following example shows how to use concatenation (string addition) and a for loop to generate an abecedarian series (that is, in alphabetical order). In Robert McCloskey's book Make Way for Ducklings, the names of the ducklings are Jack, Kack, Lack, Mack, Nack, Ouack, Pack, and Quack. This loop outputs these names in order:"
+            },
+            {
+                "type": "block",
+                "code": "prefixes = 'JKLMNOPQ'\nsuffix = 'ack'\n\nfor letter in prefixes:\n    print(letter + suffix)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The output is:"
+            },
+            {
+                "type": "block",
+                "code": "Jack\nKack\nLack\nMack\nNack\nOack\nPack\nQack",
+                "language": "text",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Of course, that's not quite right because \"Ouack\" and \"Quack\" are misspelled. As an exercise, modify the program to fix this error."
+            },
+            {
+                "type": "section_heading",
+                "title": "8.4 String slices"
+            },
+            {
+                "type": "text",
+                "text": "A segment of a string is called a slice. Selecting a slice is similar to selecting a character:"
+            },
+            {
+                "type": "block",
+                "code": ">>> s = 'Monty Python'\n>>> s[0:5]\n'Monty'\n>>> s[6:12]\n'Python'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The operator [n:m] returns the part of the string from the \"n-eth\" character to the \"m-eth\" character, including the first but excluding the last. This behavior is counterintuitive, but it might help to imagine the indices pointing between the characters, as in Figure 8.1.\n\nIf you omit the first index (before the colon), the slice starts at the beginning of the string. If you omit the second index, the slice goes to the end of the string:"
+            },
+            {
+                "type": "block",
+                "code": ">>> fruit = 'banana'\n>>> fruit[:3]",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.040695
+}

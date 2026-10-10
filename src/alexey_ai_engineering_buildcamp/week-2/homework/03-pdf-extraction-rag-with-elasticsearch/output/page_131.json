@@ -1,0 +1,37 @@
+{
+    "page": {
+        "page_number": 109,
+        "header": "11.6. Memos",
+        "blocks": [
+            {
+                "type": "figure",
+                "caption": "Figure 11.2: Call graph.",
+                "description": "A call graph (tree) for fibonacci with n=4. The top frame fibonacci n->4 calls fibonacci n->3 and fibonacci n->2. fibonacci n->3 calls fibonacci n->2 and n->1; the right fibonacci n->2 calls n->1 and n->0. The lower fibonacci n->2 calls n->1 and n->0. It illustrates how the naive recursive fibonacci repeatedly recomputes the same subproblems.",
+                "figure_number": 2
+            },
+            {
+                "type": "text",
+                "text": "Since dictionaries are mutable, they can't be used as keys, but they can be used as values."
+            },
+            {
+                "type": "section_heading",
+                "title": "11.6 Memos"
+            },
+            {
+                "type": "text",
+                "text": "If you played with the fibonacci function from Section 6.7, you might have noticed that the bigger the argument you provide, the longer the function takes to run. Furthermore, the run time increases quickly.\n\nTo understand why, consider Figure 11.2, which shows the call graph for fibonacci with n=4:\n\nA call graph shows a set of function frames, with lines connecting each frame to the frames of the functions it calls. At the top of the graph, fibonacci with n=4 calls fibonacci with n=3 and n=2. In turn, fibonacci with n=3 calls fibonacci with n=2 and n=1. And so on.\n\nCount how many times fibonacci(0) and fibonacci(1) are called. This is an inefficient solution to the problem, and it gets worse as the argument gets bigger.\n\nOne solution is to keep track of values that have already been computed by storing them in a dictionary. A previously computed value that is stored for later use is called a memo. Here is a \"memoized\" version of fibonacci:"
+            },
+            {
+                "type": "block",
+                "code": "known = {0:0, 1:1}\n\ndef fibonacci(n):\n    if n in known:\n        return known[n]\n\n    res = fibonacci(n-1) + fibonacci(n-2)\n    known[n] = res\n    return res",
+                "language": "python",
+                "description": "Memoized Fibonacci function that caches computed values in the dictionary known."
+            },
+            {
+                "type": "text",
+                "text": "known is a dictionary that keeps track of the Fibonacci numbers we already know. It starts with two items: 0 maps to 0 and 1 maps to 1."
+            }
+        ]
+    },
+    "cost": 0.040845000000000006
+}

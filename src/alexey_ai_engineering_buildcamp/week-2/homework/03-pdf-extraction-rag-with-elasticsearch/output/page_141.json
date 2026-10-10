@@ -1,0 +1,89 @@
+{
+    "page": {
+        "page_number": 119,
+        "header": "12.5. Lists and tuples",
+        "blocks": [
+            {
+                "type": "block",
+                "code": ">>> for pair in zip(s, t):\n...     print(pair)\n...\n('a', 0)\n('b', 1)\n('c', 2)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "A zip object is a kind of iterator, which is any object that iterates through a sequence. Iterators are similar to lists in some ways, but unlike lists, you can't use an index to select an element from an iterator.\n\nIf you want to use list operators and methods, you can use a zip object to make a list:"
+            },
+            {
+                "type": "block",
+                "code": ">>> list(zip(s, t))\n[('a', 0), ('b', 1), ('c', 2)]",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The result is a list of tuples; in this example, each tuple contains a character from the string and the corresponding element from the list.\n\nIf the sequences are not the same length, the result has the length of the shorter one."
+            },
+            {
+                "type": "block",
+                "code": ">>> list(zip('Anne', 'Elk'))\n[('A', 'E'), ('n', 'l'), ('n', 'k')]",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "You can use tuple assignment in a for loop to traverse a list of tuples:"
+            },
+            {
+                "type": "block",
+                "code": "t = [('a', 0), ('b', 1), ('c', 2)]\nfor letter, number in t:\n    print(number, letter)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Each time through the loop, Python selects the next tuple in the list and assigns the elements to letter and number. The output of this loop is:"
+            },
+            {
+                "type": "block",
+                "code": "0 a\n1 b\n2 c",
+                "language": "text",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "If you combine zip, for and tuple assignment, you get a useful idiom for traversing two (or more) sequences at the same time. For example, has_match takes two sequences, t1 and t2, and returns True if there is an index i such that t1[i] == t2[i]:"
+            },
+            {
+                "type": "block",
+                "code": "def has_match(t1, t2):\n    for x, y in zip(t1, t2):\n        if x == y:\n            return True\n    return False",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "If you need to traverse the elements of a sequence and their indices, you can use the built-in function enumerate:"
+            },
+            {
+                "type": "block",
+                "code": "for index, element in enumerate('abc'):\n    print(index, element)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The result from enumerate is an enumerate object, which iterates a sequence of pairs; each pair contains an index (starting from 0) and an element from the given sequence. In this example, the output is"
+            },
+            {
+                "type": "block",
+                "code": "0 a\n1 b\n2 c",
+                "language": "text",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Again."
+            }
+        ]
+    },
+    "cost": 0.04479
+}

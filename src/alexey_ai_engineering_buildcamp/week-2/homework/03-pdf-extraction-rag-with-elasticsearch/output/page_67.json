@@ -1,0 +1,63 @@
+{
+    "page": {
+        "page_number": 45,
+        "header": "5.11. Keyboard input",
+        "blocks": [
+            {
+                "type": "block",
+                "code": "def recurse():\n    recurse()",
+                "language": "python",
+                "description": "A function that calls itself with no base case, causing infinite recursion."
+            },
+            {
+                "type": "text",
+                "text": "In most programming environments, a program with infinite recursion does not really run forever. Python reports an error message when the maximum recursion depth is reached:"
+            },
+            {
+                "type": "block",
+                "code": "  File \"<stdin>\", line 2, in recurse\n  File \"<stdin>\", line 2, in recurse\n  File \"<stdin>\", line 2, in recurse\n                  .\n                  .\n                  .\n  File \"<stdin>\", line 2, in recurse\nRuntimeError: Maximum recursion depth exceeded",
+                "language": "text",
+                "description": "Traceback produced when the maximum recursion depth is exceeded."
+            },
+            {
+                "type": "text",
+                "text": "This traceback is a little bigger than the one we saw in the previous chapter. When the error occurs, there are 1000 recurse frames on the stack!\n\nIf you encounter an infinite recursion by accident, review your function to confirm that there is a base case that does not make a recursive call. And if there is a base case, check whether you are guaranteed to reach it."
+            },
+            {
+                "type": "section_heading",
+                "title": "5.11 Keyboard input"
+            },
+            {
+                "type": "text",
+                "text": "The programs we have written so far accept no input from the user. They just do the same thing every time.\n\nPython provides a built-in function called input that stops the program and waits for the user to type something. When the user presses Return or Enter, the program resumes and input returns what the user typed as a string. In Python 2, the same function is called raw_input."
+            },
+            {
+                "type": "block",
+                "code": ">>> text = input()\nWhat are you waiting for?\n>>> text\n'What are you waiting for?'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Before getting input from the user, it is a good idea to print a prompt telling the user what to type. input can take a prompt as an argument:"
+            },
+            {
+                "type": "block",
+                "code": ">>> name = input('What...is your name?\\n')\nWhat...is your name?\nArthur, King of the Britons!\n>>> name\n'Arthur, King of the Britons!'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The sequence \\n at the end of the prompt represents a newline, which is a special character that causes a line break. That's why the user's input appears below the prompt.\n\nIf you expect the user to type an integer, you can try to convert the return value to int:"
+            },
+            {
+                "type": "block",
+                "code": ">>> prompt = 'What...is the airspeed velocity of an unladen swallow?\\n'\n>>> speed = input(prompt)\nWhat...is the airspeed velocity of an unladen swallow?\n42\n>>> int(speed)\n42",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.044865
+}

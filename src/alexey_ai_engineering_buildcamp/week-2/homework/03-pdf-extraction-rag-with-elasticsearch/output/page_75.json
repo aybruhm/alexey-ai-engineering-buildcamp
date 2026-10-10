@@ -1,0 +1,53 @@
+{
+    "page": {
+        "page_number": 53,
+        "header": "6.2. Incremental development",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "Obviously, this version doesn't compute distances; it always returns zero. But it is syntactically correct, and it runs, which means that you can test it before you make it more complicated.\n\nTo test the new function, call it with sample arguments:"
+            },
+            {
+                "type": "block",
+                "code": ">>> distance(1, 2, 4, 6)\n0.0",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "I chose these values so that the horizontal distance is 3 and the vertical distance is 4; that way, the result is 5, the hypotenuse of a 3-4-5 right triangle. When testing a function, it is useful to know the right answer.\n\nAt this point we have confirmed that the function is syntactically correct, and we can start adding code to the body. A reasonable next step is to find the differences x_2 − x_1 and y_2 − y_1. The next version stores those values in temporary variables and prints them."
+            },
+            {
+                "type": "block",
+                "code": "def distance(x1, y1, x2, y2):\n    dx = x2 - x1\n    dy = y2 - y1\n    print('dx is', dx)\n    print('dy is', dy)\n    return 0.0",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "If the function is working, it should display dx is 3 and dy is 4. If so, we know that the function is getting the right arguments and performing the first computation correctly. If not, there are only a few lines to check.\n\nNext we compute the sum of squares of dx and dy:"
+            },
+            {
+                "type": "block",
+                "code": "def distance(x1, y1, x2, y2):\n    dx = x2 - x1\n    dy = y2 - y1\n    dsquared = dx**2 + dy**2\n    print('dsquared is: ', dsquared)\n    return 0.0",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Again, you would run the program at this stage and check the output (which should be 25). Finally, you can use math.sqrt to compute and return the result:"
+            },
+            {
+                "type": "block",
+                "code": "def distance(x1, y1, x2, y2):\n    dx = x2 - x1\n    dy = y2 - y1\n    dsquared = dx**2 + dy**2\n    result = math.sqrt(dsquared)\n    return result",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "If that works correctly, you are done. Otherwise, you might want to print the value of result before the return statement.\n\nThe final version of the function doesn't display anything when it runs; it only returns a value. The print statements we wrote are useful for debugging, but once you get the function working, you should remove them. Code like that is called scaffolding because it is helpful for building the program but is not part of the final product.\n\nWhen you start out, you should add only a line or two of code at a time. As you gain more experience, you might find yourself writing and debugging bigger chunks. Either way, incremental development can save you a lot of debugging time.\n\nThe key aspects of the process are:"
+            }
+        ]
+    },
+    "cost": 0.044895000000000004
+}

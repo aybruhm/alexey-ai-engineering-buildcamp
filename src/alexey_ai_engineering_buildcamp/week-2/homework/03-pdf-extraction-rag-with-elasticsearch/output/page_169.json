@@ -1,0 +1,35 @@
+{
+    "page": {
+        "page_number": 147,
+        "header": null,
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "Chapter 15"
+            },
+            {
+                "type": "section_heading",
+                "title": "Classes and objects"
+            },
+            {
+                "type": "text",
+                "text": "At this point you know how to use functions to organize code and built-in types to organize data. The next step is to learn “object-oriented programming”, which uses programmer-defined types to organize both code and data. Object-oriented programming is a big topic; it will take a few chapters to get there.\n\nCode examples from this chapter are available from https://thinkpython.com/code/Point1.py; solutions to the exercises are available from https://thinkpython.com/code/Point1_soln.py."
+            },
+            {
+                "type": "section_heading",
+                "title": "15.1 Programmer-defined types"
+            },
+            {
+                "type": "text",
+                "text": "We have used many of Python’s built-in types; now we are going to define a new type. As an example, we will create a type called Point that represents a point in two-dimensional space.\n\nIn mathematical notation, points are often written in parentheses with a comma separating the coordinates. For example, (0,0) represents the origin, and (x,y) represents the point x units to the right and y units up from the origin.\n\nThere are several ways we might represent points in Python:\n\n• We could store the coordinates separately in two variables, x and y.\n• We could store the coordinates as elements in a list or tuple.\n• We could create a new type to represent points as objects.\n\nCreating a new type is more complicated than the other options, but it has advantages that will be apparent soon.\n\nA programmer-defined type is also called a class. A class definition looks like this:"
+            },
+            {
+                "type": "block",
+                "code": "class Point:\n    \"\"\"Represents a point in 2-D space.\"\"\"",
+                "language": "python",
+                "description": "Defines a new class named Point with a docstring."
+            }
+        ]
+    },
+    "cost": 0.035495
+}

@@ -1,0 +1,39 @@
+{
+    "page": {
+        "page_number": 21,
+        "header": "3.6. Flow of execution",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "As you might expect, you have to create a function before you can run it. In other words, the function definition has to run before the function gets called.\n\nAs an exercise, move the last line of this program to the top, so the function call appears before the definitions. Run the program and see what error message you get.\n\nNow move the function call back to the bottom and move the definition of print_lyrics after the definition of repeat_lyrics. What happens when you run this program?"
+            },
+            {
+                "type": "section_heading",
+                "title": "3.6 Flow of execution"
+            },
+            {
+                "type": "text",
+                "text": "To ensure that a function is defined before its first use, you have to know the order statements run in, which is called the flow of execution.\n\nExecution always begins at the first statement of the program. Statements are run one at a time, in order from top to bottom.\n\nFunction definitions do not alter the flow of execution of the program, but remember that statements inside the function don't run until the function is called.\n\nA function call is like a detour in the flow of execution. Instead of going to the next statement, the flow jumps to the body of the function, runs the statements there, and then comes back to pick up where it left off.\n\nThat sounds simple enough, until you remember that one function can call another. While in the middle of one function, the program might have to run the statements in another function. Then, while running that new function, the program might have to run yet another function!\n\nFortunately, Python is good at keeping track of where it is, so each time a function completes, the program picks up where it left off in the function that called it. When it gets to the end of the program, it terminates.\n\nIn summary, when you read a program, you don't always want to read from top to bottom. Sometimes it makes more sense if you follow the flow of execution."
+            },
+            {
+                "type": "section_heading",
+                "title": "3.7 Parameters and arguments"
+            },
+            {
+                "type": "text",
+                "text": "Some of the functions we have seen require arguments. For example, when you call math.sin you pass a number as an argument. Some functions take more than one argument: math.pow takes two, the base and the exponent.\n\nInside the function, the arguments are assigned to variables called parameters. Here is a definition for a function that takes an argument:"
+            },
+            {
+                "type": "block",
+                "code": "def print_twice(bruce):\n    print(bruce)\n    print(bruce)",
+                "language": "python",
+                "description": "Defines a function that prints its parameter twice."
+            },
+            {
+                "type": "text",
+                "text": "This function assigns the argument to a parameter named bruce. When the function is called, it prints the value of the parameter (whatever it is) twice.\n\nThis function works with any value that can be printed."
+            }
+        ]
+    },
+    "cost": 0.04152
+}

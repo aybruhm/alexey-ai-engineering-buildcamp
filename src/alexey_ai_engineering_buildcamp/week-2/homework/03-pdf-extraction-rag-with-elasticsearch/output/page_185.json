@@ -1,0 +1,47 @@
+{
+    "page": {
+        "page_number": 163,
+        "header": "17.3. Another example",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "In this use of dot notation, print_time is the name of the method (again), and start is the object the method is invoked on, which is called the subject. Just as the subject of a sentence is what the sentence is about, the subject of a method invocation is what the method is about.\n\nInside the method, the subject is assigned to the first parameter, so in this case start is assigned to time.\n\nBy convention, the first parameter of a method is called self, so it would be more common to write print_time like this:"
+            },
+            {
+                "type": "block",
+                "code": "class Time:\n    def print_time(self):\n        print('%.2d:%.2d:%.2d' % (self.hour, self.minute, self.second))",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The reason for this convention is an implicit metaphor:\n\n• The syntax for a function call, print_time(start), suggests that the function is the active agent. It says something like, “Hey print_time! Here’s an object for you to print.”\n\n• In object-oriented programming, the objects are the active agents. A method invocation like start.print_time() says “Hey start! Please print yourself.”\n\nThis change in perspective might be more polite, but it is not obvious that it is useful. In the examples we have seen so far, it may not be. But sometimes shifting responsibility from the functions onto the objects makes it possible to write more versatile functions (or methods), and makes it easier to maintain and reuse code.\n\nAs an exercise, rewrite time_to_int (from Section 16.4) as a method. You might be tempted to rewrite int_to_time as a method, too, but that doesn’t really make sense because there would be no object to invoke it on."
+            },
+            {
+                "type": "section_heading",
+                "title": "17.3 Another example"
+            },
+            {
+                "type": "text",
+                "text": "Here’s a version of increment (from Section 16.3) rewritten as a method:"
+            },
+            {
+                "type": "block",
+                "code": "# inside class Time:\n\n    def increment(self, seconds):\n        seconds += self.time_to_int()\n        return int_to_time(seconds)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This version assumes that time_to_int is written as a method. Also, note that it is a pure function, not a modifier.\n\nHere’s how you would invoke increment:"
+            },
+            {
+                "type": "block",
+                "code": ">>> start.print_time()\n09:45:00\n>>> end = start.increment(1337)\n>>> end.print_time()\n10:07:17",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.040870000000000004
+}

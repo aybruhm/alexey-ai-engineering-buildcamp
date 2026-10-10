@@ -1,0 +1,37 @@
+{
+    "page": {
+        "page_number": 84,
+        "header": "Chapter 9. Case study: word play",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "The next word is “aah”, which is a perfectly legitimate word, so stop looking at me like that. Or, if it’s the newline character that’s bothering you, we can get rid of it with the string method strip:"
+            },
+            {
+                "type": "block",
+                "code": ">>> line = fin.readline()\n>>> word = line.strip()\n>>> word\n'aahed'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "You can also use a file object as part of a for loop. This program reads words.txt and prints each word, one per line:"
+            },
+            {
+                "type": "block",
+                "code": "fin = open('words.txt')\nfor line in fin:\n    word = line.strip()\n    print(word)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "section_heading",
+                "title": "9.2 Exercises"
+            },
+            {
+                "type": "text",
+                "text": "There are solutions to these exercises in the next section. You should at least attempt each one before you read the solutions.\n\nExercise 9.1. Write a program that reads words.txt and prints only the words with more than 20 characters (not counting whitespace).\n\nExercise 9.2. In 1939 Ernest Vincent Wright published a 50,000 word novel called Gadsby that does not contain the letter “e”. Since “e” is the most common letter in English, that’s not easy to do.\n\nIn fact, it is difficult to construct a solitary thought without using that most common symbol. It is slow going at first, but with caution and hours of training you can gradually gain facility.\n\nAll right, I’ll stop now.\n\nWrite a function called has_no_e that returns True if the given word doesn’t have the letter “e” in it.\n\nWrite a program that reads words.txt and prints only the words that have no “e”. Compute the percentage of words in the list that have no “e”.\n\nExercise 9.3. Write a function named avoids that takes a word and a string of forbidden letters, and that returns True if the word doesn’t use any of the forbidden letters.\n\nWrite a program that prompts the user to enter a string of forbidden letters and then prints the number of words that don’t contain any of them. Can you find a combination of 5 forbidden letters that excludes the smallest number of words?\n\nExercise 9.4. Write a function named uses_only that takes a word and a string of letters, and that returns True if the word contains only letters in the list. Can you make a sentence using only the letters acefhlo? Other than “Hoe alfalfa”?\n\nExercise 9.5. Write a function named uses_all that takes a word and a string of required letters, and that returns True if the word uses all the required letters at least once. How many words are there that use all the vowels aeiou? How about aeiouy?\n\nExercise 9.6. Write a function called is_abecedarian that returns True if the letters in a word appear in alphabetical order (double letters are ok). How many abecedarian words are there?"
+            }
+        ]
+    },
+    "cost": 0.044545
+}

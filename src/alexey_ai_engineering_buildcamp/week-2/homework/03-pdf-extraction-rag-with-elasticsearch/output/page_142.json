@@ -1,0 +1,77 @@
+{
+    "page": {
+        "page_number": 120,
+        "header": "Chapter 12. Tuples",
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "12.6 Dictionaries and tuples"
+            },
+            {
+                "type": "text",
+                "text": "Dictionaries have a method called items that returns a sequence of tuples, where each tuple is a key-value pair."
+            },
+            {
+                "type": "block",
+                "code": ">>> d = {'a':0, 'b':1, 'c':2}\n>>> t = d.items()\n>>> t\ndict_items([('c', 2), ('a', 0), ('b', 1)])",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The result is a dict_items object, which is an iterator that iterates the key-value pairs. You can use it in a for loop like this:"
+            },
+            {
+                "type": "block",
+                "code": ">>> for key, value in d.items():\n...     print(key, value)\n...\nc 2\na 0\nb 1",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "As you should expect from a dictionary, the items are in no particular order.\n\nGoing in the other direction, you can use a list of tuples to initialize a new dictionary:"
+            },
+            {
+                "type": "block",
+                "code": ">>> t = [('a', 0), ('c', 2), ('b', 1)]\n>>> d = dict(t)\n>>> d\n{'a': 0, 'c': 2, 'b': 1}",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Combining dict with zip yields a concise way to create a dictionary:"
+            },
+            {
+                "type": "block",
+                "code": ">>> d = dict(zip('abc', range(3)))\n>>> d\n{'a': 0, 'c': 2, 'b': 1}",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The dictionary method update also takes a list of tuples and adds them, as key-value pairs, to an existing dictionary.\n\nIt is common to use tuples as keys in dictionaries (primarily because you can't use lists). For example, a telephone directory might map from last-name, first-name pairs to telephone numbers. Assuming that we have defined last, first and number, we could write:"
+            },
+            {
+                "type": "block",
+                "code": "directory[last, first] = number",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The expression in brackets is a tuple. We could use tuple assignment to traverse this dictionary."
+            },
+            {
+                "type": "block",
+                "code": "for last, first in directory:\n    print(first, last, directory[last,first])",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This loop traverses the keys in directory, which are tuples. It assigns the elements of each tuple to last and first, then prints the name and corresponding telephone number.\n\nThere are two ways to represent tuples in a state diagram. The more detailed version shows the indices and elements just as they appear in a list. For example, the tuple ('Cleese', 'John') would appear as in Figure 12.1.\n\nBut in a larger diagram you might want to leave out the details. For example, a diagram of the telephone directory might appear as in Figure 12.2.\n\nHere the tuples are shown using Python syntax as a graphical shorthand. The telephone number in the diagram is the complaints line for the BBC, so please don't call it."
+            }
+        ]
+    },
+    "cost": 0.046145000000000005
+}

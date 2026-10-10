@@ -1,0 +1,91 @@
+{
+    "page": {
+        "page_number": 190,
+        "header": "Chapter 19. The Goodies",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "This is a lot of code to convey a small amount of information. Python provides a more concise way to say the same thing:"
+            },
+            {
+                "type": "block",
+                "code": "from collections import namedtuple\nPoint = namedtuple('Point', ['x', 'y'])",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The first argument is the name of the class you want to create. The second is a list of the attributes Point objects should have, as strings. The return value from namedtuple is a class object:"
+            },
+            {
+                "type": "block",
+                "code": ">>> Point\n<class '__main__.Point'>",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Point automatically provides methods like __init__ and __str__ so you don't have to write them.\n\nTo create a Point object, you use the Point class as a function:"
+            },
+            {
+                "type": "block",
+                "code": ">>> p = Point(1, 2)\n>>> p\nPoint(x=1, y=2)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The init method assigns the arguments to attributes using the names you provided. The str method prints a representation of the Point object and its attributes.\n\nYou can access the elements of the named tuple by name:"
+            },
+            {
+                "type": "block",
+                "code": ">>> p.x, p.y\n(1, 2)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "But you can also treat a named tuple as a tuple:"
+            },
+            {
+                "type": "block",
+                "code": ">>> p[0], p[1]\n(1, 2)\n\n>>> x, y = p\n>>> x, y\n(1, 2)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Named tuples provide a quick way to define simple classes. The drawback is that simple classes don't always stay simple. You might decide later that you want to add methods to a named tuple. In that case, you could define a new class that inherits from the named tuple:"
+            },
+            {
+                "type": "block",
+                "code": "class Pointier(Point):\n    # add more methods here",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Or you could switch to a conventional class definition."
+            },
+            {
+                "type": "section_heading",
+                "title": "19.9 Gathering keyword args"
+            },
+            {
+                "type": "text",
+                "text": "In Section 12.4, we saw how to write a function that gathers its arguments into a tuple:"
+            },
+            {
+                "type": "block",
+                "code": "def printall(*args):\n    print(args)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "You can call this function with any number of positional arguments (that is, arguments that don't have keywords):"
+            }
+        ]
+    },
+    "cost": 0.041940000000000005
+}

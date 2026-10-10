@@ -1,0 +1,53 @@
+{
+    "page": {
+        "page_number": 130,
+        "header": "Chapter 13. Case study: data structure selection",
+        "blocks": [
+            {
+                "type": "block",
+                "code": "Words in the book that aren't in the word list:\nrencontre jane's blanche woodhouses disingenuousness\nfriend's venice apartment ...",
+                "language": "text",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Some of these words are names and possessives. Others, like “rencontre”, are no longer in common use. But a few are common words that should really be in the list!"
+            },
+            {
+                "type": "text",
+                "text": "Exercise 13.6. Python provides a data structure called set that provides many common set operations. You can read about them in Section 19.5, or read the documentation at http://docs.python.org/3/library/stdtypes.html#types-set.\n\nWrite a program that uses set subtraction to find words in the book that are not in the word list. Solution: https://thinkpython.com/code/analyze_book2.py."
+            },
+            {
+                "type": "section_heading",
+                "title": "13.7 Random words"
+            },
+            {
+                "type": "text",
+                "text": "To choose a random word from the histogram, the simplest algorithm is to build a list with multiple copies of each word, according to the observed frequency, and then choose from the list:"
+            },
+            {
+                "type": "block",
+                "code": "def random_word(h):\n    t = []\n    for word, freq in h.items():\n        t.extend([word] * freq)\n\n    return random.choice(t)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The expression [word] * freq creates a list with freq copies of the string word. The extend method is similar to append except that the argument is a sequence.\n\nThis algorithm works, but it is not very efficient; each time you choose a random word, it rebuilds the list, which is as big as the original book. An obvious improvement is to build the list once and then make multiple selections, but the list is still big.\n\nAn alternative is:\n\n1. Use keys to get a list of the words in the book.\n\n2. Build a list that contains the cumulative sum of the word frequencies (see Exercise 10.2). The last item in this list is the total number of words in the book, n.\n\n3. Choose a random number from 1 to n. Use a bisection search (See Exercise 10.10) to find the index where the random number would be inserted in the cumulative sum.\n\n4. Use the index to find the corresponding word in the word list."
+            },
+            {
+                "type": "text",
+                "text": "Exercise 13.7. Write a program that uses this algorithm to choose a random word from the book. Solution: https://thinkpython.com/code/analyze_book3.py."
+            },
+            {
+                "type": "section_heading",
+                "title": "13.8 Markov analysis"
+            },
+            {
+                "type": "text",
+                "text": "If you choose words from the book at random, you can get a sense of the vocabulary, but you probably won’t get a sentence:"
+            }
+        ]
+    },
+    "cost": 0.04272
+}

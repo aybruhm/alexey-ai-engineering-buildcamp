@@ -1,0 +1,25 @@
+{
+    "page": {
+        "page_number": 160,
+        "header": "Chapter 16. Classes and functions",
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "16.6 Glossary"
+            },
+            {
+                "type": "text",
+                "text": "prototype and patch: A development plan that involves writing a rough draft of a program, testing, and correcting errors as they are found.\n\ndesigned development: A development plan that involves high-level insight into the problem and more planning than incremental development or prototype development.\n\npure function: A function that does not modify any of the objects it receives as arguments. Most pure functions are fruitful.\n\nmodifier: A function that changes one or more of the objects it receives as arguments. Most modifiers are void; that is, they return None.\n\nfunctional programming style: A style of program design in which the majority of functions are pure.\n\ninvariant: A condition that should always be true during the execution of a program.\n\nassert statement: A statement that checks a condition and raises an exception if it fails."
+            },
+            {
+                "type": "section_heading",
+                "title": "16.7 Exercises"
+            },
+            {
+                "type": "text",
+                "text": "Code examples from this chapter are available from https://thinkpython.com/code/Time1.py; solutions to the exercises are available from https://thinkpython.com/code/Time1_soln.py.\n\nExercise 16.1. Write a function called mul_time that takes a Time object and a number and returns a new Time object that contains the product of the original Time and the number.\n\nThen use mul_time to write a function that takes a Time object that represents the finishing time in a race, and a number that represents the distance, and returns a Time object that represents the average pace (time per mile).\n\nExercise 16.2. The datetime module provides time objects that are similar to the Time objects in this chapter, but they provide a rich set of methods and operators. Read the documentation at http://docs.python.org/3/library/datetime.html.\n\n1. Use the datetime module to write a program that gets the current date and prints the day of the week.\n\n2. Write a program that takes a birthday as input and prints the user's age and the number of days, hours, minutes and seconds until their next birthday.\n\n3. For two people born on different days, there is a day when one is twice as old as the other. That's their Double Day. Write a program that takes two birth dates and computes their Double Day.\n\n4. For a little more challenge, write the more general version that computes the day when one person is n times older than the other.\n\nSolution: https://thinkpython.com/code/double.py"
+            }
+        ]
+    },
+    "cost": 0.040345
+}

@@ -1,0 +1,71 @@
+{
+    "page": {
+        "page_number": 64,
+        "header": "Chapter 7. Iteration",
+        "blocks": [
+            {
+                "type": "figure",
+                "caption": "Figure 7.1: State diagram.",
+                "description": "State diagram showing variable x reassigned: an old arrow (dotted) to the value 5, which is crossed out, and a new solid arrow pointing to the value 7, illustrating that reassignment makes a variable refer to a new value.",
+                "figure_number": 1
+            },
+            {
+                "type": "block",
+                "code": ">>> a = 5\n>>> b = a    # a and b are now equal\n>>> a = 3    # a and b are no longer equal\n>>> b\n5",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The third line changes the value of a but does not change the value of b, so they are no longer equal.\n\nReassigning variables is often useful, but you should use it with caution. If the values of variables change frequently, it can make the code difficult to read and debug."
+            },
+            {
+                "type": "section_heading",
+                "title": "7.2 Updating variables"
+            },
+            {
+                "type": "text",
+                "text": "A common kind of reassignment is an update, where the new value of the variable depends on the old."
+            },
+            {
+                "type": "block",
+                "code": ">>> x = x + 1",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This means “get the current value of x, add one, and then update x with the new value.”\n\nIf you try to update a variable that doesn’t exist, you get an error, because Python evaluates the right side before it assigns a value to x:"
+            },
+            {
+                "type": "block",
+                "code": ">>> x = x + 1\nNameError: name 'x' is not defined",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Before you can update a variable, you have to initialize it, usually with a simple assignment:"
+            },
+            {
+                "type": "block",
+                "code": ">>> x = 0\n>>> x = x + 1",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Updating a variable by adding 1 is called an increment; subtracting 1 is called a decrement."
+            },
+            {
+                "type": "section_heading",
+                "title": "7.3 The while statement"
+            },
+            {
+                "type": "text",
+                "text": "Computers are often used to automate repetitive tasks. Repeating identical or similar tasks without making errors is something that computers do well and people do poorly. In a computer program, repetition is also called iteration.\n\nWe have already seen two functions, countdown and print_n, that iterate using recursion. Because iteration is so common, Python provides language features to make it easier. One is the for statement we saw in Section 4.2. We’ll get back to that later.\n\nAnother is the while statement. Here is a version of countdown that uses a while statement:"
+            }
+        ]
+    },
+    "cost": 0.04102
+}

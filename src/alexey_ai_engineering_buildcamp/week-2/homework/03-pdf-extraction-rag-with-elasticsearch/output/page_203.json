@@ -1,0 +1,35 @@
+{
+    "page": {
+        "page_number": 181,
+        "header": "18.12. Exercises",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "class diagram: A diagram that shows the classes in a program and the relationships between them.\n\nmultiplicity: A notation in a class diagram that shows, for a HAS-A relationship, how many references there are to instances of another class.\n\ndata encapsulation: A program development plan that involves a prototype using global variables and a final version that makes the global variables into instance attributes."
+            },
+            {
+                "type": "section_heading",
+                "title": "18.12 Exercises"
+            },
+            {
+                "type": "text",
+                "text": "Exercise 18.1. For the following program, draw a UML class diagram that shows these classes and the relationships among them."
+            },
+            {
+                "type": "block",
+                "code": "class PingPongParent:\n    pass\n\nclass Ping(PingPongParent):\n    def __init__(self, pong):\n        self.pong = pong\n\n\nclass Pong(PingPongParent):\n    def __init__(self, pings=None):\n        if pings is None:\n            self.pings = []\n        else:\n            self.pings = pings\n\n    def add_ping(self, ping):\n        self.pings.append(ping)\n\npong = Pong()\nping = Ping(pong)\npong.add_ping(ping)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Exercise 18.2. Write a Deck method called deal_hands that takes two parameters, the number of hands and the number of cards per hand. It should create the appropriate number of Hand objects, deal the appropriate number of cards per hand, and return a list of Hands.\n\nExercise 18.3. The following are the possible hands in poker, in increasing order of value and decreasing order of probability:"
+            },
+            {
+                "type": "text",
+                "text": "pair: two cards with the same rank\n\ntwo pair: two pairs of cards with the same rank\n\nthree of a kind: three cards with the same rank\n\nstraight: five cards with ranks in sequence (aces can be high or low, so Ace-2-3-4-5 is a straight and so is 10-Jack-Queen-King-Ace, but Queen-King-Ace-2-3 is not.)\n\nflush: five cards with the same suit\n\nfull house: three cards with one rank, two cards with another"
+            }
+        ]
+    },
+    "cost": 0.040139999999999995
+}

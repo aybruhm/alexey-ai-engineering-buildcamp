@@ -1,0 +1,67 @@
+{
+    "page": {
+        "page_number": 153,
+        "header": "15.8. Glossary",
+        "blocks": [
+            {
+                "type": "block",
+                "code": ">>> p = Point()\n>>> p.x = 3\n>>> p.y = 4\n>>> p.z\nAttributeError: Point instance has no attribute 'z'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "If you are not sure what type an object is, you can ask:"
+            },
+            {
+                "type": "block",
+                "code": ">>> type(p)\n<class '__main__.Point'>",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "You can also use isinstance to check whether an object is an instance of a class:"
+            },
+            {
+                "type": "block",
+                "code": ">>> isinstance(p, Point)\nTrue",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "If you are not sure whether an object has a particular attribute, you can use the built-in function hasattr:"
+            },
+            {
+                "type": "block",
+                "code": ">>> hasattr(p, 'x')\nTrue\n>>> hasattr(p, 'z')\nFalse",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The first argument can be any object; the second argument is a string that contains the name of the attribute.\n\nYou can also use a try statement to see if the object has the attributes you need:"
+            },
+            {
+                "type": "block",
+                "code": "try:\n    x = p.x\nexcept AttributeError:\n    x = 0",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This approach can make it easier to write functions that work with different types; more on that topic is coming up in Section 17.9."
+            },
+            {
+                "type": "section_heading",
+                "title": "15.8 Glossary"
+            },
+            {
+                "type": "text",
+                "text": "class: A programmer-defined type. A class definition creates a new class object.\n\nclass object: An object that contains information about a programmer-defined type. The class object can be used to create instances of the type.\n\ninstance: An object that belongs to a class.\n\ninstantiate: To create a new object.\n\nattribute: One of the named values associated with an object.\n\nembedded object: An object that is stored as an attribute of another object.\n\nshallow copy: To copy the contents of an object, including any references to embedded objects; implemented by the copy function in the copy module.\n\ndeep copy: To copy the contents of an object as well as any embedded objects, and any objects embedded in them, and so on; implemented by the deepcopy function in the copy module.\n\nobject diagram: A diagram that shows objects, their attributes, and the values of the attributes."
+            }
+        ]
+    },
+    "cost": 0.041389999999999996
+}

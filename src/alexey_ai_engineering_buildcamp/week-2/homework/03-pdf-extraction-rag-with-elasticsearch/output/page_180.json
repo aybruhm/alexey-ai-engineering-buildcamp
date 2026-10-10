@@ -1,0 +1,47 @@
+{
+    "page": {
+        "page_number": 158,
+        "header": "Chapter 16. Classes and functions",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "In general, I recommend that you write pure functions whenever it is reasonable and resort to modifiers only if there is a compelling advantage. This approach might be called a **functional programming style**.\n\nAs an exercise, write a “pure” version of >>>increment>>> that creates and returns a new Time object rather than modifying the parameter."
+            },
+            {
+                "type": "section_heading",
+                "title": "16.4 Prototyping versus planning"
+            },
+            {
+                "type": "text",
+                "text": "The development plan I am demonstrating is called “prototype and patch”. For each function, I wrote a prototype that performed the basic calculation and then tested it, patching errors along the way.\n\nThis approach can be effective, especially if you don’t yet have a deep understanding of the problem. But incremental corrections can generate code that is unnecessarily complicated—since it deals with many special cases—and unreliable—since it is hard to know if you have found all the errors.\n\nAn alternative is **designed development**, in which high-level insight into the problem can make the programming much easier. In this case, the insight is that a Time object is really a three-digit number in base 60 (see http://en.wikipedia.org/wiki/Sexagesimal). The >>>second>>> attribute is the “ones column”, the >>>minute>>> attribute is the “sixties column”, and the >>>hour>>> attribute is the “thirty-six hundreds column”.\n\nWhen we wrote >>>add_time>>> and >>>increment>>>, we were effectively doing addition in base 60, which is why we had to carry from one column to the next.\n\nThis observation suggests another approach to the whole problem—we can convert Time objects to integers and take advantage of the fact that the computer knows how to do integer arithmetic.\n\nHere is a function that converts Times to integers:"
+            },
+            {
+                "type": "block",
+                "code": "def time_to_int(time):\n    minutes = time.hour * 60 + time.minute\n    seconds = minutes * 60 + time.second\n    return seconds",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "And here is a function that converts an integer to a Time (recall that >>>divmod>>> divides the first argument by the second and returns the quotient and remainder as a tuple)."
+            },
+            {
+                "type": "block",
+                "code": "def int_to_time(seconds):\n    time = Time()\n    minutes, time.second = divmod(seconds, 60)\n    time.hour, time.minute = divmod(minutes, 60)\n    return time",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "You might have to think a bit, and run some tests, to convince yourself that these functions are correct. One way to test them is to check that >>>time_to_int(int_to_time(x)) == x>>> for many values of >>>x>>>. This is an example of a consistency check.\n\nOnce you are convinced they are correct, you can use them to rewrite >>>add_time>>>:"
+            },
+            {
+                "type": "block",
+                "code": "def add_time(t1, t2):\n    seconds = time_to_int(t1) + time_to_int(t2)\n    return int_to_time(seconds)",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.046545
+}

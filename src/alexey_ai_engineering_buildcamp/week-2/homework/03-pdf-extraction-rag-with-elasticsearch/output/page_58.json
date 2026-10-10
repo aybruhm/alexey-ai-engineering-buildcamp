@@ -1,0 +1,29 @@
+{
+    "page": {
+        "page_number": 36,
+        "header": "Chapter 4. Case study: interface design",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "It is terse, but it contains the essential information someone would need to use this function. It explains concisely what the function does (without getting into the details of how it does it). It explains what effect each parameter has on the behavior of the function and what type each parameter should be (if it is not obvious).\n\nWriting this kind of documentation is an important part of interface design. A well-designed interface should be simple to explain; if you have a hard time explaining one of your functions, maybe the interface could be improved."
+            },
+            {
+                "type": "section_heading",
+                "title": "4.10 Debugging"
+            },
+            {
+                "type": "text",
+                "text": "An interface is like a contract between a function and a caller. The caller agrees to provide certain parameters and the function agrees to do certain work.\n\nFor example, polyline requires four arguments: t has to be a Turtle; n has to be an integer; length should be a positive number; and angle has to be a number, which is understood to be in degrees.\n\nThese requirements are called preconditions because they are supposed to be true before the function starts executing. Conversely, conditions at the end of the function are postconditions. Postconditions include the intended effect of the function (like drawing line segments) and any side effects (like moving the Turtle or making other changes).\n\nPreconditions are the responsibility of the caller. If the caller violates a (properly documented!) precondition and the function doesn't work correctly, the bug is in the caller, not the function.\n\nIf the preconditions are satisfied and the postconditions are not, the bug is in the function. If your pre- and postconditions are clear, they can help with debugging."
+            },
+            {
+                "type": "section_heading",
+                "title": "4.11 Glossary"
+            },
+            {
+                "type": "text",
+                "text": "method: A function that is associated with an object and called using dot notation.\n\nloop: A part of a program that can run repeatedly.\n\nencapsulation: The process of transforming a sequence of statements into a function definition.\n\ngeneralization: The process of replacing something unnecessarily specific (like a number) with something appropriately general (like a variable or parameter).\n\nkeyword argument: An argument that includes the name of the parameter as a \"keyword\".\n\ninterface: A description of how to use a function, including the name and descriptions of the arguments and return value.\n\nrefactoring: The process of modifying a working program to improve function interfaces and other qualities of the code.\n\ndevelopment plan: A process for writing programs."
+            }
+        ]
+    },
+    "cost": 0.04067
+}

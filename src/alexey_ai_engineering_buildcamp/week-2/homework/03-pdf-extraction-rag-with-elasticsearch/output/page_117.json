@@ -1,0 +1,67 @@
+{
+    "page": {
+        "page_number": 95,
+        "header": "10.10. Objects and values",
+        "blocks": [
+            {
+                "type": "figure",
+                "caption": "Figure 10.2: State diagram.",
+                "description": "Two possible state diagrams for a = 'banana' and b = 'banana'. In the left diagram, a and b each point to a separate string object with the value 'banana' (two different objects with the same value). In the right diagram, both a and b point to the same single 'banana' string object (aliasing).",
+                "figure_number": 2
+            },
+            {
+                "type": "text",
+                "text": "Because list is the name of a built-in function, you should avoid using it as a variable name. I also avoid l because it looks too much like 1. So that's why I use t.\n\nThe list function breaks a string into individual letters. If you want to break a string into words, you can use the split method:"
+            },
+            {
+                "type": "block",
+                "code": ">>> s = 'pining for the fjords'\n>>> t = s.split()\n>>> t\n['pining', 'for', 'the', 'fjords']",
+                "language": "python",
+                "description": "Splitting a string into a list of words using whitespace."
+            },
+            {
+                "type": "text",
+                "text": "An optional argument called a delimiter specifies which characters to use as word boundaries. The following example uses a hyphen as a delimiter:"
+            },
+            {
+                "type": "block",
+                "code": ">>> s = 'spam-spam-spam'\n>>> delimiter = '-'\n>>> t = s.split(delimiter)\n>>> t\n['spam', 'spam', 'spam']",
+                "language": "python",
+                "description": "Splitting a string using a hyphen as the delimiter."
+            },
+            {
+                "type": "text",
+                "text": "join is the inverse of split. It takes a list of strings and concatenates the elements. join is a string method, so you have to invoke it on the delimiter and pass the list as a parameter:"
+            },
+            {
+                "type": "block",
+                "code": ">>> t = ['pining', 'for', 'the', 'fjords']\n>>> delimiter = ' '\n>>> s = delimiter.join(t)\n>>> s\n'pining for the fjords'",
+                "language": "python",
+                "description": "Joining a list of strings with a space delimiter."
+            },
+            {
+                "type": "text",
+                "text": "In this case the delimiter is a space character, so join puts a space between words. To concatenate strings without spaces, you can use the empty string, '', as a delimiter."
+            },
+            {
+                "type": "section_heading",
+                "title": "10.10 Objects and values"
+            },
+            {
+                "type": "text",
+                "text": "If we run these assignment statements:"
+            },
+            {
+                "type": "block",
+                "code": "a = 'banana'\nb = 'banana'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "We know that a and b both refer to a string, but we don't know whether they refer to the same string. There are two possible states, shown in Figure 10.2.\n\nIn one case, a and b refer to two different objects that have the same value. In the second case, they refer to the same object.\n\nTo check whether two variables refer to the same object, you can use the is operator."
+            }
+        ]
+    },
+    "cost": 0.04489
+}

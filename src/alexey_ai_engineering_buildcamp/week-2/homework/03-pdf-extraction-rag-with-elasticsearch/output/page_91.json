@@ -1,0 +1,41 @@
+{
+    "page": {
+        "page_number": 69,
+        "header": "7.9. Exercises",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "update: An assignment where the new value of the variable depends on the old.\n\ninitialization: An assignment that gives an initial value to a variable that will be updated.\n\nincrement: An update that increases the value of a variable (often by one).\n\ndecrement: An update that decreases the value of a variable.\n\niteration: Repeated execution of a set of statements using either a recursive function call or a loop.\n\ninfinite loop: A loop in which the terminating condition is never satisfied.\n\nalgorithm: A general process for solving a category of problems."
+            },
+            {
+                "type": "section_heading",
+                "title": "7.9 Exercises"
+            },
+            {
+                "type": "text",
+                "text": "Exercise 7.1. Copy the loop from Section 7.5 and encapsulate it in a function called mysqrt that takes a as a parameter, chooses a reasonable value of x, and returns an estimate of the square root of a.\n\nTo test it, write a function named test_square_root that prints a table like this:"
+            },
+            {
+                "type": "block",
+                "code": "a   mysqrt(a)     math.sqrt(a)  diff\n-   ---------     ------------  ----\n1.0 1.0           1.0           0.0\n2.0 1.41421356237 1.41421356237 2.22044604925e-16\n3.0 1.73205080757 1.73205080757 0.0\n4.0 2.0           2.0           0.0\n5.0 2.2360679775  2.2360679775  0.0\n6.0 2.44948974278 2.44948974278 0.0\n7.0 2.64575131106 2.64575131106 0.0\n8.0 2.82842712475 2.82842712475 4.4408920985e-16\n9.0 3.0           3.0           0.0",
+                "language": "text",
+                "description": "Sample output table comparing mysqrt with math.sqrt and their absolute difference."
+            },
+            {
+                "type": "text",
+                "text": "The first column is a number, a; the second column is the square root of a computed with mysqrt; the third column is the square root computed by math.sqrt; the fourth column is the absolute value of the difference between the two estimates.\n\nExercise 7.2. The built-in function eval takes a string and evaluates it using the Python interpreter. For example:"
+            },
+            {
+                "type": "block",
+                "code": ">>> eval('1 + 2 * 3')\n7\n>>> import math\n>>> eval('math.sqrt(5)')\n2.2360679774997898\n>>> eval('type(math.pi)')\n<class 'float'>",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Write a function called eval_loop that iteratively prompts the user, takes the resulting input and evaluates it using eval, and prints the result.\n\nIt should continue until the user enters 'done', and then return the value of the last expression it evaluated."
+            }
+        ]
+    },
+    "cost": 0.044965000000000005
+}

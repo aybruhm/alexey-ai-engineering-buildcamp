@@ -1,0 +1,73 @@
+{
+    "page": {
+        "page_number": 18,
+        "header": "Chapter 3. Functions",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "Finally, str converts its argument to a string:"
+            },
+            {
+                "type": "block",
+                "code": ">>> str(32)\n'32'\n>>> str(3.14159)\n'3.14159'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "section_heading",
+                "title": "3.2 Math functions"
+            },
+            {
+                "type": "text",
+                "text": "Python has a math module that provides most of the familiar mathematical functions. A module is a file that contains a collection of related functions.\n\nBefore we can use the functions in a module, we have to import it with an import statement:"
+            },
+            {
+                "type": "block",
+                "code": ">>> import math",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This statement creates a module object named math. If you display the module object, you get some information about it:"
+            },
+            {
+                "type": "block",
+                "code": ">>> math\n<module 'math' (built-in)>",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The module object contains the functions and variables defined in the module. To access one of the functions, you have to specify the name of the module and the name of the function, separated by a dot (also known as a period). This format is called dot notation."
+            },
+            {
+                "type": "block",
+                "code": ">>> ratio = signal_power / noise_power\n>>> decibels = 10 * math.log10(ratio)\n\n>>> radians = 0.7\n>>> height = math.sin(radians)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The first example uses math.log10 to compute a signal-to-noise ratio in decibels (assuming that signal_power and noise_power are defined). The math module also provides log, which computes logarithms base e.\n\nThe second example finds the sine of radians. The variable name radians is a hint that sin and the other trigonometric functions (cos, tan, etc.) take arguments in radians. To convert from degrees to radians, divide by 180 and multiply by π:"
+            },
+            {
+                "type": "block",
+                "code": ">>> degrees = 45\n>>> radians = degrees / 180.0 * math.pi\n>>> math.sin(radians)\n0.707106781187",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The expression math.pi gets the variable pi from the math module. Its value is a floating-point approximation of π, accurate to about 15 digits.\n\nIf you know trigonometry, you can check the previous result by comparing it to the square root of two, divided by two:"
+            },
+            {
+                "type": "block",
+                "code": ">>> math.sqrt(2) / 2.0\n0.707106781187",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.04184
+}

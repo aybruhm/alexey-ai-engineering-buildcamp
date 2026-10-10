@@ -1,0 +1,51 @@
+{
+    "page": {
+        "page_number": 100,
+        "header": "Chapter 10. Lists",
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "10.14 Glossary"
+            },
+            {
+                "type": "text",
+                "text": "list: A sequence of values.\n\nelement: One of the values in a list (or other sequence), also called items.\n\nnested list: A list that is an element of another list.\n\naccumulator: A variable used in a loop to add up or accumulate a result.\n\naugmented assignment: A statement that updates the value of a variable using an operator like +=.\n\nreduce: A processing pattern that traverses a sequence and accumulates the elements into a single result.\n\nmap: A processing pattern that traverses a sequence and performs an operation on each element.\n\nfilter: A processing pattern that traverses a list and selects the elements that satisfy some criterion.\n\nobject: Something a variable can refer to. An object has a type and a value.\n\nequivalent: Having the same value.\n\nidentical: Being the same object (which implies equivalence).\n\nreference: The association between a variable and its value.\n\naliasing: A circumstance where two or more variables refer to the same object.\n\ndelimiter: A character or string used to indicate where a string should be split."
+            },
+            {
+                "type": "section_heading",
+                "title": "10.15 Exercises"
+            },
+            {
+                "type": "text",
+                "text": "You can download solutions to these exercises from https://thinkpython.com/code/list_exercises.py.\n\nExercise 10.1. Write a function called nested_sum that takes a list of lists of integers and adds up the elements from all of the nested lists. For example:"
+            },
+            {
+                "type": "block",
+                "code": ">>> t = [[1, 2], [3], [4, 5, 6]]\n>>> nested_sum(t)\n21",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Exercise 10.2. Write a function called cumsum that takes a list of numbers and returns the cumulative sum; that is, a new list where the ith element is the sum of the first i + 1 elements from the original list. For example:"
+            },
+            {
+                "type": "block",
+                "code": ">>> t = [1, 2, 3]\n>>> cumsum(t)\n[1, 3, 6]",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Exercise 10.3. Write a function called middle that takes a list and returns a new list that contains all but the first and last elements. For example:"
+            },
+            {
+                "type": "block",
+                "code": ">>> t = [1, 2, 3, 4]\n>>> middle(t)\n[2, 3]",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.040895
+}

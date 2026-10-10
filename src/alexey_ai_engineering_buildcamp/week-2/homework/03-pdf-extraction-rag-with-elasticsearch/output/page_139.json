@@ -1,0 +1,77 @@
+{
+    "page": {
+        "page_number": 117,
+        "header": "12.3. Tuples as return values",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "The left side is a tuple of variables; the right side is a tuple of expressions. Each value is assigned to its respective variable. All the expressions on the right side are evaluated before any of the assignments.\n\nThe number of variables on the left and the number of values on the right have to be the same:"
+            },
+            {
+                "type": "block",
+                "code": ">>> a, b = 1, 2, 3\nValueError: too many values to unpack",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "More generally, the right side can be any kind of sequence (string, list or tuple). For example, to split an email address into a user name and a domain, you could write:"
+            },
+            {
+                "type": "block",
+                "code": ">>> addr = 'monty@python.org'\n>>> uname, domain = addr.split('@')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The return value from split is a list with two elements; the first element is assigned to uname, the second to domain."
+            },
+            {
+                "type": "block",
+                "code": ">>> uname\n'monty'\n>>> domain\n'python.org'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "section_heading",
+                "title": "12.3 Tuples as return values"
+            },
+            {
+                "type": "text",
+                "text": "Strictly speaking, a function can only return one value, but if the value is a tuple, the effect is the same as returning multiple values. For example, if you want to divide two integers and compute the quotient and remainder, it is inefficient to compute x//y and then x%y. It is better to compute them both at the same time.\n\nThe built-in function divmod takes two arguments and returns a tuple of two values, the quotient and remainder. You can store the result as a tuple:"
+            },
+            {
+                "type": "block",
+                "code": ">>> t = divmod(7, 3)\n>>> t\n(2, 1)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Or use tuple assignment to store the elements separately:"
+            },
+            {
+                "type": "block",
+                "code": ">>> quot, rem = divmod(7, 3)\n>>> quot\n2\n>>> rem\n1",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Here is an example of a function that returns a tuple:"
+            },
+            {
+                "type": "block",
+                "code": "def min_max(t):\n    return min(t), max(t)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "max and min are built-in functions that find the largest and smallest elements of a sequence. min_max computes both and returns a tuple of two values."
+            }
+        ]
+    },
+    "cost": 0.041045
+}

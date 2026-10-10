@@ -1,0 +1,17 @@
+{
+    "page": {
+        "page_number": 221,
+        "header": "Index",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "suffix, 131\nsuit, 171\nsum, 185\nsum function, 118\nsuperstitious debugging, 200\nswap pattern, 116\nsyntax, 5, 7, 13, 162, 194\nsyntax error, 13, 14, 193\nSyntaxError, 19\n\ntemporary variable, 51, 60, 199\ntest case, minimal, 198\ntesting\n  and absence of bugs, 87\n  incremental development, 52\n  is hard, 87\n  knowing the answer, 53\n  leap of faith, 57\n  minimal test case, 198\ntext\n  plain, 83, 125\n  random, 131\ntext file, 145\nTime class, 155\ntime module, 101\ntoken, 5, 7\ntraceback, 24, 26, 44, 46, 107, 196\ntranslate method, 125\ntraversal, 72, 75, 77, 79, 85, 93, 100, 105, 106, 119, 127\n  dictionary, 168\n  list, 91\ntraverse\n  dictionary, 120\ntriangle, 48\ntrigonometric function, 18\ntriple-quoted string, 35\nTrue special value, 40\ntry statement, 140, 153\ntuple, 115, 117, 121, 122\n  as key in dictionary, 120, 132\n  assignment, 116\n  comparison, 116, 174\n  in brackets, 120\n  singleton, 115\n  slice, 116\ntuple assignment, 117, 119, 122\ntuple function, 115\ntuple methods, 204\nTuring complete language, 55"
+            },
+            {
+                "type": "text",
+                "text": "Turing Thesis, 55\nTuring, Alan, 55\nturtle module, 48\nturtle typewriter, 37\ntype, 4, 7\n  bool, 40\n  dict, 103\n  file, 137\n  float, 4\n  function, 20\n  int, 4\n  list, 89\n  NoneType, 24\n  programmer-defined, 147, 153, 155, 162, 165, 173\n  set, 130\n  str, 4\n  tuple, 115\ntype checking, 58\ntype conversion, 17\ntype function, 153\ntype-based dispatch, 166, 167, 169\nTypeError, 72, 74, 108, 116, 118, 139, 164, 197\ntypewriter, turtle, 37\ntypographical error, 134\n\nUnboundLocalError, 110\nunderscore character, 10\nuniqueness, 101\nUnix command\n  ls, 142\nupdate, 64, 67, 69\n  database, 141\n  global variable, 110\n  histogram, 127\n  item, 91\n  slice, 92\nupdate method, 120\nupdate operator, 93\nuse before def, 20\n\nvalue, 4, 7, 95, 96, 112\n  default, 129\n  tuple, 117\nValueError, 46, 117\nvalues method, 104\nvariable, 9, 14\n  global, 110\n  local, 22\n  temporary, 51, 60, 199"
+            }
+        ]
+    },
+    "cost": 0.048615000000000005
+}

@@ -1,0 +1,31 @@
+{
+    "page": {
+        "page_number": 59,
+        "header": "6.9. Debugging",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "If we get past both checks, we know that n is a non-negative integer, so we can prove that the recursion terminates.\n\nThis program demonstrates a pattern sometimes called a guardian. The first two conditionals act as guardians, protecting the code that follows from values that might cause an error. The guardians make it possible to prove the correctness of the code.\n\nIn Section 11.4 we will see a more flexible alternative to printing an error message: raising an exception."
+            },
+            {
+                "type": "section_heading",
+                "title": "6.9 Debugging"
+            },
+            {
+                "type": "text",
+                "text": "Breaking a large program into smaller functions creates natural checkpoints for debugging. If a function is not working, there are three possibilities to consider:\n\n• There is something wrong with the arguments the function is getting; a precondition is violated.\n\n• There is something wrong with the function; a postcondition is violated.\n\n• There is something wrong with the return value or the way it is being used.\n\nTo rule out the first possibility, you can add a print statement at the beginning of the function and display the values of the parameters (and maybe their types). Or you can write code that checks the preconditions explicitly.\n\nIf the parameters look good, add a print statement before each return statement and display the return value. If possible, check the result by hand. Consider calling the function with values that make it easy to check the result (as in Section 6.2).\n\nIf the function seems to be working, look at the function call to make sure the return value is being used correctly (or used at all!).\n\nAdding print statements at the beginning and end of a function can help make the flow of execution more visible. For example, here is a version of factorial with print statements:"
+            },
+            {
+                "type": "block",
+                "code": "def factorial(n):\n    space = ' ' * (4 * n)\n    print(space, 'factorial', n)\n    if n == 0:\n        print(space, 'returning 1')\n        return 1\n    else:\n        recurse = factorial(n-1)\n        result = n * recurse\n        print(space, 'returning', result)\n        return result",
+                "language": "python",
+                "description": "A recursive factorial function instrumented with print statements, indented according to recursion depth, to show the flow of execution."
+            },
+            {
+                "type": "text",
+                "text": "space is a string of space characters that controls the indentation of the output. Here is the result of factorial(4) :"
+            }
+        ]
+    },
+    "cost": 0.040095000000000006
+}

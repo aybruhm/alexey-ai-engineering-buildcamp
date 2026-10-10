@@ -1,0 +1,75 @@
+{
+    "page": {
+        "page_number": 129,
+        "header": "13.5. Optional parameters",
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "13.5 Optional parameters"
+            },
+            {
+                "type": "text",
+                "text": "We have seen built-in functions and methods that take optional arguments. It is possible to write programmer-defined functions with optional arguments, too. For example, here is a function that prints the most common words in a histogram"
+            },
+            {
+                "type": "block",
+                "code": "def print_most_common(hist, num=10):\n    t = most_common(hist)\n    print('The most common words are:')\n    for freq, word in t[:num]:\n        print(word, freq, sep='\\t')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The first parameter is required; the second is optional. The default value of num is 10.\n\nIf you only provide one argument:"
+            },
+            {
+                "type": "block",
+                "code": "print_most_common(hist)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "num gets the default value. If you provide two arguments:"
+            },
+            {
+                "type": "block",
+                "code": "print_most_common(hist, 20)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "num gets the value of the argument instead. In other words, the optional argument overrides the default value.\n\nIf a function has both required and optional parameters, all the required parameters have to come first, followed by the optional ones."
+            },
+            {
+                "type": "section_heading",
+                "title": "13.6 Dictionary subtraction"
+            },
+            {
+                "type": "text",
+                "text": "Finding the words from the book that are not in the word list from words.txt is a problem you might recognize as set subtraction; that is, we want to find all the words from one set (the words in the book) that are not in the other (the words in the list).\n\nsubtract takes dictionaries d1 and d2 and returns a new dictionary that contains all the keys from d1 that are not in d2. Since we don't really care about the values, we set them all to None."
+            },
+            {
+                "type": "block",
+                "code": "def subtract(d1, d2):\n    res = dict()\n    for key in d1:\n        if key not in d2:\n            res[key] = None\n    return res",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "To find the words in the book that are not in words.txt, we can use process_file to build a histogram for words.txt, and then subtract:"
+            },
+            {
+                "type": "block",
+                "code": "words = process_file('words.txt')\ndiff = subtract(hist, words)\n\nprint(\"Words in the book that aren't in the word list:\")\nfor word in diff:\n    print(word, end=' ')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Here are some of the results from Emma:"
+            }
+        ]
+    },
+    "cost": 0.041095000000000007
+}

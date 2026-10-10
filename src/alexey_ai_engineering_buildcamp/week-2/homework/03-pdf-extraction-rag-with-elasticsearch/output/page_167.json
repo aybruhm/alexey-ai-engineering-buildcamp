@@ -1,0 +1,29 @@
+{
+    "page": {
+        "page_number": 145,
+        "header": "14.11. Glossary",
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "14.11 Glossary"
+            },
+            {
+                "type": "text",
+                "text": "persistent: Pertaining to a program that runs indefinitely and keeps at least some of its data in permanent storage.\n\nformat operator: An operator, %, that takes a format string and a tuple and generates a string that includes the elements of the tuple formatted as specified by the format string.\n\nformat string: A string, used with the format operator, that contains format sequences.\n\nformat sequence: A sequence of characters in a format string, like %d, that specifies how a value should be formatted.\n\ntext file: A sequence of characters stored in permanent storage like a hard drive.\n\ndirectory: A named collection of files, also called a folder.\n\npath: A string that identifies a file.\n\nrelative path: A path that starts from the current directory.\n\nabsolute path: A path that starts from the topmost directory in the file system.\n\ncatch: To prevent an exception from terminating a program using the try and except statements.\n\ndatabase: A file whose contents are organized like a dictionary with keys that correspond to values.\n\nbytes object: An object similar to a string.\n\nshell: A program that allows users to type commands and then executes them by starting other programs.\n\npipe object: An object that represents a running program, allowing a Python program to run commands and read the results."
+            },
+            {
+                "type": "section_heading",
+                "title": "14.12 Exercises"
+            },
+            {
+                "type": "text",
+                "text": "Exercise 14.1. Write a function called sed that takes as arguments a pattern string, a replacement string, and two filenames; it should read the first file and write the contents into the second file (creating it if necessary). If the pattern string appears anywhere in the file, it should be replaced with the replacement string.\n\nIf an error occurs while opening, reading, writing or closing files, your program should catch the exception, print an error message, and exit. Solution: https://thinkpython.com/code/sed.py."
+            },
+            {
+                "type": "text",
+                "text": "Exercise 14.2. If you download my solution to Exercise 12.2 from https://thinkpython.com/code/anagram_sets.py, you'll see that it creates a dictionary that maps from a sorted string of letters to the list of words that can be spelled with those letters. For example, 'opst' maps to the list ['opts', 'post', 'pots', 'spot', 'stop', 'tops'].\n\nWrite a module that imports anagram_sets and provides two new functions: store_anagrams should store the anagram dictionary in a \"shelf\"; read_anagrams should look up a word and return a list of its anagrams. Solution: https://thinkpython.com/code/anagram_db.py."
+            }
+        ]
+    },
+    "cost": 0.042870000000000005
+}

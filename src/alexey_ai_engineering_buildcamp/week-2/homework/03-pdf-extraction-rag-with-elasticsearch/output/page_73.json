@@ -1,0 +1,59 @@
+{
+    "page": {
+        "page_number": 51,
+        "header": null,
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "Chapter 6"
+            },
+            {
+                "type": "section_heading",
+                "title": "Fruitful functions"
+            },
+            {
+                "type": "text",
+                "text": "Many of the Python functions we have used, such as the math functions, produce return values. But the functions we've written are all void: they have an effect, like printing a value or moving a turtle, but they don't have a return value. In this chapter you will learn to write fruitful functions."
+            },
+            {
+                "type": "section_heading",
+                "title": "6.1 Return values"
+            },
+            {
+                "type": "text",
+                "text": "Calling the function generates a return value, which we usually assign to a variable or use as part of an expression."
+            },
+            {
+                "type": "block",
+                "code": "e = math.exp(1.0)\nheight = radius * math.sin(radians)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The functions we have written so far are void. Speaking casually, they have no return value; more precisely, their return value is >>>None.\n\nIn this chapter, we are (finally) going to write fruitful functions. The first example is >>>area, which returns the area of a circle with the given radius:"
+            },
+            {
+                "type": "block",
+                "code": "def area(radius):\n    a = math.pi * radius**2\n    return a",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "We have seen the >>>return statement before, but in a fruitful function the >>>return statement includes an expression. This statement means: \"Return immediately from this function and use the following expression as a return value.\" The expression can be arbitrarily complicated, so we could have written this function more concisely:"
+            },
+            {
+                "type": "block",
+                "code": "def area(radius):\n    return math.pi * radius**2",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "On the other hand, temporary variables like >>>a can make debugging easier.\n\nSometimes it is useful to have multiple return statements, one in each branch of a conditional:"
+            }
+        ]
+    },
+    "cost": 0.03777
+}

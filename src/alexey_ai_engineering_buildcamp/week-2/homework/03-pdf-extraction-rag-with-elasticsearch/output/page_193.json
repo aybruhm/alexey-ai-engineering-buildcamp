@@ -1,0 +1,56 @@
+{
+    "page": {
+        "page_number": 179,
+        "header": null,
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "Chapter 18 Inheritance"
+            },
+            {
+                "type": "text",
+                "text": "The language feature most often associated with object-oriented programming is inheritance. Inheritance is the ability to define a new class that is a modified version of an existing class. In this chapter I demonstrate inheritance using classes that represent playing cards, decks of cards, and poker hands.\n\nIf you don't play poker, you can read about it at http://en.wikipedia.org/wiki/Poker, but you don't have to; I'll tell you what you need to know for the exercises.\n\nCode examples from this chapter are available from https://thinkpython.com/code/Card.py."
+            },
+            {
+                "type": "section_heading",
+                "title": "18.1 Card objects"
+            },
+            {
+                "type": "text",
+                "text": "There are fifty-two cards in a deck, each of which belongs to one of four suits and one of thirteen ranks. The suits are Spades, Hearts, Diamonds, and Clubs (in descending order in bridge). The ranks are Ace, 2, 3, 4, 5, 6, 7, 8, 9, 10, Jack, Queen, and King. Depending on the game that you are playing, an Ace may be higher than King or lower than 2.\n\nIf we want to define a new object to represent a playing card, it is obvious what the attributes should be: rank and suit. It is not as obvious what type the attributes should be. One possibility is to use strings containing words like 'Spade' for suits and 'Queen' for ranks. One problem with this implementation is that it would not be easy to compare cards to see which had a higher rank or suit.\n\nAn alternative is to use integers to encode the ranks and suits. In this context, \"encode\" means that we are going to define a mapping between numbers and suits, or between numbers and ranks. This kind of encoding is not meant to be a secret (that would be \"encryption\").\n\nFor example, this table shows the suits and the corresponding integer codes:"
+            },
+            {
+                "type": "table",
+                "caption": null,
+                "columns": [
+                    "Suit",
+                    "",
+                    "Code"
+                ],
+                "rows": [
+                    [
+                        "Spades",
+                        "↦",
+                        "3"
+                    ],
+                    [
+                        "Hearts",
+                        "↦",
+                        "2"
+                    ],
+                    [
+                        "Diamonds",
+                        "↦",
+                        "1"
+                    ],
+                    [
+                        "Clubs",
+                        "↦",
+                        "0"
+                    ]
+                ]
+            }
+        ]
+    },
+    "cost": 0.039470000000000005
+}

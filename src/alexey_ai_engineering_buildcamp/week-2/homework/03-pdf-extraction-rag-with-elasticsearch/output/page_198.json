@@ -1,0 +1,57 @@
+{
+    "page": {
+        "page_number": 176,
+        "header": "Chapter 18. Inheritance",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "Don't forget to import random.\n\nAs an exercise, write a Deck method named sort that uses the list method sort to sort the cards in a Deck. sort uses the __lt__ method we defined to determine the order."
+            },
+            {
+                "type": "section_heading",
+                "title": "18.7 Inheritance"
+            },
+            {
+                "type": "text",
+                "text": "Inheritance is the ability to define a new class that is a modified version of an existing class. As an example, let's say we want a class to represent a \"hand\", that is, the cards held by one player. A hand is similar to a deck: both are made up of a collection of cards, and both require operations like adding and removing cards.\n\nA hand is also different from a deck; there are operations we want for hands that don't make sense for a deck. For example, in poker we might compare two hands to see which one wins. In bridge, we might compute a score for a hand in order to make a bid.\n\nThis relationship between classes—similar, but different—lends itself to inheritance. To define a new class that inherits from an existing class, you put the name of the existing class in parentheses:"
+            },
+            {
+                "type": "block",
+                "code": "class Hand(Deck):\n    \"\"\"Represents a hand of playing cards.\"\"\"",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This definition indicates that Hand inherits from Deck; that means we can use methods like pop_card and add_card for Hands as well as Decks.\n\nWhen a new class inherits from an existing one, the existing one is called the parent and the new class is called the child.\n\nIn this example, Hand inherits __init__ from Deck, but it doesn't really do what we want: instead of populating the hand with 52 new cards, the init method for Hands should initialize cards with an empty list.\n\nIf we provide an init method in the Hand class, it overrides the one in the Deck class:"
+            },
+            {
+                "type": "block",
+                "code": "# inside class Hand:\n\n    def __init__(self, label=''):\n        self.cards = []\n        self.label = label",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "When you create a Hand, Python invokes this init method, not the one in Deck."
+            },
+            {
+                "type": "block",
+                "code": ">>> hand = Hand('new hand')\n>>> hand.cards\n[]\n>>> hand.label\n'new hand'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The other methods are inherited from Deck, so we can use pop_card and add_card to deal a card:"
+            },
+            {
+                "type": "block",
+                "code": ">>> deck = Deck()\n>>> card = deck.pop_card()\n>>> hand.add_card(card)\n>>> print(hand)\nKing of Spades",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.04389
+}

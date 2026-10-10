@@ -1,0 +1,25 @@
+{
+    "page": {
+        "page_number": 14,
+        "header": "Chapter 2. Variables, expressions and statements",
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "2.9 Glossary"
+            },
+            {
+                "type": "text",
+                "text": "variable: A name that refers to a value.\n\nassignment: A statement that assigns a value to a variable.\n\nstate diagram: A graphical representation of a set of variables and the values they refer to.\n\nkeyword: A reserved word that is used to parse a program; you cannot use keywords like if, def, and while as variable names.\n\noperand: One of the values on which an operator operates.\n\nexpression: A combination of variables, operators, and values that represents a single result.\n\nevaluate: To simplify an expression by performing the operations in order to yield a single value.\n\nstatement: A section of code that represents a command or action. So far, the statements we have seen are assignments and print statements.\n\nexecute: To run a statement and do what it says.\n\ninteractive mode: A way of using the Python interpreter by typing code at the prompt.\n\nscript mode: A way of using the Python interpreter to read code from a script and run it.\n\nscript: A program stored in a file.\n\norder of operations: Rules governing the order in which expressions involving multiple operators and operands are evaluated.\n\nconcatenate: To join two operands end-to-end.\n\ncomment: Information in a program that is meant for other programmers (or anyone reading the source code) and has no effect on the execution of the program.\n\nsyntax error: An error in a program that makes it impossible to parse (and therefore impossible to interpret).\n\nexception: An error that is detected while the program is running.\n\nsemantics: The meaning of a program.\n\nsemantic error: An error in a program that makes it do something other than what the programmer intended."
+            },
+            {
+                "type": "section_heading",
+                "title": "2.10 Exercises"
+            },
+            {
+                "type": "text",
+                "text": "Exercise 2.1. Repeating my advice from the previous chapter, whenever you learn a new feature, you should try it out in interactive mode and make errors on purpose to see what goes wrong.\n\n• We've seen that n = 42 is legal. What about 42 = n?"
+            }
+        ]
+    },
+    "cost": 0.038345000000000004
+}

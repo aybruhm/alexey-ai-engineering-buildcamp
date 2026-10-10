@@ -1,0 +1,43 @@
+{
+    "page": {
+        "page_number": 156,
+        "header": "Chapter 16. Classes and functions",
+        "blocks": [
+            {
+                "type": "figure",
+                "caption": "Figure 16.1: Object diagram.",
+                "description": "Object diagram showing the variable time referring to a Time object whose attributes are hour = 11, minute = 59, and second = 30.",
+                "figure_number": 1
+            },
+            {
+                "type": "section_heading",
+                "title": "16.2 Pure functions"
+            },
+            {
+                "type": "text",
+                "text": "In the next few sections, we'll write two functions that add time values. They demonstrate two kinds of functions: pure functions and modifiers. They also demonstrate a development plan I'll call prototype and patch, which is a way of tackling a complex problem by starting with a simple prototype and incrementally dealing with the complications.\n\nHere is a simple prototype of add_time:"
+            },
+            {
+                "type": "block",
+                "code": "def add_time(t1, t2):\n    sum = Time()\n    sum.hour = t1.hour + t2.hour\n    sum.minute = t1.minute + t2.minute\n    sum.second = t1.second + t2.second\n    return sum",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The function creates a new Time object, initializes its attributes, and returns a reference to the new object. This is called a pure function because it does not modify any of the objects passed to it as arguments and it has no effect, like displaying a value or getting user input, other than returning a value.\n\nTo test this function, I'll create two Time objects: start contains the start time of a movie, like Monty Python and the Holy Grail, and duration contains the run time of the movie, which is one hour 35 minutes.\n\nadd_time figures out when the movie will be done."
+            },
+            {
+                "type": "block",
+                "code": ">>> start = Time()\n>>> start.hour = 9\n>>> start.minute = 45\n>>> start.second =  0\n\n>>> duration = Time()\n>>> duration.hour = 1\n>>> duration.minute = 35\n>>> duration.second = 0\n\n>>> done = add_time(start, duration)\n>>> print_time(done)\n10:80:00",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The result, 10:80:00 might not be what you were hoping for. The problem is that this function does not deal with cases where the number of seconds or minutes adds up to more than sixty. When that happens, we have to \"carry\" the extra seconds into the minute column or the extra minutes into the hour column.\n\nHere's an improved version:"
+            }
+        ]
+    },
+    "cost": 0.040595000000000006
+}

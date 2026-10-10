@@ -1,0 +1,37 @@
+{
+    "page": {
+        "page_number": 121,
+        "header": "12.7. Sequences of sequences",
+        "blocks": [
+            {
+                "type": "figure",
+                "caption": "Figure 12.1: State diagram.",
+                "description": "State diagram of a tuple with two elements: index 0 maps to 'Cleese' and index 1 maps to 'John', showing how tuple indices refer to their string values.",
+                "figure_number": 1
+            },
+            {
+                "type": "figure",
+                "caption": "Figure 12.2: State diagram.",
+                "description": "State diagram of a dictionary whose keys are tuples of (last name, first name) and whose values are phone number strings: ('Cleese', 'John'), ('Chapman', 'Graham'), ('Idle', 'Eric'), ('Gilliam', 'Terry'), ('Jones', 'Terry'), and ('Palin', 'Michael') each map to '08700 100 222'. It illustrates using tuples as dictionary keys.",
+                "figure_number": 2
+            },
+            {
+                "type": "section_heading",
+                "title": "12.7 Sequences of sequences"
+            },
+            {
+                "type": "text",
+                "text": "I have focused on lists of tuples, but almost all of the examples in this chapter also work with lists of lists, tuples of tuples, and tuples of lists. To avoid enumerating the possible combinations, it is sometimes easier to talk about sequences of sequences.\n\nIn many contexts, the different kinds of sequences (strings, lists and tuples) can be used interchangeably. So how should you choose one over the others?\n\nTo start with the obvious, strings are more limited than other sequences because the elements have to be characters. They are also immutable. If you need the ability to change the characters in a string (as opposed to creating a new string), you might want to use a list of characters instead.\n\nLists are more common than tuples, mostly because they are mutable. But there are a few cases where you might prefer tuples:"
+            },
+            {
+                "type": "text",
+                "text": "1. In some contexts, like a >>>return statement, it is syntactically simpler to create a tuple than a list.\n\n2. If you want to use a sequence as a dictionary key, you have to use an immutable type like a tuple or string.\n\n3. If you are passing a sequence as an argument to a function, using tuples reduces the potential for unexpected behavior due to aliasing."
+            },
+            {
+                "type": "text",
+                "text": "Because tuples are immutable, they don't provide methods like >>>sort and >>>reverse, which modify existing lists. But Python provides the built-in function >>>sorted, which takes any sequence and returns a new list with the same elements in sorted order, and >>>reversed, which takes a sequence and returns an iterator that traverses the list in reverse order."
+            }
+        ]
+    },
+    "cost": 0.041819999999999996
+}

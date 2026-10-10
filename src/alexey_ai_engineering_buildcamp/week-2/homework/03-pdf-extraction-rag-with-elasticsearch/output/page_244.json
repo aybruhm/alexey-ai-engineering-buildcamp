@@ -1,0 +1,21 @@
+{
+    "page": {
+        "page_number": 222,
+        "header": "Index",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "updating, 64\nvariable-length argument tuple, 118\nveneer, 175, 180\nvoid function, 24, 26\nvoid method, 92\nvorpal, 55"
+            },
+            {
+                "type": "text",
+                "text": "walk, directory, 140\nwhile loop, 64\nwhitespace, 46, 84, 144, 194\nword count, 143\nword frequency, 125, 134\nword, reducible, 113, 124\nworking directory, 139\nworst bug, 170\nworst case, 202, 209"
+            },
+            {
+                "type": "text",
+                "text": "zero, index starting at, 71\nzero, index starting at, 90\nzip function, 118\n    use with dict, 120\nzip object, 123\nZipf's law, 134"
+            }
+        ]
+    },
+    "cost": 0.028265000000000002
+}

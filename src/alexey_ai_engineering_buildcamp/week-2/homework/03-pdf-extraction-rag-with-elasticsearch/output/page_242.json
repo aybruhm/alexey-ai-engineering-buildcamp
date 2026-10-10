@@ -1,0 +1,17 @@
+{
+    "page": {
+        "page_number": 220,
+        "header": "Index",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "scatter, 118, 123, 191\nSchmidt, Eric, 201\nScrabble, 123\nscript, 11, 14\nscript mode, 11, 14, 24\nsearch, 107, 205, 209\nsearch pattern, 75, 79, 85, 186\nsearch, binary, 101\nsearch, bisection, 101\nself (parameter name), 163\nsemantic error, 13, 14, 193, 198\nsemantics, 14, 162\nsequence, 4, 71, 79, 89, 94, 115, 121\nset, 130, 186\n    anagram, 123, 145\nset membership, 113\nset subtraction, 186\nsetdefault, 189\nsetdefault method, 113\nsexagesimal, 158\nshallow copy, 152, 153\nshape, 123\nshape error, 122\nshell, 142, 145\nshelve module, 142\nshuffle function, 175\nsine function, 18\nsingleton, 108, 112, 115\nslice, 79\n    copy, 74, 92\n    list, 91\n    string, 73\n    tuple, 116\n    update, 92\nslice operator, 73, 79, 91, 98, 116\nsort method, 92, 99, 176\nsorted\n    function, 99, 106\nsorted function, 121\nsorting, 204, 205\nspecial case, 87, 157\nspecial value\n    False, 40\n    None, 24, 26, 52, 92, 94\n    True, 40\nspiral, 38\nsplit method, 95, 117\nsqrt, 53\nsqrt function, 18\nsquare root, 66"
+            },
+            {
+                "type": "text",
+                "text": "squiggly bracket, 103\nstable sort, 205\nstack diagram, 23, 26, 37, 44, 56, 60, 97\nstate diagram, 9, 14, 63, 78, 90, 96, 108, 120, 148, 150, 152, 155, 173\nstatement, 10, 14\n    assert, 159, 160\n    assignment, 9, 63\n    break, 66\n    compound, 41\n    conditional, 41, 47, 55, 184\n    for, 30, 72, 91\n    global, 110, 112\n    if, 41\n    import, 26, 144\n    pass, 41\n    print, 3, 7, 165, 197\n    raise, 107, 112, 159\n    return, 44, 51, 199\n    try, 140, 153\n    while, 64\nstep size, 79\nStopIteration, 185\nstr function, 18\n__str__ method, 165, 174\nstring, 4, 7, 94, 121\n    accumulator, 175\n    comparison, 77\n    empty, 95\n    immutable, 74\n    method, 75\n    multiline, 35, 194\n    operation, 12\n    slice, 73\n    triple-quoted, 35\nstring concatenation, 204\nstring method, 79\nstring methods, 204\nstring module, 125\nstring representation, 144, 165\nstring type, 4\nstrip method, 84, 125\nstructshape module, 122\nstructure, 5\nsubject, 163, 169\nsubset, 187\nsubtraction\n    dictionary, 129\n    with borrowing, 68\nsubtraction with borrowing, 159"
+            }
+        ]
+    },
+    "cost": 0.050215
+}

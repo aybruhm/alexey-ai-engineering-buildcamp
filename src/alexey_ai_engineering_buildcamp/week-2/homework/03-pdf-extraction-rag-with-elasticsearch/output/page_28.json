@@ -1,0 +1,29 @@
+{
+    "page": {
+        "page_number": 6,
+        "header": "Chapter 1. The way of the program",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "Formal languages are more dense than natural languages, so it takes longer to read them. Also, the structure is important, so it is not always best to read from top to bottom, left to right. Instead, learn to parse the program in your head, identifying the tokens and interpreting the structure. Finally, the details matter. Small errors in spelling and punctuation, which you can get away with in natural languages, can make a big difference in a formal language."
+            },
+            {
+                "type": "section_heading",
+                "title": "1.7 Debugging"
+            },
+            {
+                "type": "text",
+                "text": "Programmers make mistakes. For whimsical reasons, programming errors are called bugs and the process of tracking them down is called debugging.\n\nProgramming, and especially debugging, sometimes brings out strong emotions. If you are struggling with a difficult bug, you might feel angry, despondent, or embarrassed.\n\nThere is evidence that people naturally respond to computers as if they were people. When they work well, we think of them as teammates, and when they are obstinate or rude, we respond to them the same way we respond to rude, obstinate people (Reeves and Nass, The Media Equation: How People Treat Computers, Television, and New Media Like Real People and Places).\n\nPreparing for these reactions might help you deal with them. One approach is to think of the computer as an employee with certain strengths, like speed and precision, and particular weaknesses, like lack of empathy and inability to grasp the big picture.\n\nYour job is to be a good manager: find ways to take advantage of the strengths and mitigate the weaknesses. And find ways to use your emotions to engage with the problem, without letting your reactions interfere with your ability to work effectively.\n\nLearning to debug can be frustrating, but it is a valuable skill that is useful for many activities beyond programming. At the end of each chapter there is a section, like this one, with my suggestions for debugging. I hope they help!"
+            },
+            {
+                "type": "section_heading",
+                "title": "1.8 Glossary"
+            },
+            {
+                "type": "text",
+                "text": "problem solving: The process of formulating a problem, finding a solution, and expressing it.\n\nhigh-level language: A programming language like Python that is designed to be easy for humans to read and write.\n\nlow-level language: A programming language that is designed to be easy for a computer to run; also called “machine language” or “assembly language”.\n\nportability: A property of a program that can run on more than one kind of computer.\n\ninterpreter: A program that reads another program and executes it\n\nprompt: Characters displayed by the interpreter to indicate that it is ready to take input from the user.\n\nprogram: A set of instructions that specifies a computation."
+            }
+        ]
+    },
+    "cost": 0.04272
+}

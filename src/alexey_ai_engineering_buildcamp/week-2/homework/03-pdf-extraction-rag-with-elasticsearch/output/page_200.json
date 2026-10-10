@@ -1,0 +1,43 @@
+{
+    "page": {
+        "page_number": 178,
+        "header": "Chapter 18. Inheritance",
+        "blocks": [
+            {
+                "type": "figure",
+                "caption": "Figure 18.2: Class diagram.",
+                "description": "A UML class diagram with three classes: Deck, Card, and Hand. Deck points to Card with a standard arrow marked with a star (*), indicating a HAS-A relationship where a Deck has any number of Cards. Hand points up to Deck with a hollow triangle arrowhead, indicating an IS-A relationship (Hand inherits from Deck).",
+                "figure_number": 2
+            },
+            {
+                "type": "text",
+                "text": "The arrow with a hollow triangle head represents an IS-A relationship; in this case it indicates that Hand inherits from Deck.\n\nThe standard arrow head represents a HAS-A relationship; in this case a Deck has references to Card objects.\n\nThe star (*) near the arrow head is a multiplicity; it indicates how many Cards a Deck has. A multiplicity can be a simple number, like 52, a range, like 5..7 or a star, which indicates that a Deck can have any number of Cards.\n\nThere are no dependencies in this diagram. They would normally be shown with a dashed arrow. Or if there are a lot of dependencies, they are sometimes omitted.\n\nA more detailed diagram might show that a Deck actually contains a list of Cards, but built-in types like list and dict are usually not included in class diagrams."
+            },
+            {
+                "type": "section_heading",
+                "title": "18.9 Debugging"
+            },
+            {
+                "type": "text",
+                "text": "Inheritance can make debugging difficult because when you invoke a method on an object, it might be hard to figure out which method will be invoked.\n\nSuppose you are writing a function that works with Hand objects. You would like it to work with all kinds of Hands, like PokerHands, BridgeHands, etc. If you invoke a method like shuffle, you might get the one defined in Deck, but if any of the subclasses override this method, you'll get that version instead. This behavior is usually a good thing, but it can be confusing.\n\nAny time you are unsure about the flow of execution through your program, the simplest solution is to add print statements at the beginning of the relevant methods. If Deck.shuffle prints a message that says something like Running Deck.shuffle, then as the program runs it traces the flow of execution.\n\nAs an alternative, you could use this function, which takes an object and a method name (as a string) and returns the class that provides the definition of the method:"
+            },
+            {
+                "type": "block",
+                "code": "def find_defining_class(obj, meth_name):\n    for ty in type(obj).mro():\n        if meth_name in ty.__dict__:\n            return ty",
+                "language": "python",
+                "description": "Searches the method resolution order of the object's type and returns the first class whose namespace defines the given method name."
+            },
+            {
+                "type": "text",
+                "text": "Here's an example:"
+            },
+            {
+                "type": "block",
+                "code": ">>> hand = Hand()\n>>> find_defining_class(hand, 'shuffle')\n<class '__main__.Deck'>",
+                "language": "python",
+                "description": "Shows that the shuffle method used by a Hand object is defined in the Deck class."
+            }
+        ]
+    },
+    "cost": 0.047165
+}

@@ -1,0 +1,59 @@
+{
+    "page": {
+        "page_number": 150,
+        "header": "Chapter 15. Classes and objects",
+        "blocks": [
+            {
+                "type": "figure",
+                "caption": "Figure 15.2: Object diagram.",
+                "description": "Object diagram showing the variable box referring to a Rectangle object with attributes width (100.0), height (200.0), and corner. The corner attribute refers to an embedded Point object with attributes x (0.0) and y (0.0), illustrating that an object can be an attribute of another object.",
+                "figure_number": 2
+            },
+            {
+                "type": "block",
+                "code": "class Rectangle:\n    \"\"\"Represents a rectangle.\n\n    attributes: width, height, corner.\n    \"\"\"",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The docstring lists the attributes: width and height are numbers; corner is a Point object that specifies the lower-left corner.\n\nTo represent a rectangle, you have to instantiate a Rectangle object and assign values to the attributes:"
+            },
+            {
+                "type": "block",
+                "code": "box = Rectangle()\nbox.width = 100.0\nbox.height = 200.0\nbox.corner = Point()\nbox.corner.x = 0.0\nbox.corner.y = 0.0",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The expression box.corner.x means, “Go to the object box refers to and select the attribute named corner; then go to that object and select the attribute named x.”\n\nFigure 15.2 shows the state of this object. An object that is an attribute of another object is embedded."
+            },
+            {
+                "type": "section_heading",
+                "title": "15.4 Instances as return values"
+            },
+            {
+                "type": "text",
+                "text": "Functions can return instances. For example, find_center takes a Rectangle as an argument and returns a Point that contains the coordinates of the center of the Rectangle:"
+            },
+            {
+                "type": "block",
+                "code": "def find_center(rect):\n    p = Point()\n    p.x = rect.corner.x + rect.width/2\n    p.y = rect.corner.y + rect.height/2\n    return p",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Here is an example that passes box as an argument and assigns the resulting Point to center:"
+            },
+            {
+                "type": "block",
+                "code": ">>> center = find_center(box)\n>>> print_point(center)\n(50, 100)",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.04009
+}

@@ -1,0 +1,77 @@
+{
+    "page": {
+        "page_number": 141,
+        "header": "14.6. Databases",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "Python starts by executing the try clause. If all goes well, it skips the except clause and proceeds. If an exception occurs, it jumps out of the try clause and runs the except clause.\n\nHandling an exception with a try statement is called catching an exception. In this example, the except clause prints an error message that is not very helpful. In general, catching an exception gives you a chance to fix the problem, or try again, or at least end the program gracefully."
+            },
+            {
+                "type": "section_heading",
+                "title": "14.6 Databases"
+            },
+            {
+                "type": "text",
+                "text": "A database is a file that is organized for storing data. Many databases are organized like a dictionary in the sense that they map from keys to values. The biggest difference between a database and a dictionary is that the database is on disk (or other permanent storage), so it persists after the program ends.\n\nThe module dbm provides an interface for creating and updating database files. As an example, I'll create a database that contains captions for image files.\n\nOpening a database is similar to opening other files:"
+            },
+            {
+                "type": "block",
+                "code": ">>> import dbm\n>>> db = dbm.open('captions', 'c')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The mode 'c' means that the database should be created if it doesn't already exist. The result is a database object that can be used (for most operations) like a dictionary.\n\nWhen you create a new item, dbm updates the database file."
+            },
+            {
+                "type": "block",
+                "code": ">>> db['cleese.png'] = 'Photo of John Cleese.'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "When you access one of the items, dbm reads the file:"
+            },
+            {
+                "type": "block",
+                "code": ">>> db['cleese.png']\nb'Photo of John Cleese.'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The result is a bytes object, which is why it begins with b. A bytes object is similar to a string in many ways. When you get farther into Python, the difference becomes important, but for now we can ignore it.\n\nIf you make another assignment to an existing key, dbm replaces the old value:"
+            },
+            {
+                "type": "block",
+                "code": ">>> db['cleese.png'] = 'Photo of John Cleese doing a silly walk.'\n>>> db['cleese.png']\nb'Photo of John Cleese doing a silly walk.'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Some dictionary methods, like keys and items, don't work with database objects. But iteration with a for loop works:"
+            },
+            {
+                "type": "block",
+                "code": "for key in db.keys():\n    print(key, db[key])",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "As with other files, you should close the database when you are done:"
+            },
+            {
+                "type": "block",
+                "code": ">>> db.close()",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.042845
+}

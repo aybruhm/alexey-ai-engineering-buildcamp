@@ -1,0 +1,61 @@
+{
+    "page": {
+        "page_number": 13,
+        "header": "2.8. Debugging",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "For this reason, it is a good idea to add notes to your programs to explain in natural language what the program is doing. These notes are called comments, and they start with the # symbol:"
+            },
+            {
+                "type": "block",
+                "code": "# compute the percentage of the hour that has elapsed\npercentage = (minute * 100) / 60",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "In this case, the comment appears on a line by itself. You can also put comments at the end of a line:"
+            },
+            {
+                "type": "block",
+                "code": "percentage = (minute * 100) / 60     # percentage of an hour",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Everything from the # to the end of the line is ignored—it has no effect on the execution of the program.\n\nComments are most useful when they document non-obvious features of the code. It is reasonable to assume that the reader can figure out what the code does; it is more useful to explain why.\n\nThis comment is redundant with the code and useless:"
+            },
+            {
+                "type": "block",
+                "code": "v = 5     # assign 5 to v",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This comment contains useful information that is not in the code:"
+            },
+            {
+                "type": "block",
+                "code": "v = 5     # velocity in meters/second.",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Good variable names can reduce the need for comments, but long names can make complex expressions hard to read, so there is a tradeoff."
+            },
+            {
+                "type": "section_heading",
+                "title": "2.8 Debugging"
+            },
+            {
+                "type": "text",
+                "text": "Three kinds of errors can occur in a program: syntax errors, runtime errors, and semantic errors. It is useful to distinguish between them in order to track them down more quickly.\n\nSyntax error: “Syntax” refers to the structure of a program and the rules about that structure. For example, parentheses have to come in matching pairs, so (1 + 2) is legal, but 8) is a syntax error.\n\nIf there is a syntax error anywhere in your program, Python displays an error message and quits, and you will not be able to run the program. During the first few weeks of your programming career, you might spend a lot of time tracking down syntax errors. As you gain experience, you will make fewer errors and find them faster.\n\nRuntime error: The second type of error is a runtime error, so called because the error does not appear until after the program has started running. These errors are also called exceptions because they usually indicate that something exceptional (and bad) has happened.\n\nRuntime errors are rare in the simple programs you will see in the first few chapters, so it might be a while before you encounter one.\n\nSemantic error: The third type of error is “semantic”, which means related to meaning. If there is a semantic error in your program, it will run without generating error messages, but it will not do the right thing. It will do something else. Specifically, it will do what you told it to do.\n\nIdentifying semantic errors can be tricky because it requires you to work backward by looking at the output of the program and trying to figure out what it is doing."
+            }
+        ]
+    },
+    "cost": 0.04487000000000001
+}

@@ -1,0 +1,25 @@
+{
+    "page": {
+        "page_number": 169,
+        "header": "17.11. Interface and implementation",
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "17.11 Interface and implementation"
+            },
+            {
+                "type": "text",
+                "text": "One of the goals of object-oriented design is to make software more maintainable, which means that you can keep the program working when other parts of the system change, and modify the program to meet new requirements.\n\nA design principle that helps achieve that goal is to keep interfaces separate from implementations. For objects, that means that the methods a class provides should not depend on how the attributes are represented.\n\nFor example, in this chapter we developed a class that represents a time of day. Methods provided by this class include time_to_int, is_after, and add_time.\n\nWe could implement those methods in several ways. The details of the implementation depend on how we represent time. In this chapter, the attributes of a Time object are hour, minute, and second.\n\nAs an alternative, we could replace these attributes with a single integer representing the number of seconds since midnight. This implementation would make some methods, like is_after, easier to write, but it makes other methods harder.\n\nAfter you deploy a new class, you might discover a better implementation. If other parts of the program are using your class, it might be time-consuming and error-prone to change the interface.\n\nBut if you designed the interface carefully, you can change the implementation without changing the interface, which means that other parts of the program don't have to change."
+            },
+            {
+                "type": "section_heading",
+                "title": "17.12 Glossary"
+            },
+            {
+                "type": "text",
+                "text": "object-oriented language: A language that provides features, such as programmer-defined types and methods, that facilitate object-oriented programming.\n\nobject-oriented programming: A style of programming in which data and the operations that manipulate it are organized into classes and methods.\n\nmethod: A function that is defined inside a class definition and is invoked on instances of that class.\n\nsubject: The object a method is invoked on.\n\npositional argument: An argument that does not include a parameter name, so it is not a keyword argument.\n\noperator overloading: Changing the behavior of an operator like + so it works with a programmer-defined type.\n\ntype-based dispatch: A programming pattern that checks the type of an operand and invokes different functions for different types.\n\npolymorphic: Pertaining to a function that can work with more than one type."
+            }
+        ]
+    },
+    "cost": 0.039220000000000005
+}

@@ -1,0 +1,67 @@
+{
+    "page": {
+        "page_number": 85,
+        "header": "9.3. Search",
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "9.3 Search"
+            },
+            {
+                "type": "text",
+                "text": "All of the exercises in the previous section have something in common; they can be solved with the search pattern we saw in Section 8.6. The simplest example is:"
+            },
+            {
+                "type": "block",
+                "code": "def has_no_e(word):\n    for letter in word:\n        if letter == 'e':\n            return False\n    return True",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The for loop traverses the characters in word. If we find the letter “e”, we can immediately return False; otherwise we have to go to the next letter. If we exit the loop normally, that means we didn’t find an “e”, so we return True.\n\nYou could write this function more concisely using the in operator, but I started with this version because it demonstrates the logic of the search pattern.\n\navoids is a more general version of has_no_e but it has the same structure:"
+            },
+            {
+                "type": "block",
+                "code": "def avoids(word, forbidden):\n    for letter in word:\n        if letter in forbidden:\n            return False\n    return True",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "We can return False as soon as we find a forbidden letter; if we get to the end of the loop, we return True.\n\nuses_only is similar except that the sense of the condition is reversed:"
+            },
+            {
+                "type": "block",
+                "code": "def uses_only(word, available):\n    for letter in word:\n        if letter not in available:\n            return False\n    return True",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Instead of a list of forbidden letters, we have a list of available letters. If we find a letter in word that is not in available, we can return False.\n\nuses_all is similar except that we reverse the role of the word and the string of letters:"
+            },
+            {
+                "type": "block",
+                "code": "def uses_all(word, required):\n    for letter in required:\n        if letter not in word:\n            return False\n    return True",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Instead of traversing the letters in word, the loop traverses the required letters. If any of the required letters do not appear in the word, we can return False.\n\nIf you were really thinking like a computer scientist, you would have recognized that uses_all was an instance of a previously solved problem, and you would have written:"
+            },
+            {
+                "type": "block",
+                "code": "def uses_all(word, required):\n    return uses_only(required, word)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This is an example of a program development plan called reduction to a previously solved problem, which means that you recognize the problem you are working on as an instance of a solved problem and apply an existing solution."
+            }
+        ]
+    },
+    "cost": 0.04152
+}

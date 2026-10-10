@@ -1,0 +1,190 @@
+{
+    "page": {
+        "page_number": 20,
+        "header": "Contents",
+        "blocks": [
+            {
+                "type": "table",
+                "caption": null,
+                "columns": [
+                    "Section",
+                    "Title",
+                    "Page"
+                ],
+                "rows": [
+                    [
+                        "17.4",
+                        "A more complicated example",
+                        "164"
+                    ],
+                    [
+                        "17.5",
+                        "The init method",
+                        "164"
+                    ],
+                    [
+                        "17.6",
+                        "The __str__ method",
+                        "165"
+                    ],
+                    [
+                        "17.7",
+                        "Operator overloading",
+                        "165"
+                    ],
+                    [
+                        "17.8",
+                        "Type-based dispatch",
+                        "166"
+                    ],
+                    [
+                        "17.9",
+                        "Polymorphism",
+                        "167"
+                    ],
+                    [
+                        "17.10",
+                        "Debugging",
+                        "168"
+                    ],
+                    [
+                        "17.11",
+                        "Interface and implementation",
+                        "169"
+                    ],
+                    [
+                        "17.12",
+                        "Glossary",
+                        "169"
+                    ],
+                    [
+                        "17.13",
+                        "Exercises",
+                        "170"
+                    ]
+                ]
+            },
+            {
+                "type": "section_heading",
+                "title": "18 Inheritance 171"
+            },
+            {
+                "type": "table",
+                "caption": null,
+                "columns": [
+                    "Section",
+                    "Title",
+                    "Page"
+                ],
+                "rows": [
+                    [
+                        "18.1",
+                        "Card objects",
+                        "171"
+                    ],
+                    [
+                        "18.2",
+                        "Class attributes",
+                        "172"
+                    ],
+                    [
+                        "18.3",
+                        "Comparing cards",
+                        "173"
+                    ],
+                    [
+                        "18.4",
+                        "Decks",
+                        "174"
+                    ],
+                    [
+                        "18.5",
+                        "Printing the deck",
+                        "174"
+                    ],
+                    [
+                        "18.6",
+                        "Add, remove, shuffle and sort",
+                        "175"
+                    ],
+                    [
+                        "18.7",
+                        "Inheritance",
+                        "176"
+                    ],
+                    [
+                        "18.8",
+                        "Class diagrams",
+                        "177"
+                    ],
+                    [
+                        "18.9",
+                        "Debugging",
+                        "178"
+                    ],
+                    [
+                        "18.10",
+                        "Data encapsulation",
+                        "179"
+                    ],
+                    [
+                        "18.11",
+                        "Glossary",
+                        "180"
+                    ],
+                    [
+                        "18.12",
+                        "Exercises",
+                        "181"
+                    ]
+                ]
+            },
+            {
+                "type": "section_heading",
+                "title": "19 The Goodies 183"
+            },
+            {
+                "type": "table",
+                "caption": null,
+                "columns": [
+                    "Section",
+                    "Title",
+                    "Page"
+                ],
+                "rows": [
+                    [
+                        "19.1",
+                        "Conditional expressions",
+                        "183"
+                    ],
+                    [
+                        "19.2",
+                        "List comprehensions",
+                        "184"
+                    ],
+                    [
+                        "19.3",
+                        "Generator expressions",
+                        "185"
+                    ],
+                    [
+                        "19.4",
+                        "any and all",
+                        "185"
+                    ],
+                    [
+                        "19.5",
+                        "Sets",
+                        "186"
+                    ],
+                    [
+                        "19.6",
+                        "Counters",
+                        "187"
+                    ]
+                ]
+            }
+        ]
+    },
+    "cost": 0.03712
+}

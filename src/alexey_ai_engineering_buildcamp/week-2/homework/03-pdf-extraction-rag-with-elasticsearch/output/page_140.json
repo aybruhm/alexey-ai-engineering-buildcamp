@@ -1,0 +1,95 @@
+{
+    "page": {
+        "page_number": 118,
+        "header": "Chapter 12. Tuples",
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "12.4 Variable-length argument tuples"
+            },
+            {
+                "type": "text",
+                "text": "Functions can take a variable number of arguments. A parameter name that begins with * gathers arguments into a tuple. For example, printall takes any number of arguments and prints them:"
+            },
+            {
+                "type": "block",
+                "code": "def printall(*args):\n    print(args)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The gather parameter can have any name you like, but args is conventional. Here's how the function works:"
+            },
+            {
+                "type": "block",
+                "code": ">>> printall(1, 2.0, '3')\n(1, 2.0, '3')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The complement of gather is scatter. If you have a sequence of values and you want to pass it to a function as multiple arguments, you can use the * operator. For example, divmod takes exactly two arguments; it doesn't work with a tuple:"
+            },
+            {
+                "type": "block",
+                "code": ">>> t = (7, 3)\n>>> divmod(t)\nTypeError: divmod expected 2 arguments, got 1",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "But if you scatter the tuple, it works:"
+            },
+            {
+                "type": "block",
+                "code": ">>> divmod(*t)\n(2, 1)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Many of the built-in functions use variable-length argument tuples. For example, max and min can take any number of arguments:"
+            },
+            {
+                "type": "block",
+                "code": ">>> max(1, 2, 3)\n3",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "But sum does not."
+            },
+            {
+                "type": "block",
+                "code": ">>> sum(1, 2, 3)\nTypeError: sum expected at most 2 arguments, got 3",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "As an exercise, write a function called sum_all that takes any number of arguments and returns their sum."
+            },
+            {
+                "type": "section_heading",
+                "title": "12.5 Lists and tuples"
+            },
+            {
+                "type": "text",
+                "text": "zip is a built-in function that takes two or more sequences and interleaves them. The name of the function refers to a zipper, which interleaves two rows of teeth.\n\nThis example zips a string and a list:"
+            },
+            {
+                "type": "block",
+                "code": ">>> s = 'abc'\n>>> t = [0, 1, 2]\n>>> zip(s, t)\n<zip object at 0x7f7d0a9e7c48>",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The result is a zip object that knows how to iterate through the pairs. The most common use of zip is in a for loop:"
+            }
+        ]
+    },
+    "cost": 0.041845
+}

@@ -1,0 +1,13 @@
+{
+    "page": {
+        "page_number": 210,
+        "header": "Appendix B. Analysis of Algorithms",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "hashtable: A data structure that represents a collection of key-value pairs and performs search in constant time."
+            }
+        ]
+    },
+    "cost": 0.02334
+}

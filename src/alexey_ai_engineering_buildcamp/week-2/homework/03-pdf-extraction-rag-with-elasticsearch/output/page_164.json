@@ -1,0 +1,65 @@
+{
+    "page": {
+        "page_number": 142,
+        "header": "Chapter 14. Files",
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "14.7 Pickling"
+            },
+            {
+                "type": "text",
+                "text": "A limitation of dbm is that the keys and values have to be strings or bytes. If you try to use any other type, you get an error.\n\nThe pickle module can help. It translates almost any type of object into a string suitable for storage in a database, and then translates strings back into objects.\n\npickle.dumps takes an object as a parameter and returns a string representation (dumps is short for “dump string”):"
+            },
+            {
+                "type": "block",
+                "code": ">>> import pickle\n>>> t = [1, 2, 3]\n>>> pickle.dumps(t)\nb'\\x80\\x03]q\\x00(K\\x01K\\x02K\\x03e.'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The format isn’t obvious to human readers; it is meant to be easy for pickle to interpret. pickle.loads (“load string”) reconstitutes the object:"
+            },
+            {
+                "type": "block",
+                "code": ">>> t1 = [1, 2, 3]\n>>> s = pickle.dumps(t1)\n>>> t2 = pickle.loads(s)\n>>> t2\n[1, 2, 3]",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Although the new object has the same value as the old, it is not (in general) the same object:"
+            },
+            {
+                "type": "block",
+                "code": ">>> t1 == t2\nTrue\n>>> t1 is t2\nFalse",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "In other words, pickling and then unpickling has the same effect as copying the object.\n\nYou can use pickle to store non-strings in a database. In fact, this combination is so common that it has been encapsulated in a module called shelve."
+            },
+            {
+                "type": "section_heading",
+                "title": "14.8 Pipes"
+            },
+            {
+                "type": "text",
+                "text": "Most operating systems provide a command-line interface, also known as a shell. Shells usually provide commands to navigate the file system and launch applications. For example, in Unix you can change directories with cd, display the contents of a directory with ls, and launch a web browser by typing (for example) firefox.\n\nAny program that you can launch from the shell can also be launched from Python using a pipe object, which represents a running program.\n\nFor example, the Unix command ls -l normally displays the contents of the current directory in long format. You can launch ls with os.popen¹:"
+            },
+            {
+                "type": "block",
+                "code": ">>> cmd = 'ls -l'\n>>> fp = os.popen(cmd)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "¹popen is deprecated now, which means we are supposed to stop using it and start using the subprocess module. But for simple cases, I find subprocess more complicated than necessary. So I am going to keep using popen until they take it away."
+            }
+        ]
+    },
+    "cost": 0.04357
+}

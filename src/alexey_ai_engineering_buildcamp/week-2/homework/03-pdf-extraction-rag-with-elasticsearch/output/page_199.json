@@ -1,0 +1,31 @@
+{
+    "page": {
+        "page_number": 177,
+        "header": "18.8. Class diagrams",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "A natural next step is to encapsulate this code in a method called move_cards:"
+            },
+            {
+                "type": "block",
+                "code": "# inside class Deck:\n\n    def move_cards(self, hand, num):\n        for i in range(num):\n            hand.add_card(self.pop_card())",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "move_cards takes two arguments, a Hand object and the number of cards to deal. It modifies both self and hand, and returns None.\n\nIn some games, cards are moved from one hand to another, or from a hand back to the deck. You can use move_cards for any of these operations: self can be either a Deck or a Hand, and hand, despite the name, can also be a Deck.\n\nInheritance is a useful feature. Some programs that would be repetitive without inheritance can be written more elegantly with it. Inheritance can facilitate code reuse, since you can customize the behavior of parent classes without having to modify them. In some cases, the inheritance structure reflects the natural structure of the problem, which makes the design easier to understand.\n\nOn the other hand, inheritance can make programs difficult to read. When a method is invoked, it is sometimes not clear where to find its definition. The relevant code may be spread across several modules. Also, many of the things that can be done using inheritance can be done as well or better without it."
+            },
+            {
+                "type": "section_heading",
+                "title": "18.8 Class diagrams"
+            },
+            {
+                "type": "text",
+                "text": "So far we have seen stack diagrams, which show the state of a program, and object diagrams, which show the attributes of an object and their values. These diagrams represent a snapshot in the execution of a program, so they change as the program runs.\n\nThey are also highly detailed; for some purposes, too detailed. A class diagram is a more abstract representation of the structure of a program. Instead of showing individual objects, it shows classes and the relationships between them.\n\nThere are several kinds of relationship between classes:\n\n• Objects in one class might contain references to objects in another class. For example, each Rectangle contains a reference to a Point, and each Deck contains references to many Cards. This kind of relationship is called HAS-A, as in, “a Rectangle has a Point.”\n\n• One class might inherit from another. This relationship is called IS-A, as in, “a Hand is a kind of a Deck.”\n\n• One class might depend on another in the sense that objects in one class take objects in the second class as parameters, or use objects in the second class as part of a computation. This kind of relationship is called a dependency.\n\nA class diagram is a graphical representation of these relationships. For example, Figure 18.2 shows the relationships between Card, Deck and Hand."
+            }
+        ]
+    },
+    "cost": 0.044039999999999996
+}

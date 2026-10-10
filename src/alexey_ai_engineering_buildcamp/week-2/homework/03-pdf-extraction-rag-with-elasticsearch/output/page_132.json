@@ -1,0 +1,61 @@
+{
+    "page": {
+        "page_number": 110,
+        "header": "Chapter 11. Dictionaries",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "Whenever fibonacci is called, it checks known. If the result is already there, it can return immediately. Otherwise it has to compute the new value, add it to the dictionary, and return it.\n\nIf you run this version of fibonacci and compare it with the original, you will find that it is much faster."
+            },
+            {
+                "type": "section_heading",
+                "title": "11.7 Global variables"
+            },
+            {
+                "type": "text",
+                "text": "In the previous example, known is created outside the function, so it belongs to the special frame called __main__. Variables in __main__ are sometimes called global because they can be accessed from any function. Unlike local variables, which disappear when their function ends, global variables persist from one function call to the next.\n\nIt is common to use global variables for flags; that is, boolean variables that indicate (\"flag\") whether a condition is true. For example, some programs use a flag named verbose to control the level of detail in the output:"
+            },
+            {
+                "type": "block",
+                "code": "verbose = True\n\ndef example1():\n    if verbose:\n        print('Running example1')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "If you try to reassign a global variable, you might be surprised. The following example is supposed to keep track of whether the function has been called:"
+            },
+            {
+                "type": "block",
+                "code": "been_called = False\n\ndef example2():\n    been_called = True         # WRONG",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "But if you run it you will see that the value of been_called doesn't change. The problem is that example2 creates a new local variable named been_called. The local variable goes away when the function ends, and has no effect on the global variable.\n\nTo reassign a global variable inside a function you have to declare the global variable before you use it:"
+            },
+            {
+                "type": "block",
+                "code": "been_called = False\n\ndef example2():\n    global been_called\n    been_called = True",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The global statement tells the interpreter something like, \"In this function, when I say been_called, I mean the global variable; don't create a local one.\"\n\nHere's an example that tries to update a global variable:"
+            },
+            {
+                "type": "block",
+                "code": "count = 0\n\ndef example3():\n    count = count + 1          # WRONG",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "If you run it you get:"
+            }
+        ]
+    },
+    "cost": 0.039345000000000005
+}

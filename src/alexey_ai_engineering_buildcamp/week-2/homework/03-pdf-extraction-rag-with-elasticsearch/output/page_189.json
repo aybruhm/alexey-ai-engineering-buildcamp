@@ -1,0 +1,63 @@
+{
+    "page": {
+        "page_number": 167,
+        "header": "17.9. Polymorphism",
+        "blocks": [
+            {
+                "type": "block",
+                "code": ">>> start = Time(9, 45)\n>>> duration = Time(1, 35)\n>>> print(start + duration)\n11:20:00\n>>> print(start + 1337)\n10:07:17",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Unfortunately, this implementation of addition is not commutative. If the integer is the first operand, you get"
+            },
+            {
+                "type": "block",
+                "code": ">>> print(1337 + start)\nTypeError: unsupported operand type(s) for +: 'int' and 'instance'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The problem is, instead of asking the Time object to add an integer, Python is asking an integer to add a Time object, and it doesn't know how. But there is a clever solution for this problem: the special method __radd__, which stands for “right-side add”. This method is invoked when a Time object appears on the right side of the + operator. Here's the definition:"
+            },
+            {
+                "type": "block",
+                "code": "# inside class Time:\n\n    def __radd__(self, other):\n        return self.__add__(other)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "And here's how it's used:"
+            },
+            {
+                "type": "block",
+                "code": ">>> print(1337 + start)\n10:07:17",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "As an exercise, write an add method for Points that works with either a Point object or a tuple:\n\n• If the second operand is a Point, the method should return a new Point whose x coordinate is the sum of the x coordinates of the operands, and likewise for the y coordinates.\n\n• If the second operand is a tuple, the method should add the first element of the tuple to the x coordinate and the second element to the y coordinate, and return a new Point with the result."
+            },
+            {
+                "type": "section_heading",
+                "title": "17.9 Polymorphism"
+            },
+            {
+                "type": "text",
+                "text": "Type-based dispatch is useful when it is necessary, but (fortunately) it is not always necessary. Often you can avoid it by writing functions that work correctly for arguments with different types.\n\nMany of the functions we wrote for strings also work for other sequence types. For example, in Section 11.2 we used histogram to count the number of times each letter appears in a word."
+            },
+            {
+                "type": "block",
+                "code": "def histogram(s):\n    d = dict()\n    for c in s:\n        if c not in d:\n            d[c] = 1",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.041440000000000005
+}

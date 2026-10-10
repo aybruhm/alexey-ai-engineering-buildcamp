@@ -1,0 +1,39 @@
+{
+    "page": {
+        "page_number": 125,
+        "header": null,
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "Chapter 13"
+            },
+            {
+                "type": "section_heading",
+                "title": "Case study: data structure selection"
+            },
+            {
+                "type": "text",
+                "text": "At this point you have learned about Python's core data structures, and you have seen some of the algorithms that use them. If you would like to know more about algorithms, this might be a good time to read Chapter B. But you don't have to read it before you go on; you can read it whenever you are interested.\n\nThis chapter presents a case study with exercises that let you think about choosing data structures and practice using them."
+            },
+            {
+                "type": "section_heading",
+                "title": "13.1 Word frequency analysis"
+            },
+            {
+                "type": "text",
+                "text": "As usual, you should at least attempt the exercises before you read my solutions.\n\nExercise 13.1. Write a program that reads a file, breaks each line into words, strips whitespace and punctuation from the words, and converts them to lowercase.\n\nHint: The string module provides a string named whitespace, which contains space, tab, newline, etc., and punctuation which contains the punctuation characters. Let's see if we can make Python swear:"
+            },
+            {
+                "type": "block",
+                "code": ">>> import string\n>>> string.punctuation\n'!\"#$%&\\'()*+,-./:;<=>?@[\\\\]^_`{|}~'",
+                "language": "python",
+                "description": "Importing the string module and displaying the string of punctuation characters."
+            },
+            {
+                "type": "text",
+                "text": "Also, you might consider using the string methods strip, replace and translate.\n\nExercise 13.2. Go to Project Gutenberg (http://gutenberg.org) and download your favorite out-of-copyright book in plain text format.\n\nModify your program from the previous exercise to read the book you downloaded, skip over the header information at the beginning of the file, and process the rest of the words as before.\n\nThen modify the program to count the total number of words in the book, and the number of times each word is used.\n\nPrint the number of different words used in the book. Compare different books by different authors, written in different eras. Which author uses the most extensive vocabulary?"
+            }
+        ]
+    },
+    "cost": 0.041845
+}

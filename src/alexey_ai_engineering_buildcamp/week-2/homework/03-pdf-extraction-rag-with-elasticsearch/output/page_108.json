@@ -1,0 +1,53 @@
+{
+    "page": {
+        "page_number": 86,
+        "header": "Chapter 9. Case study: word play",
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "9.4 Looping with indices"
+            },
+            {
+                "type": "text",
+                "text": "I wrote the functions in the previous section with for loops because I only needed the characters in the strings; I didn't have to do anything with the indices.\n\nFor is_abecedarian we have to compare adjacent letters, which is a little tricky with a for loop:"
+            },
+            {
+                "type": "block",
+                "code": "def is_abecedarian(word):\n    previous = word[0]\n    for c in word:\n        if c < previous:\n            return False\n        previous = c\n    return True",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "An alternative is to use recursion:"
+            },
+            {
+                "type": "block",
+                "code": "def is_abecedarian(word):\n    if len(word) <= 1:\n        return True\n    if word[0] > word[1]:\n        return False\n    return is_abecedarian(word[1:])",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Another option is to use a while loop:"
+            },
+            {
+                "type": "block",
+                "code": "def is_abecedarian(word):\n    i = 0\n    while i < len(word)-1:\n        if word[i+1] < word[i]:\n            return False\n        i = i+1\n    return True",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The loop starts at i=0 and ends when i=len(word)-1. Each time through the loop, it compares the ith character (which you can think of as the current character) to the i + 1th character (which you can think of as the next).\n\nIf the next character is less than (alphabetically before) the current one, then we have discovered a break in the abecedarian trend, and we return False.\n\nIf we get to the end of the loop without finding a fault, then the word passes the test. To convince yourself that the loop ends correctly, consider an example like 'flossy'. The length of the word is 6, so the last time the loop runs is when i is 4, which is the index of the second-to-last character. On the last iteration, it compares the second-to-last character to the last, which is what we want.\n\nHere is a version of is_palindrome (see Exercise 6.3) that uses two indices; one starts at the beginning and goes up; the other starts at the end and goes down."
+            },
+            {
+                "type": "block",
+                "code": "def is_palindrome(word):\n    i = 0\n    j = len(word)-1\n\n    while i<j:\n        if word[i] != word[j]:",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.04047
+}

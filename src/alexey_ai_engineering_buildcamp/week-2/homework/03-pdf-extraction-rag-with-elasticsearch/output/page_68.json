@@ -1,0 +1,61 @@
+{
+    "page": {
+        "page_number": 46,
+        "header": "Chapter 5. Conditionals and recursion",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "But if the user types something other than a string of digits, you get an error:"
+            },
+            {
+                "type": "block",
+                "code": ">>> speed = input(prompt)\nWhat...is the airspeed velocity of an unladen swallow?\nWhat do you mean, an African or a European swallow?\n>>> int(speed)\nValueError: invalid literal for int() with base 10",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "We will see how to handle this kind of error later."
+            },
+            {
+                "type": "section_heading",
+                "title": "5.12 Debugging"
+            },
+            {
+                "type": "text",
+                "text": "When a syntax or runtime error occurs, the error message contains a lot of information, but it can be overwhelming. The most useful parts are usually:\n\n• What kind of error it was, and\n• Where it occurred.\n\nSyntax errors are usually easy to find, but there are a few gotchas. Whitespace errors can be tricky because spaces and tabs are invisible and we are used to ignoring them."
+            },
+            {
+                "type": "block",
+                "code": ">>> x = 5\n>>>  y = 6\n  File \"<stdin>\", line 1\n    y = 6\n    ^\nIndentationError: unexpected indent",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "In this example, the problem is that the second line is indented by one space. But the error message points to y, which is misleading. In general, error messages indicate where the problem was discovered, but the actual error might be earlier in the code, sometimes on a previous line.\n\nThe same is true of runtime errors. Suppose you are trying to compute a signal-to-noise ratio in decibels. The formula is SNR_db = 10 log_10(P_signal / P_noise). In Python, you might write something like this:"
+            },
+            {
+                "type": "block",
+                "code": "import math\nsignal_power = 9\nnoise_power = 10\nratio = signal_power // noise_power\ndecibels = 10 * math.log10(ratio)\nprint(decibels)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "When you run this program, you get an exception:"
+            },
+            {
+                "type": "block",
+                "code": "Traceback (most recent call last):\n  File \"snr.py\", line 5, in ?\n    decibels = 10 * math.log10(ratio)\nValueError: math domain error",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The error message indicates line 5, but there is nothing wrong with that line. To find the real error, it might be useful to print the value of ratio, which turns out to be 0. The problem is in line 4, which uses floor division instead of floating-point division.\n\nYou should take the time to read error messages carefully, but don't assume that everything they say is correct."
+            }
+        ]
+    },
+    "cost": 0.043965000000000004
+}

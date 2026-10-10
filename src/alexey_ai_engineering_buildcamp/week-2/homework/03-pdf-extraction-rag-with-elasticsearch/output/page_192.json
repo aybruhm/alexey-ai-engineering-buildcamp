@@ -1,0 +1,21 @@
+{
+    "page": {
+        "page_number": 170,
+        "header": "Chapter 17. Classes and methods",
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "17.13 Exercises"
+            },
+            {
+                "type": "text",
+                "text": "Exercise 17.1. Download the code from this chapter from https://thinkpython.com/code/Time2.py. Change the attributes of Time to be a single integer representing seconds since midnight. Then modify the methods (and the function int_to_time) to work with the new implementation. You should not have to modify the test code in main. When you are done, the output should be the same as before. Solution: https://thinkpython.com/code/Time2_soln.py."
+            },
+            {
+                "type": "text",
+                "text": "Exercise 17.2. This exercise is a cautionary tale about one of the most common, and difficult to find, errors in Python. Write a definition for a class named Kangaroo with the following methods:\n\n1. An __init__ method that initializes an attribute named pouch_contents to an empty list.\n\n2. A method named put_in_pouch that takes an object of any type and adds it to pouch_contents.\n\n3. A __str__ method that returns a string representation of the Kangaroo object and the contents of the pouch.\n\nTest your code by creating two Kangaroo objects, assigning them to variables named kanga and roo, and then adding roo to the contents of kanga's pouch.\n\nDownload https://thinkpython.com/code/BadKangaroo.py. It contains a solution to the previous problem with one big, nasty bug. Find and fix the bug.\n\nIf you get stuck, you can download https://thinkpython.com/code/GoodKangaroo.py, which explains the problem and demonstrates a solution."
+            }
+        ]
+    },
+    "cost": 0.034145
+}

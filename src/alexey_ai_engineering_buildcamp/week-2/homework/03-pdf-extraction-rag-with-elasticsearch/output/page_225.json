@@ -1,0 +1,55 @@
+{
+    "page": {
+        "page_number": 203,
+        "header": "B.1. Order of growth",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "If two algorithms have the same leading order term, it is hard to say which is better; again, the answer depends on the details. So for algorithmic analysis, functions with the same leading term are considered equivalent, even if they have different coefficients.\n\nAn order of growth is a set of functions whose growth behavior is considered equivalent. For example, 2n, 100n and n + 1 belong to the same order of growth, which is written O(n) in Big-Oh notation and often called linear because every function in the set grows linearly with n.\n\nAll functions with the leading term n^2 belong to O(n^2); they are called quadratic.\n\nThe following table shows some of the orders of growth that appear most commonly in algorithmic analysis, in increasing order of badness."
+            },
+            {
+                "type": "table",
+                "caption": null,
+                "columns": [
+                    "Order of growth",
+                    "Name"
+                ],
+                "rows": [
+                    [
+                        "O(1)",
+                        "constant"
+                    ],
+                    [
+                        "O(log_b n)",
+                        "logarithmic (for any b)"
+                    ],
+                    [
+                        "O(n)",
+                        "linear"
+                    ],
+                    [
+                        "O(n log_b n)",
+                        "linearithmic"
+                    ],
+                    [
+                        "O(n^2)",
+                        "quadratic"
+                    ],
+                    [
+                        "O(n^3)",
+                        "cubic"
+                    ],
+                    [
+                        "O(c^n)",
+                        "exponential (for any c)"
+                    ]
+                ]
+            },
+            {
+                "type": "text",
+                "text": "For the logarithmic terms, the base of the logarithm doesn't matter; changing bases is the equivalent of multiplying by a constant, which doesn't change the order of growth. Similarly, all exponential functions belong to the same order of growth regardless of the base of the exponent. Exponential functions grow very quickly, so exponential algorithms are only useful for small problems.\n\nExercise B.1. Read the Wikipedia page on Big-Oh notation at http://en.wikipedia.org/wiki/Big_O_notation and answer the following questions:\n\n1. What is the order of growth of n^3 + n^2? What about 1000000n^3 + n^2? What about n^3 + 1000000n^2?\n\n2. What is the order of growth of (n^2 + n) · (n + 1)? Before you start multiplying, remember that you only need the leading term.\n\n3. If f is in O(g), for some unspecified function g, what can we say about af + b, where a and b are constants?\n\n4. If f1 and f2 are in O(g), what can we say about f1 + f2?\n\n5. If f1 is in O(g) and f2 is in O(h), what can we say about f1 + f2?\n\n6. If f1 is in O(g) and f2 is O(h), what can we say about f1 · f2?\n\nProgrammers who care about performance often find this kind of analysis hard to swallow. They have a point: sometimes the coefficients and the non-leading terms make a real difference. Sometimes the details of the hardware, the programming language, and the characteristics of the input make a big difference. And for small problems, order of growth is irrelevant.\n\nBut if you keep those caveats in mind, algorithmic analysis is a useful tool. At least for large problems, the \"better\" algorithm is usually better, and sometimes it is much better. The difference between two algorithms with the same order of growth is usually a constant factor, but the difference between a good algorithm and a bad algorithm is unbounded!"
+            }
+        ]
+    },
+    "cost": 0.048515
+}

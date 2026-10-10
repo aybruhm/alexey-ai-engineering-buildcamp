@@ -1,0 +1,25 @@
+{
+    "page": {
+        "page_number": 207,
+        "header": "B.4. Hashtables",
+        "blocks": [
+            {
+                "type": "block",
+                "code": "    def find_map(self, k):\n        index = hash(k) % len(self.maps)\n        return self.maps[index]\n\n    def add(self, k, v):\n        m = self.find_map(k)\n        m.add(k, v)\n\n    def get(self, k):\n        m = self.find_map(k)\n        return m.get(k)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "__init__ makes a list of n LinearMaps.\n\nfind_map is used by add and get to figure out which map to put the new item in, or which map to search.\n\nfind_map uses the built-in function hash, which takes almost any Python object and returns an integer. A limitation of this implementation is that it only works with hashable keys. Mutable types like lists and dictionaries are unhashable.\n\nHashable objects that are considered equivalent return the same hash value, but the converse is not necessarily true: two objects with different values can return the same hash value.\n\nfind_map uses the modulus operator to wrap the hash values into the range from 0 to len(self.maps), so the result is a legal index into the list. Of course, this means that many different hash values will wrap onto the same index. But if the hash function spreads things out pretty evenly (which is what hash functions are designed to do), then we expect n/100 items per LinearMap.\n\nSince the run time of LinearMap.get is proportional to the number of items, we expect BetterMap to be about 100 times faster than LinearMap. The order of growth is still linear, but the leading coefficient is smaller. That's nice, but still not as good as a hashtable.\n\nHere (finally) is the crucial idea that makes hashtables fast: if you can keep the maximum length of the LinearMaps bounded, LinearMap.get is constant time. All you have to do is keep track of the number of items and when the number of items per LinearMap exceeds a threshold, resize the hashtable by adding more LinearMaps.\n\nHere is an implementation of a hashtable:"
+            },
+            {
+                "type": "block",
+                "code": "class HashMap:\n\n    def __init__(self):\n        self.maps = BetterMap(2)\n        self.num = 0\n\n    def get(self, k):\n        return self.maps.get(k)\n\n    def add(self, k, v):\n        if self.num == len(self.maps.maps):",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.041514999999999996
+}

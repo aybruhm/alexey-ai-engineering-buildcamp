@@ -1,0 +1,77 @@
+{
+    "page": {
+        "page_number": 172,
+        "header": "Chapter 18. Inheritance",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "This code makes it easy to compare cards; because higher suits map to higher numbers, we can compare suits by comparing their codes.\n\nThe mapping for ranks is fairly obvious; each of the numerical ranks maps to the corresponding integer, and for face cards:"
+            },
+            {
+                "type": "table",
+                "caption": null,
+                "columns": [
+                    "Face card",
+                    "↦",
+                    "Integer"
+                ],
+                "rows": [
+                    [
+                        "Jack",
+                        "↦",
+                        "11"
+                    ],
+                    [
+                        "Queen",
+                        "↦",
+                        "12"
+                    ],
+                    [
+                        "King",
+                        "↦",
+                        "13"
+                    ]
+                ]
+            },
+            {
+                "type": "text",
+                "text": "I am using the ↦ symbol to make it clear that these mappings are not part of the Python program. They are part of the program design, but they don’t appear explicitly in the code.\n\nThe class definition for Card looks like this:"
+            },
+            {
+                "type": "block",
+                "code": "class Card:\n    \"\"\"Represents a standard playing card.\"\"\"\n\n    def __init__(self, suit=0, rank=2):\n        self.suit = suit\n        self.rank = rank",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "As usual, the init method takes an optional parameter for each attribute. The default card is the 2 of Clubs.\n\nTo create a Card, you call Card with the suit and rank of the card you want."
+            },
+            {
+                "type": "block",
+                "code": "queen_of_diamonds = Card(1, 12)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "section_heading",
+                "title": "18.2 Class attributes"
+            },
+            {
+                "type": "text",
+                "text": "In order to print Card objects in a way that people can easily read, we need a mapping from the integer codes to the corresponding ranks and suits. A natural way to do that is with lists of strings. We assign these lists to class attributes:"
+            },
+            {
+                "type": "block",
+                "code": "# inside class Card:\n\n    suit_names = ['Clubs', 'Diamonds', 'Hearts', 'Spades']\n    rank_names = [None, 'Ace', '2', '3', '4', '5', '6', '7',\n              '8', '9', '10', 'Jack', 'Queen', 'King']\n\n    def __str__(self):\n        return '%s of %s' % (Card.rank_names[self.rank],\n                             Card.suit_names[self.suit])",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Variables like suit_names and rank_names, which are defined inside a class but outside of any method, are called class attributes because they are associated with the class object Card.\n\nThis term distinguishes them from variables like suit and rank, which are called instance attributes because they are associated with a particular instance.\n\nBoth kinds of attribute are accessed using dot notation. For example, in __str__, self is a Card object, and self.rank is its rank. Similarly, Card is a class object, and Card.rank_names is a list of strings associated with the class."
+            }
+        ]
+    },
+    "cost": 0.045015
+}

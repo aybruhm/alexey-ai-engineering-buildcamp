@@ -1,0 +1,25 @@
+{
+    "page": {
+        "page_number": 215,
+        "header": "Index",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "reload, 144, 195\nrepr, 144\nreversed, 121\nshuffle, 175\nsorted, 99, 106, 121\nsqrt, 18, 53\nstr, 18\nsum, 118, 185\ntrigonometric, 18\ntuple, 115\ntuple as return value, 117\ntype, 153\nvoid, 24\nzip, 118\nfunction argument, 21\nfunction call, 17, 26\nfunction composition, 54\nfunction definition, 19, 20, 25\nfunction frame, 23, 26, 44, 56, 109\nfunction object, 27\nfunction parameter, 21\nfunction syntax, 162\nfunction type, 20\nmodifier, 157\npure, 156\nfunctional programming style, 158, 160"
+            },
+            {
+                "type": "text",
+                "text": "gamma function, 58\ngather, 118, 123, 190\nGCD (greatest common divisor), 61\ngeneralization, 32, 36, 85, 159\ngenerator expression, 185, 186, 191\ngenerator object, 185\ngeometric resizing, 209\nget method, 105\ngetattr function, 168\ngetcwd function, 139\nglobal statement, 110, 112\nglobal variable, 110, 112\nupdate, 110\nGNU Free Documentation License, v, vi\ngreatest common divisor (GCD), 61\ngrid, 27\nguardian pattern, 59, 60, 78"
+            },
+            {
+                "type": "text",
+                "text": "Hand class, 176\nhanging, 195\nHAS-A relationship, 177, 180\nhasattr function, 153, 168\nhash function, 108, 112, 207\nhashable, 108, 112, 120\nHashMap, 207\nhashtable, 112, 206, 210\nheader, 19, 25, 194\nHello, World, 3\nhexadecimal, 148\nhigh-level language, 6\nhistogram, 105\nrandom choice, 126, 130\nword frequencies, 127\nHolmes, Sherlock, 25\nhomophone, 113\nhypotenuse, 54"
+            },
+            {
+                "type": "text",
+                "text": "identical, 100\nidentity, 96, 152\nif statement, 41\nimmutability, 74, 79, 97, 108, 115, 121\nimplementation, 105, 112, 132, 169\nimport statement, 26, 144\nin operator, 205\nin operator, 76, 85, 90, 104\nincrement, 64, 69, 157, 163\nincremental development, 60, 193\nindentation, 19, 162, 194\nindex, 71, 78, 79, 90, 103, 197\nlooping with, 86, 91\nnegative, 72\nslice, 73, 91\nstarting at zero, 71, 90\nIndexError, 72, 78, 90, 197\nindexing, 204\ninfinite loop, 65, 69, 195, 196\ninfinite recursion, 44, 47, 58, 195, 196\ninheritance, 176, 178, 180, 190\ninit method, 164, 168, 172, 174, 176\ninitialization\nvariable, 69\ninitialization (before update), 64\ninput function, 45\ninstance, 148, 153\nas argument, 149\nas return value, 150\ninstance attribute, 148, 153, 172, 180\ninstantiate, 153\ninstantiation, 148\nint function, 17\nint type, 4\ninteger, 4, 7\ninteractive mode, 11, 14, 24"
+            }
+        ]
+    },
+    "cost": 0.051965
+}

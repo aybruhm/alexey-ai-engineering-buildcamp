@@ -1,0 +1,31 @@
+{
+    "page": {
+        "page_number": 132,
+        "header": "Chapter 13. Case study: data structure selection",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "3. Once your program is working, you might want to try a mash-up: if you combine text from two or more books, the random text you generate will blend the vocabulary and phrases from the sources in interesting ways.\n\nCredit: This case study is based on an example from Kernighan and Pike, The Practice of Programming, Addison-Wesley, 1999.\n\nYou should attempt this exercise before you go on; then you can download my solution from https://thinkpython.com/code/markov.py. You will also need https://thinkpython.com/code/emma.txt."
+            },
+            {
+                "type": "section_heading",
+                "title": "13.9 Data structures"
+            },
+            {
+                "type": "text",
+                "text": "Using Markov analysis to generate random text is fun, but there is also a point to this exercise: data structure selection. In your solution to the previous exercises, you had to choose:\n\n• How to represent the prefixes.\n• How to represent the collection of possible suffixes.\n• How to represent the mapping from each prefix to the collection of possible suffixes.\n\nThe last one is easy: a dictionary is the obvious choice for a mapping from keys to corresponding values.\n\nFor the prefixes, the most obvious options are string, list of strings, or tuple of strings.\n\nFor the suffixes, one option is a list; another is a histogram (dictionary).\n\nHow should you choose? The first step is to think about the operations you will need to implement for each data structure. For the prefixes, we need to be able to remove words from the beginning and add to the end. For example, if the current prefix is “Half a”, and the next word is “bee”, you need to be able to form the next prefix, “a bee”.\n\nYour first choice might be a list, since it is easy to add and remove elements, but we also need to be able to use the prefixes as keys in a dictionary, so that rules out lists. With tuples, you can’t append or remove, but you can use the addition operator to form a new tuple:"
+            },
+            {
+                "type": "block",
+                "code": "def shift(prefix, word):\n    return prefix[1:] + (word,)",
+                "language": "python",
+                "description": "Forms a new tuple from all words in prefix except the first, with word appended."
+            },
+            {
+                "type": "text",
+                "text": "shift takes a tuple of words, prefix, and a string, word, and forms a new tuple that has all the words in prefix except the first, and word added to the end.\n\nFor the collection of suffixes, the operations we need to perform include adding a new suffix (or increasing the frequency of an existing one), and choosing a random suffix.\n\nAdding a new suffix is equally easy for the list implementation or the histogram. Choosing a random element from a list is easy; choosing from a histogram is harder to do efficiently (see Exercise 13.7).\n\nSo far we have been talking mostly about ease of implementation, but there are other factors to consider in choosing data structures. One is run time. Sometimes there is a theoretical reason to expect one data structure to be faster than other; for example, I mentioned that"
+            }
+        ]
+    },
+    "cost": 0.04549500000000001
+}

@@ -1,0 +1,27 @@
+{
+    "page": {
+        "page_number": 180,
+        "header": "Chapter 18. Inheritance",
+        "blocks": [
+            {
+                "type": "block",
+                "code": "        try:\n            self.suffix_map[self.prefix].append(word)\n        except KeyError:\n            # if there is no entry for this prefix, make one\n            self.suffix_map[self.prefix] = [word]\n\n        self.prefix = shift(self.prefix, word)",
+                "language": "python",
+                "description": "Continuation of a Markov class method that appends a word to the suffix list for the current prefix, creating the entry if missing, then shifts the prefix."
+            },
+            {
+                "type": "text",
+                "text": "Transforming a program like this—changing the design without changing the behavior—is another example of refactoring (see Section 4.7).\n\nThis example suggests a development plan for designing objects and methods:\n\n1. Start by writing functions that read and write global variables (when necessary).\n2. Once you get the program working, look for associations between global variables and the functions that use them.\n3. Encapsulate related variables as attributes of an object.\n4. Transform the associated functions into methods of the new class.\n\nAs an exercise, download my Markov code from https://thinkpython.com/code/markov.py, and follow the steps described above to encapsulate the global variables as attributes of a new class called Markov. Solution: https://thinkpython.com/code/markov2.py."
+            },
+            {
+                "type": "section_heading",
+                "title": "18.11 Glossary"
+            },
+            {
+                "type": "text",
+                "text": "encode: To represent one set of values using another set of values by constructing a mapping between them.\n\nclass attribute: An attribute associated with a class object. Class attributes are defined inside a class definition but outside any method.\n\ninstance attribute: An attribute associated with an instance of a class.\n\nveneer: A method or function that provides a different interface to another function without doing much computation.\n\ninheritance: The ability to define a new class that is a modified version of a previously defined class.\n\nparent class: The class from which a child class inherits.\n\nchild class: A new class created by inheriting from an existing class; also called a \"subclass\".\n\nIS-A relationship: A relationship between a child class and its parent class.\n\nHAS-A relationship: A relationship between two classes where instances of one class contain references to instances of the other.\n\ndependency: A relationship between two classes where instances of one class use instances of the other class, but do not store them as attributes."
+            }
+        ]
+    },
+    "cost": 0.041115
+}

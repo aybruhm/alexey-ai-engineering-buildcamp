@@ -1,0 +1,77 @@
+{
+    "page": {
+        "page_number": 128,
+        "header": "Chapter 13. Case study: data structure selection",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "The number of different words is just the number of items in the dictionary:"
+            },
+            {
+                "type": "block",
+                "code": "def different_words(hist):\n    return len(hist)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Here is some code to print the results:"
+            },
+            {
+                "type": "block",
+                "code": "print('Total number of words:', total_words(hist))\nprint('Number of different words:', different_words(hist))",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "And the results:"
+            },
+            {
+                "type": "block",
+                "code": "Total number of words: 161080\nNumber of different words: 7214",
+                "language": "text",
+                "description": null
+            },
+            {
+                "type": "section_heading",
+                "title": "13.4 Most common words"
+            },
+            {
+                "type": "text",
+                "text": "To find the most common words, we can make a list of tuples, where each tuple contains a word and its frequency, and sort it.\n\nThe following function takes a histogram and returns a list of word-frequency tuples:"
+            },
+            {
+                "type": "block",
+                "code": "def most_common(hist):\n    t = []\n    for key, value in hist.items():\n        t.append((value, key))\n\n    t.sort(reverse=True)\n    return t",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "In each tuple, the frequency appears first, so the resulting list is sorted by frequency. Here is a loop that prints the ten most common words:"
+            },
+            {
+                "type": "block",
+                "code": "t = most_common(hist)\nprint('The most common words are:')\nfor freq, word in t[:10]:\n    print(word, freq, sep='\\t')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "I use the keyword argument sep to tell print to use a tab character as a “separator”, rather than a space, so the second column is lined up. Here are the results from Emma:"
+            },
+            {
+                "type": "block",
+                "code": "The most common words are:\nto      5242\nthe     5205\nand     4897\nof      4295\ni       3191\na       3130\nit      2529\nher     2483\nwas     2400\nshe     2364",
+                "language": "text",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This code can be simplified using the key parameter of the sort function. If you are curious, you can read about it at https://wiki.python.org/moin/HowTo/Sorting."
+            }
+        ]
+    },
+    "cost": 0.038895
+}

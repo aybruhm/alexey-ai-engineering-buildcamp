@@ -1,0 +1,164 @@
+{
+    "page": {
+        "page_number": 15,
+        "header": "Contents",
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "5 Conditionals and recursion 39"
+            },
+            {
+                "type": "table",
+                "caption": null,
+                "columns": [
+                    "Section",
+                    "Title",
+                    "Page"
+                ],
+                "rows": [
+                    [
+                        "5.1",
+                        "Floor division and modulus",
+                        "39"
+                    ],
+                    [
+                        "5.2",
+                        "Boolean expressions",
+                        "40"
+                    ],
+                    [
+                        "5.3",
+                        "Logical operators",
+                        "40"
+                    ],
+                    [
+                        "5.4",
+                        "Conditional execution",
+                        "41"
+                    ],
+                    [
+                        "5.5",
+                        "Alternative execution",
+                        "41"
+                    ],
+                    [
+                        "5.6",
+                        "Chained conditionals",
+                        "41"
+                    ],
+                    [
+                        "5.7",
+                        "Nested conditionals",
+                        "42"
+                    ],
+                    [
+                        "5.8",
+                        "Recursion",
+                        "43"
+                    ],
+                    [
+                        "5.9",
+                        "Stack diagrams for recursive functions",
+                        "44"
+                    ],
+                    [
+                        "5.10",
+                        "Infinite recursion",
+                        "44"
+                    ],
+                    [
+                        "5.11",
+                        "Keyboard input",
+                        "45"
+                    ],
+                    [
+                        "5.12",
+                        "Debugging",
+                        "46"
+                    ],
+                    [
+                        "5.13",
+                        "Glossary",
+                        "47"
+                    ],
+                    [
+                        "5.14",
+                        "Exercises",
+                        "47"
+                    ]
+                ]
+            },
+            {
+                "type": "section_heading",
+                "title": "6 Fruitful functions 51"
+            },
+            {
+                "type": "table",
+                "caption": null,
+                "columns": [
+                    "Section",
+                    "Title",
+                    "Page"
+                ],
+                "rows": [
+                    [
+                        "6.1",
+                        "Return values",
+                        "51"
+                    ],
+                    [
+                        "6.2",
+                        "Incremental development",
+                        "52"
+                    ],
+                    [
+                        "6.3",
+                        "Composition",
+                        "54"
+                    ],
+                    [
+                        "6.4",
+                        "Boolean functions",
+                        "54"
+                    ],
+                    [
+                        "6.5",
+                        "More recursion",
+                        "55"
+                    ],
+                    [
+                        "6.6",
+                        "Leap of faith",
+                        "57"
+                    ],
+                    [
+                        "6.7",
+                        "One more example",
+                        "57"
+                    ],
+                    [
+                        "6.8",
+                        "Checking types",
+                        "58"
+                    ],
+                    [
+                        "6.9",
+                        "Debugging",
+                        "59"
+                    ],
+                    [
+                        "6.10",
+                        "Glossary",
+                        "60"
+                    ],
+                    [
+                        "6.11",
+                        "Exercises",
+                        "60"
+                    ]
+                ]
+            }
+        ]
+    },
+    "cost": 0.034095
+}

@@ -1,0 +1,21 @@
+{
+    "page": {
+        "page_number": 28,
+        "header": "Chapter 3. Functions",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "The output of these statements is '+ -' on the same line. The output from the next print statement would begin on the next line."
+            },
+            {
+                "type": "text",
+                "text": "2. Write a function that draws a similar grid with four rows and four columns."
+            },
+            {
+                "type": "text",
+                "text": "Solution: https://thinkpython.com/code/grid.py. Credit: This exercise is based on an exercise in Oualline, Practical C Programming, Third Edition, O'Reilly Media, 1997."
+            }
+        ]
+    },
+    "cost": 0.024945000000000002
+}

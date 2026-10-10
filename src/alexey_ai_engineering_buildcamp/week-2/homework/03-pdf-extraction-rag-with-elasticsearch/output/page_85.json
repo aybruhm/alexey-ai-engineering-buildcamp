@@ -1,0 +1,39 @@
+{
+    "page": {
+        "page_number": 61,
+        "header": null,
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "Chapter 7"
+            },
+            {
+                "type": "section_heading",
+                "title": "Iteration"
+            },
+            {
+                "type": "text",
+                "text": "This chapter is about iteration, which is the ability to run a block of statements repeatedly. We saw a kind of iteration, using recursion, in Section 5.8. We saw another kind, using a for loop, in Section 4.2. In this chapter we'll see yet another kind, using a while statement. But first I want to say a little more about variable assignment."
+            },
+            {
+                "type": "section_heading",
+                "title": "7.1 Reassignment"
+            },
+            {
+                "type": "text",
+                "text": "As you may have discovered, it is legal to make more than one assignment to the same variable. A new assignment makes an existing variable refer to a new value (and stop referring to the old value)."
+            },
+            {
+                "type": "block",
+                "code": ">>> x = 5\n>>> x\n5\n>>> x = 7\n>>> x\n7",
+                "language": "python",
+                "description": "Reassigning x changes the value it refers to from 5 to 7."
+            },
+            {
+                "type": "text",
+                "text": "The first time we display x, its value is 5; the second time, its value is 7.\n\nFigure 7.1 shows what reassignment looks like in a state diagram.\n\nAt this point I want to address a common source of confusion. Because Python uses the equal sign (=) for assignment, it is tempting to interpret a statement like a = b as a mathematical proposition of equality; that is, the claim that a and b are equal. But this interpretation is wrong.\n\nFirst, equality is a symmetric relationship and assignment is not. For example, in mathematics, if a = 7 then 7 = a. But in Python, the statement a = 7 is legal and 7 = a is not.\n\nAlso, in mathematics, a proposition of equality is either true or false for all time. If a = b now, then a will always equal b. In Python, an assignment statement can make two variables equal, but they don't have to stay that way:"
+            }
+        ]
+    },
+    "cost": 0.037665000000000004
+}

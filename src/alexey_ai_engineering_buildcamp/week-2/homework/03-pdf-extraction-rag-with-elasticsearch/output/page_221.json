@@ -1,0 +1,75 @@
+{
+    "page": {
+        "page_number": 199,
+        "header": "A.3. Semantic errors",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "In order to program, you need a mental model of how programs work. If you write a program that doesn't do what you expect, often the problem is not in the program; it's in your mental model.\n\nThe best way to correct your mental model is to break the program into its components (usually the functions and methods) and test each component independently. Once you find the discrepancy between your model and reality, you can solve the problem.\n\nOf course, you should be building and testing components as you develop the program. If you encounter a problem, there should be only a small amount of new code that is not known to be correct."
+            },
+            {
+                "type": "section_heading",
+                "title": "A.3.2 I've got a big hairy expression and it doesn't do what I expect."
+            },
+            {
+                "type": "text",
+                "text": "Writing complex expressions is fine as long as they are readable, but they can be hard to debug. It is often a good idea to break a complex expression into a series of assignments to temporary variables.\n\nFor example:"
+            },
+            {
+                "type": "block",
+                "code": "self.hands[i].addCard(self.hands[self.findNeighbor(i)].popCard())",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This can be rewritten as:"
+            },
+            {
+                "type": "block",
+                "code": "neighbor = self.findNeighbor(i)\npickedCard = self.hands[neighbor].popCard()\nself.hands[i].addCard(pickedCard)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The explicit version is easier to read because the variable names provide additional documentation, and it is easier to debug because you can check the types of the intermediate variables and display their values.\n\nAnother problem that can occur with big expressions is that the order of evaluation may not be what you expect. For example, if you are translating the expression x/(2π) into Python, you might write:"
+            },
+            {
+                "type": "block",
+                "code": "y = x / 2 * math.pi",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "That is not correct because multiplication and division have the same precedence and are evaluated from left to right. So this expression computes xπ/2.\n\nA good way to debug expressions is to add parentheses to make the order of evaluation explicit:"
+            },
+            {
+                "type": "block",
+                "code": "y = x / (2 * math.pi)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Whenever you are not sure of the order of evaluation, use parentheses. Not only will the program be correct (in the sense of doing what you intended), it will also be more readable for other people who haven't memorized the order of operations."
+            },
+            {
+                "type": "section_heading",
+                "title": "A.3.3 I've got a function that doesn't return what I expect."
+            },
+            {
+                "type": "text",
+                "text": "If you have a return statement with a complex expression, you don't have a chance to print the result before returning. Again, you can use a temporary variable. For example, instead of:"
+            },
+            {
+                "type": "block",
+                "code": "return self.hands[i].removeMatches()",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.04504
+}

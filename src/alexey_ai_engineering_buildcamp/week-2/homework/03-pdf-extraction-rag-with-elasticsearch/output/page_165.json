@@ -1,0 +1,73 @@
+{
+    "page": {
+        "page_number": 143,
+        "header": "14.9. Writing modules",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "The argument is a string that contains a shell command. The return value is an object that behaves like an open file. You can read the output from the ls process one line at a time with readline or get the whole thing at once with read:"
+            },
+            {
+                "type": "block",
+                "code": ">>> res = fp.read()",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "When you are done, you close the pipe like a file:"
+            },
+            {
+                "type": "block",
+                "code": ">>> stat = fp.close()\n>>> print(stat)\nNone",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The return value is the final status of the ls process; None means that it ended normally (with no errors).\n\nFor example, most Unix systems provide a command called md5sum that reads the contents of a file and computes a “checksum”. You can read about MD5 at http://en.wikipedia.org/wiki/Md5. This command provides an efficient way to check whether two files have the same contents. The probability that different contents yield the same checksum is very small (that is, unlikely to happen before the universe collapses).\n\nYou can use a pipe to run md5sum from Python and get the result:"
+            },
+            {
+                "type": "block",
+                "code": ">>> filename = 'book.tex'\n>>> cmd = 'md5sum ' + filename\n>>> fp = os.popen(cmd)\n>>> res = fp.read()\n>>> stat = fp.close()\n>>> print(res)\n1e0033f0ed0656636de0d75144ba32e0  book.tex\n>>> print(stat)\nNone",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "section_heading",
+                "title": "14.9 Writing modules"
+            },
+            {
+                "type": "text",
+                "text": "Any file that contains Python code can be imported as a module. For example, suppose you have a file named wc.py with the following code:"
+            },
+            {
+                "type": "block",
+                "code": "def linecount(filename):\n    count = 0\n    for line in open(filename):\n        count += 1\n    return count\n\nprint(linecount('wc.py'))",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "If you run this program, it reads itself and prints the number of lines in the file, which is 7. You can also import it like this:"
+            },
+            {
+                "type": "block",
+                "code": ">>> import wc\n7",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Now you have a module object wc:"
+            },
+            {
+                "type": "block",
+                "code": ">>> wc\n<module 'wc' from 'wc.py'>",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.040444999999999995
+}

@@ -1,0 +1,29 @@
+{
+    "page": {
+        "page_number": 194,
+        "header": "Appendix A. Debugging",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "If you are building the program incrementally, you should have a good idea about where the error is. It will be in the last line you added.\n\nIf you are copying code from a book, start by comparing your code to the book's code very carefully. Check every character. At the same time, remember that the book might be wrong, so if you see something that looks like a syntax error, it might be.\n\nHere are some ways to avoid the most common syntax errors:"
+            },
+            {
+                "type": "text",
+                "text": "1. Make sure you are not using a Python keyword for a variable name.\n\n2. Check that you have a colon at the end of the header of every compound statement, including for, while, if, and def statements.\n\n3. Make sure that any strings in the code have matching quotation marks. Make sure that all quotation marks are \"straight quotes\", not \"curly quotes\".\n\n4. If you have multiline strings with triple quotes (single or double), make sure you have terminated the string properly. An unterminated string may cause an invalid token error at the end of your program, or it may treat the following part of the program as a string until it comes to the next string. In the second case, it might not produce an error message at all!\n\n5. An unclosed opening operator—(, {, or [—makes Python continue with the next line as part of the current statement. Generally, an error occurs almost immediately in the next line.\n\n6. Check for the classic = instead of == inside a conditional.\n\n7. Check the indentation to make sure it lines up the way it is supposed to. Python can handle space and tabs, but if you mix them it can cause problems. The best way to avoid this problem is to use a text editor that knows about Python and generates consistent indentation.\n\n8. If you have non-ASCII characters in the code (including strings and comments), that might cause a problem, although Python 3 usually handles non-ASCII characters. Be careful if you paste in text from a web page or other source."
+            },
+            {
+                "type": "text",
+                "text": "If nothing works, move on to the next section..."
+            },
+            {
+                "type": "section_heading",
+                "title": "A.1.1 I keep making changes and it makes no difference."
+            },
+            {
+                "type": "text",
+                "text": "If the interpreter says there is an error and you don't see it, that might be because you and the interpreter are not looking at the same code. Check your programming environment to make sure that the program you are editing is the one Python is trying to run.\n\nIf you are not sure, try putting an obvious and deliberate syntax error at the beginning of the program. Now run it again. If the interpreter doesn't find the new error, you are not running the new code.\n\nThere are a few likely culprits:\n\n• You edited the file and forgot to save the changes before running it again. Some programming environments do this for you, but some don't."
+            }
+        ]
+    },
+    "cost": 0.04389
+}

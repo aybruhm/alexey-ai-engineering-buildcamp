@@ -1,0 +1,89 @@
+{
+    "page": {
+        "page_number": 91,
+        "header": "10.3. Traversing a list",
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "10.3 Traversing a list"
+            },
+            {
+                "type": "text",
+                "text": "The most common way to traverse the elements of a list is with a for loop. The syntax is the same as for strings:"
+            },
+            {
+                "type": "block",
+                "code": "for cheese in cheeses:\n    print(cheese)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This works well if you only need to read the elements of the list. But if you want to write or update the elements, you need the indices. A common way to do that is to combine the built-in functions range and len:"
+            },
+            {
+                "type": "block",
+                "code": "for i in range(len(numbers)):\n    numbers[i] = numbers[i] * 2",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This loop traverses the list and updates each element. len returns the number of elements in the list. range returns a list of indices from 0 to n − 1, where n is the length of the list. Each time through the loop i gets the index of the next element. The assignment statement in the body uses i to read the old value of the element and to assign the new value.\n\nA for loop over an empty list never runs the body:"
+            },
+            {
+                "type": "block",
+                "code": "for x in []:\n    print('This never happens.')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Although a list can contain another list, the nested list still counts as a single element. The length of this list is four:"
+            },
+            {
+                "type": "block",
+                "code": "['spam', 1, ['Brie', 'Roquefort', 'Pol le Veq'], [1, 2, 3]]",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "section_heading",
+                "title": "10.4 List operations"
+            },
+            {
+                "type": "text",
+                "text": "The + operator concatenates lists:"
+            },
+            {
+                "type": "block",
+                "code": ">>> a = [1, 2, 3]\n>>> b = [4, 5, 6]\n>>> c = a + b\n>>> c\n[1, 2, 3, 4, 5, 6]",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The * operator repeats a list a given number of times:"
+            },
+            {
+                "type": "block",
+                "code": ">>> [0] * 4\n[0, 0, 0, 0]\n>>> [1, 2, 3] * 3\n[1, 2, 3, 1, 2, 3, 1, 2, 3]",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The first example repeats [0] four times. The second example repeats the list [1, 2, 3] three times."
+            },
+            {
+                "type": "section_heading",
+                "title": "10.5 List slices"
+            },
+            {
+                "type": "text",
+                "text": "The slice operator also works on lists:"
+            }
+        ]
+    },
+    "cost": 0.041245000000000004
+}

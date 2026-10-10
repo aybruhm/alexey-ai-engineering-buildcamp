@@ -1,0 +1,87 @@
+{
+    "page": {
+        "page_number": 104,
+        "header": "Chapter 11. Dictionaries",
+        "blocks": [
+            {
+                "type": "block",
+                "code": ">>> eng2sp = {'one': 'uno', 'two': 'dos', 'three': 'tres'}",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "But if you print eng2sp, you might be surprised:"
+            },
+            {
+                "type": "block",
+                "code": ">>> eng2sp\n{'one': 'uno', 'three': 'tres', 'two': 'dos'}",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The order of the key-value pairs might not be the same. If you type the same example on your computer, you might get a different result. In general, the order of items in a dictionary is unpredictable.\n\nBut that's not a problem because the elements of a dictionary are never indexed with integer indices. Instead, you use the keys to look up the corresponding values:"
+            },
+            {
+                "type": "block",
+                "code": ">>> eng2sp['two']\n'dos'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The key 'two' always maps to the value 'dos' so the order of the items doesn't matter.\n\nIf the key isn't in the dictionary, you get an exception:"
+            },
+            {
+                "type": "block",
+                "code": ">>> eng2sp['four']\nKeyError: 'four'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The len function works on dictionaries; it returns the number of key-value pairs:"
+            },
+            {
+                "type": "block",
+                "code": ">>> len(eng2sp)\n3",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The in operator works on dictionaries, too; it tells you whether something appears as a key in the dictionary (appearing as a value is not good enough)."
+            },
+            {
+                "type": "block",
+                "code": ">>> 'one' in eng2sp\nTrue\n>>> 'uno' in eng2sp\nFalse",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "To see whether something appears as a value in a dictionary, you can use the method values, which returns a collection of values, and then use the in operator:"
+            },
+            {
+                "type": "block",
+                "code": ">>> vals = eng2sp.values()\n>>> 'uno' in vals\nTrue",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The in operator uses different algorithms for lists and dictionaries. For lists, it searches the elements of the list in order, as in Section 8.6. As the list gets longer, the search time gets longer in direct proportion.\n\nPython dictionaries use a data structure called a hashtable that has a remarkable property: the in operator takes about the same amount of time no matter how many items are in the dictionary. I explain how that's possible in Section B.4, but the explanation might not make sense until you've read a few more chapters."
+            },
+            {
+                "type": "section_heading",
+                "title": "11.2 Dictionary as a collection of counters"
+            },
+            {
+                "type": "text",
+                "text": "Suppose you are given a string and you want to count how many times each letter appears. There are several ways you could do it:"
+            }
+        ]
+    },
+    "cost": 0.044045
+}

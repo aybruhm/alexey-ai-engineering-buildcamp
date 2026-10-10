@@ -1,0 +1,35 @@
+{
+    "page": {
+        "page_number": 44,
+        "header": "Chapter 5. Conditionals and recursion",
+        "blocks": [
+            {
+                "type": "figure",
+                "caption": "Figure 5.1: Stack diagram.",
+                "description": "A stack diagram for countdown called with n = 3. The top frame is __main__, which is empty. Below it are four countdown frames, stacked in order, with the parameter n bound to 3, 2, 1, and 0 respectively. The bottom frame, where n = 0, is the base case.",
+                "figure_number": 1
+            },
+            {
+                "type": "text",
+                "text": "If n <= 0 the return statement exits the function. The flow of execution immediately returns to the caller, and the remaining lines of the function don't run.\n\nThe rest of the function is similar to countdown: it displays s and then calls itself to display s n − 1 additional times. So the number of lines of output is 1 + (n - 1), which adds up to n.\n\nFor simple examples like this, it is probably easier to use a for loop. But we will see examples later that are hard to write with a for loop and easy to write with recursion, so it is good to start early."
+            },
+            {
+                "type": "section_heading",
+                "title": "5.9 Stack diagrams for recursive functions"
+            },
+            {
+                "type": "text",
+                "text": "In Section 3.9, we used a stack diagram to represent the state of a program during a function call. The same kind of diagram can help interpret a recursive function.\n\nEvery time a function gets called, Python creates a frame to contain the function's local variables and parameters. For a recursive function, there might be more than one frame on the stack at the same time.\n\nFigure 5.1 shows a stack diagram for countdown called with n = 3.\n\nAs usual, the top of the stack is the frame for __main__. It is empty because we did not create any variables in __main__ or pass any arguments to it.\n\nThe four countdown frames have different values for the parameter n. The bottom of the stack, where n=0, is called the base case. It does not make a recursive call, so there are no more frames.\n\nAs an exercise, draw a stack diagram for print_n called with s = 'Hello' and n=2. Then write a function called do_n that takes a function object and a number, n, as arguments, and that calls the given function n times."
+            },
+            {
+                "type": "section_heading",
+                "title": "5.10 Infinite recursion"
+            },
+            {
+                "type": "text",
+                "text": "If a recursion never reaches a base case, it goes on making recursive calls forever, and the program never terminates. This is known as infinite recursion, and it is generally not a good idea. Here is a minimal program with an infinite recursion:"
+            }
+        ]
+    },
+    "cost": 0.041395
+}

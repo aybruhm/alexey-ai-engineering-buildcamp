@@ -1,0 +1,85 @@
+{
+    "page": {
+        "page_number": 164,
+        "header": "Chapter 17. Classes and methods",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "The subject, start, gets assigned to the first parameter, self. The argument, 1337, gets assigned to the second parameter, seconds.\n\nThis mechanism can be confusing, especially if you make an error. For example, if you invoke increment with two arguments, you get:"
+            },
+            {
+                "type": "block",
+                "code": ">>> end = start.increment(1337, 460)\nTypeError: increment() takes 2 positional arguments but 3 were given",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The error message is initially confusing, because there are only two arguments in parentheses. But the subject is also considered an argument, so all together that's three.\n\nBy the way, a positional argument is an argument that doesn't have a parameter name; that is, it is not a keyword argument. In this function call:"
+            },
+            {
+                "type": "block",
+                "code": "sketch(parrot, cage, dead=True)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "parrot and cage are positional, and dead is a keyword argument."
+            },
+            {
+                "type": "section_heading",
+                "title": "17.4 A more complicated example"
+            },
+            {
+                "type": "text",
+                "text": "Rewriting is_after (from Section 16.1) is slightly more complicated because it takes two Time objects as parameters. In this case it is conventional to name the first parameter self and the second parameter other:"
+            },
+            {
+                "type": "block",
+                "code": "# inside class Time:\n\n    def is_after(self, other):\n        return self.time_to_int() > other.time_to_int()",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "To use this method, you have to invoke it on one object and pass the other as an argument:"
+            },
+            {
+                "type": "block",
+                "code": ">>> end.is_after(start)\nTrue",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "One nice thing about this syntax is that it almost reads like English: “end is after start?”"
+            },
+            {
+                "type": "section_heading",
+                "title": "17.5 The init method"
+            },
+            {
+                "type": "text",
+                "text": "The init method (short for “initialization”) is a special method that gets invoked when an object is instantiated. Its full name is __init__ (two underscore characters, followed by init, and then two more underscores). An init method for the Time class might look like this:"
+            },
+            {
+                "type": "block",
+                "code": "# inside class Time:\n\n    def __init__(self, hour=0, minute=0, second=0):\n        self.hour = hour\n        self.minute = minute\n        self.second = second",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "It is common for the parameters of __init__ to have the same names as the attributes. The statement"
+            },
+            {
+                "type": "block",
+                "code": "        self.hour = hour",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.042120000000000005
+}

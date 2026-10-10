@@ -1,0 +1,59 @@
+{
+    "page": {
+        "page_number": 40,
+        "header": "Chapter 5. Conditionals and recursion",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "Also, you can extract the right-most digit or digits from a number. For example, x % 10 yields the right-most digit of x (in base 10). Similarly x % 100 yields the last two digits.\n\nIf you are using Python 2, division works differently. The division operator, /, performs floor division if both operands are integers, and floating-point division if either operand is a float."
+            },
+            {
+                "type": "section_heading",
+                "title": "5.2 Boolean expressions"
+            },
+            {
+                "type": "text",
+                "text": "A boolean expression is an expression that is either true or false. The following examples use the operator ==, which compares two operands and produces True if they are equal and False otherwise:"
+            },
+            {
+                "type": "block",
+                "code": ">>> 5 == 5\nTrue\n>>> 5 == 6\nFalse",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "True and False are special values that belong to the type bool; they are not strings:"
+            },
+            {
+                "type": "block",
+                "code": ">>> type(True)\n<class 'bool'>\n>>> type(False)\n<class 'bool'>",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The == operator is one of the relational operators; the others are:"
+            },
+            {
+                "type": "block",
+                "code": "x != y               # x is not equal to y\nx > y                # x is greater than y\nx < y                # x is less than y\nx >= y               # x is greater than or equal to y\nx <= y               # x is less than or equal to y",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Although these operations are probably familiar to you, the Python symbols are different from the mathematical symbols. A common error is to use a single equal sign (=) instead of a double equal sign (==). Remember that = is an assignment operator and == is a relational operator. There is no such thing as =< or =>."
+            },
+            {
+                "type": "section_heading",
+                "title": "5.3 Logical operators"
+            },
+            {
+                "type": "text",
+                "text": "There are three logical operators: and, or, and not. The semantics (meaning) of these operators is similar to their meaning in English. For example, x > 0 and x < 10 is true only if x is greater than 0 and less than 10.\n\nn%2 == 0 or n%3 == 0 is true if either or both of the conditions is true, that is, if the number is divisible by 2 or 3.\n\nFinally, the not operator negates a boolean expression, so not (x > y) is true if x > y is false, that is, if x is less than or equal to y.\n\nStrictly speaking, the operands of the logical operators should be boolean expressions, but Python is not very strict. Any nonzero number is interpreted as True:"
+            }
+        ]
+    },
+    "cost": 0.04192
+}

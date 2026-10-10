@@ -1,0 +1,71 @@
+{
+    "page": {
+        "page_number": 151,
+        "header": "15.5. Objects are mutable",
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "15.5 Objects are mutable"
+            },
+            {
+                "type": "text",
+                "text": "You can change the state of an object by making an assignment to one of its attributes. For example, to change the size of a rectangle without changing its position, you can modify the values of width and height:"
+            },
+            {
+                "type": "block",
+                "code": "box.width = box.width + 50\nbox.height = box.height + 100",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "You can also write functions that modify objects. For example, grow_rectangle takes a Rectangle object and two numbers, dwidth and dheight, and adds the numbers to the width and height of the rectangle:"
+            },
+            {
+                "type": "block",
+                "code": "def grow_rectangle(rect, dwidth, dheight):\n    rect.width += dwidth\n    rect.height += dheight",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Here is an example that demonstrates the effect:"
+            },
+            {
+                "type": "block",
+                "code": ">>> box.width, box.height\n(150.0, 300.0)\n>>> grow_rectangle(box, 50, 100)\n>>> box.width, box.height\n(200.0, 400.0)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Inside the function, rect is an alias for box, so when the function modifies rect, box changes.\n\nAs an exercise, write a function named move_rectangle that takes a Rectangle and two numbers named dx and dy. It should change the location of the rectangle by adding dx to the x coordinate of corner and adding dy to the y coordinate of corner."
+            },
+            {
+                "type": "section_heading",
+                "title": "15.6 Copying"
+            },
+            {
+                "type": "text",
+                "text": "Aliasing can make a program difficult to read because changes in one place might have unexpected effects in another place. It is hard to keep track of all the variables that might refer to a given object.\n\nCopying an object is often an alternative to aliasing. The copy module contains a function called copy that can duplicate any object:"
+            },
+            {
+                "type": "block",
+                "code": ">>> p1 = Point()\n>>> p1.x = 3.0\n>>> p1.y = 4.0\n\n>>> import copy\n>>> p2 = copy.copy(p1)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "p1 and p2 contain the same data, but they are not the same Point."
+            },
+            {
+                "type": "block",
+                "code": ">>> print_point(p1)\n(3, 4)\n>>> print_point(p2)\n(3, 4)\n>>> p1 is p2\nFalse",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.04142
+}

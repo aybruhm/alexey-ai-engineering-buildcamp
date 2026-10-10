@@ -1,0 +1,65 @@
+{
+    "page": {
+        "page_number": 66,
+        "header": "Chapter 7. Iteration",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "As an exercise, rewrite the function print_n from Section 5.8 using iteration instead of recursion."
+            },
+            {
+                "type": "section_heading",
+                "title": "7.4 break"
+            },
+            {
+                "type": "text",
+                "text": "Sometimes you don't know it's time to end a loop until you get half way through the body. In that case you can use the break statement to jump out of the loop.\n\nFor example, suppose you want to take input from the user until they type done. You could write:"
+            },
+            {
+                "type": "block",
+                "code": "while True:\n    line = input('> ')\n    if line == 'done':\n        break\n    print(line)\n\nprint('Done!')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The loop condition is True, which is always true, so the loop runs until it hits the break statement.\n\nEach time through, it prompts the user with an angle bracket. If the user types done, the break statement exits the loop. Otherwise the program echoes whatever the user types and goes back to the top of the loop. Here's a sample run:"
+            },
+            {
+                "type": "block",
+                "code": "> not done\nnot done\n> done\nDone!",
+                "language": "text",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This way of writing while loops is common because you can check the condition anywhere in the loop (not just at the top) and you can express the stop condition affirmatively (\"stop when this happens\") rather than negatively (\"keep going until that happens\")."
+            },
+            {
+                "type": "section_heading",
+                "title": "7.5 Square roots"
+            },
+            {
+                "type": "text",
+                "text": "Loops are often used in programs that compute numerical results by starting with an approximate answer and iteratively improving it.\n\nFor example, one way of computing square roots is Newton's method. Suppose that you want to know the square root of a. If you start with almost any estimate, x, you can compute a better estimate with the following formula:"
+            },
+            {
+                "type": "block",
+                "code": "y = (x + a/x) / 2",
+                "language": "math",
+                "description": "Newton's method update: the new estimate y is the average of x and a/x."
+            },
+            {
+                "type": "text",
+                "text": "For example, if a is 4 and x is 3:"
+            },
+            {
+                "type": "block",
+                "code": ">>> a = 4\n>>> x = 3\n>>> y = (x + a/x) / 2\n>>> y\n2.16666666667",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.04039
+}

@@ -1,0 +1,79 @@
+{
+    "page": {
+        "page_number": 165,
+        "header": "17.6. The __str__ method",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "stores the value of the parameter hour as an attribute of self.\n\nThe parameters are optional, so if you call Time with no arguments, you get the default values."
+            },
+            {
+                "type": "block",
+                "code": ">>> time = Time()\n>>> time.print_time()\n00:00:00",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "If you provide one argument, it overrides hour:"
+            },
+            {
+                "type": "block",
+                "code": ">>> time = Time (9)\n>>> time.print_time()\n09:00:00",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "If you provide two arguments, they override hour and minute."
+            },
+            {
+                "type": "block",
+                "code": ">>> time = Time(9, 45)\n>>> time.print_time()\n09:45:00",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "And if you provide three arguments, they override all three default values.\n\nAs an exercise, write an init method for the Point class that takes x and y as optional parameters and assigns them to the corresponding attributes."
+            },
+            {
+                "type": "section_heading",
+                "title": "17.6 The __str__ method"
+            },
+            {
+                "type": "text",
+                "text": "__str__ is a special method, like __init__, that is supposed to return a string representation of an object.\n\nFor example, here is a str method for Time objects:"
+            },
+            {
+                "type": "block",
+                "code": "# inside class Time:\n\n    def __str__(self):\n        return '%.2d:%.2d:%.2d' % (self.hour, self.minute, self.second)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "When you print an object, Python invokes the str method:"
+            },
+            {
+                "type": "block",
+                "code": ">>> time = Time(9, 45)\n>>> print(time)\n09:45:00",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "When I write a new class, I almost always start by writing __init__, which makes it easier to instantiate objects, and __str__, which is useful for debugging.\n\nAs an exercise, write a str method for the Point class. Create a Point object and print it."
+            },
+            {
+                "type": "section_heading",
+                "title": "17.7 Operator overloading"
+            },
+            {
+                "type": "text",
+                "text": "By defining other special methods, you can specify the behavior of operators on programmer-defined types. For example, if you define a method named __add__ for the Time class, you can use the + operator on Time objects.\n\nHere is what the definition might look like:"
+            }
+        ]
+    },
+    "cost": 0.04099
+}

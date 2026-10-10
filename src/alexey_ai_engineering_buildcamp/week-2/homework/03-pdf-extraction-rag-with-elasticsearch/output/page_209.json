@@ -1,0 +1,67 @@
+{
+    "page": {
+        "page_number": 187,
+        "header": "19.6. Counters",
+        "blocks": [
+            {
+                "type": "block",
+                "code": "def has_duplicates(t):\n    d = {}\n    for x in t:\n        if x in d:\n            return True\n        d[x] = True\n    return False",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "When an element appears for the first time, it is added to the dictionary. If the same element appears again, the function returns True.\n\nUsing sets, we can write the same function like this:"
+            },
+            {
+                "type": "block",
+                "code": "def has_duplicates(t):\n    return len(set(t)) < len(t)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "An element can only appear in a set once, so if an element in t appears more than once, the set will be smaller than t. If there are no duplicates, the set will be the same size as t.\n\nWe can also use sets to do some of the exercises in Chapter 9. For example, here's a version of uses_only with a loop:"
+            },
+            {
+                "type": "block",
+                "code": "def uses_only(word, available):\n    for letter in word:\n        if letter not in available:\n            return False\n    return True",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "uses_only checks whether all letters in word are in available. We can rewrite it like this:"
+            },
+            {
+                "type": "block",
+                "code": "def uses_only(word, available):\n    return set(word) <= set(available)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The <= operator checks whether one set is a subset of another, including the possibility that they are equal, which is true if all the letters in word appear in available.\n\nAs an exercise, rewrite avoids using sets."
+            },
+            {
+                "type": "section_heading",
+                "title": "19.6 Counters"
+            },
+            {
+                "type": "text",
+                "text": "A Counter is like a set, except that if an element appears more than once, the Counter keeps track of how many times it appears. If you are familiar with the mathematical idea of a multiset, a Counter is a natural way to represent a multiset.\n\nCounter is defined in a standard module called collections, so you have to import it. You can initialize a Counter with a string, list, or anything else that supports iteration:"
+            },
+            {
+                "type": "block",
+                "code": ">>> from collections import Counter\n>>> count = Counter('parrot')\n>>> count\nCounter({'r': 2, 't': 1, 'o': 1, 'p': 1, 'a': 1})",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Counters behave like dictionaries in many ways; they map from each key to the number of times it appears. As in dictionaries, the keys have to be hashable.\n\nUnlike dictionaries, Counters don't raise an exception if you access an element that doesn't appear. Instead, they return 0:"
+            }
+        ]
+    },
+    "cost": 0.04329
+}

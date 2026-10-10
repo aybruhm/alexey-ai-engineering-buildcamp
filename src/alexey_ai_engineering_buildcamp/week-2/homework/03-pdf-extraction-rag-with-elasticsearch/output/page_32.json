@@ -1,0 +1,57 @@
+{
+    "page": {
+        "page_number": 10,
+        "header": "Chapter 2. Variables, expressions and statements",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "Variable names can be as long as you like. They can contain both letters and numbers, but they can't begin with a number. It is legal to use uppercase letters, but it is conventional to use only lower case for variables names.\n\nThe underscore character, _, can appear in a name. It is often used in names with multiple words, such as your_name or airspeed_of_unladen_swallow.\n\nIf you give a variable an illegal name, you get a syntax error:"
+            },
+            {
+                "type": "block",
+                "code": ">>> 76trombones = 'big parade'\nSyntaxError: invalid syntax\n>>> more@ = 1000000\nSyntaxError: invalid syntax\n>>> class = 'Advanced Theoretical Zymurgy'\nSyntaxError: invalid syntax",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "76trombones is illegal because it begins with a number. more@ is illegal because it contains an illegal character, @. But what's wrong with class?\n\nIt turns out that class is one of Python's keywords. The interpreter uses keywords to recognize the structure of the program, and they cannot be used as variable names.\n\nPython 3 has these keywords:"
+            },
+            {
+                "type": "block",
+                "code": "False      class      finally    is         return\nNone       continue   for        lambda     try\nTrue       def        from       nonlocal   while\nand        del        global     not        with\nas         elif       if         or         yield\nassert     else       import     pass\nbreak      except     in         raise",
+                "language": "python",
+                "description": "List of the reserved keywords in Python 3."
+            },
+            {
+                "type": "text",
+                "text": "You don't have to memorize this list. In most development environments, keywords are displayed in a different color; if you try to use one as a variable name, you'll know."
+            },
+            {
+                "type": "section_heading",
+                "title": "2.3 Expressions and statements"
+            },
+            {
+                "type": "text",
+                "text": "An expression is a combination of values, variables, and operators. A value all by itself is considered an expression, and so is a variable, so the following are all legal expressions:"
+            },
+            {
+                "type": "block",
+                "code": ">>> 42\n42\n>>> n\n17\n>>> n + 25\n42",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "When you type an expression at the prompt, the interpreter evaluates it, which means that it finds the value of the expression. In this example, n has the value 17 and n + 25 has the value 42.\n\nA statement is a unit of code that has an effect, like creating a variable or displaying a value."
+            },
+            {
+                "type": "block",
+                "code": ">>> n = 17\n>>> print(n)",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.042145
+}

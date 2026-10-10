@@ -1,0 +1,21 @@
+{
+    "page": {
+        "page_number": 214,
+        "header": "Index",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "FileNotFoundError, 140\nIndexError, 72, 78, 90, 197\nKeyError, 104, 197\nLookupError, 107\nNameError, 22, 197\nOverflowError, 46\nRuntimeError, 45\nStopIteration, 185\nSyntaxError, 19\nTypeError, 72, 74, 108, 116, 118, 139, 164, 197\nUnboundLocalError, 110\nValueError, 46, 117\nexception, catching, 140\nexecute, 11, 14\nexists function, 139\nexperimental debugging, 25, 134\nexponent, 202\nexponential growth, 203\nexpression, 10, 14\n  big and hairy, 199\n  boolean, 40, 47\n  conditional, 183, 191\n  generator, 185, 186, 191\nextend method, 92"
+            },
+            {
+                "type": "text",
+                "text": "factorial, 183\nfactorial function, 56, 58\nfactory, 191\nfactory function, 188, 189\nFalse special value, 40\nFermat's Last Theorem, 48\nfibonacci function, 57, 109\nfile, 137\n  permission, 140\n  reading and writing, 137\nfile object, 83, 87\nfilename, 139\nFileNotFoundError, 140\nfilter pattern, 93, 100, 184\nfind function, 74\nflag, 110, 112\nfloat function, 17\nfloat type, 4\nfloating-point, 4, 7, 67, 183\nfloating-point division, 39\nfloor division, 39, 46, 47\nflow of execution, 21, 26, 58, 59, 65, 178, 196\nflower, 37\nfolder, 139"
+            },
+            {
+                "type": "text",
+                "text": "for loop, 30, 44, 72, 91, 119, 184\nformal language, 4, 7\nformat operator, 138, 145, 197\nformat sequence, 138, 145\nformat string, 138, 145\nframe, 23, 26, 44, 56, 109\nFree Documentation License, GNU, v, vi\nfrequency, 105\n  letter, 123\n  word, 125, 134\nfruitful function, 24, 26\nfrustration, 200\nfunction, 3, 17, 19, 25, 161\n  abs, 52\n  ack, 61, 113\n  arc, 31\n  choice, 126\n  circle, 31\n  compare, 52\n  deepcopy, 152\n  dict, 103\n  dir, 197\n  enumerate, 119\n  eval, 69\n  exists, 139\n  factorial, 56, 183\n  fibonacci, 57, 109\n  find, 74\n  float, 17\n  fruitful, 24\n  getattr, 168\n  getcwd, 139\n  hasattr, 153, 168\n  input, 45\n  int, 17\n  isinstance, 58, 153, 166\n  len, 26, 72, 104\n  list, 94\n  log, 18\n  math, 18\n  max, 117, 118\n  min, 117, 118\n  open, 83, 84, 137, 140, 141\n  polygon, 31\n  popen, 142\n  programmer defined, 22, 129\n  randint, 101, 126\n  random, 126\n  reasons for, 24\n  recursive, 43"
+            }
+        ]
+    },
+    "cost": 0.05029
+}

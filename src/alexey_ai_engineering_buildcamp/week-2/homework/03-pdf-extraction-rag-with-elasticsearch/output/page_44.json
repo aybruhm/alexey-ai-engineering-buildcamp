@@ -1,0 +1,67 @@
+{
+    "page": {
+        "page_number": 22,
+        "header": "Chapter 3. Functions",
+        "blocks": [
+            {
+                "type": "block",
+                "code": ">>> print_twice('Spam')\nSpam\nSpam\n>>> print_twice(42)\n42\n42\n>>> print_twice(math.pi)\n3.14159265359\n3.14159265359",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The same rules of composition that apply to built-in functions also apply to programmer-defined functions, so we can use any kind of expression as an argument for print_twice:"
+            },
+            {
+                "type": "block",
+                "code": ">>> print_twice('Spam '*4)\nSpam Spam Spam Spam\nSpam Spam Spam Spam\n>>> print_twice(math.cos(math.pi))\n-1.0\n-1.0",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The argument is evaluated before the function is called, so in the examples the expressions 'Spam '*4 and math.cos(math.pi) are only evaluated once.\n\nYou can also use a variable as an argument:"
+            },
+            {
+                "type": "block",
+                "code": ">>> michael = 'Eric, the half a bee.'\n>>> print_twice(michael)\nEric, the half a bee.\nEric, the half a bee.",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The name of the variable we pass as an argument (michael) has nothing to do with the name of the parameter (bruce). It doesn't matter what the value was called back home (in the caller); here in print_twice, we call everybody bruce."
+            },
+            {
+                "type": "section_heading",
+                "title": "3.8 Variables and parameters are local"
+            },
+            {
+                "type": "text",
+                "text": "When you create a variable inside a function, it is local, which means that it only exists inside the function. For example:"
+            },
+            {
+                "type": "block",
+                "code": "def cat_twice(part1, part2):\n    cat = part1 + part2\n    print_twice(cat)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This function takes two arguments, concatenates them, and prints the result twice. Here is an example that uses it:"
+            },
+            {
+                "type": "block",
+                "code": ">>> line1 = 'Bing tiddle '\n>>> line2 = 'tiddle bang.'\n>>> cat_twice(line1, line2)\nBing tiddle tiddle bang.\nBing tiddle tiddle bang.",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "When cat_twice terminates, the variable cat is destroyed. If we try to print it, we get an exception:"
+            }
+        ]
+    },
+    "cost": 0.04062
+}

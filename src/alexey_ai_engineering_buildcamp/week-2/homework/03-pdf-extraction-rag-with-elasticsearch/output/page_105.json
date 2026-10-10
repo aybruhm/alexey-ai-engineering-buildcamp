@@ -1,0 +1,55 @@
+{
+    "page": {
+        "page_number": 83,
+        "header": null,
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "Chapter 9"
+            },
+            {
+                "type": "section_heading",
+                "title": "Case study: word play"
+            },
+            {
+                "type": "text",
+                "text": "This chapter presents the second case study, which involves solving word puzzles by searching for words that have certain properties. For example, we'll find the longest palindromes in English and search for words whose letters appear in alphabetical order. And I will present another program development plan: reduction to a previously solved problem."
+            },
+            {
+                "type": "section_heading",
+                "title": "9.1 Reading word lists"
+            },
+            {
+                "type": "text",
+                "text": "For the exercises in this chapter we need a list of English words. There are lots of word lists available on the Web, but the one most suitable for our purpose is one of the word lists collected and contributed to the public domain by Grady Ward as part of the Moby lexicon project (see http://wikipedia.org/wiki/Moby_Project). It is a list of 113,809 official crosswords; that is, words that are considered valid in crossword puzzles and other word games. In the Moby collection, the filename is 113809of.fic; you can download a copy, with the simpler name words.txt, from https://thinkpython.com/code/words.txt.\n\nThis file is in plain text, so you can open it with a text editor, but you can also read it from Python. The built-in function open takes the name of the file as a parameter and returns a file object you can use to read the file."
+            },
+            {
+                "type": "block",
+                "code": ">>> fin = open('words.txt')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "fin is a common name for a file object used for input. The file object provides several methods for reading, including readline, which reads characters from the file until it gets to a newline and returns the result as a string:"
+            },
+            {
+                "type": "block",
+                "code": ">>> fin.readline()\n'aa\\n'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The first word in this particular list is “aa”, which is a kind of lava. The sequence \\n represents the newline character that separates this word from the next.\n\nThe file object keeps track of where it is in the file, so if you call readline again, you get the next word:"
+            },
+            {
+                "type": "block",
+                "code": ">>> fin.readline()\n'aah\\n'",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.038220000000000004
+}

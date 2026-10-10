@@ -1,0 +1,55 @@
+{
+    "page": {
+        "page_number": 29,
+        "header": null,
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "Chapter 4"
+            },
+            {
+                "type": "section_heading",
+                "title": "Case study: interface design"
+            },
+            {
+                "type": "text",
+                "text": "This chapter presents a case study that demonstrates a process for designing functions that work together.\n\nIt introduces the turtle module, which allows you to create images using turtle graphics. The turtle module is included in most Python installations, but if you are running Python using PythonAnywhere, you won't be able to run the turtle examples (at least you couldn't when I wrote this).\n\nIf you have already installed Python on your computer, you should be able to run the examples. Otherwise, now is a good time to install. I have posted instructions at http://tinyurl.com/thinkpython2e.\n\nCode examples from this chapter are available from https://thinkpython.com/code/polygon.py."
+            },
+            {
+                "type": "section_heading",
+                "title": "4.1 The turtle module"
+            },
+            {
+                "type": "text",
+                "text": "To check whether you have the turtle module, open the Python interpreter and type"
+            },
+            {
+                "type": "block",
+                "code": ">>> import turtle\n>>> bob = turtle.Turtle()",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "When you run this code, it should create a new window with small arrow that represents the turtle. Close the window.\n\nCreate a file named mypolygon.py and type in the following code:"
+            },
+            {
+                "type": "block",
+                "code": "import turtle\nbob = turtle.Turtle()\nprint(bob)\nturtle.mainloop()",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The turtle module (with a lowercase 't') provides a function called Turtle (with an uppercase 'T') that creates a Turtle object, which we assign to a variable named bob. Printing bob displays something like:"
+            },
+            {
+                "type": "block",
+                "code": "<turtle.Turtle object at 0xb7bfbf4c>",
+                "language": "text",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.037115
+}

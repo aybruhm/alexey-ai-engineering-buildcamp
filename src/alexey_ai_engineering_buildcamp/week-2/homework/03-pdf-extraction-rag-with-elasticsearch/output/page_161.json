@@ -1,0 +1,67 @@
+{
+    "page": {
+        "page_number": 139,
+        "header": "14.4. Filenames and paths",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "The number of elements in the tuple has to match the number of format sequences in the string. Also, the types of the elements have to match the format sequences:"
+            },
+            {
+                "type": "block",
+                "code": ">>> '%d %d %d' % (1, 2)\nTypeError: not enough arguments for format string\n>>> '%d' % 'dollars'\nTypeError: %d format: a number is required, not str",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "In the first example, there aren't enough elements; in the second, the element is the wrong type.\n\nFor more information on the format operator, see https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting. A more powerful alternative is the string format method, which you can read about at https://docs.python.org/3/library/stdtypes.html#str.format."
+            },
+            {
+                "type": "section_heading",
+                "title": "14.4 Filenames and paths"
+            },
+            {
+                "type": "text",
+                "text": "Files are organized into directories (also called \"folders\"). Every running program has a \"current directory\", which is the default directory for most operations. For example, when you open a file for reading, Python looks for it in the current directory.\n\nThe os module provides functions for working with files and directories (\"os\" stands for \"operating system\"). os.getcwd returns the name of the current directory:"
+            },
+            {
+                "type": "block",
+                "code": ">>> import os\n>>> cwd = os.getcwd()\n>>> cwd\n'/home/dinsdale'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "cwd stands for \"current working directory\". The result in this example is /home/dinsdale, which is the home directory of a user named dinsdale.\n\nA string like '/home/dinsdale' that identifies a file or directory is called a path.\n\nA simple filename, like memo.txt is also considered a path, but it is a relative path because it relates to the current directory. If the current directory is /home/dinsdale, the filename memo.txt would refer to /home/dinsdale/memo.txt.\n\nA path that begins with / does not depend on the current directory; it is called an absolute path. To find the absolute path to a file, you can use os.path.abspath:"
+            },
+            {
+                "type": "block",
+                "code": ">>> os.path.abspath('memo.txt')\n'/home/dinsdale/memo.txt'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "os.path provides other functions for working with filenames and paths. For example, os.path.exists checks whether a file or directory exists:"
+            },
+            {
+                "type": "block",
+                "code": ">>> os.path.exists('memo.txt')\nTrue",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "If it exists, os.path.isdir checks whether it's a directory:"
+            },
+            {
+                "type": "block",
+                "code": ">>> os.path.isdir('memo.txt')\nFalse\n>>> os.path.isdir('/home/dinsdale')\nTrue",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.044545
+}

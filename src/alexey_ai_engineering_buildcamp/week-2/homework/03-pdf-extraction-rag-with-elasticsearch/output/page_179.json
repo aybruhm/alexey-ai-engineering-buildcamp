@@ -1,0 +1,37 @@
+{
+    "page": {
+        "page_number": 157,
+        "header": "16.3. Modifiers",
+        "blocks": [
+            {
+                "type": "block",
+                "code": "def add_time(t1, t2):\n    sum = Time()\n    sum.hour = t1.hour + t2.hour\n    sum.minute = t1.minute + t2.minute\n    sum.second = t1.second + t2.second\n\n    if sum.second >= 60:\n        sum.second -= 60\n        sum.minute += 1\n\n    if sum.minute >= 60:\n        sum.minute -= 60\n        sum.hour += 1\n\n    return sum",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Although this function is correct, it is starting to get big. We will see a shorter alternative later."
+            },
+            {
+                "type": "section_heading",
+                "title": "16.3 Modifiers"
+            },
+            {
+                "type": "text",
+                "text": "Sometimes it is useful for a function to modify the objects it gets as parameters. In that case, the changes are visible to the caller. Functions that work this way are called **modifiers**.\n\n`increment`, which adds a given number of seconds to a `Time` object, can be written naturally as a modifier. Here is a rough draft:"
+            },
+            {
+                "type": "block",
+                "code": "def increment(time, seconds):\n    time.second += seconds\n\n    if time.second >= 60:\n        time.second -= 60\n        time.minute += 1\n\n    if time.minute >= 60:\n        time.minute -= 60\n        time.hour += 1",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The first line performs the basic operation; the remainder deals with the special cases we saw before.\n\nIs this function correct? What happens if `seconds` is much greater than sixty?\n\nIn that case, it is not enough to carry once; we have to keep doing it until `time.second` is less than sixty. One solution is to replace the `if` statements with `while` statements. That would make the function correct, but not very efficient. As an exercise, write a correct version of `increment` that doesn't contain any loops.\n\nAnything that can be done with modifiers can also be done with pure functions. In fact, some programming languages only allow pure functions. There is some evidence that programs that use pure functions are faster to develop and less error-prone than programs that use modifiers. But modifiers are convenient at times, and functional programs tend to be less efficient."
+            }
+        ]
+    },
+    "cost": 0.039470000000000005
+}

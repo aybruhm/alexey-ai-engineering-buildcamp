@@ -1,0 +1,75 @@
+{
+    "page": {
+        "page_number": 122,
+        "header": "Chapter 12. Tuples",
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "12.8 Debugging"
+            },
+            {
+                "type": "text",
+                "text": "Lists, dictionaries and tuples are examples of data structures; in this chapter we are starting to see compound data structures, like lists of tuples, or dictionaries that contain tuples as keys and lists as values. Compound data structures are useful, but they are prone to what I call shape errors; that is, errors caused when a data structure has the wrong type, size, or structure. For example, if you are expecting a list with one integer and I give you a plain old integer (not in a list), it won't work.\n\nTo help debug these kinds of errors, I have written a module called structshape that provides a function, also called structshape, that takes any kind of data structure as an argument and returns a string that summarizes its shape. You can download it from https://thinkpython.com/code/structshape.py\n\nHere's the result for a simple list:"
+            },
+            {
+                "type": "block",
+                "code": ">>> from structshape import structshape\n>>> t = [1, 2, 3]\n>>> structshape(t)\n'list of 3 int'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "A fancier program might write \"list of 3 ints\", but it was easier not to deal with plurals. Here's a list of lists:"
+            },
+            {
+                "type": "block",
+                "code": ">>> t2 = [[1,2], [3,4], [5,6]]\n>>> structshape(t2)\n'list of 3 list of 2 int'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "If the elements of the list are not the same type, structshape groups them, in order, by type:"
+            },
+            {
+                "type": "block",
+                "code": ">>> t3 = [1, 2, 3, 4.0, '5', '6', [7], [8], 9]\n>>> structshape(t3)\n'list of (3 int, float, 2 str, 2 list of int, int)'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Here's a list of tuples:"
+            },
+            {
+                "type": "block",
+                "code": ">>> s = 'abc'\n>>> lt = list(zip(t, s))\n>>> structshape(lt)\n'list of 3 tuple of (int, str)'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "And here's a dictionary with 3 items that map integers to strings."
+            },
+            {
+                "type": "block",
+                "code": ">>> d = dict(lt)\n>>> structshape(d)\n'dict of 3 int->str'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "If you are having trouble keeping track of your data structures, structshape can help."
+            },
+            {
+                "type": "section_heading",
+                "title": "12.9 Glossary"
+            },
+            {
+                "type": "text",
+                "text": "tuple: An immutable sequence of elements.\n\ntuple assignment: An assignment with a sequence on the right side and a tuple of variables on the left. The right side is evaluated and then its elements are assigned to the variables on the left."
+            }
+        ]
+    },
+    "cost": 0.044145000000000004
+}

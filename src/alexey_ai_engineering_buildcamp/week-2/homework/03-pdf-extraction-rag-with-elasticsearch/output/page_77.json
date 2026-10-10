@@ -1,0 +1,75 @@
+{
+    "page": {
+        "page_number": 55,
+        "header": "6.5. More recursion",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "It is common to give boolean functions names that sound like yes/no questions; is_divisible returns either True or False to indicate whether x is divisible by y."
+            },
+            {
+                "type": "text",
+                "text": "Here is an example:"
+            },
+            {
+                "type": "block",
+                "code": ">>> is_divisible(6, 4)\nFalse\n>>> is_divisible(6, 3)\nTrue",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The result of the == operator is a boolean, so we can write the function more concisely by returning it directly:"
+            },
+            {
+                "type": "block",
+                "code": "def is_divisible(x, y):\n    return x % y == 0",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Boolean functions are often used in conditional statements:"
+            },
+            {
+                "type": "block",
+                "code": "if is_divisible(x, y):\n    print('x is divisible by y')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "It might be tempting to write something like:"
+            },
+            {
+                "type": "block",
+                "code": "if is_divisible(x, y) == True:\n    print('x is divisible by y')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "But the extra comparison is unnecessary."
+            },
+            {
+                "type": "text",
+                "text": "As an exercise, write a function is_between(x, y, z) that returns True if x ≤ y ≤ z or False otherwise."
+            },
+            {
+                "type": "section_heading",
+                "title": "6.5 More recursion"
+            },
+            {
+                "type": "text",
+                "text": "We have only covered a small subset of Python, but you might be interested to know that this subset is a complete programming language, which means that anything that can be computed can be expressed in this language. Any program ever written could be rewritten using only the language features you have learned so far (actually, you would need a few commands to control devices like the mouse, disks, etc., but that's all).\n\nProving that claim is a nontrivial exercise first accomplished by Alan Turing, one of the first computer scientists (some would argue that he was a mathematician, but a lot of early computer scientists started as mathematicians). Accordingly, it is known as the Turing Thesis. For a more complete (and accurate) discussion of the Turing Thesis, I recommend Michael Sipser's book Introduction to the Theory of Computation.\n\nTo give you an idea of what you can do with the tools you have learned so far, we'll evaluate a few recursively defined mathematical functions. A recursive definition is similar to a circular definition, in the sense that the definition contains a reference to the thing being defined. A truly circular definition is not very useful:\n\nvorpal: An adjective used to describe something that is vorpal.\n\nIf you saw that definition in the dictionary, you might be annoyed. On the other hand, if you looked up the definition of the factorial function, denoted with the symbol !, you might get something like this:"
+            },
+            {
+                "type": "block",
+                "code": "0! = 1\nn! = n(n − 1)!",
+                "language": "math",
+                "description": "Recursive definition of factorial: base case 0! = 1, and n! equals n times (n−1)!."
+            }
+        ]
+    },
+    "cost": 0.04639
+}

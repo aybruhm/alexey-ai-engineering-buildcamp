@@ -1,0 +1,29 @@
+{
+    "page": {
+        "page_number": 216,
+        "header": "Index",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "interface, 33, 36, 169, 179\ninterlocking words, 101\ninterpret, 6\ninterpreter, 2\ninvariant, 159, 160\ninvert dictionary, 107\ninvocation, 76, 79\nis operator, 95, 152\nIS-A relationship, 177, 180\nisinstance function, 58, 153, 166\nitem, 74, 79, 89, 103\n    dictionary, 112\nitem assignment, 74, 90, 116\nitem update, 91\nitems method, 120\niteration, 64, 69\niterator, 119–121, 123, 204"
+            },
+            {
+                "type": "text",
+                "text": "join, 204\njoin method, 95, 175"
+            },
+            {
+                "type": "text",
+                "text": "Kangaroo class, 170\nkey, 103, 112\nkey-value pair, 103, 112, 120\nkeyboard input, 45\nKeyError, 104, 197\nKeyError, 206\nkeyword, 10, 14, 194\n    def, 19\n    elif, 42\n    else, 41\nkeyword argument, 33, 36, 191\nKoch curve, 49"
+            },
+            {
+                "type": "text",
+                "text": "language\n    formal, 4\n    natural, 4\n    safe, 13\n    Turing complete, 55\nleading coefficient, 202\nleading term, 202, 209\nleap of faith, 57\nlen function, 26, 72, 104\nletter frequency, 123\nletter rotation, 80, 113\nlinear, 209\nlinear growth, 203\nlinear search, 205\nLinearMap, 206\nLinux, 25\nlipogram, 84\nLiskov substitution principle, 179\nlist, 89, 94, 100, 121, 184\n    as argument, 97\n    concatenation, 91, 97, 101\n    copy, 92\n    element, 90\n    empty, 89\n    function, 94\n    index, 90\n    membership, 90\n    method, 92\n    nested, 89, 91\n    of objects, 174\n    of tuples, 119\n    operation, 91\n    repetition, 91\n    slice, 91\n    traversal, 91\nlist comprehension, 184, 191\nlist methods, 204\nliteralness, 5\nlocal variable, 22, 26\nlog function, 18\nlogarithm, 135\nlogarithmic growth, 203\nlogical operator, 40\nlookup, 112\nlookup, dictionary, 106\nLookupError, 107\nloop, 31, 36, 65, 119\n    condition, 196\n    for, 30, 44, 72, 91\n    infinite, 65, 196\n    nested, 174\n    traversal, 72\n    while, 64\nloop variable, 184\nlooping\n    with dictionaries, 106\n    with indices, 86, 91\n    with strings, 75\nlooping and counting, 75\nlow-level language, 6\nls (Unix command), 142"
+            },
+            {
+                "type": "text",
+                "text": "machine model, 201, 209\nmain, 23, 43, 110, 144\nmaintainable, 169\nmap pattern, 93, 100\nmap to, 171"
+            }
+        ]
+    },
+    "cost": 0.048765
+}

@@ -1,0 +1,37 @@
+{
+    "page": {
+        "page_number": 37,
+        "header": "4.12. Exercises",
+        "blocks": [
+            {
+                "type": "figure",
+                "caption": "Figure 4.1: Turtle flowers.",
+                "description": "Three flower shapes drawn with a turtle, each made of repeated petals (arcs) arranged around a center: one with 7 broad petals, one with 10 overlapping petals, and one with 20 narrow petals, showing how varying the number and size of petals produces different flowers.",
+                "figure_number": 1
+            },
+            {
+                "type": "figure",
+                "caption": "Figure 4.2: Turtle pies.",
+                "description": "Three regular polygons (pentagon, hexagon, heptagon) each divided into triangular 'pie slices' by lines from the center to each vertex, illustrating shapes built from repeated isosceles triangles.",
+                "figure_number": 2
+            },
+            {
+                "type": "text",
+                "text": "docstring: A string that appears at the top of a function definition to document the function's interface.\n\nprecondition: A requirement that should be satisfied by the caller before a function starts.\n\npostcondition: A requirement that should be satisfied by the function before it ends."
+            },
+            {
+                "type": "section_heading",
+                "title": "4.12 Exercises"
+            },
+            {
+                "type": "text",
+                "text": "Exercise 4.1. Download the code in this chapter from https://thinkpython.com/code/polygon.py.\n\n1. Draw a stack diagram that shows the state of the program while executing circle(bob, radius). You can do the arithmetic by hand or add print statements to the code.\n\n2. The version of arc in Section 4.7 is not very accurate because the linear approximation of the circle is always outside the true circle. As a result, the Turtle ends up a few pixels away from the correct destination. My solution shows a way to reduce the effect of this error. Read the code and see if it makes sense to you. If you draw a diagram, you might see how it works."
+            },
+            {
+                "type": "text",
+                "text": "Exercise 4.2. Write an appropriately general set of functions that can draw flowers as in Figure 4.1.\n\nSolution: https://thinkpython.com/code/flower.py, also requires https://thinkpython.com/code/polygon.py.\n\nExercise 4.3. Write an appropriately general set of functions that can draw shapes as in Figure 4.2.\n\nSolution: https://thinkpython.com/code/pie.py.\n\nExercise 4.4. The letters of the alphabet can be constructed from a moderate number of basic elements, like vertical and horizontal lines and a few curves. Design an alphabet that can be drawn with a minimal number of basic elements and then write functions that draw the letters.\n\nYou should write one function for each letter, with names draw_a, draw_b, etc., and put your functions in a file named letters.py. You can download a \"turtle typewriter\" from https://thinkpython.com/code/typewriter.py to help you test your code."
+            }
+        ]
+    },
+    "cost": 0.043795
+}

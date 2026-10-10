@@ -1,0 +1,63 @@
+{
+    "page": {
+        "page_number": 42,
+        "header": "Chapter 5. Conditionals and recursion",
+        "blocks": [
+            {
+                "type": "block",
+                "code": "if x < y:\n    print('x is less than y')\nelif x > y:\n    print('x is greater than y')\nelse:\n    print('x and y are equal')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "elif is an abbreviation of “else if”. Again, exactly one branch will run. There is no limit on the number of elif statements. If there is an else clause, it has to be at the end, but there doesn’t have to be one."
+            },
+            {
+                "type": "block",
+                "code": "if choice == 'a':\n    draw_a()\nelif choice == 'b':\n    draw_b()\nelif choice == 'c':\n    draw_c()",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Each condition is checked in order. If the first is false, the next is checked, and so on. If one of them is true, the corresponding branch runs and the statement ends. Even if more than one condition is true, only the first true branch runs."
+            },
+            {
+                "type": "section_heading",
+                "title": "5.7 Nested conditionals"
+            },
+            {
+                "type": "text",
+                "text": "One conditional can also be nested within another. We could have written the example in the previous section like this:"
+            },
+            {
+                "type": "block",
+                "code": "if x == y:\n    print('x and y are equal')\nelse:\n    if x < y:\n        print('x is less than y')\n    else:\n        print('x is greater than y')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The outer conditional contains two branches. The first branch contains a simple statement. The second branch contains another if statement, which has two branches of its own. Those two branches are both simple statements, although they could have been conditional statements as well.\n\nAlthough the indentation of the statements makes the structure apparent, nested conditionals become difficult to read very quickly. It is a good idea to avoid them when you can.\n\nLogical operators often provide a way to simplify nested conditional statements. For example, we can rewrite the following code using a single conditional:"
+            },
+            {
+                "type": "block",
+                "code": "if 0 < x:\n    if x < 10:\n        print('x is a positive single-digit number.')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The print statement runs only if we make it past both conditionals, so we can get the same effect with the and operator:"
+            },
+            {
+                "type": "block",
+                "code": "if 0 < x and x < 10:\n    print('x is a positive single-digit number.')",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.041365
+}

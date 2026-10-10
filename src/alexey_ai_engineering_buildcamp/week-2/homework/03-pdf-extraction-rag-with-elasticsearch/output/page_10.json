@@ -1,0 +1,13 @@
+{
+    "page": {
+        "page_number": 10,
+        "header": "Chapter 0. Preface",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "• Mark E. Casida is is good at spotting repeated words.\n• Scott Tyler filled in a that was missing. And then sent in a heap of corrections.\n• Gordon Shephard sent in several corrections, all in separate emails.\n• Andrew Turner spotted an error in Chapter 8.\n• Adam Hobart fixed a problem with floor division in arc.\n• Daryl Hammond and Sarah Zimmerman pointed out that I served up math.pi too early. And Zim spotted a typo.\n• George Sass found a bug in a Debugging section.\n• Brian Bingham suggested Exercise 11.5.\n• Leah Engelbert-Fenton pointed out that I used tuple as a variable name, contrary to my own advice. And then found a bunch of typos and a “use before def”.\n• Joe Funke spotted a typo.\n• Chao-chao Chen found an inconsistency in the Fibonacci example.\n• Jeff Paine knows the difference between space and spam.\n• Lubos Pintes sent in a typo.\n• Gregg Lind and Abigail Heithoff suggested Exercise 14.3.\n• Max Hailperin has sent in a number of corrections and suggestions. Max is one of the authors of the extraordinary Concrete Abstractions, which you might want to read when you are done with this book.\n• Chotipat Pornavalai found an error in an error message.\n• Stanislaw Antol sent a list of very helpful suggestions.\n• Eric Pashman sent a number of corrections for Chapters 4–11.\n• Miguel Azevedo found some typos.\n• Jianhua Liu sent in a long list of corrections.\n• Nick King found a missing word.\n• Martin Zuther sent a long list of suggestions.\n• Adam Zimmerman found an inconsistency in my instance of an “instance” and several other errors.\n• Ratnakar Tiwari suggested a footnote explaining degenerate triangles.\n• Anurag Goel suggested another solution for is_abecedarian and sent some additional corrections. And he knows how to spell Jane Austen.\n• Kelli Kratzer spotted one of the typos.\n• Mark Griffiths pointed out a confusing example in Chapter 3.\n• Roydan Ongie found an error in my Newton’s method.\n• Patryk Wolowiec helped me with a problem in the HTML version."
+            }
+        ]
+    },
+    "cost": 0.041655
+}

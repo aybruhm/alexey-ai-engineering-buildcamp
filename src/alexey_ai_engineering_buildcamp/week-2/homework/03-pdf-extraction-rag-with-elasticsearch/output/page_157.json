@@ -1,0 +1,33 @@
+{
+    "page": {
+        "page_number": 135,
+        "header": "13.12. Exercises",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "Zipf's law describes a relationship between the ranks and frequencies of words in natural languages (http://en.wikipedia.org/wiki/Zipf's_law). Specifically, it predicts that the frequency, f, of the word with rank r is:"
+            },
+            {
+                "type": "block",
+                "code": "f = c r^{-s}",
+                "language": "latex",
+                "description": "Zipf's law: frequency f of the word with rank r, with parameters c and s."
+            },
+            {
+                "type": "text",
+                "text": "where s and c are parameters that depend on the language and the text. If you take the logarithm of both sides of this equation, you get:"
+            },
+            {
+                "type": "block",
+                "code": "\\log f = \\log c - s \\log r",
+                "language": "latex",
+                "description": "Logarithmic form of Zipf's law, linear in log r."
+            },
+            {
+                "type": "text",
+                "text": "So if you plot log f versus log r, you should get a straight line with slope −s and intercept log c.\n\nWrite a program that reads a text from a file, counts word frequencies, and prints one line for each word, in descending order of frequency, with log f and log r. Use the graphing program of your choice to plot the results and check whether they form a straight line. Can you estimate the value of s?\n\nSolution: https://thinkpython.com/code/zipf.py. To run my solution, you need the plotting module matplotlib. If you installed Anaconda, you already have matplotlib; otherwise you might have to install it."
+            }
+        ]
+    },
+    "cost": 0.032495
+}

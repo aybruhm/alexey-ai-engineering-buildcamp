@@ -1,0 +1,69 @@
+{
+    "page": {
+        "page_number": 39,
+        "header": null,
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "Chapter 5"
+            },
+            {
+                "type": "section_heading",
+                "title": "Conditionals and recursion"
+            },
+            {
+                "type": "text",
+                "text": "The main topic of this chapter is the if statement, which executes different code depending on the state of the program. But first I want to introduce two new operators: floor division and modulus."
+            },
+            {
+                "type": "section_heading",
+                "title": "5.1 Floor division and modulus"
+            },
+            {
+                "type": "text",
+                "text": "The floor division operator, //, divides two numbers and rounds down to an integer. For example, suppose the run time of a movie is 105 minutes. You might want to know how long that is in hours. Conventional division returns a floating-point number:"
+            },
+            {
+                "type": "block",
+                "code": ">>> minutes = 105\n>>> minutes / 60\n1.75",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "But we don't normally write hours with decimal points. Floor division returns the integer number of hours, rounding down:"
+            },
+            {
+                "type": "block",
+                "code": ">>> minutes = 105\n>>> hours = minutes // 60\n>>> hours\n1",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "To get the remainder, you could subtract off one hour in minutes:"
+            },
+            {
+                "type": "block",
+                "code": ">>> remainder = minutes - hours * 60\n>>> remainder\n45",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "An alternative is to use the modulus operator, %, which divides two numbers and returns the remainder."
+            },
+            {
+                "type": "block",
+                "code": ">>> remainder = minutes % 60\n>>> remainder\n45",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The modulus operator is more useful than it seems. For example, you can check whether one number is divisible by another—if x % y is zero, then x is divisible by y."
+            }
+        ]
+    },
+    "cost": 0.036945000000000006
+}

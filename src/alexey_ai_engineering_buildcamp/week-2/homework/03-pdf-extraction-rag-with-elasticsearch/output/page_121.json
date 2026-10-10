@@ -1,0 +1,63 @@
+{
+    "page": {
+        "page_number": 99,
+        "header": "10.13. Debugging",
+        "blocks": [
+            {
+                "type": "block",
+                "code": "t = t.sort()           # WRONG!",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Because sort returns None, the next operation you perform with t is likely to fail.\n\nBefore using list methods and operators, you should read the documentation carefully and then test them in interactive mode."
+            },
+            {
+                "type": "text",
+                "text": "2. Pick an idiom and stick with it.\n\nPart of the problem with lists is that there are too many ways to do things. For example, to remove an element from a list, you can use pop, remove, del, or even a slice assignment.\n\nTo add an element, you can use the append method or the + operator. Assuming that t is a list and x is a list element, these are correct:"
+            },
+            {
+                "type": "block",
+                "code": "t.append(x)\nt = t + [x]\nt += [x]",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "And these are wrong:"
+            },
+            {
+                "type": "block",
+                "code": "t.append([x])          # WRONG!\nt = t.append(x)        # WRONG!\nt + [x]                # WRONG!\nt = t + x              # WRONG!",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Try out each of these examples in interactive mode to make sure you understand what they do. Notice that only the last one causes a runtime error; the other three are legal, but they do the wrong thing."
+            },
+            {
+                "type": "text",
+                "text": "3. Make copies to avoid aliasing.\n\nIf you want to use a method like sort that modifies the argument, but you need to keep the original list as well, you can make a copy."
+            },
+            {
+                "type": "block",
+                "code": ">>> t = [3, 1, 2]\n>>> t2 = t[:]\n>>> t2.sort()\n>>> t\n[3, 1, 2]\n>>> t2\n[1, 2, 3]",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "In this example you could also use the built-in function sorted, which returns a new, sorted list and leaves the original alone."
+            },
+            {
+                "type": "block",
+                "code": ">>> t2 = sorted(t)\n>>> t\n[3, 1, 2]\n>>> t2\n[1, 2, 3]",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.039540000000000006
+}

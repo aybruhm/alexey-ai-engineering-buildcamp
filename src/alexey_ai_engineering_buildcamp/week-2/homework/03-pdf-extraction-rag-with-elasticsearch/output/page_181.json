@@ -1,0 +1,51 @@
+{
+    "page": {
+        "page_number": 159,
+        "header": "16.5. Debugging",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "This version is shorter than the original, and easier to verify. As an exercise, rewrite increment using time_to_int and int_to_time.\n\nIn some ways, converting from base 60 to base 10 and back is harder than just dealing with times. Base conversion is more abstract; our intuition for dealing with time values is better.\n\nBut if we have the insight to treat times as base 60 numbers and make the investment of writing the conversion functions (time_to_int and int_to_time), we get a program that is shorter, easier to read and debug, and more reliable.\n\nIt is also easier to add features later. For example, imagine subtracting two Times to find the duration between them. The naive approach would be to implement subtraction with borrowing. Using the conversion functions would be easier and more likely to be correct.\n\nIronically, sometimes making a problem harder (or more general) makes it easier (because there are fewer special cases and fewer opportunities for error)."
+            },
+            {
+                "type": "section_heading",
+                "title": "16.5 Debugging"
+            },
+            {
+                "type": "text",
+                "text": "A Time object is well-formed if the values of minute and second are between 0 and 60 (including 0 but not 60) and if hour is positive. hour and minute should be integer values, but we might allow second to have a fraction part.\n\nRequirements like these are called invariants because they should always be true. To put it a different way, if they are not true, something has gone wrong.\n\nWriting code to check invariants can help detect errors and find their causes. For example, you might have a function like valid_time that takes a Time object and returns False if it violates an invariant:"
+            },
+            {
+                "type": "block",
+                "code": "def valid_time(time):\n    if time.hour < 0 or time.minute < 0 or time.second < 0:\n        return False\n    if time.minute >= 60 or time.second >= 60:\n        return False\n    return True",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "At the beginning of each function you could check the arguments to make sure they are valid:"
+            },
+            {
+                "type": "block",
+                "code": "def add_time(t1, t2):\n    if not valid_time(t1) or not valid_time(t2):\n        raise ValueError('invalid Time object in add_time')\n    seconds = time_to_int(t1) + time_to_int(t2)\n    return int_to_time(seconds)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Or you could use an assert statement, which checks a given invariant and raises an exception if it fails:"
+            },
+            {
+                "type": "block",
+                "code": "def add_time(t1, t2):\n    assert valid_time(t1) and valid_time(t2)\n    seconds = time_to_int(t1) + time_to_int(t2)\n    return int_to_time(seconds)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "assert statements are useful because they distinguish code that deals with normal conditions from code that checks for errors."
+            }
+        ]
+    },
+    "cost": 0.044295
+}

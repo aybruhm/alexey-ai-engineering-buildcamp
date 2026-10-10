@@ -1,0 +1,37 @@
+{
+    "page": {
+        "page_number": 31,
+        "header": "4.3. Exercises",
+        "blocks": [
+            {
+                "type": "block",
+                "code": "Hello!\nHello!\nHello!\nHello!",
+                "language": "text",
+                "description": "Output of a for loop that prints Hello! four times."
+            },
+            {
+                "type": "text",
+                "text": "This is the simplest use of the for statement; we will see more later. But that should be enough to let you rewrite your square-drawing program. Don't go on until you do.\n\nHere is a for statement that draws a square:"
+            },
+            {
+                "type": "block",
+                "code": "for i in range(4):\n    bob.fd(100)\n    bob.lt(90)",
+                "language": "python",
+                "description": "A loop that moves the turtle forward 100 units and turns left 90 degrees, four times, drawing a square."
+            },
+            {
+                "type": "text",
+                "text": "The syntax of a for statement is similar to a function definition. It has a header that ends with a colon and an indented body. The body can contain any number of statements.\n\nA for statement is also called a **loop** because the flow of execution runs through the body and then loops back to the top. In this case, it runs the body four times.\n\nThis version is actually a little different from the previous square-drawing code because it makes another turn after drawing the last side of the square. The extra turn takes more time, but it simplifies the code if we do the same thing every time through the loop. This version also has the effect of leaving the turtle back in the starting position, facing in the starting direction."
+            },
+            {
+                "type": "section_heading",
+                "title": "4.3 Exercises"
+            },
+            {
+                "type": "text",
+                "text": "The following is a series of exercises using the turtle module. They are meant to be fun, but they have a point, too. While you are working on them, think about what the point is.\n\nThe following sections have solutions to the exercises, so don't look until you have finished (or at least tried).\n\n1. Write a function called square that takes a parameter named t, which is a turtle. It should use the turtle to draw a square.\n\nWrite a function call that passes bob as an argument to square, and then run the program again.\n\n2. Add another parameter, named length, to square. Modify the body so length of the sides is length, and then modify the function call to provide a second argument. Run the program again. Test your program with a range of values for length.\n\n3. Make a copy of square and change the name to polygon. Add another parameter named n and modify the body so it draws an n-sided regular polygon. Hint: The exterior angles of an n-sided regular polygon are 360/n degrees.\n\n4. Write a function called circle that takes a turtle, t, and radius, r, as parameters and that draws an approximate circle by calling polygon with an appropriate length and number of sides. Test your function with a range of values of r.\n\nHint: figure out the circumference of the circle and make sure that length * n = circumference.\n\n5. Make a more general version of circle called arc that takes an additional parameter angle, which determines what fraction of a circle to draw. angle is in units of degrees, so when angle=360, arc should draw a complete circle."
+            }
+        ]
+    },
+    "cost": 0.044445
+}

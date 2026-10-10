@@ -1,0 +1,57 @@
+{
+    "page": {
+        "page_number": 107,
+        "header": "11.5. Dictionaries and lists",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "This function is yet another example of the search pattern, but it uses a feature we haven't seen before, raise. The raise statement causes an exception; in this case it causes a LookupError, which is a built-in exception used to indicate that a lookup operation failed.\n\nIf we get to the end of the loop, that means v doesn't appear in the dictionary as a value, so we raise an exception.\n\nHere is an example of a successful reverse lookup:"
+            },
+            {
+                "type": "block",
+                "code": ">>> h = histogram('parrot')\n>>> key = reverse_lookup(h, 2)\n>>> key\n'r'",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "And an unsuccessful one:"
+            },
+            {
+                "type": "block",
+                "code": ">>> key = reverse_lookup(h, 3)\nTraceback (most recent call last):\n  File \"<stdin>\", line 1, in <module>\n  File \"<stdin>\", line 5, in reverse_lookup\nLookupError",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The effect when you raise an exception is the same as when Python raises one: it prints a traceback and an error message.\n\nWhen you raise an exception, you can provide a detailed error message as an optional argument. For example:"
+            },
+            {
+                "type": "block",
+                "code": ">>> raise LookupError('value does not appear in the dictionary')\nTraceback (most recent call last):\n  File \"<stdin>\", line 1, in ?\nLookupError: value does not appear in the dictionary",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "A reverse lookup is much slower than a forward lookup; if you have to do it often, or if the dictionary gets big, the performance of your program will suffer."
+            },
+            {
+                "type": "section_heading",
+                "title": "11.5 Dictionaries and lists"
+            },
+            {
+                "type": "text",
+                "text": "Lists can appear as values in a dictionary. For example, if you are given a dictionary that maps from letters to frequencies, you might want to invert it; that is, create a dictionary that maps from frequencies to letters. Since there might be several letters with the same frequency, each value in the inverted dictionary should be a list of letters.\n\nHere is a function that inverts a dictionary:"
+            },
+            {
+                "type": "block",
+                "code": "def invert_dict(d):\n    inverse = dict()\n    for key in d:\n        val = d[key]\n        if val not in inverse:\n            inverse[val] = [key]\n        else:\n            inverse[val].append(key)\n    return inverse",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.041694999999999996
+}

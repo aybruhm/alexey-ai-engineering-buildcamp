@@ -1,0 +1,55 @@
+{
+    "page": {
+        "page_number": 4,
+        "header": "Chapter 1. The way of the program",
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "1.5 Values and types"
+            },
+            {
+                "type": "text",
+                "text": "A value is one of the basic things a program works with, like a letter or a number. Some values we have seen so far are 2, 42.0, and 'Hello, World!'.\n\nThese values belong to different types: 2 is an integer, 42.0 is a floating-point number, and 'Hello, World!' is a string, so-called because the letters it contains are strung together.\n\nIf you are not sure what type a value has, the interpreter can tell you:"
+            },
+            {
+                "type": "block",
+                "code": ">>> type(2)\n<class 'int'>\n>>> type(42.0)\n<class 'float'>\n>>> type('Hello, World!')\n<class 'str'>",
+                "language": "python",
+                "description": "Using the type function in the interpreter to show the types of an integer, a float, and a string."
+            },
+            {
+                "type": "text",
+                "text": "In these results, the word “class” is used in the sense of a category; a type is a category of values.\n\nNot surprisingly, integers belong to the type int, strings belong to str and floating-point numbers belong to float.\n\nWhat about values like '2' and '42.0'? They look like numbers, but they are in quotation marks like strings."
+            },
+            {
+                "type": "block",
+                "code": ">>> type('2')\n<class 'str'>\n>>> type('42.0')\n<class 'str'>",
+                "language": "python",
+                "description": "Numbers in quotation marks are strings."
+            },
+            {
+                "type": "text",
+                "text": "They’re strings.\n\nWhen you type a large integer, you might be tempted to use commas between groups of digits, as in 1,000,000. This is not a legal integer in Python, but it is legal:"
+            },
+            {
+                "type": "block",
+                "code": ">>> 1,000,000\n(1, 0, 0)",
+                "language": "python",
+                "description": "Python interprets comma-separated digits as a sequence (tuple) of integers."
+            },
+            {
+                "type": "text",
+                "text": "That’s not what we expected at all! Python interprets 1,000,000 as a comma-separated sequence of integers. We’ll learn more about this kind of sequence later."
+            },
+            {
+                "type": "section_heading",
+                "title": "1.6 Formal and natural languages"
+            },
+            {
+                "type": "text",
+                "text": "Natural languages are the languages people speak, such as English, Spanish, and French. They were not designed by people (although people try to impose some order on them); they evolved naturally.\n\nFormal languages are languages that are designed by people for specific applications. For example, the notation that mathematicians use is a formal language that is particularly good at denoting relationships among numbers and symbols. Chemists use a formal language to represent the chemical structure of molecules. And most importantly:\n\nProgramming languages are formal languages that have been designed to express computations."
+            }
+        ]
+    },
+    "cost": 0.043095
+}

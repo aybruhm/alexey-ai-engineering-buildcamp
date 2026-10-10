@@ -1,0 +1,77 @@
+{
+    "page": {
+        "page_number": 98,
+        "header": "Chapter 10. Lists",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "The return value from append is None.\n\nHere's an example using the + operator:"
+            },
+            {
+                "type": "block",
+                "code": ">>> t3 = t1 + [4]\n>>> t1\n[1, 2, 3]\n>>> t3\n[1, 2, 3, 4]",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The result of the operator is a new list, and the original list is unchanged.\n\nThis difference is important when you write functions that are supposed to modify lists. For example, this function does not delete the head of a list:"
+            },
+            {
+                "type": "block",
+                "code": "def bad_delete_head(t):\n    t = t[1:]              # WRONG!",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The slice operator creates a new list and the assignment makes t refer to it, but that doesn't affect the caller."
+            },
+            {
+                "type": "block",
+                "code": ">>> t4 = [1, 2, 3]\n>>> bad_delete_head(t4)\n>>> t4\n[1, 2, 3]",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "At the beginning of bad_delete_head, t and t4 refer to the same list. At the end, t refers to a new list, but t4 still refers to the original, unmodified list.\n\nAn alternative is to write a function that creates and returns a new list. For example, tail returns all but the first element of a list:"
+            },
+            {
+                "type": "block",
+                "code": "def tail(t):\n    return t[1:]",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This function leaves the original list unmodified. Here's how it is used:"
+            },
+            {
+                "type": "block",
+                "code": ">>> letters = ['a', 'b', 'c']\n>>> rest = tail(letters)\n>>> rest\n['b', 'c']",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "section_heading",
+                "title": "10.13 Debugging"
+            },
+            {
+                "type": "text",
+                "text": "Careless use of lists (and other mutable objects) can lead to long hours of debugging. Here are some common pitfalls and ways to avoid them:\n\n1. Most list methods modify the argument and return None. This is the opposite of the string methods, which return a new string and leave the original alone.\n\nIf you are used to writing string code like this:"
+            },
+            {
+                "type": "block",
+                "code": "word = word.strip()",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "It is tempting to write list code like this:"
+            }
+        ]
+    },
+    "cost": 0.041215
+}

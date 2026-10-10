@@ -1,0 +1,17 @@
+{
+    "page": {
+        "page_number": 11,
+        "header": "xi",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "• Mark Chonofsky told me about a new keyword in Python 3.\n• Russell Coleman helped me with my geometry.\n• Nam Nguyen found a typo and pointed out that I used the Decorator pattern but didn't mention it by name.\n• Stéphane Morin sent in several corrections and suggestions.\n• Paul Stoop corrected a typo in uses_only.\n• Eric Bronner pointed out a confusion in the discussion of the order of operations.\n• Alexandros Gezerlis set a new standard for the number and quality of suggestions he submitted. We are deeply grateful!\n• Gray Thomas knows his right from his left.\n• Giovanni Escobar Sosa sent a long list of corrections and suggestions.\n• Daniel Neilson corrected an error about the order of operations.\n• Will McGinnis pointed out that polyline was defined differently in two places.\n• Frank Hecker pointed out an exercise that was under-specified, and some broken links.\n• Animesh B helped me clean up a confusing example.\n• Martin Caspersen found two round-off errors.\n• Gregor Ulm sent several corrections and suggestions.\n• Dimitrios Tsirigkas suggested I clarify an exercise.\n• Carlos Tafur sent a page of corrections and suggestions.\n• Martin Nordsletten found a bug in an exercise solution.\n• Sven Hoexter pointed out that a variable named input shadows a build-in function.\n• Stephen Gregory pointed out the problem with cmp in Python 3.\n• Ishwar Bhat corrected my statement of Fermat's last theorem.\n• Andrea Zanella translated the book into Italian, and sent a number of corrections along the way.\n• Many, many thanks to Melissa Lewis and Luciano Ramalho for excellent comments and suggestions on the second edition.\n• Thanks to Harry Percival from PythonAnywhere for his help getting people started running Python in a browser.\n• Xavier Van Aubel made several useful corrections in the second edition.\n• William Murray corrected my definition of floor division.\n• Per Starbäck brought me up to date on universal newlines in Python 3.\n• Laurent Rosenfeld and Mihaela Rotaru translated this book into French. Along the way, they sent many corrections and suggestions."
+            },
+            {
+                "type": "text",
+                "text": "In addition, people who spotted typos or made corrections include Czeslaw Czapla, Dale Wilson, Francesco Carlo Cimini, Richard Fursa, Brian McGhie, Lokesh Kumar Makani, Matthew Shultz, Viet Le, Victor Simeone, Lars O.D. Christensen, Swarup Sahoo, Alix Etienne, Kuang He, Wei Huang, Karen Barber, and Eric Ransom."
+            }
+        ]
+    },
+    "cost": 0.04528
+}

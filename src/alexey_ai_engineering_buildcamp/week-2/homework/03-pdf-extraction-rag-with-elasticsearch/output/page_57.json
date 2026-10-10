@@ -1,0 +1,45 @@
+{
+    "page": {
+        "page_number": 35,
+        "header": "4.8. A development plan",
+        "blocks": [
+            {
+                "type": "block",
+                "code": "def circle(t, r):\n    arc(t, r, 360)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This process—rearranging a program to improve interfaces and facilitate code re-use—is called refactoring. In this case, we noticed that there was similar code in arc and polygon, so we \"factored it out\" into polyline.\n\nIf we had planned ahead, we might have written polyline first and avoided refactoring, but often you don't know enough at the beginning of a project to design all the interfaces. Once you start coding, you understand the problem better. Sometimes refactoring is a sign that you have learned something."
+            },
+            {
+                "type": "section_heading",
+                "title": "4.8 A development plan"
+            },
+            {
+                "type": "text",
+                "text": "A development plan is a process for writing programs. The process we used in this case study is \"encapsulation and generalization\". The steps of this process are:\n\n1. Start by writing a small program with no function definitions.\n\n2. Once you get the program working, identify a coherent piece of it, encapsulate the piece in a function and give it a name.\n\n3. Generalize the function by adding appropriate parameters.\n\n4. Repeat steps 1–3 until you have a set of working functions. Copy and paste working code to avoid retyping (and re-debugging).\n\n5. Look for opportunities to improve the program by refactoring. For example, if you have similar code in several places, consider factoring it into an appropriately general function.\n\nThis process has some drawbacks—we will see alternatives later—but it can be useful if you don't know ahead of time how to divide the program into functions. This approach lets you design as you go along."
+            },
+            {
+                "type": "section_heading",
+                "title": "4.9 docstring"
+            },
+            {
+                "type": "text",
+                "text": "A docstring is a string at the beginning of a function that explains the interface (\"doc\" is short for \"documentation\"). Here is an example:"
+            },
+            {
+                "type": "block",
+                "code": "def polyline(t, n, length, angle):\n    \"\"\"Draws n line segments with the given length and\n    angle (in degrees) between them.  t is a turtle.\n    \"\"\"\n    for i in range(n):\n        t.fd(length)\n        t.lt(angle)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "By convention, all docstrings are triple-quoted strings, also known as multiline strings because the triple quotes allow the string to span more than one line."
+            }
+        ]
+    },
+    "cost": 0.040595000000000006
+}

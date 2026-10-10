@@ -1,0 +1,75 @@
+{
+    "page": {
+        "page_number": 54,
+        "header": "Chapter 6. Fruitful functions",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "1. Start with a working program and make small incremental changes. At any point, if there is an error, you should have a good idea where it is.\n\n2. Use variables to hold intermediate values so you can display and check them.\n\n3. Once the program is working, you might want to remove some of the scaffolding or consolidate multiple statements into compound expressions, but only if it does not make the program difficult to read."
+            },
+            {
+                "type": "text",
+                "text": "As an exercise, use incremental development to write a function called hypotenuse that returns the length of the hypotenuse of a right triangle given the lengths of the other two legs as arguments. Record each stage of the development process as you go."
+            },
+            {
+                "type": "section_heading",
+                "title": "6.3 Composition"
+            },
+            {
+                "type": "text",
+                "text": "As you should expect by now, you can call one function from within another. As an example, we'll write a function that takes two points, the center of the circle and a point on the perimeter, and computes the area of the circle.\n\nAssume that the center point is stored in the variables xc and yc, and the perimeter point is in xp and yp. The first step is to find the radius of the circle, which is the distance between the two points. We just wrote a function, distance, that does that:"
+            },
+            {
+                "type": "block",
+                "code": "radius = distance(xc, yc, xp, yp)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The next step is to find the area of a circle with that radius; we just wrote that, too:"
+            },
+            {
+                "type": "block",
+                "code": "result = area(radius)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Encapsulating these steps in a function, we get:"
+            },
+            {
+                "type": "block",
+                "code": "def circle_area(xc, yc, xp, yp):\n    radius = distance(xc, yc, xp, yp)\n    result = area(radius)\n    return result",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The temporary variables radius and result are useful for development and debugging, but once the program is working, we can make it more concise by composing the function calls:"
+            },
+            {
+                "type": "block",
+                "code": "def circle_area(xc, yc, xp, yp):\n    return area(distance(xc, yc, xp, yp))",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "section_heading",
+                "title": "6.4 Boolean functions"
+            },
+            {
+                "type": "text",
+                "text": "Functions can return booleans, which is often convenient for hiding complicated tests inside functions. For example:"
+            },
+            {
+                "type": "block",
+                "code": "def is_divisible(x, y):\n    if x % y == 0:\n        return True\n    else:\n        return False",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.04147
+}

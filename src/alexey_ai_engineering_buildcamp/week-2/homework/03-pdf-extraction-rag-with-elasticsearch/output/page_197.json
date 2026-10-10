@@ -1,0 +1,63 @@
+{
+    "page": {
+        "page_number": 175,
+        "header": "18.6. Add, remove, shuffle and sort",
+        "blocks": [
+            {
+                "type": "block",
+                "code": "        for card in self.cards:\n            res.append(str(card))\n        return '\\n'.join(res)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "This method demonstrates an efficient way to accumulate a large string: building a list of strings and then using the string method join. The built-in function str invokes the __str__ method on each card and returns the string representation.\n\nSince we invoke join on a newline character, the cards are separated by newlines. Here's what the result looks like:"
+            },
+            {
+                "type": "block",
+                "code": ">>> deck = Deck()\n>>> print(deck)\nAce of Clubs\n2 of Clubs\n3 of Clubs\n...\n10 of Spades\nJack of Spades\nQueen of Spades\nKing of Spades",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Even though the result appears on 52 lines, it is one long string that contains newlines."
+            },
+            {
+                "type": "section_heading",
+                "title": "18.6 Add, remove, shuffle and sort"
+            },
+            {
+                "type": "text",
+                "text": "To deal cards, we would like a method that removes a card from the deck and returns it. The list method pop provides a convenient way to do that:"
+            },
+            {
+                "type": "block",
+                "code": "# inside class Deck:\n\n    def pop_card(self):\n        return self.cards.pop()",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Since pop removes the last card in the list, we are dealing from the bottom of the deck.\n\nTo add a card, we can use the list method append:"
+            },
+            {
+                "type": "block",
+                "code": "# inside class Deck:\n\n    def add_card(self, card):\n        self.cards.append(card)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "A method like this that uses another method without doing much work is sometimes called a veneer. The metaphor comes from woodworking, where a veneer is a thin layer of good quality wood glued to the surface of a cheaper piece of wood to improve the appearance.\n\nIn this case add_card is a \"thin\" method that expresses a list operation in terms appropriate for decks. It improves the appearance, or interface, of the implementation.\n\nAs another example, we can write a Deck method named shuffle using the function shuffle from the random module:"
+            },
+            {
+                "type": "block",
+                "code": "# inside class Deck:\n\n    def shuffle(self):\n        random.shuffle(self.cards)",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.041765
+}

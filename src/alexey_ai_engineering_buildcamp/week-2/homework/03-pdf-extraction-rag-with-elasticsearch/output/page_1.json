@@ -1,0 +1,21 @@
+{
+    "page": {
+        "page_number": 0,
+        "header": null,
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "Think Python"
+            },
+            {
+                "type": "text",
+                "text": "How to Think Like a Computer Scientist"
+            },
+            {
+                "type": "text",
+                "text": "2nd Edition, Version 2.4.0"
+            }
+        ]
+    },
+    "cost": 0.022555
+}

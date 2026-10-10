@@ -1,0 +1,63 @@
+{
+    "page": {
+        "page_number": 43,
+        "header": "5.8. Recursion",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "For this kind of condition, Python provides a more concise option:"
+            },
+            {
+                "type": "block",
+                "code": "if 0 < x < 10:\n    print('x is a positive single-digit number.')",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "section_heading",
+                "title": "5.8 Recursion"
+            },
+            {
+                "type": "text",
+                "text": "It is legal for one function to call another; it is also legal for a function to call itself. It may not be obvious why that is a good thing, but it turns out to be one of the most magical things a program can do. For example, look at the following function:"
+            },
+            {
+                "type": "block",
+                "code": "def countdown(n):\n    if n <= 0:\n        print('Blastoff!')\n    else:\n        print(n)\n        countdown(n-1)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "If n is 0 or negative, it outputs the word, “Blastoff!” Otherwise, it outputs n and then calls a function named countdown—itself—passing n-1 as an argument.\n\nWhat happens if we call this function like this?"
+            },
+            {
+                "type": "block",
+                "code": ">>> countdown(3)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The execution of countdown begins with n=3, and since n is greater than 0, it outputs the value 3, and then calls itself...\n\nThe execution of countdown begins with n=2, and since n is greater than 0, it outputs the value 2, and then calls itself...\n\nThe execution of countdown begins with n=1, and since n is greater than 0, it outputs the value 1, and then calls itself...\n\nThe execution of countdown begins with n=0, and since n is not greater than 0, it outputs the word, “Blastoff!” and then returns.\n\nThe countdown that got n=1 returns.\n\nThe countdown that got n=2 returns.\n\nThe countdown that got n=3 returns.\n\nAnd then you’re back in __main__. So, the total output looks like this:"
+            },
+            {
+                "type": "block",
+                "code": "3\n2\n1\nBlastoff!",
+                "language": "text",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "A function that calls itself is recursive; the process of executing it is called recursion.\n\nAs another example, we can write a function that prints a string n times."
+            },
+            {
+                "type": "block",
+                "code": "def print_n(s, n):\n    if n <= 0:\n        return\n    print(s)\n    print_n(s, n-1)",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.041639999999999996
+}

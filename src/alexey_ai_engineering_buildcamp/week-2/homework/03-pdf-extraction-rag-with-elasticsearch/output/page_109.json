@@ -1,0 +1,45 @@
+{
+    "page": {
+        "page_number": 87,
+        "header": "9.5. Debugging",
+        "blocks": [
+            {
+                "type": "block",
+                "code": "            return False\n        i = i+1\n        j = j-1\n\n    return True",
+                "language": "python",
+                "description": "Continuation of an iterative is_palindrome function that compares characters from both ends."
+            },
+            {
+                "type": "text",
+                "text": "Or we could reduce to a previously solved problem and write:"
+            },
+            {
+                "type": "block",
+                "code": "def is_palindrome(word):\n    return is_reverse(word, word)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Using is_reverse from Section 8.11."
+            },
+            {
+                "type": "section_heading",
+                "title": "9.5 Debugging"
+            },
+            {
+                "type": "text",
+                "text": "Testing programs is hard. The functions in this chapter are relatively easy to test because you can check the results by hand. Even so, it is somewhere between difficult and impossible to choose a set of words that test for all possible errors.\n\nTaking has_no_e as an example, there are two obvious cases to check: words that have an 'e' should return False, and words that don't should return True. You should have no trouble coming up with one of each.\n\nWithin each case, there are some less obvious subcases. Among the words that have an \"e\", you should test words with an \"e\" at the beginning, the end, and somewhere in the middle. You should test long words, short words, and very short words, like the empty string. The empty string is an example of a special case, which is one of the non-obvious cases where errors often lurk.\n\nIn addition to the test cases you generate, you can also test your program with a word list like words.txt. By scanning the output, you might be able to catch errors, but be careful: you might catch one kind of error (words that should not be included, but are) and not another (words that should be included, but aren't).\n\nIn general, testing can help you find bugs, but it is not easy to generate a good set of test cases, and even if you do, you can't be sure your program is correct. According to a legendary computer scientist:\n\nProgram testing can be used to show the presence of bugs, but never to show their absence!\n— Edsger W. Dijkstra"
+            },
+            {
+                "type": "section_heading",
+                "title": "9.6 Glossary"
+            },
+            {
+                "type": "text",
+                "text": "file object: A value that represents an open file.\n\nreduction to a previously solved problem: A way of solving a problem by expressing it as an instance of a previously solved problem.\n\nspecial case: A test case that is atypical or non-obvious (and less likely to be handled correctly)."
+            }
+        ]
+    },
+    "cost": 0.04149
+}

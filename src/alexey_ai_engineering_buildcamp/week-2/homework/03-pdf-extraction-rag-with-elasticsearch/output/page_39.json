@@ -1,0 +1,61 @@
+{
+    "page": {
+        "page_number": 17,
+        "header": null,
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "Chapter 3 Functions"
+            },
+            {
+                "type": "text",
+                "text": "In the context of programming, a function is a named sequence of statements that performs a computation. When you define a function, you specify the name and the sequence of statements. Later, you can “call” the function by name."
+            },
+            {
+                "type": "section_heading",
+                "title": "3.1 Function calls"
+            },
+            {
+                "type": "text",
+                "text": "We have already seen one example of a function call:"
+            },
+            {
+                "type": "block",
+                "code": ">>> type(42)\n<class 'int'>",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "The name of the function is type. The expression in parentheses is called the argument of the function. The result, for this function, is the type of the argument.\n\nIt is common to say that a function “takes” an argument and “returns” a result. The result is also called the return value.\n\nPython provides functions that convert values from one type to another. The int function takes any value and converts it to an integer, if it can, or complains otherwise:"
+            },
+            {
+                "type": "block",
+                "code": ">>> int('32')\n32\n>>> int('Hello')\nValueError: invalid literal for int(): Hello",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "int can convert floating-point values to integers, but it doesn’t round off; it chops off the fraction part:"
+            },
+            {
+                "type": "block",
+                "code": ">>> int(3.99999)\n3\n>>> int(-2.3)\n-2",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "float converts integers and strings to floating-point numbers:"
+            },
+            {
+                "type": "block",
+                "code": ">>> float(32)\n32.0\n>>> float('3.14159')\n3.14159",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.035915
+}

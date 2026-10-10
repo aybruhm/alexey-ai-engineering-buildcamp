@@ -1,0 +1,61 @@
+{
+    "page": {
+        "page_number": 19,
+        "header": "3.3. Composition",
+        "blocks": [
+            {
+                "type": "section_heading",
+                "title": "3.3 Composition"
+            },
+            {
+                "type": "text",
+                "text": "So far, we have looked at the elements of a program—variables, expressions, and statements—in isolation, without talking about how to combine them.\n\nOne of the most useful features of programming languages is their ability to take small building blocks and compose them. For example, the argument of a function can be any kind of expression, including arithmetic operators:"
+            },
+            {
+                "type": "block",
+                "code": "x = math.sin(degrees / 360.0 * 2 * math.pi)",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "And even function calls:"
+            },
+            {
+                "type": "block",
+                "code": "x = math.exp(math.log(x+1))",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Almost anywhere you can put a value, you can put an arbitrary expression, with one exception: the left side of an assignment statement has to be a variable name. Any other expression on the left side is a syntax error (we will see exceptions to this rule later)."
+            },
+            {
+                "type": "block",
+                "code": ">>> minutes = hours * 60                 # right\n>>> hours * 60 = minutes                 # wrong!\nSyntaxError: can't assign to operator",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "section_heading",
+                "title": "3.4 Adding new functions"
+            },
+            {
+                "type": "text",
+                "text": "So far, we have only been using the functions that come with Python, but it is also possible to add new functions. A function definition specifies the name of a new function and the sequence of statements that run when the function is called.\n\nHere is an example:"
+            },
+            {
+                "type": "block",
+                "code": "def print_lyrics():\n    print(\"I'm a lumberjack, and I'm okay.\")\n    print(\"I sleep all night and I work all day.\")",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "def is a keyword that indicates that this is a function definition. The name of the function is print_lyrics. The rules for function names are the same as for variable names: letters, numbers and underscore are legal, but the first character can't be a number. You can't use a keyword as the name of a function, and you should avoid having a variable and a function with the same name.\n\nThe empty parentheses after the name indicate that this function doesn't take any arguments.\n\nThe first line of the function definition is called the header; the rest is called the body. The header has to end with a colon and the body has to be indented. By convention, indentation is always four spaces. The body can contain any number of statements.\n\nThe strings in the print statements are enclosed in double quotes. Single quotes and double quotes do the same thing; most people use single quotes except in cases like this where a single quote (which is also an apostrophe) appears in the string.\n\nAll quotation marks (single and double) must be “straight quotes”, usually located next to Enter on the keyboard. “Curly quotes”, like the ones in this sentence, are not legal in Python.\n\nIf you type a function definition in interactive mode, the interpreter prints dots (...) to let you know that the definition isn't complete:"
+            }
+        ]
+    },
+    "cost": 0.045094999999999996
+}

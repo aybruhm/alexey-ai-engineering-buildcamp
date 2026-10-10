@@ -1,0 +1,57 @@
+{
+    "page": {
+        "page_number": 111,
+        "header": "11.8. Debugging",
+        "blocks": [
+            {
+                "type": "block",
+                "code": "UnboundLocalError: local variable 'count' referenced before assignment",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Python assumes that count is local, and under that assumption you are reading it before writing it. The solution, again, is to declare count global."
+            },
+            {
+                "type": "block",
+                "code": "def example3():\n    global count\n    count += 1",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "If a global variable refers to a mutable value, you can modify the value without declaring the variable:"
+            },
+            {
+                "type": "block",
+                "code": "known = {0:0, 1:1}\n\ndef example4():\n    known[2] = 1",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "So you can add, remove and replace elements of a global list or dictionary, but if you want to reassign the variable, you have to declare it:"
+            },
+            {
+                "type": "block",
+                "code": "def example5():\n    global known\n    known = dict()",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Global variables can be useful, but if you have a lot of them, and you modify them frequently, they can make programs hard to debug."
+            },
+            {
+                "type": "section_heading",
+                "title": "11.8 Debugging"
+            },
+            {
+                "type": "text",
+                "text": "As you work with bigger datasets it can become unwieldy to debug by printing and checking the output by hand. Here are some suggestions for debugging large datasets:\n\nScale down the input: If possible, reduce the size of the dataset. For example if the program reads a text file, start with just the first 10 lines, or with the smallest example you can find. You can either edit the files themselves, or (better) modify the program so it reads only the first n lines.\n\nIf there is an error, you can reduce n to the smallest value that manifests the error, and then increase it gradually as you find and correct errors.\n\nCheck summaries and types: Instead of printing and checking the entire dataset, consider printing summaries of the data: for example, the number of items in a dictionary or the total of a list of numbers.\n\nA common cause of runtime errors is a value that is not the right type. For debugging this kind of error, it is often enough to print the type of a value.\n\nWrite self-checks: Sometimes you can write code to check for errors automatically. For example, if you are computing the average of a list of numbers, you could check that the result is not greater than the largest element in the list or less than the smallest. This is called a “sanity check” because it detects results that are “insane”.\n\nAnother kind of check compares the results of two different computations to see if they are consistent. This is called a “consistency check”."
+            }
+        ]
+    },
+    "cost": 0.041295
+}

@@ -1,0 +1,39 @@
+{
+    "page": {
+        "page_number": 79,
+        "header": "8.12. Glossary",
+        "blocks": [
+            {
+                "type": "figure",
+                "caption": "Figure 8.2: State diagram.",
+                "description": "State diagram showing two string variables and two index variables: word1 refers to 'pots' and word2 refers to 'stop'; i refers to 0 and j refers to 3. Dotted lines link the indices to their respective words, illustrating how i traverses word1 forward while j traverses word2 backward (as in a reversal check).",
+                "figure_number": 2
+            },
+            {
+                "type": "section_heading",
+                "title": "8.12 Glossary"
+            },
+            {
+                "type": "text",
+                "text": "object: Something a variable can refer to. For now, you can use “object” and “value” interchangeably.\n\nsequence: An ordered collection of values where each value is identified by an integer index.\n\nitem: One of the values in a sequence.\n\nindex: An integer value used to select an item in a sequence, such as a character in a string. In Python indices start from 0.\n\nslice: A part of a string specified by a range of indices.\n\nempty string: A string with no characters and length 0, represented by two quotation marks.\n\nimmutable: The property of a sequence whose items cannot be changed.\n\ntraverse: To iterate through the items in a sequence, performing a similar operation on each.\n\nsearch: A pattern of traversal that stops when it finds what it is looking for.\n\ncounter: A variable used to count something, usually initialized to zero and then incremented.\n\ninvocation: A statement that calls a method.\n\noptional argument: A function or method argument that is not required."
+            },
+            {
+                "type": "section_heading",
+                "title": "8.13 Exercises"
+            },
+            {
+                "type": "text",
+                "text": "Exercise 8.1. Read the documentation of the string methods at http://docs.python.org/3/library/stdtypes.html#string-methods. You might want to experiment with some of them to make sure you understand how they work. strip and replace are particularly useful.\n\nThe documentation uses a syntax that might be confusing. For example, in find(sub[, start[, end]]), the brackets indicate optional arguments. So sub is required, but start is optional, and if you include start, then end is optional."
+            },
+            {
+                "type": "text",
+                "text": "Exercise 8.2. There is a string method called count that is similar to the function in Section 8.7. Read the documentation of this method and write an invocation that counts the number of a's in 'banana'."
+            },
+            {
+                "type": "text",
+                "text": "Exercise 8.3. A string slice can take a third index that specifies the “step size”; that is, the number of spaces between successive characters. A step size of 2 means every other character; 3 means every third, etc."
+            }
+        ]
+    },
+    "cost": 0.041845
+}

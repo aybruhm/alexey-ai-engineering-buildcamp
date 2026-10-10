@@ -1,0 +1,21 @@
+{
+    "page": {
+        "page_number": 7,
+        "header": "1.9. Exercises",
+        "blocks": [
+            {
+                "type": "text",
+                "text": "print statement: An instruction that causes the Python interpreter to display a value on the screen.\n\noperator: A special symbol that represents a simple computation like addition, multiplication, or string concatenation.\n\nvalue: One of the basic units of data, like a number or string, that a program manipulates.\n\ntype: A category of values. The types we have seen so far are integers (type int), floating-point numbers (type float), and strings (type str).\n\ninteger: A type that represents whole numbers.\n\nfloating-point: A type that represents numbers with fractional parts.\n\nstring: A type that represents sequences of characters.\n\nnatural language: Any one of the languages that people speak that evolved naturally.\n\nformal language: Any one of the languages that people have designed for specific purposes, such as representing mathematical ideas or computer programs; all programming languages are formal languages.\n\ntoken: One of the basic elements of the syntactic structure of a program, analogous to a word in a natural language.\n\nsyntax: The rules that govern the structure of a program.\n\nparse: To examine a program and analyze the syntactic structure.\n\nbug: An error in a program.\n\ndebugging: The process of finding and correcting bugs."
+            },
+            {
+                "type": "section_heading",
+                "title": "1.9 Exercises"
+            },
+            {
+                "type": "text",
+                "text": "Exercise 1.1. It is a good idea to read this book in front of a computer so you can try out the examples as you go.\n\nWhenever you are experimenting with a new feature, you should try to make mistakes. For example, in the “Hello, world!” program, what happens if you leave out one of the quotation marks? What if you leave out both? What if you spell print wrong?\n\nThis kind of experiment helps you remember what you read; it also helps when you are programming, because you get to know what the error messages mean. It is better to make mistakes now and on purpose than later and accidentally.\n\n1. In a print statement, what happens if you leave out one of the parentheses, or both?\n\n2. If you are trying to print a string, what happens if you leave out one of the quotation marks, or both?\n\n3. You can use a minus sign to make a negative number like -2. What happens if you put a plus sign before a number? What about 2++2?"
+            }
+        ]
+    },
+    "cost": 0.039645
+}

@@ -1,0 +1,187 @@
+{
+    "page": {
+        "page_number": 16,
+        "header": "Contents",
+        "blocks": [
+            {
+                "type": "table",
+                "caption": "7 Iteration — 63",
+                "columns": [
+                    "Section",
+                    "Title",
+                    "Page"
+                ],
+                "rows": [
+                    [
+                        "7.1",
+                        "Reassignment",
+                        "63"
+                    ],
+                    [
+                        "7.2",
+                        "Updating variables",
+                        "64"
+                    ],
+                    [
+                        "7.3",
+                        "The while statement",
+                        "64"
+                    ],
+                    [
+                        "7.4",
+                        "break",
+                        "66"
+                    ],
+                    [
+                        "7.5",
+                        "Square roots",
+                        "66"
+                    ],
+                    [
+                        "7.6",
+                        "Algorithms",
+                        "67"
+                    ],
+                    [
+                        "7.7",
+                        "Debugging",
+                        "68"
+                    ],
+                    [
+                        "7.8",
+                        "Glossary",
+                        "68"
+                    ],
+                    [
+                        "7.9",
+                        "Exercises",
+                        "69"
+                    ]
+                ]
+            },
+            {
+                "type": "table",
+                "caption": "8 Strings — 71",
+                "columns": [
+                    "Section",
+                    "Title",
+                    "Page"
+                ],
+                "rows": [
+                    [
+                        "8.1",
+                        "A string is a sequence",
+                        "71"
+                    ],
+                    [
+                        "8.2",
+                        "len",
+                        "72"
+                    ],
+                    [
+                        "8.3",
+                        "Traversal with a for loop",
+                        "72"
+                    ],
+                    [
+                        "8.4",
+                        "String slices",
+                        "73"
+                    ],
+                    [
+                        "8.5",
+                        "Strings are immutable",
+                        "74"
+                    ],
+                    [
+                        "8.6",
+                        "Searching",
+                        "74"
+                    ],
+                    [
+                        "8.7",
+                        "Looping and counting",
+                        "75"
+                    ],
+                    [
+                        "8.8",
+                        "String methods",
+                        "75"
+                    ],
+                    [
+                        "8.9",
+                        "The in operator",
+                        "76"
+                    ],
+                    [
+                        "8.10",
+                        "String comparison",
+                        "77"
+                    ],
+                    [
+                        "8.11",
+                        "Debugging",
+                        "77"
+                    ],
+                    [
+                        "8.12",
+                        "Glossary",
+                        "79"
+                    ],
+                    [
+                        "8.13",
+                        "Exercises",
+                        "79"
+                    ]
+                ]
+            },
+            {
+                "type": "table",
+                "caption": "9 Case study: word play — 83",
+                "columns": [
+                    "Section",
+                    "Title",
+                    "Page"
+                ],
+                "rows": [
+                    [
+                        "9.1",
+                        "Reading word lists",
+                        "83"
+                    ],
+                    [
+                        "9.2",
+                        "Exercises",
+                        "84"
+                    ],
+                    [
+                        "9.3",
+                        "Search",
+                        "85"
+                    ],
+                    [
+                        "9.4",
+                        "Looping with indices",
+                        "86"
+                    ],
+                    [
+                        "9.5",
+                        "Debugging",
+                        "87"
+                    ],
+                    [
+                        "9.6",
+                        "Glossary",
+                        "87"
+                    ],
+                    [
+                        "9.7",
+                        "Exercises",
+                        "88"
+                    ]
+                ]
+            }
+        ]
+    },
+    "cost": 0.03622
+}

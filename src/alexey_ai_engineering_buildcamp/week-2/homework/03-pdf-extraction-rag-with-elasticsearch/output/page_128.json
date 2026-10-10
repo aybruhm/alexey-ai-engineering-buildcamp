@@ -1,0 +1,67 @@
+{
+    "page": {
+        "page_number": 106,
+        "header": "Chapter 11. Dictionaries",
+        "blocks": [
+            {
+                "type": "block",
+                "code": "1\n>>> h.get('c', 0)\n0",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "As an exercise, use get to write histogram more concisely. You should be able to eliminate the if statement."
+            },
+            {
+                "type": "section_heading",
+                "title": "11.3 Looping and dictionaries"
+            },
+            {
+                "type": "text",
+                "text": "If you use a dictionary in a for statement, it traverses the keys of the dictionary. For example, print_hist prints each key and the corresponding value:"
+            },
+            {
+                "type": "block",
+                "code": "def print_hist(h):\n    for c in h:\n        print(c, h[c])",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Here's what the output looks like:"
+            },
+            {
+                "type": "block",
+                "code": ">>> h = histogram('parrot')\n>>> print_hist(h)\na 1\np 1\nr 2\nt 1\no 1",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "text",
+                "text": "Again, the keys are in no particular order. To traverse the keys in sorted order, you can use the built-in function sorted:"
+            },
+            {
+                "type": "block",
+                "code": ">>> for key in sorted(h):\n...     print(key, h[key])\na 1\no 1\np 1\nr 2\nt 1",
+                "language": "python",
+                "description": null
+            },
+            {
+                "type": "section_heading",
+                "title": "11.4 Reverse lookup"
+            },
+            {
+                "type": "text",
+                "text": "Given a dictionary d and a key k, it is easy to find the corresponding value v = d[k]. This operation is called a lookup.\n\nBut what if you have v and you want to find k? You have two problems: first, there might be more than one key that maps to the value v. Depending on the application, you might be able to pick one, or you might have to make a list that contains all of them. Second, there is no simple syntax to do a reverse lookup; you have to search.\n\nHere is a function that takes a value and returns the first key that maps to that value:"
+            },
+            {
+                "type": "block",
+                "code": "def reverse_lookup(d, v):\n    for k in d:\n        if d[k] == v:\n            return k\n    raise LookupError()",
+                "language": "python",
+                "description": null
+            }
+        ]
+    },
+    "cost": 0.03909
+}
