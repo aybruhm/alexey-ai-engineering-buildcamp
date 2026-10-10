@@ -31,7 +31,8 @@ This repository walks through building real AI applications with LLMs: calling l
 
 - `week-2/homework/01-pulumi-docs-rag/` — Pulumi Docs RAG: index the Pulumi docs site and answer developer questions with a RAG system.
 - `week-2/homework/02-pdf-extraction-rag/` — PDF extraction + RAG: extract a PDF textbook into structured page JSONs with Claude, then index the pages and answer questions with structured outputs.
-- `week-2/homework/02-pdf-extraction-rag-with-elasticsearch/` — PDF extraction + RAG with Elasticsearch: same pipeline as `02-pdf-extraction-rag`, but full-text search is backed by Elasticsearch instead of sqlitesearch.
+- `week-2/homework/03-pdf-extraction-rag-with-elasticsearch/` — PDF extraction + RAG with Elasticsearch: same pipeline as `02-pdf-extraction-rag`, but full-text search is backed by Elasticsearch instead of sqlitesearch.
+- `week-2/homework/04-pdf-extraction-rag-with-qdrant/` — PDF extraction + RAG with Qdrant: same pipeline as `02-pdf-extraction-rag`, but retrieval uses vector search backed by Qdrant with Jina embeddings.
 
 ## Setup
 
@@ -47,6 +48,7 @@ This repository walks through building real AI applications with LLMs: calling l
    cp .env.template .env
    # then edit .env and set ANTHROPIC_API_KEY=...
    # for the Elasticsearch homework also set ELASTICSEARCH_HOST and ELASTICSEARCH_API_KEY
+   # for the Qdrant homework also set QDRANT_URL and QDRANT_API_KEY
    ```
 
 3. Launch Jupyter and open the notebooks:
@@ -88,7 +90,16 @@ This repository walks through building real AI applications with LLMs: calling l
                 │   ├── rag.py
                 │   ├── retrieval.py
                 │   └── utils.py
-                └── 02-pdf-extraction-rag-with-elasticsearch/
+                ├── 03-pdf-extraction-rag-with-elasticsearch/
+                │   ├── index.ipynb
+                │   ├── extraction.py
+                │   ├── models.py
+                │   ├── pricing.py
+                │   ├── prompt.py
+                │   ├── rag.py
+                │   ├── retrieval.py
+                │   └── utils.py
+                └── 04-pdf-extraction-rag-with-qdrant/
                     ├── index.ipynb
                     ├── extraction.py
                     ├── models.py
