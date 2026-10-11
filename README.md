@@ -34,6 +34,13 @@ This repository walks through building real AI applications with LLMs: calling l
 - `week-2/homework/03-pdf-extraction-rag-with-elasticsearch/` — PDF extraction + RAG with Elasticsearch: same pipeline as `02-pdf-extraction-rag`, but full-text search is backed by Elasticsearch instead of sqlitesearch.
 - `week-2/homework/04-pdf-extraction-rag-with-qdrant/` — PDF extraction + RAG with Qdrant: same pipeline as `02-pdf-extraction-rag`, but retrieval uses vector search backed by Qdrant with Jina embeddings.
 
+### Week 3 — Agentic RAG
+
+| Notebook | Topic |
+|---|---|
+| `01-agentic-rag-with-tool-calling.ipynb` | Agentic RAG with tool calling: exposing the `search` tool so the model retrieves on demand |
+| `02-agentic-loop.ipynb` | The agentic loop: multi-round tool calling with the `search` and `add_entry` tools, feeding results back until a final answer |
+
 ## Setup
 
 1. Install dependencies with [uv](https://docs.astral.sh/uv/):
@@ -76,38 +83,41 @@ This repository walks through building real AI applications with LLMs: calling l
         │   └── homework/
         │       ├── books.csv
         │       └── index.ipynb
-        └── week-2/
-            ├── 01-reusable-rag.ipynb
-            └── homework/
-                ├── 01-pulumi-docs-rag/
-                │   └── index.ipynb
-                ├── 02-pdf-extraction-rag/
-                │   ├── index.ipynb
-                │   ├── extraction.py
-                │   ├── models.py
-                │   ├── pricing.py
-                │   ├── prompt.py
-                │   ├── rag.py
-                │   ├── retrieval.py
-                │   └── utils.py
-                ├── 03-pdf-extraction-rag-with-elasticsearch/
-                │   ├── index.ipynb
-                │   ├── extraction.py
-                │   ├── models.py
-                │   ├── pricing.py
-                │   ├── prompt.py
-                │   ├── rag.py
-                │   ├── retrieval.py
-                │   └── utils.py
-                └── 04-pdf-extraction-rag-with-qdrant/
-                    ├── index.ipynb
-                    ├── extraction.py
-                    ├── models.py
-                    ├── pricing.py
-                    ├── prompt.py
-                    ├── rag.py
-                    ├── retrieval.py
-                    └── utils.py
+        ├── week-2/
+        │   ├── 01-reusable-rag.ipynb
+        │   └── homework/
+        │       ├── 01-pulumi-docs-rag/
+        │       │   └── index.ipynb
+        │       ├── 02-pdf-extraction-rag/
+        │       │   ├── index.ipynb
+        │       │   ├── extraction.py
+        │       │   ├── models.py
+        │       │   ├── pricing.py
+        │       │   ├── prompt.py
+        │       │   ├── rag.py
+        │       │   ├── retrieval.py
+        │       │   └── utils.py
+        │       ├── 03-pdf-extraction-rag-with-elasticsearch/
+        │       │   ├── index.ipynb
+        │       │   ├── extraction.py
+        │       │   ├── models.py
+        │       │   ├── pricing.py
+        │       │   ├── prompt.py
+        │       │   ├── rag.py
+        │       │   ├── retrieval.py
+        │       │   └── utils.py
+        │       └── 04-pdf-extraction-rag-with-qdrant/
+        │           ├── index.ipynb
+        │           ├── extraction.py
+        │           ├── models.py
+        │           ├── pricing.py
+        │           ├── prompt.py
+        │           ├── rag.py
+        │           ├── retrieval.py
+        │           └── utils.py
+        └── week-3/
+            ├── 01-agentic-rag-with-tool-calling.ipynb
+            └── 02-agentic-loop.ipynb
 ```
 
 ## Requirements
