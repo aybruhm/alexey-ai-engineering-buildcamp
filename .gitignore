@@ -25,3 +25,4 @@ src/alexey_ai_engineering_buildcamp/week-2/homework/03-pdf-extraction-rag-with-e
 src/alexey_ai_engineering_buildcamp/week-2/homework/03-pdf-extraction-rag-with-elasticsearch/db/*.sqlite*
 src/alexey_ai_engineering_buildcamp/week-2/homework/04-pdf-extraction-rag-with-qdrant/output/*.json
 src/alexey_ai_engineering_buildcamp/week-2/homework/04-pdf-extraction-rag-with-qdrant/db/*.sqlite*
+src/alexey_ai_engineering_buildcamp/week-3/docs/
