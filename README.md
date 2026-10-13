@@ -40,6 +40,18 @@ This repository walks through building real AI applications with LLMs: calling l
 |---|---|
 | `01-agentic-rag-with-tool-calling.ipynb` | Agentic RAG with tool calling: exposing the `search` tool so the model retrieves on demand |
 | `02-agentic-loop.ipynb` | The agentic loop: multi-round tool calling with the `search` and `add_entry` tools, feeding results back until a final answer |
+| `03-qa-agentic-loop.ipynb` | Interactive Q&A agentic loop: a multi-turn chat that reuses the conversation history and scales `max_tokens` as it grows |
+| `04-toyaikit-agent.ipynb` | Building an agent with Toyaikit: exposing index tools and running the agent loop |
+| `05-toyaikit-agent-organizing-tools.ipynb` | Organizing agent tools with Toyaikit |
+| `06-agentic-search-beyond-rag.ipynb` | Agentic search beyond RAG: letting the agent decide when and how to search |
+| `07-pydantic-ai-agents.ipynb` | Building agents with Pydantic AI |
+| `08-web-search-agent-pydanticai.ipynb` | A web-search agent built with Pydantic AI |
+
+Shared helpers in `week-3/`: `search_tools.py` (index tools for the agent) and `invoke_llm_trace.py` (OpenTelemetry/Phoenix tracing setup).
+
+### Week 3 — Homework
+
+- `week-3/homework/01-wikipedia-agent/` — Wikipedia agent: answer questions by searching Wikipedia with an agentic loop.
 
 ## Setup
 
@@ -117,7 +129,19 @@ This repository walks through building real AI applications with LLMs: calling l
         │           └── utils.py
         └── week-3/
             ├── 01-agentic-rag-with-tool-calling.ipynb
-            └── 02-agentic-loop.ipynb
+            ├── 02-agentic-loop.ipynb
+            ├── 03-qa-agentic-loop.ipynb
+            ├── 04-toyaikit-agent.ipynb
+            ├── 05-toyaikit-agent-organizing-tools.ipynb
+            ├── 06-agentic-search-beyond-rag.ipynb
+            ├── 07-pydantic-ai-agents.ipynb
+            ├── 08-web-search-agent-pydanticai.ipynb
+            ├── search_tools.py
+            ├── invoke_llm_trace.py
+            └── homework/
+                └── 01-wikipedia-agent/
+                    ├── index.ipynb
+                    └── invoke_llm_trace.py
 ```
 
 ## Requirements
