@@ -49,6 +49,15 @@ This repository walks through building real AI applications with LLMs: calling l
 
 Shared helpers in `week-3/`: `search_tools.py` (index tools for the agent) and `invoke_llm_trace.py` (OpenTelemetry/Phoenix tracing setup).
 
+### Week 3 — MCP
+
+`week-3/09-mcp/` exposes the docs search tools over the Model Context Protocol (MCP):
+
+- `main.py` — a FastMCP server that exposes the search tools over stdio.
+- `run_mcp.ipynb` — an MCP client that launches the server as a subprocess and calls its tools.
+- `run_mcp_with_pydanticai.ipynb` — driving the MCP server's tools from a Pydantic AI agent.
+- `search_tools.py`, `utils.py`, `invoke_llm_trace.py` — the server's tools, documentation helpers, and tracing setup.
+
 ### Week 3 — Homework
 
 - `week-3/homework/01-wikipedia-agent/` — Wikipedia agent: answer questions by searching Wikipedia with an agentic loop.
@@ -136,6 +145,13 @@ Shared helpers in `week-3/`: `search_tools.py` (index tools for the agent) and `
             ├── 06-agentic-search-beyond-rag.ipynb
             ├── 07-pydantic-ai-agents.ipynb
             ├── 08-web-search-agent-pydanticai.ipynb
+            ├── 09-mcp/
+            │   ├── main.py
+            │   ├── search_tools.py
+            │   ├── utils.py
+            │   ├── invoke_llm_trace.py
+            │   ├── run_mcp.ipynb
+            │   └── run_mcp_with_pydanticai.ipynb
             ├── search_tools.py
             ├── invoke_llm_trace.py
             └── homework/
