@@ -3,9 +3,23 @@ from typing import Literal
 from pydantic import BaseModel, Field
 
 
+class Reference(BaseModel):
+    """
+    A reference to a document that was used to generate the answer.
+    """
+
+    file_path: str = Field(description="The path to the document")
+    explanation: str = Field(
+        description="The explanation of how this document is relevant and was used in the answer"
+    )
+
+
 class RAGResponse(BaseModel):
     answer: str = Field(
         description="The main answer to the user's question in markdown"
+    )
+    references: list[Reference] = Field(
+        description="List of references to documents used to generate the answer"
     )
     found_answer: bool = Field(
         description="True if relevant information was found in the documentation"
