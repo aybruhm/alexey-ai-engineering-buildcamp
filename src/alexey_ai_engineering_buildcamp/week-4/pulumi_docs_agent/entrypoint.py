@@ -31,10 +31,11 @@ async def run_agent_question():
     agent_config = DocumentationAgentConfig()
 
     agent = init_agent(agent_config, tools)
-    await run_agent_stream(agent, user_prompt)
+    result = await run_agent_stream(agent, user_prompt)
     # result = await run_agent(agent, user_prompt)
     # print_messages(result.new_messages())
-    # output = result.output
+    output = result.output  # type: ignore
+    print("AI > ", output)
 
 
 def main() -> None:
