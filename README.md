@@ -62,6 +62,41 @@ Shared helpers in `week-3/`: `search_tools.py` (index tools for the agent) and `
 
 - `week-3/homework/01-wikipedia-agent/` — Wikipedia agent: answer questions by searching Wikipedia with an agentic loop.
 
+### Week 4 — Documentation Agent
+
+`week-4/` is a standalone, installable package rather than a notebook. It answers questions about the
+Pulumi documentation: the agent searches a local index, retrieves whole files when it needs them, and
+returns a structured answer.
+
+It ships its own `pyproject.toml`, `uv.lock`, `.venv` and `.gitignore`, so it is installed and run
+independently of the root project.
+
+| Module | Purpose |
+|---|---|
+| `pulumi_docs_agent/__init__.py` | OpenTelemetry/OpenInference tracing setup for Phoenix |
+| `pulumi_docs_agent/entrypoint.py` | CLI entry point: downloads the docs, builds the index, runs the agent |
+| `pulumi_docs_agent/agent.py` | Pydantic AI agent construction, blocking and streaming runs |
+| `pulumi_docs_agent/helpers.py` | Streaming, tool-call, and message printing helpers |
+| `pulumi_docs_agent/models.py` | `RAGResponse` structured output model |
+| `pulumi_docs_agent/prompts.py` | The agent's instructions |
+| `pulumi_docs_agent/retrieval.py` | minsearch index and highlighter |
+| `pulumi_docs_agent/tools.py` | `SearchTools`: `search`, `add_entry`, `get_file` |
+| `pulumi_docs_agent/utils.py` | Downloads the Pulumi docs and reuses the local copy |
+
+The documentation is downloaded into `week-4/docs/` on first run and reused afterwards, so only the
+first run is slow.
+
+Run it from the project directory:
+
+```bash
+cd src/alexey_ai_engineering_buildcamp/week-4
+uv sync
+uv run pulumi-docs-agent
+```
+
+Tracing is configured as soon as the package is imported, so `PHOENIX_API_KEY`,
+`PHOENIX_COLLECTOR_ENDPOINT` and `PHOENIX_PROJECT_NAME` must be set alongside `ANTHROPIC_API_KEY`.
+
 ## Setup
 
 1. Install dependencies with [uv](https://docs.astral.sh/uv/):
@@ -136,28 +171,44 @@ Shared helpers in `week-3/`: `search_tools.py` (index tools for the agent) and `
         │           ├── rag.py
         │           ├── retrieval.py
         │           └── utils.py
-        └── week-3/
-            ├── 01-agentic-rag-with-tool-calling.ipynb
-            ├── 02-agentic-loop.ipynb
-            ├── 03-qa-agentic-loop.ipynb
-            ├── 04-toyaikit-agent.ipynb
-            ├── 05-toyaikit-agent-organizing-tools.ipynb
-            ├── 06-agentic-search-beyond-rag.ipynb
-            ├── 07-pydantic-ai-agents.ipynb
-            ├── 08-web-search-agent-pydanticai.ipynb
-            ├── 09-mcp/
-            │   ├── main.py
-            │   ├── search_tools.py
-            │   ├── utils.py
-            │   ├── invoke_llm_trace.py
-            │   ├── run_mcp.ipynb
-            │   └── run_mcp_with_pydanticai.ipynb
-            ├── search_tools.py
-            ├── invoke_llm_trace.py
-            └── homework/
-                └── 01-wikipedia-agent/
-                    ├── index.ipynb
-                    └── invoke_llm_trace.py
+        ├── week-3/
+        │   ├── 01-agentic-rag-with-tool-calling.ipynb
+        │   ├── 02-agentic-loop.ipynb
+        │   ├── 03-qa-agentic-loop.ipynb
+        │   ├── 04-toyaikit-agent.ipynb
+        │   ├── 05-toyaikit-agent-organizing-tools.ipynb
+        │   ├── 06-agentic-search-beyond-rag.ipynb
+        │   ├── 07-pydantic-ai-agents.ipynb
+        │   ├── 08-web-search-agent-pydanticai.ipynb
+        │   ├── 09-mcp/
+        │   │   ├── main.py
+        │   │   ├── search_tools.py
+        │   │   ├── utils.py
+        │   │   ├── invoke_llm_trace.py
+        │   │   ├── run_mcp.ipynb
+        │   │   └── run_mcp_with_pydanticai.ipynb
+        │   ├── search_tools.py
+        │   ├── invoke_llm_trace.py
+        │   └── homework/
+        │       └── 01-wikipedia-agent/
+        │           ├── index.ipynb
+        │           └── invoke_llm_trace.py
+        └── week-4/
+            ├── .env.template
+            ├── .gitignore
+            ├── .python-version
+            ├── pyproject.toml
+            ├── uv.lock
+            └── pulumi_docs_agent/
+                ├── __init__.py
+                ├── agent.py
+                ├── entrypoint.py
+                ├── helpers.py
+                ├── models.py
+                ├── prompts.py
+                ├── retrieval.py
+                ├── tools.py
+                └── utils.py
 ```
 
 ## Requirements
