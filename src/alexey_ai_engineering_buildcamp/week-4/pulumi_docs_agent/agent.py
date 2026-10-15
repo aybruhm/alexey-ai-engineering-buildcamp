@@ -2,7 +2,6 @@ from dataclasses import dataclass
 
 from pydantic_ai import (
     Agent,
-    AgentRun,
     AgentRunResult,
 )
 from pydantic_ai.capabilities import Instrumentation, ProcessEventStream
@@ -66,7 +65,7 @@ async def run_agent_stream(
     agent: Agent,
     user_prompt: str,
     message_history: list | None = None,
-) -> AgentRun:
+) -> AgentRunResult | None:
     if message_history is None:
         message_history = []
 
@@ -85,4 +84,4 @@ async def run_agent_stream(
                     agent_run,
                     agent.name or "agent",
                 )
-        return agent_run
+        return agent_run.result
