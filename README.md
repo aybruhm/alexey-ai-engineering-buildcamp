@@ -77,7 +77,8 @@ independently of the root project.
 | `pulumi_docs_agent/entrypoint.py` | CLI entry point: downloads the docs, builds the index, runs the agent |
 | `pulumi_docs_agent/agent.py` | Pydantic AI agent construction, blocking and streaming runs |
 | `pulumi_docs_agent/helpers.py` | Streaming, tool-call, and message printing helpers |
-| `pulumi_docs_agent/models.py` | `RAGResponse` structured output model |
+| `pulumi_docs_agent/models.py` | `RAGResponse` and `Reference` structured output models |
+| `pulumi_docs_agent/pricing.py` | Model pricing and cost calculation, used by the test suite |
 | `pulumi_docs_agent/prompts.py` | The agent's instructions |
 | `pulumi_docs_agent/retrieval.py` | minsearch index and highlighter |
 | `pulumi_docs_agent/tools.py` | `SearchTools`: `search`, `add_entry`, `get_file` |
@@ -96,6 +97,23 @@ uv run pulumi-docs-agent
 
 Tracing is configured as soon as the package is imported, so `PHOENIX_API_KEY`,
 `PHOENIX_COLLECTOR_ENDPOINT` and `PHOENIX_PROJECT_NAME` must be set alongside `ANTHROPIC_API_KEY`.
+
+#### Tests
+
+`pulumi_docs_agent/tests/` holds an integration suite that drives the real agent:
+
+| File | Purpose |
+|---|---|
+| `tests/conftest.py` | Module-scoped fixture that builds the index and the agent once per test module |
+| `tests/test_agent.py` | Asserts the answer is populated, that both `search` and `get_file` get called, and that answers contain code and references |
+| `tests/utils.py` | Tool-call collection, token-usage capture, and cost reporting |
+
+```bash
+cd src/alexey_ai_engineering_buildcamp/week-4
+uv run pytest
+```
+
+These tests call the model for real, so they need a valid `ANTHROPIC_API_KEY`, they take a while, and they consume tokens. Each test records its token usage and the session prints the total cost once the run finishes.
 
 ## Setup
 
@@ -205,8 +223,14 @@ Tracing is configured as soon as the package is imported, so `PHOENIX_API_KEY`,
                 ├── entrypoint.py
                 ├── helpers.py
                 ├── models.py
+                ├── pricing.py
                 ├── prompts.py
                 ├── retrieval.py
+                ├── tests/
+                │   ├── __init__.py
+                │   ├── conftest.py
+                │   ├── test_agent.py
+                │   └── utils.py
                 ├── tools.py
                 └── utils.py
 ```
