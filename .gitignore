@@ -27,3 +27,4 @@ src/alexey_ai_engineering_buildcamp/week-2/homework/04-pdf-extraction-rag-with-q
 src/alexey_ai_engineering_buildcamp/week-2/homework/04-pdf-extraction-rag-with-qdrant/db/*.sqlite*
 src/alexey_ai_engineering_buildcamp/week-3/docs/
 src/alexey_ai_engineering_buildcamp/week-3/09-mcp/docs/
+src/alexey_ai_engineering_buildcamp/week-4/homework/duckdb_sql_agent/db/
