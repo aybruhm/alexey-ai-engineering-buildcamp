@@ -43,9 +43,90 @@ always include code snippets in your answer.
 Additional notes:
 - The knowledge base is entirely about Pulumi, so you do not need to include the word "pulumi" in search queries.
 - Prefer retrieving and analyzing full documents (via get_file) before producing the final answer.
+
+Off-topic handling:
+- Always perform at least one search, even if the question seems
+  obviously off-topic, to confirm it's not in the documentation.
+- If the question could be related but search returns nothing,
+  reformulate the query before giving up.
+- When confirmed off-topic: state it clearly, set confidence to 0.0,
+  and use predefined follow-up questions about the documentation topics.
+  
+Adapting to user context:
+- First work out what the user already has: the language and SDK they
+  are using, the resources, stacks and variable names they mention, any
+  code they paste, and the outcome they are working towards.
+- Answer for that setup. When they paste code, extend it rather than
+  replacing it: same language, same resource and variable names, same
+  imports and file layout.
+- When they describe a goal, shape the answer around reaching that goal
+  instead of giving a general overview of the topic.
+- NEVER invent placeholder resources or a fresh project skeleton when
+  the user has already told you what they are working with.
+- If the documentation only covers a different language or approach, say
+  so, then explain how it maps onto the user's setup.
+
+Self-verification checklist:
+Before you submit, fill in the 'checks' field by testing your own
+answer against the rules above. This is the last step, not a formality.
+
+- Only include the checks that apply to this question.
+- For each one, quote the exact sentence or code line in your answer
+  that proves it, in 'explanation'. If you cannot point at concrete
+  evidence, set 'passed' to false. Never pass a rule because the answer
+  "seems fine" overall.
+- If any check fails, fix the answer and check again. The 'checks' you
+  submit must describe the answer you actually submit, not an earlier
+  draft.
+- Never report a failed check as passed. An honestly reported failure is
+  useful; a false pass defeats the point of checking.
+
+Apply these checks:
+1. "Grounded in docs" — every fact, resource, argument and code line
+   comes from the retrieved documents; nothing from outside knowledge.
+2. "Code included" — a technical answer includes at least one code
+   snippet taken from the documents.
+3. "User context used" — the user's language, resource and variable
+   names and existing setup are kept; no invented placeholder project
+   and no invented sample resources.
+4. "Honest about gaps" — if the retrieved documents did not answer the
+   question, or the question was off-topic, the answer says so plainly,
+   does not guess, and uses confidence 0.0 when off-topic.
+5. "Follow-ups on topic" — each follow-up question is about the specific
+   topic of this answer, not a generic list.
 """
+
+JUDGE_INSTRUCTIONS = """
+You are an expert judge evaluating the performance of an
+AI agent.
+""".strip()
+
+JUDGE_USER_PROMPT_TEMPLATE = """
+Evaluate the agent's performance based on the following criteria:
+<CRITERIA>
+{criteria}
+</CRITERIA>
+
+The agent's final output was:
+<AGENT_OUTPUT>
+{output}
+</AGENT_OUTPUT>
+
+Tool calls:
+<TOOL_CALLS>
+{tool_calls}
+</TOOL_CALLS>
+""".strip()
 
 
 def build_prompt(question: str, search_results: list) -> str:
     context = json.dumps(search_results, indent=2)
     return PROMPT_TEMPLATE.format(question=question, context=context)
+
+
+def build_judge_prompt(criteria: list[str], output: str, tool_calls: list) -> str:
+    return JUDGE_USER_PROMPT_TEMPLATE.format(
+        criteria="\n".join(criteria),
+        output=output,
+        tool_calls="\n".join([str(tc) for tc in tool_calls]),
+    )
