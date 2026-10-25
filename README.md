@@ -77,9 +77,9 @@ independently of the root project.
 | `pulumi_docs_agent/entrypoint.py` | CLI entry point: downloads the docs, builds the index, runs the agent |
 | `pulumi_docs_agent/agent.py` | Pydantic AI agent construction, blocking and streaming runs |
 | `pulumi_docs_agent/helpers.py` | Streaming, tool-call, and message printing helpers |
-| `pulumi_docs_agent/models.py` | `RAGResponse` and `Reference` structured output models |
+| `pulumi_docs_agent/models.py` | `RAGResponse`, `Reference` and `Check` structured output models |
 | `pulumi_docs_agent/pricing.py` | Model pricing and cost calculation, used by the test suite |
-| `pulumi_docs_agent/prompts.py` | The agent's instructions |
+| `pulumi_docs_agent/prompts.py` | Agent instructions, self-verification checklist, and judge prompt templates |
 | `pulumi_docs_agent/retrieval.py` | minsearch index and highlighter |
 | `pulumi_docs_agent/tools.py` | `SearchTools`: `search`, `add_entry`, `get_file` |
 | `pulumi_docs_agent/utils.py` | Downloads the Pulumi docs and reuses the local copy |
@@ -95,25 +95,42 @@ uv sync
 uv run pulumi-docs-agent
 ```
 
+`make run` from the repository root does the same thing.
+
 Tracing is configured as soon as the package is imported, so `PHOENIX_API_KEY`,
 `PHOENIX_COLLECTOR_ENDPOINT` and `PHOENIX_PROJECT_NAME` must be set alongside `ANTHROPIC_API_KEY`.
 
 #### Tests
 
-`pulumi_docs_agent/tests/` holds an integration suite that drives the real agent:
+`pulumi_docs_agent/tests/` drives the real agent and grades it in two layers.
+
+**Deterministic** — one model call per case and no judge, so this is the layer to run on every change:
 
 | File | Purpose |
 |---|---|
 | `tests/conftest.py` | Module-scoped fixture that builds the index and the agent once per test module |
+| `tests/test_cases.py` | Table-driven contract checks: every cited path exists in the corpus, `found_answer` agrees with the citations, tool-call budget, search-before-fetch ordering, prompt-injection safety |
 | `tests/test_agent.py` | Asserts the answer is populated, that both `search` and `get_file` get called, and that answers contain code and references |
 | `tests/utils.py` | Tool-call collection, token-usage capture, and cost reporting |
 
+**LLM as a judge** — a second model grades answer quality against a rubric:
+
+| File | Purpose |
+|---|---|
+| `tests/llm_judge.py` | Builds the judge agent and asserts every criterion it returns |
+| `tests/test_judge.py` | Rubrics for answer quality, plus scenario tests for an ambiguous query and for adapting to the user's existing project |
+
+Run both layers, or the cheap one on its own:
+
 ```bash
 cd src/alexey_ai_engineering_buildcamp/week-4
-uv run pytest
+uv run pytest                                          # both layers
+uv run pytest pulumi_docs_agent/tests/test_cases.py    # deterministic only
 ```
 
-These tests call the model for real, so they need a valid `ANTHROPIC_API_KEY`, they take a while, and they consume tokens. Each test records its token usage and the session prints the total cost once the run finishes.
+`make tests` from the repository root runs everything.
+
+These tests call the model for real, so they need a valid `ANTHROPIC_API_KEY`, they take a while, and they consume tokens — the judge layer roughly doubles the cost per case. Each test records its token usage and the session prints the total cost once the run finishes.
 
 ## Setup
 
@@ -145,6 +162,7 @@ These tests call the model for real, so they need a valid `ANTHROPIC_API_KEY`, t
 ├── pyproject.toml
 ├── uv.lock
 ├── README.md
+├── Makefile
 └── src/
     └── alexey_ai_engineering_buildcamp/
         ├── week-1/
@@ -229,7 +247,10 @@ These tests call the model for real, so they need a valid `ANTHROPIC_API_KEY`, t
                 ├── tests/
                 │   ├── __init__.py
                 │   ├── conftest.py
+                │   ├── llm_judge.py
                 │   ├── test_agent.py
+                │   ├── test_cases.py
+                │   ├── test_judge.py
                 │   └── utils.py
                 ├── tools.py
                 └── utils.py
