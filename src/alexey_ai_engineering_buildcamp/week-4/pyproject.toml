@@ -3,11 +3,12 @@ name = "pulumi-docs-agent"
 version = "0.1.0"
 description = "Add your description here"
 authors = [
-    { name = "Abram", email = "55067204+aybruhm@users.noreply.github.com" }
+    { name = "Abram", email = "55067204+aybruhm@users.noreply.github.com" },
 ]
 requires-python = ">=3.14"
 dependencies = [
     "anthropic>=1.14.0",
+    "duckdb>=2.0.0",
     "gitsource>=0.0.5",
     "httpx>=0.28.1",
     "minsearch>=0.2.0",
@@ -22,6 +23,7 @@ dependencies = [
 
 [project.scripts]
 pulumi-docs-agent = "pulumi_docs_agent.entrypoint:main"
+duckdb-sql-agent = "homework.duckdb_sql_agent.entrypoint:main"
 
 [build-system]
 requires = ["uv_build>=0.12.19,<0.13.0"]
@@ -31,7 +33,4 @@ build-backend = "uv_build"
 module-root = ""
 
 [dependency-groups]
-dev = [
-    "pytest>=9.1.1",
-    "pytest-asyncio>=1.4.0",
-]
+dev = ["pytest>=9.1.1", "pytest-asyncio>=1.4.0"]

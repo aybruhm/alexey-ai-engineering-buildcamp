@@ -1,0 +1,51 @@
+from collections.abc import AsyncIterable
+from typing import Any
+
+from pydantic_ai import (
+    AgentRun,
+    AgentStreamEvent,
+    CallToolsNode,
+    ModelRequestNode,
+    RunContext,
+)
+from pydantic_ai.messages import FunctionToolCallEvent
+
+from .models import SQLResult
+
+
+async def log_events(
+    ctx: RunContext,
+    events: AsyncIterable[AgentStreamEvent],
+) -> None:
+    async for event in events:
+        if isinstance(event, FunctionToolCallEvent):
+            tool_name = event.part.tool_name
+            args = event.part.args
+            agent_name = (
+                ctx.agent.name if ctx.agent and hasattr(ctx.agent, "name") else "search"
+            )
+            print(f"TOOL CALL ({agent_name}): {tool_name}({args})")
+
+
+async def print_stream_node(
+    node: ModelRequestNode[Any, Any],
+    agent_run: AgentRun[None, SQLResult],
+):
+    async with node.stream(agent_run.ctx) as stream:
+        async for response in stream.stream_output(debounce_by=0.01):
+            print(response)
+    print()
+
+
+async def print_tool_calls(
+    node: CallToolsNode[Any, Any],
+    agent_run: AgentRun[None, SQLResult],
+    agent_name: str,
+):
+    async with node.stream(agent_run.ctx) as events:
+        async for event in events:
+            if isinstance(event, FunctionToolCallEvent):
+                tool_name = event.part.tool_name
+                args = event.part.args
+                print(f"TOOL CALL ({agent_name}): {tool_name}({args})")
+
