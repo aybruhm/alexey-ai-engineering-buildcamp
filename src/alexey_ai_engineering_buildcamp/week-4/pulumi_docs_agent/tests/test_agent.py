@@ -1,7 +1,7 @@
 import pytest
 
 from ..agent import run_agent_stream
-from .utils import capture_usage, collect_tools
+from .utils import capture_usage, collect_tools, get_model_name
 
 
 @pytest.mark.asyncio
@@ -26,7 +26,7 @@ async def test_agent_uses_tools(create_agent):
     result = await run_agent_stream(agent, user_prompt)
 
     usage = result.usage  # type: ignore
-    capture_usage(agent.model.model_name, usage)
+    capture_usage(get_model_name(agent.model), usage)
 
     messages = result.new_messages()  # type: ignore
 
@@ -47,7 +47,7 @@ async def test_agent_includes_code_in_answer(create_agent):
     result = await run_agent_stream(agent, user_prompt)
 
     usage = result.usage  # type: ignore
-    capture_usage(agent.model.model_name, usage)
+    capture_usage(get_model_name(agent.model), usage)
 
     search_result = result.output  # type: ignore
     assert "```python" in search_result.answer or "```python" in search_result.answer  # type: ignore
@@ -61,7 +61,7 @@ async def test_agent_includes_references(create_agent):
     result = await run_agent_stream(agent, user_prompt)
 
     usage = result.usage  # type: ignore
-    capture_usage(agent.model.model_name, usage)
+    capture_usage(get_model_name(agent.model), usage)
 
     search_result = result.output  # type: ignore
 

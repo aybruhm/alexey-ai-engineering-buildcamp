@@ -2,6 +2,7 @@ from collections import defaultdict
 from dataclasses import dataclass
 from typing import Any
 
+from pydantic_ai import Agent
 from pydantic_ai.usage import RunUsage
 
 from ..pricing import calculate_cost
@@ -11,6 +12,15 @@ from ..pricing import calculate_cost
 class ToolCall:
     name: str
     args: dict[str, Any]
+
+
+def get_model_name(agent: Agent) -> str:
+    model = agent.model
+    if isinstance(model, str):
+        return model
+    if model is not None:
+        return model.model_name
+    return "unknown"
 
 
 def collect_tools(messages: list):
