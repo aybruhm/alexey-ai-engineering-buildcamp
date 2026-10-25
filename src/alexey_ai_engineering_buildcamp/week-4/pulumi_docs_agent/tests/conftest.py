@@ -1,4 +1,5 @@
 import time
+from pathlib import Path
 
 import pytest
 
@@ -7,6 +8,9 @@ from ..retrieval import build_index, create_highlighter
 from ..tools import SearchTools
 from ..utils import retrieve_documentation
 from .utils import display_total_usage
+
+# Absolute so the cache is found no matter which directory pytest is run from.
+DOCS_DIR = Path(__file__).resolve().parents[2] / "docs"
 
 
 @pytest.fixture(scope="module")
@@ -17,7 +21,7 @@ def create_agent():
         repo_name="docs",
         branch_name="master",
         docs_path="content",
-        save_dir="docs",
+        save_dir=str(DOCS_DIR),
     )
     store_index = build_index(documents=documents)
     store_highlighter = create_highlighter(
