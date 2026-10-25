@@ -132,6 +132,54 @@ uv run pytest pulumi_docs_agent/tests/test_cases.py    # deterministic only
 
 These tests call the model for real, so they need a valid `ANTHROPIC_API_KEY`, they take a while, and they consume tokens — the judge layer roughly doubles the cost per case. Each test records its token usage and the session prints the total cost once the run finishes.
 
+### Week 4 — Homework
+
+`week-4/homework/duckdb_sql_agent/` is a SQL agent over the NYC yellow taxi dataset. It inspects the
+`trips` table with `get_schema`, generates SQL, runs it with `run_sql` against DuckDB, and returns a
+structured `SQLResult` containing the query, the result summary, and the row count.
+
+The first run downloads `yellow_tripdata_2024-01.parquet` into `db/` and materializes
+`db/taxi.duckdb` with a `trips` table. Both files are gitignored and reused on later runs.
+
+| Module | Purpose |
+|---|---|
+| `__init__.py` | Loads `week-4/.env` and configures Phoenix tracing |
+| `entrypoint.py` | CLI entry point |
+| `agent.py` | Pydantic AI agent construction |
+| `helpers.py` | Tool-call event logging |
+| `models.py` | `SQLResult` and `SQLAgentConfig` |
+| `prompts.py` | SQL instructions, self-verification checklist, and judge prompts |
+| `tools.py` | `SQLTools`: `get_schema` and `run_sql` with a 50-row cap |
+| `utils.py` | Parquet download and DuckDB setup |
+| `tests/` | Deterministic checks and an LLM-as-a-judge suite |
+
+Run it from the `week-4` project directory:
+
+```bash
+cd src/alexey_ai_engineering_buildcamp/week-4
+uv run duckdb-sql-agent
+```
+
+The prompt asks for a question; the agent calls `get_schema` first, then `run_sql`, and prints the
+structured result.
+
+#### Tests
+
+| File | Purpose |
+|---|---|
+| `tests/test_agent.py` | Exact count check, schema-before-SQL ordering, and an LLM judge for the highest-average-fare hour |
+| `tests/test_cases.py` | Five table-driven data questions with expected SQL columns and result values |
+| `tests/judge.py` | Judge agent plus `evaluate_agent_performance` and `assert_criteria` |
+| `tests/utils.py` | Tool-call collection and numeric result parsing |
+
+```bash
+cd src/alexey_ai_engineering_buildcamp/week-4
+uv run pytest homework/duckdb_sql_agent/tests -q
+```
+
+These tests call the model for real and need `ANTHROPIC_API_KEY`; the judge test adds a second model
+call. The `db/` directory is generated locally and is not committed.
+
 ## Setup
 
 1. Install dependencies with [uv](https://docs.astral.sh/uv/):
@@ -235,6 +283,22 @@ These tests call the model for real, so they need a valid `ANTHROPIC_API_KEY`, t
             ├── .python-version
             ├── pyproject.toml
             ├── uv.lock
+            ├── homework/
+            │   └── duckdb_sql_agent/
+            │       ├── __init__.py
+            │       ├── agent.py
+            │       ├── entrypoint.py
+            │       ├── helpers.py
+            │       ├── models.py
+            │       ├── prompts.py
+            │       ├── tools.py
+            │       ├── utils.py
+            │       └── tests/
+            │           ├── __init__.py
+            │           ├── judge.py
+            │           ├── test_agent.py
+            │           ├── test_cases.py
+            │           └── utils.py
             └── pulumi_docs_agent/
                 ├── __init__.py
                 ├── agent.py
