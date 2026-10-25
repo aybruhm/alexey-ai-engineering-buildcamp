@@ -1,3 +1,4 @@
+import os
 from dataclasses import dataclass
 
 from pydantic_ai import (
@@ -24,7 +25,7 @@ class DocumentationAgentConfig:
 def init_agent(
     config: DocumentationAgentConfig,
     search_tools: SearchTools,
-) -> Agent:
+) -> Agent[None, RAGResponse]:
     tools = [search_tools.search, search_tools.get_file]
     model_settings = AnthropicModelSettings(
         anthropic_cache=True,
@@ -61,19 +62,32 @@ async def run_agent(
     return result
 
 
+def _debug_output_enabled(verbose: bool | None) -> bool:
+    # pytest sets PYTEST_CURRENT_TEST while a test runs; keep the streaming
+    # debug output out of test logs unless a test explicitly asks for it.
+    if verbose is not None:
+        return verbose
+    return "PYTEST_CURRENT_TEST" not in os.environ
+
+
 async def run_agent_stream(
-    agent: Agent,
+    agent: Agent[None, RAGResponse],
     user_prompt: str,
     message_history: list | None = None,
-) -> AgentRunResult | None:
+    verbose: bool | None = None,
+) -> AgentRunResult[RAGResponse] | None:
     if message_history is None:
         message_history = []
+
+    show_debug = _debug_output_enabled(verbose)
 
     async with agent.iter(
         user_prompt,
         message_history=message_history,
     ) as agent_run:
         async for node in agent_run:
+            if not show_debug:
+                continue
             if Agent.is_user_prompt_node(node):
                 print(f"User Prompt ({agent.name}) > ", node.user_prompt)
             elif Agent.is_model_request_node(node):
@@ -84,4 +98,5 @@ async def run_agent_stream(
                     agent_run,
                     agent.name or "agent",
                 )
+
         return agent_run.result

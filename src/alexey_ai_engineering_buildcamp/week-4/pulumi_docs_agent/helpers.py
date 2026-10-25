@@ -1,4 +1,5 @@
 from collections.abc import AsyncIterable
+from typing import Any
 
 from pydantic_ai import (
     AgentRun,
@@ -8,6 +9,8 @@ from pydantic_ai import (
     RunContext,
 )
 from pydantic_ai.messages import FunctionToolCallEvent
+
+from .models import RAGResponse
 
 
 async def log_events(
@@ -25,8 +28,8 @@ async def log_events(
 
 
 async def print_stream_node(
-    node: ModelRequestNode[object, str],
-    agent_run: AgentRun,
+    node: ModelRequestNode[Any, Any],
+    agent_run: AgentRun[None, RAGResponse],
 ):
     async with node.stream(agent_run.ctx) as stream:
         async for response in stream.stream_output(debounce_by=0.01):
@@ -35,8 +38,8 @@ async def print_stream_node(
 
 
 async def print_tool_calls(
-    node: CallToolsNode[object, str],
-    agent_run: AgentRun,
+    node: CallToolsNode[Any, Any],
+    agent_run: AgentRun[None, RAGResponse],
     agent_name: str,
 ):
     async with node.stream(agent_run.ctx) as events:
