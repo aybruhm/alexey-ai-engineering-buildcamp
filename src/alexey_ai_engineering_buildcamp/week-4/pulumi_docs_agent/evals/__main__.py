@@ -48,6 +48,24 @@ COMMANDS = {
             "open the Streamlit app to explore the judged results",
         ),
     },
+    "phoenix": {
+        "traces": (
+            "observability.traces",
+            "pull agent traces from Phoenix into rows the judges and labeling app use",
+        ),
+        "upload": (
+            "observability.datasets",
+            "upload the scenarios and synthetic questions as Phoenix datasets",
+        ),
+        "experiment": (
+            "observability.experiments",
+            "record Phoenix experiments from saved runs with the evaluators and judges",
+        ),
+        "annotate": (
+            "observability.annotate",
+            "judge traces and write the scores back as span annotations",
+        ),
+    },
 }
 
 PACKAGE = __package__ or "pulumi_docs_agent.evals"
