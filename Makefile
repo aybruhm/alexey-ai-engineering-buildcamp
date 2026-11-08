@@ -1,4 +1,4 @@
-.PHONY: tests run evals-help scenarios label evals judge evaluators questions synthetic judge-synthetic explore
+.PHONY: tests run evals-help scenarios label evals judge evaluators questions synthetic judge-synthetic explore traces phoenix-upload phoenix-experiment annotate
 
 WEEK4 = cd src/alexey_ai_engineering_buildcamp/week-4
 EVALS = uv run python -m pulumi_docs_agent.evals
@@ -13,7 +13,7 @@ run:
 	$(WEEK4) && uv run pulumi-docs-agent
 
 evals-help:
-	$(WEEK4) && $(EVALS)
+	$(WEEK4) && $(EVALS) --help
 
 scenarios:
 	$(WEEK4) && $(EVALS) scenarios run $(ARGS)
@@ -41,3 +41,15 @@ judge-synthetic:
 
 explore:
 	$(WEEK4) && $(EVALS) synthetic explore
+
+traces:
+	$(WEEK4) && $(EVALS) phoenix traces $(ARGS)
+
+phoenix-upload:
+	$(WEEK4) && $(EVALS) phoenix upload $(ARGS)
+
+phoenix-experiment:
+	$(WEEK4) && $(EVALS) phoenix experiment $(ARGS)
+
+annotate:
+	$(WEEK4) && $(EVALS) phoenix annotate $(ARGS)
