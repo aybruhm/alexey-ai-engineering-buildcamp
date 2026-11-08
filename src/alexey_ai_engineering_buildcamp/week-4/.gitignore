@@ -3,3 +3,5 @@ docs/
 tmp
 .env
 .cache
+# trace dumps include full retrieved documents
+pulumi_docs_agent/evals/observability/data/
