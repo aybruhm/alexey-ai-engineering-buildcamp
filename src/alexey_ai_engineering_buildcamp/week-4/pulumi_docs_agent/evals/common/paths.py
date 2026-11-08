@@ -1,0 +1,15 @@
+from pathlib import Path
+
+EVALS_DIR = Path(__file__).resolve().parents[1]
+PACKAGE_DIR = EVALS_DIR.parent
+WEEK_DIR = PACKAGE_DIR.parent
+DOCS_DIR = WEEK_DIR / "docs"
+
+SCENARIOS_DIR = EVALS_DIR / "scenarios"
+SCENARIOS_FILE = SCENARIOS_DIR / "scenarios.json"
+SCENARIO_RESULTS_DIR = SCENARIOS_DIR / "results"
+PIPELINE_RESULTS_DIR = SCENARIO_RESULTS_DIR / "evals"
+
+SYNTHETIC_DIR = EVALS_DIR / "synthetic"
+SYNTHETIC_DATA_DIR = SYNTHETIC_DIR / "data"
+DEFAULT_QUESTIONS = SYNTHETIC_DATA_DIR / "questions_generated.csv"
