@@ -154,9 +154,18 @@ uv run python -m pulumi_docs_agent.evals <group> <command> [options]
 | `synthetic` | `run` | Runs the agent on the generated questions, five at a time | `make synthetic` |
 | `synthetic` | `judge` | Judges each response for correctness, instruction following and trajectory | `make judge-synthetic` |
 | `synthetic` | `explore` | Streamlit app for filtering and reading the judged results | `make explore` |
+| `phoenix` | `traces` | Pulls the agent's traces from Phoenix into the same row format, tagged organic, scenario, synthetic or test | `make traces` |
+| `phoenix` | `upload` | Creates the `pulumi-docs-scenarios` and `pulumi-docs-synthetic` datasets in Phoenix, skipping any that already exist | `make phoenix-upload` |
+| `phoenix` | `experiment` | Records a Phoenix experiment for each dataset from a saved run, with the code checks and the judges as evaluators | `make phoenix-experiment` |
+| `phoenix` | `annotate` | Judges traces and writes the scores onto the spans as annotations | `make annotate` |
 
 Pass extra options with `ARGS`, for example `make scenarios ARGS="--ids edge-pricing"`. Each command also
 accepts `--help`.
+
+A typical order: run the scenarios and label the responses with `scenarios run` and `scenarios label`, check the
+judge against your labels with `judge evaluate`, track the percentage of good responses with `scenarios evals`
+while you change the prompt or retrieval, then widen coverage with the `synthetic` commands. Once the agent is
+traced in Phoenix, `phoenix traces` brings real usage into the same pipeline and `phoenix annotate` scores it.
 
 | Folder | Contents |
 |---|---|
@@ -164,6 +173,7 @@ accepts `--help`.
 | `evals/judge/` | The judge prompt and the script that measures its agreement with the human labels |
 | `evals/code_evaluators/` | `evaluators.py`: a deterministic `evaluate(output, reference, input, metadata)` function that needs only the standard library, so it can also be pasted into a Phoenix code evaluator |
 | `evals/synthetic/` | Question generation, the three judges, the results explorer, and `data/` with the generated questions and the judged runs |
+| `evals/observability/` | The Phoenix integration: the trace loader, dataset upload, experiments and span annotations. `data/` holds trace dumps and is gitignored because they contain the full retrieved documents |
 | `evals/common/` | Shared helpers: paths, building the agent, replaying retrieval for the judge, and parallel execution |
 
 **Scenarios and the judge.** The scenarios cover each area of the docs with direct, vague and
@@ -184,6 +194,26 @@ ranges are validated in code. Three separate judges grade each response: whether
 reference answer, whether it follows the agent's instructions, and whether the tool-call sequence was
 efficient. The generated questions and reference answers are not reviewed by a person, so check some
 before treating a mismatch as an agent failure.
+
+**Phoenix.** Monitoring in this repo uses Arize Phoenix, not the Pydantic Logfire used in the course's monitoring
+week. The agent's traces are sent to the project named by `PHOENIX_PROJECT_NAME`, and the `phoenix` commands read
+and write that project through `arize-phoenix-client`, using `PHOENIX_COLLECTOR_ENDPOINT` and
+`PHOENIX_API_KEY`. `phoenix traces` rebuilds each one into an eval row: the
+question and structured answer come from the agent span, and the tool calls and their full results come from the
+tool spans, so the judges see exactly what the agent retrieved. Questions that match the scenarios, the synthetic
+set or the test suite are tagged with that source, so `organic` means everything else. The loaded rows work with
+the labeling app (`make label` lists trace files), the code evaluator and the judges.
+
+`phoenix experiment` replays the agent outputs already saved on disk instead of calling the agent again, so it
+costs nothing by default and the judge verdicts reuse the stored ones. Each run is recorded as
+`scenarios-replay-<timestamp>` or `synthetic-replay-<timestamp>`. Add `--live-judges` to re-run them, or
+`--dry-run N` to run N examples locally without recording anything. `phoenix annotate` runs the code checks and
+the judges on organic traces by default and writes `code_checks`, `judge_quality`,
+`judge_instruction_following` and `judge_trajectory` annotations (plus `judge_correctness` when a reference
+answer is known) under the identifier `evals-v1`. Re-running updates them in place, and traces that already have
+a `judge_quality` annotation are skipped unless you pass `--force`. `--dry-run` judges without writing. The
+`upload`, `experiment` and `annotate` commands write to the Phoenix instance, and the client cannot delete a
+dataset, so check the dataset names before uploading.
 
 These commands call the model for real and need `ANTHROPIC_API_KEY` and the Phoenix variables. At the
 default models a full `scenarios evals` run costs about $0.13; running the agent on all synthetic
@@ -370,6 +400,7 @@ call. The `db/` directory is generated locally and is not committed.
                 │   ├── __main__.py
                 │   ├── common/
                 │   │   ├── agent_runner.py
+                │   │   ├── known_questions.py
                 │   │   ├── paths.py
                 │   │   ├── retrieval_replay.py
                 │   │   └── utils.py
@@ -384,12 +415,19 @@ call. The `db/` directory is generated locally and is not committed.
                 │   │   └── evaluate.py
                 │   ├── code_evaluators/
                 │   │   └── evaluators.py
-                │   └── synthetic/
-                │       ├── generate.py
-                │       ├── run.py
-                │       ├── judges.py
-                │       ├── run_judges.py
-                │       ├── explore.py
+                │   ├── synthetic/
+                │   │   ├── generate.py
+                │   │   ├── run.py
+                │   │   ├── judges.py
+                │   │   ├── run_judges.py
+                │   │   ├── explore.py
+                │   │   └── data/
+                │   └── observability/
+                │       ├── client.py
+                │       ├── traces.py
+                │       ├── datasets.py
+                │       ├── experiments.py
+                │       ├── annotate.py
                 │       └── data/
                 ├── tests/
                 │   ├── __init__.py
