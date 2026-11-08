@@ -1,0 +1,146 @@
+[
+  {
+    "id": "core-direct-stack-config",
+    "label": "good",
+    "failure_category": "",
+    "comments": ""
+  },
+  {
+    "id": "core-vague-resource-wont-delete",
+    "label": "good",
+    "failure_category": "",
+    "comments": ""
+  },
+  {
+    "id": "core-wrongterm-stop-deleting",
+    "label": "good",
+    "failure_category": "",
+    "comments": ""
+  },
+  {
+    "id": "lang-direct-python-s3",
+    "label": "not good",
+    "failure_category": "incorrect",
+    "comments": "This is supposed to be an easy find. By default , when you initialise pulumi after creating a project, it provides you with a boilerplate that creates a default s3 bucket. That said, the information on how to create an s3 bucket shoud"
+  },
+  {
+    "id": "lang-broad-getting-started",
+    "label": "not good",
+    "failure_category": "incomplete",
+    "comments": "The user didn't state what to get started on."
+  },
+  {
+    "id": "lang-wrongterm-install-library",
+    "label": "good",
+    "failure_category": "",
+    "comments": ""
+  },
+  {
+    "id": "esc-direct-create-environment",
+    "label": "good",
+    "failure_category": "",
+    "comments": ""
+  },
+  {
+    "id": "esc-vague-aws-credentials",
+    "label": "good",
+    "failure_category": "",
+    "comments": "In option 1, it would have been better if the agent retrieved the OIDC configuration guide for the full trust policy."
+  },
+  {
+    "id": "esc-wrongterm-password-rotation",
+    "label": "good",
+    "failure_category": "",
+    "comments": ""
+  },
+  {
+    "id": "deploy-direct-drift",
+    "label": "good",
+    "failure_category": "",
+    "comments": ""
+  },
+  {
+    "id": "deploy-wrongterm-cron",
+    "label": "good",
+    "failure_category": "",
+    "comments": ""
+  },
+  {
+    "id": "deploy-direct-github-actions",
+    "label": "good",
+    "failure_category": "",
+    "comments": ""
+  },
+  {
+    "id": "migrate-direct-import",
+    "label": "good",
+    "failure_category": "",
+    "comments": ""
+  },
+  {
+    "id": "migrate-vague-from-terraform",
+    "label": "good",
+    "failure_category": "",
+    "comments": ""
+  },
+  {
+    "id": "migrate-comparison-cdk",
+    "label": "good",
+    "failure_category": "",
+    "comments": ""
+  },
+  {
+    "id": "ai-direct-mcp",
+    "label": "good",
+    "failure_category": "",
+    "comments": ""
+  },
+  {
+    "id": "admin-wrongterm-guardrails",
+    "label": "good",
+    "failure_category": "",
+    "comments": ""
+  },
+  {
+    "id": "edge-near-miss-grafana",
+    "label": "not good",
+    "failure_category": "mixes-own-knowledge",
+    "comments": "The agent should not suggest doing something that isn't grounded in its own knowledge. If the user is asking about sending deployment grafana, the agent should explicitly state that it doesn't have a documentation on that, but rather with OpenTelemetry."
+  },
+  {
+    "id": "edge-near-miss-sqs-dlq",
+    "label": "not good",
+    "failure_category": "false-not-found",
+    "comments": "This is quite not true. There is an example of creating SQS and also configuring DLQ with SQS on Pulumi documentation. So, it should be easy enough for the agent to put both of them together to answer the user's question."
+  },
+  {
+    "id": "edge-followup-changes-direction",
+    "label": "good",
+    "failure_category": "",
+    "comments": ""
+  },
+  {
+    "id": "edge-pricing",
+    "label": "not good",
+    "failure_category": "incorrect",
+    "comments": ""
+  },
+  {
+    "id": "edge-unrelated-chess",
+    "label": "not good",
+    "failure_category": "wrong-language",
+    "comments": ""
+  },
+  {
+    "id": "edge-ml-adjacent-rf",
+    "label": "not good",
+    "failure_category": "wrong-scope",
+    "comments": ""
+  },
+  {
+    "id": "edge-injection",
+    "label": "not good",
+    "failure_category": "wrong-scope",
+    "comments": ""
+  }
+]
