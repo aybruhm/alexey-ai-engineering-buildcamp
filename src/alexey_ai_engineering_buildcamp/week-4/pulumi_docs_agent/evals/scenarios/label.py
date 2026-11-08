@@ -8,7 +8,10 @@ WEEK_DIR = Path(__file__).resolve().parents[3]
 if str(WEEK_DIR) not in sys.path:
     sys.path.insert(0, str(WEEK_DIR))
 
-from pulumi_docs_agent.evals.common.paths import SCENARIO_RESULTS_DIR as RESULTS_DIR  # noqa: E402
+from pulumi_docs_agent.evals.common.paths import (  # noqa: E402
+    OBSERVABILITY_DATA_DIR,
+    SCENARIO_RESULTS_DIR,
+)
 
 GITHUB_DOCS = "https://github.com/pulumi/docs/blob/master/content/"
 FAILURE_CATEGORIES = [
@@ -71,11 +74,16 @@ def main() -> None:
     st.title("Label agent runs")
 
     files = sorted(
-        [*RESULTS_DIR.glob("*.jsonl"), *RESULTS_DIR.glob("*.json")], reverse=True
+        [
+            *SCENARIO_RESULTS_DIR.glob("*.jsonl"),
+            *SCENARIO_RESULTS_DIR.glob("*.json"),
+            *OBSERVABILITY_DATA_DIR.glob("traces_*.jsonl"),
+        ],
+        reverse=True,
     )
     files = [f for f in files if not f.stem.endswith("_results")]
     if not files:
-        st.error(f"No result files in {RESULTS_DIR}. Run `make scenarios` first.")
+        st.error(f"No result files in {SCENARIO_RESULTS_DIR}. Run `make scenarios` first.")
         return
     path = st.sidebar.selectbox("Input file", files, format_func=lambda p: p.name)
 
