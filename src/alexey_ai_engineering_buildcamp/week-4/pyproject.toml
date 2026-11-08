@@ -8,6 +8,7 @@ authors = [
 requires-python = ">=3.14"
 dependencies = [
     "anthropic>=1.14.0",
+    "arize-phoenix-client>=3.7.0",
     "duckdb>=2.0.0",
     "gitsource>=0.0.5",
     "httpx>=0.28.1",

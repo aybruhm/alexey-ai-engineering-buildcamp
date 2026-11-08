@@ -89,6 +89,25 @@ wheels = [
 ]
 
 [[package]]
+name = "arize-phoenix-client"
+version = "3.7.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "certifi" },
+    { name = "httpx" },
+    { name = "openinference-instrumentation" },
+    { name = "openinference-semantic-conventions" },
+    { name = "opentelemetry-exporter-otlp" },
+    { name = "opentelemetry-sdk" },
+    { name = "tqdm" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/2c/bb/2baef57a69187b85c00e57b0c439ad1836b634a36ff9dbe38ae3fe9bf43d/arize_phoenix_client-3.7.0.tar.gz", hash = "sha256:79e0e3f4351ff9a6fc30d05144adf9e17bb5ca07b7b0bbcb2a66dcf95d94f63b", size = 316341, upload-time = "2026-11-05T03:10:32.156Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/bb/61/7a011a51ef9b515fccbdb4e72326b0c1bdae009089ce24e25c14853de9bb/arize_phoenix_client-3.7.0-py3-none-any.whl", hash = "sha256:20a39e524a124ea48a61a6619f2997b938e9fe36996cf686ab2624aadbc3899b", size = 272051, upload-time = "2026-11-05T03:10:30.296Z" },
+]
+
+[[package]]
 name = "attrs"
 version = "26.1.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1570,6 +1589,7 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "anthropic" },
+    { name = "arize-phoenix-client" },
     { name = "duckdb" },
     { name = "gitsource" },
     { name = "httpx" },
@@ -1593,6 +1613,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "anthropic", specifier = ">=1.14.0" },
+    { name = "arize-phoenix-client", specifier = ">=3.7.0" },
     { name = "duckdb", specifier = ">=2.0.0" },
     { name = "gitsource", specifier = ">=0.0.5" },
     { name = "httpx", specifier = ">=0.28.1" },
