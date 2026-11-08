@@ -78,7 +78,7 @@ independently of the root project.
 | `pulumi_docs_agent/agent.py` | Pydantic AI agent construction, blocking and streaming runs |
 | `pulumi_docs_agent/helpers.py` | Streaming, tool-call, and message printing helpers |
 | `pulumi_docs_agent/models.py` | `RAGResponse`, `Reference` and `Check` structured output models |
-| `pulumi_docs_agent/pricing.py` | Model pricing and cost calculation, used by the test suite |
+| `pulumi_docs_agent/pricing.py` | Model pricing and cost calculation, used by the test suite and the evals |
 | `pulumi_docs_agent/prompts.py` | Agent instructions, self-verification checklist, and judge prompt templates |
 | `pulumi_docs_agent/retrieval.py` | minsearch index and highlighter |
 | `pulumi_docs_agent/tools.py` | `SearchTools`: `search`, `add_entry`, `get_file` |
@@ -131,6 +131,64 @@ uv run pytest pulumi_docs_agent/tests/test_cases.py    # deterministic only
 `make tests` from the repository root runs everything.
 
 These tests call the model for real, so they need a valid `ANTHROPIC_API_KEY`, they take a while, and they consume tokens — the judge layer roughly doubles the cost per case. Each test records its token usage and the session prints the total cost once the run finishes.
+
+#### Evaluations
+
+`pulumi_docs_agent/evals/` measures how good the agent is, beyond the pass/fail tests. It is split into
+one folder per kind of evaluation, and a single entrypoint runs any of them:
+
+```bash
+cd src/alexey_ai_engineering_buildcamp/week-4
+uv run python -m pulumi_docs_agent.evals                      # list every command
+uv run python -m pulumi_docs_agent.evals <group> <command> [options]
+```
+
+| Group | Command | What it does | `make` target |
+|---|---|---|---|
+| `scenarios` | `run` | Runs the 24 hand-designed scenarios against the agent and saves each response | `make scenarios` |
+| `scenarios` | `label` | Streamlit app for labeling each response good / not good | `make label` |
+| `scenarios` | `evals` | Runs the agent, judges every response and reports the percentage that are good, with the change from the previous run | `make evals` |
+| `judge` | `evaluate` | Compares the LLM judge with the human labels (accuracy, precision and recall for the bad class) | `make judge` |
+| `code-evaluators` | `run` | Applies the deterministic code evaluator to saved runs | `make evaluators` |
+| `synthetic` | `generate` | Generates questions and reference answers from sampled documentation pages | `make questions` |
+| `synthetic` | `run` | Runs the agent on the generated questions, five at a time | `make synthetic` |
+| `synthetic` | `judge` | Judges each response for correctness, instruction following and trajectory | `make judge-synthetic` |
+| `synthetic` | `explore` | Streamlit app for filtering and reading the judged results | `make explore` |
+
+Pass extra options with `ARGS`, for example `make scenarios ARGS="--ids edge-pricing"`. Each command also
+accepts `--help`.
+
+| Folder | Contents |
+|---|---|
+| `evals/scenarios/` | `scenarios.json` (scenarios grouped by documentation area and phrasing, plus edge cases), the runner, the labeling app, the `evals` pipeline, and `results/` with saved runs and the human labels |
+| `evals/judge/` | The judge prompt and the script that measures its agreement with the human labels |
+| `evals/code_evaluators/` | `evaluators.py`: a deterministic `evaluate(output, reference, input, metadata)` function that needs only the standard library, so it can also be pasted into a Phoenix code evaluator |
+| `evals/synthetic/` | Question generation, the three judges, the results explorer, and `data/` with the generated questions and the judged runs |
+| `evals/common/` | Shared helpers: paths, building the agent, replaying retrieval for the judge, and parallel execution |
+
+**Scenarios and the judge.** The scenarios cover each area of the docs with direct, vague and
+wrong-terminology phrasings, plus questions the docs cannot answer and a prompt-injection attempt. The
+judge sees the retrieved documents, rebuilt by replaying the saved tool calls, so it can check
+grounding. It is still a work in progress: on the 24 labeled scenarios it agrees with the human labels
+on about two thirds of them and catches only a quarter of the responses labeled bad, so treat the
+percentage from `scenarios evals` as a trend line, not an absolute score.
+
+**Code evaluator.** The hard checks cover an empty answer, cited paths that do not exist in the corpus,
+duplicate references, `found_answer` without references, confidence out of range, a missing refusal when
+one is expected, a prompt leak and the tool-call budget. Cited-source and process-narration checks only
+lower the score. These checks find structural problems; they cannot judge whether an answer is correct.
+
+**Synthetic data.** 204 questions are generated from 70 pages sampled evenly across the areas of `docs/`,
+using four user personas. Each comes with a reference answer and the lines it came from, and the line
+ranges are validated in code. Three separate judges grade each response: whether it contains the
+reference answer, whether it follows the agent's instructions, and whether the tool-call sequence was
+efficient. The generated questions and reference answers are not reviewed by a person, so check some
+before treating a mismatch as an agent failure.
+
+These commands call the model for real and need `ANTHROPIC_API_KEY` and the Phoenix variables. At the
+default models a full `scenarios evals` run costs about $0.13; running the agent on all synthetic
+questions costs about $0.80 and about ten minutes, and judging them about $0.35. The Streamlit apps
+need no API key.
 
 ### Week 4 — Homework
 
@@ -308,6 +366,31 @@ call. The `db/` directory is generated locally and is not committed.
                 ├── pricing.py
                 ├── prompts.py
                 ├── retrieval.py
+                ├── evals/
+                │   ├── __main__.py
+                │   ├── common/
+                │   │   ├── agent_runner.py
+                │   │   ├── paths.py
+                │   │   ├── retrieval_replay.py
+                │   │   └── utils.py
+                │   ├── scenarios/
+                │   │   ├── scenarios.json
+                │   │   ├── run.py
+                │   │   ├── run_evals.py
+                │   │   ├── label.py
+                │   │   └── results/
+                │   ├── judge/
+                │   │   ├── judge.py
+                │   │   └── evaluate.py
+                │   ├── code_evaluators/
+                │   │   └── evaluators.py
+                │   └── synthetic/
+                │       ├── generate.py
+                │       ├── run.py
+                │       ├── judges.py
+                │       ├── run_judges.py
+                │       ├── explore.py
+                │       └── data/
                 ├── tests/
                 │   ├── __init__.py
                 │   ├── conftest.py
