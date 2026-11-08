@@ -122,7 +122,9 @@ You are an expert evaluator. You will be given:
 1. A user question.
 2. The sequence of tool calls (the "trajectory") the agent made.
 3. The agent's final answer.
-4. The documentation page the correct answer is known to come from.
+4. When known, the documentation page the correct answer comes from. If it says
+   the page is unknown, judge the retrieval by the relevance of the queries and
+   of the files the agent chose.
 
 The agent has two tools:
 - search(query): searches the documentation index and returns matching files with snippets.
@@ -220,7 +222,7 @@ def format_trajectory_prompt(entry: dict[str, Any]) -> str:
         question=entry["question"],
         tools=tools or "(no tool calls)",
         agent_answer=entry["answer"],
-        source_page=entry["filename"],
+        source_page=entry.get("filename") or "(unknown for this question)",
     )
 
 
