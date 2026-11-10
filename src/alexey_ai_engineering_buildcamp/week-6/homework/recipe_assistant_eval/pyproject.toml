@@ -1,0 +1,30 @@
+[project]
+name = "recipe-assistant-eval"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Abram", email = "55067204+aybruhm@users.noreply.github.com" },
+]
+requires-python = ">=3.14"
+dependencies = [
+    "minsearch>=0.2.0",
+    "openinference-instrumentation-pydantic-ai>=0.1.30",
+    "opentelemetry-api>=1.44.0",
+    "opentelemetry-exporter-otlp>=1.44.0",
+    "opentelemetry-sdk>=1.44.0",
+    "pydantic-ai>=2.56.0",
+    "python-dotenv>=1.2.4",
+    "streamlit>=1.67.0",
+]
+
+[project.scripts]
+recipe-assistant = "recipe_assistant.entrypoint:main"
+
+[build-system]
+requires = ["uv_build>=0.12.19,<0.13.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-root = ""
+module-name = "recipe_assistant"
