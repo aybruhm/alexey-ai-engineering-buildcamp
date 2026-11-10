@@ -1,0 +1,1052 @@
+[
+  {
+    "question": "What temperature should my oven be at for a margherita pizza?",
+    "category": "temperature",
+    "type": "factual",
+    "recipe_id": 1,
+    "output": "Preheat your oven to **475\u00b0F (245\u00b0C)** for the Classic Margherita Pizza in my collection. Bake it for 12\u201315 minutes, until the crust is golden. Add the fresh basil and a drizzle of olive oil after baking.",
+    "execution_time": 2.78,
+    "tokens": {
+      "input_tokens": 2887,
+      "output_tokens": 190,
+      "total_tokens": 3077
+    },
+    "cost": 0.000384
+  },
+  {
+    "question": "How do I roll out pizza dough so it doesn't stick or tear?",
+    "category": "method",
+    "type": "how-to",
+    "recipe_id": 1,
+    "output": "The recipe in my collection, Classic Margherita Pizza, only says to \"roll out dough on a floured surface,\" so it doesn't have detailed tips. Here's general advice that should help:\n\n- **Let the dough come to room temperature.** Cold dough is stiff and tears more easily. Let it rest for 30 to 60 minutes after taking it out of the fridge.\n- **Use enough flour, but not too much.** Dust the surface and the top of the dough lightly. Excess flour can make the crust tough and dry.\n- **Let gluten relax.** If the dough springs back when you stretch it, cover it and let it rest for 5 to 10 minutes, then try again.\n- **Start in the center.** Press the middle flat, then work outward, rotating the dough often. Pressing out from the center helps keep the edges from tearing.\n- **Stretch instead of rolling.** Rolling with a pin can squeeze out air and toughen the dough. Working it with your knuckles or hands, letting gravity help as you lift it, keeps the rim airy.\n- **Leave a thicker edge.** Keep the outer rim slightly thicker than the center so it holds toppings and doesn't tear.\n- **Transfer with confidence.** Lightly dust a pizza peel or the back of a baking sheet with flour or cornmeal, or use parchment paper. Assemble the pizza on that surface so you can slide it into the oven without it sticking.\n\nIf you're making the Margherita, preheat the oven to 475\u00b0F and bake for 12 to 15 minutes until the crust is golden.",
+    "execution_time": 5.41,
+    "tokens": {
+      "input_tokens": 2975,
+      "output_tokens": 741,
+      "total_tokens": 3716
+    },
+    "cost": 0.000668
+  },
+  {
+    "question": "Should I add the basil before or after baking, and why?",
+    "category": "method",
+    "type": "detail",
+    "recipe_id": 1,
+    "output": "In the Classic Margherita Pizza recipe, you add the basil **after baking**. The instructions say to bake the pizza for 12-15 minutes until the crust is golden, then \"top with fresh basil and a drizzle of olive oil.\"\n\nThe recipe doesn't give a reason. The usual explanation is that fresh basil wilts, darkens, and loses much of its aroma in a 475\u00b0F oven, so adding it at the end keeps it bright and fragrant.\n\nIf you meant a different recipe, such as the Thai Green Curry, tell me and I'll check its instructions.",
+    "execution_time": 4.72,
+    "tokens": {
+      "input_tokens": 3375,
+      "output_tokens": 593,
+      "total_tokens": 3968
+    },
+    "cost": 0.000634
+  },
+  {
+    "question": "Can I use regular canned tomatoes if I can't find San Marzano?",
+    "category": "substitution",
+    "type": "substitution",
+    "recipe_id": 1,
+    "output": "The collection doesn't say whether regular canned tomatoes can replace San Marzano. The only recipe that uses them is the **Classic Margherita Pizza**, which calls for \"San Marzano tomatoes\" and says to spread \"crushed tomatoes evenly\" over the dough.\n\nFrom general cooking knowledge, regular canned crushed tomatoes should work. San Marzanos are sweeter and less acidic, so the sauce may taste slightly more tart. You could add a pinch of sugar, or a little salt, to balance it, and taste before spreading. Choose canned crushed tomatoes if you can, since the recipe calls for crushed tomatoes. If you only have whole tomatoes, crush them by hand or pulse them briefly in a blender.",
+    "execution_time": 5.13,
+    "tokens": {
+      "input_tokens": 3228,
+      "output_tokens": 534,
+      "total_tokens": 3762
+    },
+    "cost": 0.00059
+  },
+  {
+    "question": "How is a margherita pizza different from a regular New York style cheese pizza?",
+    "category": "comparison",
+    "type": "comparison",
+    "recipe_id": 1,
+    "output": "I can describe the Classic Margherita Pizza in my collection, but I don't have a New York style cheese pizza recipe, so I can't make a direct comparison from my recipe data.\n\n**Classic Margherita Pizza (from my collection)**\n- **Ingredients:** pizza dough, San Marzano tomatoes, fresh mozzarella, fresh basil, olive oil, and salt.\n- **Method:** Roll out the dough on a floured surface, spread crushed tomatoes evenly, tear the mozzarella over the sauce, and bake at 475\u00b0F for 12 to 15 minutes until the crust is golden. Finish with fresh basil and a drizzle of olive oil.\n- **Time:** About 20 minutes prep and 15 minutes cook, serving 4.\n\nGoing by general cooking knowledge rather than my recipe data, a New York style cheese pizza typically uses a larger, thin, foldable crust, a tomato sauce that is often seasoned, and a generous amount of shredded low-moisture mozzarella, sometimes with grated Parmesan or Pecorino. It's usually baked at a high temperature. The main differences from a margherita are that the margherita uses fresh mozzarella and fresh basil, and it generally has a lighter layer of toppings. If you want the exact New York style method, you'd need a recipe from another source.",
+    "execution_time": 5.48,
+    "tokens": {
+      "input_tokens": 3959,
+      "output_tokens": 816,
+      "total_tokens": 4775
+    },
+    "cost": 0.000804
+  },
+  {
+    "question": "How long does the chicken need to marinate before I cook it?",
+    "category": "timing",
+    "type": "factual",
+    "recipe_id": 2,
+    "output": "The only recipe in my collection with a marinade is **Chicken Tikka Masala**. It says to marinate the chicken in yogurt, garam masala, turmeric, and cumin for **at least 1 hour** before grilling or broiling it.\n\nThe **Thai Green Curry** doesn't have a marinating step. It calls for slicing the chicken thigh and searing it in the curry paste.",
+    "execution_time": 4.98,
+    "tokens": {
+      "input_tokens": 3925,
+      "output_tokens": 482,
+      "total_tokens": 4407
+    },
+    "cost": 0.000633
+  },
+  {
+    "question": "How do I get that charred look on the chicken if I don't have a grill?",
+    "category": "method",
+    "type": "how-to",
+    "recipe_id": 2,
+    "output": "I don't have a recipe in my collection that specifically describes getting a charred chicken finish without a grill. The closest match is **Chicken Tikka Masala**, which says to marinate the chicken in yogurt, garam masala, turmeric, and cumin for at least an hour, then \"grill or broil chicken until charred.\" So the broiler is a built-in option for that recipe.\n\nTo get a charred look indoors:\n\n- **Use your broiler.** Set the oven to high, put the chicken on a rack over a foil-lined sheet pan about 4 to 6 inches from the heat, and watch it closely. Flip once. Broiling can go from browned to burnt quickly.\n- **Sear in a cast-iron or heavy skillet.** Get the pan very hot with a little oil, then cook the chicken without moving it until the surface is deeply browned before flipping.\n- **Dry the surface.** Pat the chicken dry before cooking. Moisture causes steaming instead of browning.\n- **Use a marinade with sugar or yogurt.** Sugars and dairy brown faster, which helps the char. The tikka marinade already does this.\n- **Finish in the oven.** Sear for color, then move the chicken to a 425\u00b0F (220\u00b0C) oven to cook through.\n\nIf you tell me which dish you had in mind, I can check whether it's in my collection and walk you through its specific steps.",
+    "execution_time": 6.92,
+    "tokens": {
+      "input_tokens": 5300,
+      "output_tokens": 854,
+      "total_tokens": 6154
+    },
+    "cost": 0.000957
+  },
+  {
+    "question": "Should I cut the chicken into chunks before marinating or after it's cooked?",
+    "category": "method",
+    "type": "detail",
+    "recipe_id": 2,
+    "output": "The Chicken Tikka Masala recipe in my collection doesn't say whether to cut the chicken before or after marinating. It just says to marinate the chicken in yogurt, garam masala, turmeric, and cumin for at least an hour, then grill or broil it until charred.\n\nIn general cooking practice, cutting the chicken into pieces before marinating helps the flavors penetrate faster because there's more surface area. Many cooks do this for tikka-style dishes. Cutting after cooking also works, but the chicken will be less seasoned inside. Whichever you choose, the recipe's instructions still apply: marinate for at least an hour, then cook the chicken until charred before adding it to the sauce.\n\nIf you tell me which recipe you're making, I can check its instructions for you.",
+    "execution_time": 5.48,
+    "tokens": {
+      "input_tokens": 3422,
+      "output_tokens": 626,
+      "total_tokens": 4048
+    },
+    "cost": 0.000655
+  },
+  {
+    "question": "Can I use coconut milk instead of heavy cream to make this dairy-free?",
+    "category": "substitution",
+    "type": "substitution",
+    "recipe_id": 2,
+    "output": "I'd be glad to help, but I don't see which recipe you mean. Could you tell me the recipe name, or paste its ingredient list? Once I have it, I can check whether coconut milk would work in place of the heavy cream and suggest any other changes needed to make it dairy-free.",
+    "execution_time": 1.65,
+    "tokens": {
+      "input_tokens": 759,
+      "output_tokens": 165,
+      "total_tokens": 924
+    },
+    "cost": 0.000158
+  },
+  {
+    "question": "What's the difference between chicken tikka masala and butter chicken?",
+    "category": "comparison",
+    "type": "comparison",
+    "recipe_id": 2,
+    "output": "Chicken tikka masala is in my collection, but butter chicken isn't, so I can only describe the first one from a recipe.\n\n**Chicken Tikka Masala (from the collection):** Chicken breast is marinated in yogurt, garam masala, turmeric, and cumin, then grilled or broiled until charred. The chicken goes into a sauce of saut\u00e9ed onion, garlic, and ginger with tomato sauce and spices, finished with heavy cream. It's served over rice with cilantro. It takes about 30 minutes to prep and 40 to cook, and serves 4.\n\n**Butter chicken (general knowledge, not from your collection):** It's typically milder and richer than tikka masala. The chicken is usually marinated in yogurt and spices, then simmered in a smooth, mildly sweet tomato sauce enriched with butter and cream. It's often finished with dried fenugreek leaves (kasuri methi). Recipes vary a lot, so check any specific one you find.\n\nIn short, tikka masala is defined by the charred, grilled chicken in a spiced tomato-cream sauce, while butter chicken is defined by its buttery, smooth, gently sweet sauce.\n\nIf you want something similar to butter chicken, I can search the collection for other creamy chicken curries.",
+    "execution_time": 5.53,
+    "tokens": {
+      "input_tokens": 4275,
+      "output_tokens": 831,
+      "total_tokens": 5106
+    },
+    "cost": 0.000843
+  },
+  {
+    "question": "Is Caesar salad actually American? I always assumed it was Italian because of the name.",
+    "category": "origin",
+    "type": "factual",
+    "recipe_id": 3,
+    "output": "Caesar salad is generally credited to Caesar Cardini, an Italian immigrant restaurateur who ran a restaurant in Tijuana, Mexico. The most common account dates it to around 1924, and it became popular with American tourists who came over from San Diego and Los Angeles. So it's usually considered an American invention, though the name and the inventor's roots are Italian.\n\nThe name most likely comes from Cardini himself, not from a classic Italian dish. Cardini's dressing was not a traditional Italian recipe. It was a creation built around ingredients like romaine, parmesan, croutons, lemon, egg, olive oil, and Worcestershire-style seasoning. Anchovies were in some versions, and the story that Cardini made it up on the spot during a busy Fourth of July rush is popular but not well documented.\n\nMy recipe collection also lists a Caesar Salad under the American cuisine tag, which fits this history. It uses romaine, parmesan, croutons, Caesar dressing, lemon juice, anchovy paste, garlic, olive oil, and egg yolk.",
+    "execution_time": 4.97,
+    "tokens": {
+      "input_tokens": 1921,
+      "output_tokens": 770,
+      "total_tokens": 2691
+    },
+    "cost": 0.000577
+  },
+  {
+    "question": "How do I whisk the dressing so it gets thick and creamy instead of staying oily and separated?",
+    "category": "method",
+    "type": "how-to",
+    "recipe_id": 3,
+    "output": "The collection has one dressing recipe, the Caesar Salad, and its instructions don't say how to whisk it. They only say to \"whisk egg yolk, anchovy paste, garlic, lemon juice, and olive oil.\" So I can't tell you the recipe's exact technique.\n\nThe egg yolk is what makes this dressing emulsify, so the oil has to be added slowly. This is general technique, not from the recipe:\n\n- **Whisk the yolk, anchovy paste, garlic, and lemon juice together first** so you have a base.\n- **Add the olive oil drop by drop at the start**, whisking constantly. Once the mixture begins to thicken, you can pour it in a thin, steady stream.\n- **Keep whisking the whole time** so the oil breaks into tiny droplets that stay suspended in the yolk.\n- **If it looks split or oily**, stop adding oil. Whisk a fresh egg yolk in a clean bowl, then add the broken dressing to it very slowly, as if you were adding oil.\n\nIf you tell me which dressing you're making, I can search for it in the collection.",
+    "execution_time": 5.52,
+    "tokens": {
+      "input_tokens": 3083,
+      "output_tokens": 727,
+      "total_tokens": 3810
+    },
+    "cost": 0.000672
+  },
+  {
+    "question": "How much anchovy paste should I use? I don't want the dressing to taste too fishy.",
+    "category": "ingredients",
+    "type": "detail",
+    "recipe_id": 3,
+    "output": "The Caesar Salad recipe in my collection uses anchovy paste in the dressing, along with egg yolk, garlic, lemon juice, and olive oil. It doesn't list a specific amount, so I can't give you the recipe's quantity.\n\nSince the recipe doesn't specify, here's general guidance: start with about \u00bd teaspoon for a dressing that serves two, whisk it in, and taste. Add more only if you want a stronger anchovy flavor. Lemon juice and parmesan in the dressing also help mellow the fishiness, so you may not need much.",
+    "execution_time": 4.12,
+    "tokens": {
+      "input_tokens": 3509,
+      "output_tokens": 485,
+      "total_tokens": 3994
+    },
+    "cost": 0.000593
+  },
+  {
+    "question": "I'm nervous about eating raw egg yolk. What can I use instead and still get a creamy dressing?",
+    "category": "substitution",
+    "type": "substitution",
+    "recipe_id": 3,
+    "output": "I couldn't find an egg-free creamy dressing in my recipe collection, and the collection doesn't include a substitution guide.\n\nThe only dressing I found that uses raw yolk is the **Caesar Salad** (serves 2, about 15 minutes). Its dressing is whisked from egg yolk, anchovy paste, garlic, lemon juice, and olive oil, then tossed with romaine and topped with parmesan and croutons. The recipe doesn't say how to change the dressing without the yolk.\n\nThe **Spaghetti Carbonara** also uses raw egg yolks, so it has the same concern.\n\nOutside the collection, a few general options people use are pasteurized eggs or pasteurized yolks, which are safe to use in uncooked dressings, and commercial egg-free Caesar-style dressings. I can't verify how those would change the flavor or texture of this recipe, so you may want to test a small batch first.",
+    "execution_time": 5.0,
+    "tokens": {
+      "input_tokens": 4161,
+      "output_tokens": 728,
+      "total_tokens": 4889
+    },
+    "cost": 0.00078
+  },
+  {
+    "question": "How is a Caesar salad different from a regular garden salad with Italian dressing?",
+    "category": "comparison",
+    "type": "comparison",
+    "recipe_id": 3,
+    "output": "A Caesar salad and a garden salad with Italian dressing differ mainly in their base, dressing, and toppings.\n\n**Caesar salad** (from my collection, serves 2, about 15 minutes):\n- **Base:** romaine lettuce\n- **Dressing:** a homemade emulsion of egg yolk, anchovy paste, garlic, lemon juice, and olive oil, with the lettuce tossed in it\n- **Toppings:** shaved parmesan and croutons\n\n**Garden salad with Italian dressing:** My collection doesn't have a recipe for this, so I can only give the general picture. It usually features a mix of mixed greens and fresh vegetables such as tomato, cucumber, and onion. The dressing is a vinaigrette of oil, vinegar, and Italian herbs, and it's typically bottled or quickly whisked together. There's usually no anchovy or egg.\n\nThe main differences are that the Caesar has a richer, creamier, savory dressing with anchovy and parmesan flavor, while the garden salad is lighter and more vegetable-focused, with a tangy herb vinaigrette.\n\nIf you want a similar salad from my collection, the **Greek Salad** is a no-cook, vegetable-heavy option. It uses cucumber, tomato, red onion, Kalamata olives, and feta, dressed with olive oil, red wine vinegar, and oregano, so it's closer in spirit to a garden salad with a vinaigrette.",
+    "execution_time": 5.65,
+    "tokens": {
+      "input_tokens": 4585,
+      "output_tokens": 891,
+      "total_tokens": 5476
+    },
+    "cost": 0.000904
+  },
+  {
+    "question": "What kind of cheese goes on these beef tacos?",
+    "category": "ingredients",
+    "type": "factual",
+    "recipe_id": 4,
+    "output": "The Beef Tacos recipe in my collection calls for **cheddar cheese**. It's one of the toppings, along with lettuce, tomato, sour cream, and salsa. The recipe doesn't specify a particular type of cheddar, so any cheddar you like should work.",
+    "execution_time": 2.71,
+    "tokens": {
+      "input_tokens": 2929,
+      "output_tokens": 229,
+      "total_tokens": 3158
+    },
+    "cost": 0.000407
+  },
+  {
+    "question": "What's the best way to warm up hard taco shells so they don't break or get soggy?",
+    "category": "method",
+    "type": "how-to",
+    "recipe_id": 4,
+    "output": "My recipe collection doesn't have a detailed method for warming hard taco shells. The only relevant recipe is Beef Tacos, which says just \"Warm taco shells\" without specifying how.\n\nHere are common general techniques, which aren't from the collection:\n\n- **Oven:** Set it to about 350\u00b0F (175\u00b0C), arrange the shells upright or on their sides on a baking sheet so they don't tip, and heat for 3 to 5 minutes. Heating them directly on the rack keeps them crisp.\n- **Foil wrap:** Wrap a stack of shells loosely in foil and warm them in the oven for about 5 minutes. This gently warms them and helps prevent cracking.\n- **Microwave:** Stack 4 to 6 shells between damp paper towels and heat in 10-second bursts. This is quick, but the shells can go soft or chewy.\n\nTo avoid sogginess, warm them just before serving and fill them right away. Keep them wrapped in a towel or foil if you're holding them.",
+    "execution_time": 4.76,
+    "tokens": {
+      "input_tokens": 3224,
+      "output_tokens": 546,
+      "total_tokens": 3770
+    },
+    "cost": 0.000595
+  },
+  {
+    "question": "How long should I simmer the beef after adding the seasoning and water, and how much water do I use?",
+    "category": "timing",
+    "type": "detail",
+    "recipe_id": 4,
+    "output": "The closest match in my collection is the **Beef Tacos** recipe (ID 4), but it doesn't give the amounts you asked about. The instructions say to brown the ground beef with diced onion, then \"add taco seasoning and water, simmer until thickened.\" It doesn't specify how much water to add or how long to simmer. The total cook time is listed as 20 minutes, but that isn't broken down by step.\n\nIf you're working from a different beef recipe, such as a stew or braise, tell me its name and I'll check it. I searched for beef stews and braises and didn't find one in my collection that matches.",
+    "execution_time": 5.91,
+    "tokens": {
+      "input_tokens": 5464,
+      "output_tokens": 644,
+      "total_tokens": 6108
+    },
+    "cost": 0.000868
+  },
+  {
+    "question": "Can I use ground turkey or chicken instead of ground beef, and will I need to change anything?",
+    "category": "substitution",
+    "type": "substitution",
+    "recipe_id": 4,
+    "output": "Yes, you can use ground turkey or chicken in the **Beef Tacos** recipe. It's the only ground beef recipe in my collection, so I'm assuming that's the one you mean. The ingredient list and steps don't need to change, but a few adjustments will help:\n\n- **Fat:** Ground turkey and chicken are leaner than beef, so they can dry out and stick to the pan. Add a little oil before browning the meat with the onion.\n- **Moisture:** The recipe adds taco seasoning and water, then simmers until thickened. With leaner meat, you may need to simmer a bit less or add a splash more water if the mixture gets dry.\n- **Doneness:** Cook until there's no pink left. Poultry is generally safe at 165\u00b0F (74\u00b0C), which is general food-safety guidance rather than something in this recipe.\n- **Flavor:** Poultry is milder than beef, so you might add a bit more seasoning or some extra onion or garlic if you like a bolder taste.\n\nEverything else (shells, lettuce, tomato, cheese, sour cream, salsa) stays the same. If you were thinking of a different recipe, tell me its name or ingredients and I'll check it.",
+    "execution_time": 6.05,
+    "tokens": {
+      "input_tokens": 3179,
+      "output_tokens": 871,
+      "total_tokens": 4050
+    },
+    "cost": 0.000753
+  },
+  {
+    "question": "How are these beef tacos different from Mexican street tacos like carne asada?",
+    "category": "comparison",
+    "type": "comparison",
+    "recipe_id": 4,
+    "output": "I think you mean the **Beef Tacos** recipe in my collection (ID 4). I couldn't find a carne asada recipe in the collection, so I can only compare the two using general culinary knowledge for the street-taco style.\n\n**The Beef Tacos recipe:**\n- Uses **ground beef** browned with onion, then simmered with **taco seasoning** and water until thickened.\n- Served in **crunchy taco shells**.\n- Topped with lettuce, tomato, shredded cheddar, sour cream, and salsa.\n- Quick (about 35 minutes total) and designed as a family-friendly weeknight meal.\n\n**Typical Mexican street tacos (like carne asada), from general knowledge:**\n- Use **whole cuts of beef**, usually skirt or flank steak, rather than ground beef.\n- The meat is marinated, often with citrus, garlic, and spices, then grilled over high heat and chopped.\n- Served on **small corn tortillas**, usually soft, not crunchy shells.\n- Garnished simply with chopped white onion, cilantro, and a squeeze of lime, plus salsa. Cheese, lettuce, and sour cream are generally not included.\n\nIn short, the collection's recipe is an American-style taco night dish with seasoned ground beef and lots of toppings, while carne asada is a grilled, marinated steak taco with minimal toppings. If you want, I can search the collection for other steak or corn-tortilla recipes.",
+    "execution_time": 6.65,
+    "tokens": {
+      "input_tokens": 3210,
+      "output_tokens": 789,
+      "total_tokens": 3999
+    },
+    "cost": 0.000715
+  },
+  {
+    "question": "What kind of oil do I heat in the wok for this stir fry?",
+    "category": "ingredients",
+    "type": "factual",
+    "recipe_id": 5,
+    "output": "I don't know which stir fry you mean. Could you tell me the recipe name, or paste the ingredient list? If you're not sure, I can search the collection for stir fry recipes and check the oil in each one.",
+    "execution_time": 1.92,
+    "tokens": {
+      "input_tokens": 754,
+      "output_tokens": 222,
+      "total_tokens": 976
+    },
+    "cost": 0.000186
+  },
+  {
+    "question": "How do I make the cornstarch slurry so the sauce thickens without getting lumpy?",
+    "category": "method",
+    "type": "how-to",
+    "recipe_id": 5,
+    "output": "The Vegetable Stir Fry in my collection uses a cornstarch slurry, but its instructions only say to \"stir in soy sauce and cornstarch slurry\" and \"cook until sauce thickens.\" They don't give the ratio or method, so I can't tell you the exact amounts from this recipe.\n\nThe general technique, which isn't from the recipe, is:\n\n1. **Use cold liquid.** Mix about 1 tablespoon of cornstarch with 2 to 3 tablespoons of cold water (or cold broth or soy sauce). Stir until completely smooth. Cornstarch added to hot liquid clumps immediately.\n2. **Stir the slurry right before using it.** Cornstarch settles quickly, so give it another stir.\n3. **Add it gradually while stirring.** Pour it into the simmering sauce in a thin stream and stir constantly.\n4. **Simmer briefly.** Let the sauce bubble for 30 to 60 seconds. The cornstarch thickens once it reaches a simmer, and it will look glossy.\n5. **Add more only if needed.** If it's still thin, add a little more slurry. Don't dump it all in at once.\n\nIf the sauce still lumps, strain it through a fine sieve or whisk it vigorously over low heat.",
+    "execution_time": 5.17,
+    "tokens": {
+      "input_tokens": 3662,
+      "output_tokens": 676,
+      "total_tokens": 4338
+    },
+    "cost": 0.000704
+  },
+  {
+    "question": "Why do the carrots and broccoli go in before the snap peas and bell pepper, and how long should I wait before adding the softer veggies?",
+    "category": "timing",
+    "type": "detail",
+    "recipe_id": 5,
+    "output": "The Vegetable Stir Fry recipe I found says to add the carrots and broccoli first, then the softer vegetables. It doesn't say why, and it doesn't give a specific wait time.\n\nThe likely reason is texture. Carrots and broccoli are denser and take longer to become tender-crisp, so they need a head start. Snap peas and bell pepper cook faster and can turn limp or dull in color if they go in at the same time. That's general cooking knowledge, though, not something the recipe states.\n\nFor timing, the recipe doesn't give one. You could add the carrots and broccoli, stir-fry for a few minutes until they begin to soften and turn bright, then add the snap peas and bell pepper and cook for another minute or two. Judge by texture: the carrots should be just tender when pierced, and the snap peas should still be bright and crisp. Then add the soy sauce and cornstarch slurry and cook until the sauce thickens.",
+    "execution_time": 4.48,
+    "tokens": {
+      "input_tokens": 3653,
+      "output_tokens": 585,
+      "total_tokens": 4238
+    },
+    "cost": 0.000658
+  },
+  {
+    "question": "I need this to be gluten-free. What can I use instead of regular soy sauce?",
+    "category": "substitution",
+    "type": "substitution",
+    "recipe_id": 5,
+    "output": "The Vegetable Stir Fry (recipe #5) is the only recipe in my collection that uses soy sauce. Its other ingredients (broccoli, bell pepper, carrot, snap peas, sesame oil, garlic, ginger, cornstarch, and rice) are naturally gluten-free, so the soy sauce is the only thing to change.\n\nRegular soy sauce is brewed with wheat, so you'll want a substitute. These are common options, though my collection doesn't list them:\n\n- **Tamari:** Usually made without wheat and works as a close one-to-one swap. Check the label, since some brands contain wheat.\n- **Gluten-free soy sauce:** Many brands are labeled this way and can be used in the same amount as regular soy sauce.\n- **Coconut aminos:** A soy-free, gluten-free option with a sweeter, milder flavor. You may need to add a little more to get the same salty depth.\n\nAlso check that your cornstarch is labeled gluten-free, since some brands can be processed with wheat.",
+    "execution_time": 5.78,
+    "tokens": {
+      "input_tokens": 3946,
+      "output_tokens": 868,
+      "total_tokens": 4814
+    },
+    "cost": 0.000829
+  },
+  {
+    "question": "How is this veggie stir fry different from vegetable fried rice? Could I turn it into fried rice instead of serving it over plain rice?",
+    "category": "comparison",
+    "type": "comparison",
+    "recipe_id": 5,
+    "output": "I'm assuming you mean the **Vegetable Stir Fry** (recipe #5). I couldn't find a vegetable fried rice recipe in the collection, so I can't compare the two directly from a recipe.\n\n**What the stir fry recipe does:**\n- Stir-fries broccoli, bell pepper, carrot, and snap peas with garlic and ginger in sesame oil.\n- Adds soy sauce and a cornstarch slurry, then cooks until the sauce thickens.\n- Serves the vegetables in that thickened sauce over rice. The rice is cooked separately.\n\n**Turning it into fried rice:** The recipe doesn't cover this, so I can't give you exact steps or amounts. In general, fried rice means stir-frying cooked rice in the wok with the vegetables and seasoning, rather than spooning a sauced stir fry over rice. The stir fry's cornstarch-thickened sauce is what sets it apart from fried rice, which usually relies on soy sauce and the rice itself for flavor. You could try cooking the rice in the wok after the vegetables, seasoning it with soy sauce, and tossing everything together, but that's general cooking knowledge and not something from this collection. If you want a tested fried rice recipe, I can search again with different terms.",
+    "execution_time": 6.76,
+    "tokens": {
+      "input_tokens": 4634,
+      "output_tokens": 1096,
+      "total_tokens": 5730
+    },
+    "cost": 0.001011
+  },
+  {
+    "question": "What region of Italy does carbonara originally come from?",
+    "category": "origin",
+    "type": "factual",
+    "recipe_id": 6,
+    "output": "Carbonara is traditionally associated with **Rome, in the Lazio region** of central Italy. Its exact origin is debated. A common theory is that it took shape in the mid-20th century, possibly after World War II, when American soldiers' rations of bacon and eggs were combined with Italian ingredients like guanciale and pecorino. My recipe collection doesn't include historical background, so this comes from general knowledge.\n\nMy collection does have a Spaghetti Carbonara recipe (serves 4, about 30 minutes total) made with spaghetti, guanciale, egg yolks, pecorino romano, black pepper, and salt. I can pull up the full instructions if you'd like.",
+    "execution_time": 3.62,
+    "tokens": {
+      "input_tokens": 1833,
+      "output_tokens": 558,
+      "total_tokens": 2391
+    },
+    "cost": 0.000462
+  },
+  {
+    "question": "How do I keep the eggs from scrambling when I mix them into the hot pasta?",
+    "category": "method",
+    "type": "how-to",
+    "recipe_id": 6,
+    "output": "The collection's Spaghetti Carbonara recipe gives a few steps that prevent scrambling:\n\n1. **Take the pan off the heat** before adding the eggs. The recipe says to stir the egg mixture in \"off heat.\"\n2. **Toss the hot pasta with the guanciale first**, then add the egg mixture, so the eggs are mixed into the pasta and don't sit in a hot pan.\n3. **Work quickly** when you stir in the egg yolk and pecorino mixture.\n4. **Add reserved pasta water as needed.** The starchy water loosens the sauce and helps it turn creamy rather than clumpy.\n\nThe recipe doesn't say more than this. Some general cooking practice that fits these steps: let the pasta cool for a few seconds after draining, and keep stirring so the yolks spread before they can set. If the sauce still tightens up, add a splash of pasta water and keep tossing.",
+    "execution_time": 4.72,
+    "tokens": {
+      "input_tokens": 3418,
+      "output_tokens": 542,
+      "total_tokens": 3960
+    },
+    "cost": 0.000613
+  },
+  {
+    "question": "About how much pasta water should I save before draining, and when do I add it?",
+    "category": "method",
+    "type": "detail",
+    "recipe_id": 6,
+    "output": "The Spaghetti Carbonara recipe in my collection says to drain the pasta \"reserving some water,\" but it doesn't give an amount. The recipe is also the only pasta recipe I found that mentions pasta water.\n\nTiming, per the recipe:\n1. Reserve some of the cooking water before you drain the spaghetti.\n2. Toss the hot pasta with the crisped guanciale.\n3. Take the pan off the heat and stir in the egg and pecorino mixture.\n4. Add pasta water a little at a time as needed to get a creamy sauce.\n\nAdding the water a splash at a time lets you control the consistency, and taking the pan off the heat keeps the egg from scrambling.\n\nAs general cooking guidance rather than something from this recipe, many cooks save about a cup (240 ml) of water, but the amount depends on the pasta and the sauce.",
+    "execution_time": 4.59,
+    "tokens": {
+      "input_tokens": 3554,
+      "output_tokens": 580,
+      "total_tokens": 4134
+    },
+    "cost": 0.000645
+  },
+  {
+    "question": "I can't find guanciale anywhere near me. Can I use pancetta or bacon instead?",
+    "category": "substitution",
+    "type": "substitution",
+    "recipe_id": 6,
+    "output": "The collection doesn't include substitution notes, but the Spaghetti Carbonara recipe (#6) calls for guanciale, and its method works with either substitute. Based on general cooking knowledge:\n\n- **Pancetta** is the closer match. It's also Italian cured pork, usually from the belly, and it tastes milder and less smoky than bacon. If you can find it, use it.\n- **Bacon** works too, especially in the US, where it's easy to find. It's smoked, so the carbonara will taste smokier. Choose a thick-cut, unsweetened bacon if you can, since sugar-cured varieties can burn when crisped.\n\nGuanciale has a higher fat content and a richer, more pronounced pork flavor, so your sauce may be a bit less rich with either substitute. Crisp the pancetta or bacon in a pan as the recipe describes, and save some of the rendered fat if the pan looks dry, since it adds flavor to the sauce.",
+    "execution_time": 5.43,
+    "tokens": {
+      "input_tokens": 2989,
+      "output_tokens": 642,
+      "total_tokens": 3631
+    },
+    "cost": 0.00062
+  },
+  {
+    "question": "What's the difference between carbonara and cacio e pepe? They seem to use a lot of the same ingredients.",
+    "category": "comparison",
+    "type": "comparison",
+    "recipe_id": 6,
+    "output": "Carbonara is in my collection, but cacio e pepe isn't, so I can only compare them based on the carbonara recipe and general knowledge of cacio e pepe.\n\n**Spaghetti Carbonara (from my collection)**\n- Spaghetti, guanciale, egg yolks, pecorino romano, black pepper, salt\n- Guanciale is crisped in a pan. The egg yolks are whisked with grated pecorino and pepper, then tossed with the hot drained pasta and guanciale off the heat. Pasta water is added as needed for a creamy sauce.\n\n**Cacio e pepe (general knowledge, not from my collection)**\n- Typically just spaghetti or tonnarelli, pecorino romano, black pepper, and pasta water, with no egg and no guanciale.\n- The sauce comes from emulsifying the cheese with starchy pasta water, which is why technique matters so much.\n\n**Main differences**\n- **Egg:** Carbonara uses egg yolks for its richness. Cacio e pepe has none.\n- **Meat:** Carbonara includes guanciale. Cacio e pepe is meatless.\n- **Cheese:** Both use pecorino romano, but cacio e pepe relies on it as the main sauce ingredient.\n- **Pepper:** Cacio e pepe features black pepper more prominently, often as the dish's defining flavor.\n\nThat's why they taste so different even though the overlap in ingredients is large. If you'd like, I can look for other pasta dishes in the collection that might suit you.",
+    "execution_time": 6.15,
+    "tokens": {
+      "input_tokens": 3745,
+      "output_tokens": 950,
+      "total_tokens": 4695
+    },
+    "cost": 0.000849
+  },
+  {
+    "question": "What gives Thai green curry its green color?",
+    "category": "ingredients",
+    "type": "factual",
+    "recipe_id": 7,
+    "output": "The collection doesn't say what gives green curry its color. My recipe, Thai Green Curry (recipe 7), uses a store-bought or prepared **green curry paste** and doesn't list its contents.\n\nFrom general culinary knowledge, not from this recipe, the color usually comes from the fresh green ingredients ground into the paste, such as green chilies and fresh herbs like cilantro and Thai basil. Coconut milk adds to the pale green tone. Check the label of your curry paste for the exact ingredients.",
+    "execution_time": 8.22,
+    "tokens": {
+      "input_tokens": 3329,
+      "output_tokens": 483,
+      "total_tokens": 3812
+    },
+    "cost": 0.000574
+  },
+  {
+    "question": "How do I know when the coconut cream has 'cracked' and the oil has separated enough to fry the paste?",
+    "category": "method",
+    "type": "how-to",
+    "recipe_id": 7,
+    "output": "The Thai Green Curry recipe in my collection says only to \"heat coconut cream in a wok until oil separates,\" then fry the curry paste for 2 minutes. It doesn't describe what \"cracked\" looks like or how long to heat it.\n\nGenerally, cooks look for these signs:\n- The cream thickens and bubbles, and the surface gets glossy.\n- Pale, oily patches or droplets appear on top, and the solids look grainy or curdled.\n- The oil pools at the edges, and the cream stops looking smooth and uniform.\n\nCooks usually heat it over medium heat and stir often, which can take several minutes depending on the coconut cream. Once the oil has separated, add the paste and fry it until it smells fragrant and the oil glistens around it.\n\nThese cues come from general cooking practice, not from this recipe, so treat them as a guide and trust what you see in your pan.",
+    "execution_time": 6.49,
+    "tokens": {
+      "input_tokens": 3632,
+      "output_tokens": 537,
+      "total_tokens": 4169
+    },
+    "cost": 0.000632
+  },
+  {
+    "question": "How long should the eggplant and bamboo shoots simmer before I add the fish sauce and sugar?",
+    "category": "timing",
+    "type": "detail",
+    "recipe_id": 7,
+    "output": "The eggplant and bamboo shoots should simmer for **10 minutes** in the coconut milk before you season with fish sauce and palm sugar. This comes from the Thai Green Curry recipe in the collection.",
+    "execution_time": 2.66,
+    "tokens": {
+      "input_tokens": 3569,
+      "output_tokens": 211,
+      "total_tokens": 3780
+    },
+    "cost": 0.000462
+  },
+  {
+    "question": "I can't find palm sugar at my store. What can I use instead?",
+    "category": "substitution",
+    "type": "substitution",
+    "recipe_id": 7,
+    "output": "The recipe collection doesn't list a palm sugar substitute. The only recipe that uses it is the **Thai Green Curry**, where it's added with the fish sauce to balance the heat and saltiness. Nothing in that recipe says what to swap in.\n\nFrom general cooking knowledge, these are common stand-ins:\n\n- **Coconut sugar:** the closest match in flavor and texture, and often in the baking or health-food aisle.\n- **Brown sugar** (light or dark): works well, with a more molasses-like taste. Use the same amount.\n- **Granulated white sugar:** the most neutral option if that's all you have. It's sweet but lacks the caramel notes.\n\nPalm sugar is also sold at many Asian grocery stores, sometimes labeled \"jaggery\" or \"gula melaka,\" if you want to try there.",
+    "execution_time": 4.71,
+    "tokens": {
+      "input_tokens": 3418,
+      "output_tokens": 640,
+      "total_tokens": 4058
+    },
+    "cost": 0.000662
+  },
+  {
+    "question": "What's the difference between green curry and red curry? Is one spicier than the other?",
+    "category": "comparison",
+    "type": "comparison",
+    "recipe_id": 7,
+    "output": "Green and red curry are both Thai curries built on a paste, coconut milk, and protein or vegetables, and the main difference is the chilies in the paste.\n\n- **Green curry** is made with fresh green chilies, plus herbs like cilantro and kaffir lime. It tends to taste brighter, fresher, and more herbal.\n- **Red curry** is made with dried red chilies, along with ingredients like dried spices and shallots. It tends to taste richer and deeper.\n\nOn heat, the general view is that green curry is often the hotter of the two, since fresh green chilies can taste sharper than dried red ones. But heat varies a lot by brand, recipe, and how much paste is used, so the difference isn't fixed.\n\nMy collection only has a Thai Green Curry recipe (medium difficulty, tagged \"spicy\"). It uses chicken thigh, coconut milk, green curry paste, eggplant, bamboo shoots, bell pepper, Thai basil, fish sauce, and palm sugar, served over jasmine rice. I don't have a red curry recipe, so I can't give you one from the collection. The general comparison above comes from common cooking knowledge, not from my recipe data.",
+    "execution_time": 6.22,
+    "tokens": {
+      "input_tokens": 4103,
+      "output_tokens": 898,
+      "total_tokens": 5001
+    },
+    "cost": 0.000859
+  },
+  {
+    "question": "Is traditional Greek salad supposed to have lettuce in it?",
+    "category": "ingredients",
+    "type": "factual",
+    "recipe_id": 8,
+    "output": "No, a traditional Greek salad doesn't have lettuce. My collection's Greek Salad recipe is made from cucumber, tomato, red onion, Kalamata olives, and feta, dressed with olive oil, red wine vinegar, and oregano. The vegetables are chopped into chunks, so it's a chunky salad rather than a leafy one.\n\nLettuce does show up in some modern restaurant versions, but it isn't part of the classic dish. If you want leafy greens, you could try the Caesar Salad in the collection, which uses romaine.",
+    "execution_time": 5.74,
+    "tokens": {
+      "input_tokens": 3263,
+      "output_tokens": 350,
+      "total_tokens": 3613
+    },
+    "cost": 0.000501
+  },
+  {
+    "question": "How big should I cut the cucumber and tomato chunks so the salad doesn't get watery?",
+    "category": "method",
+    "type": "how-to",
+    "recipe_id": 8,
+    "output": "The Greek Salad recipe in my collection says only to \"chop cucumber, tomatoes, and red onion into chunks.\" It doesn't give a size or any tips for keeping the salad from getting watery.\n\nThe recipe also has you let the salad sit for 5 minutes before serving, which may release some liquid. Salting the cucumber first and draining it is a common way to reduce watering down, but that isn't in this recipe, so you'd be adjusting it yourself.",
+    "execution_time": 3.45,
+    "tokens": {
+      "input_tokens": 3533,
+      "output_tokens": 359,
+      "total_tokens": 3892
+    },
+    "cost": 0.000533
+  },
+  {
+    "question": "Why do you let the salad sit for 5 minutes before serving, and can I make it further ahead?",
+    "category": "timing",
+    "type": "detail",
+    "recipe_id": 8,
+    "output": "I don't have a specific salad in our conversation yet, so I can't tell which resting step you mean. Which recipe is it? If you give me the name, or a few ingredients, I'll look it up and explain the resting time and whether it can be made ahead, based on the recipe's instructions.",
+    "execution_time": 1.92,
+    "tokens": {
+      "input_tokens": 764,
+      "output_tokens": 251,
+      "total_tokens": 1015
+    },
+    "cost": 0.000202
+  },
+  {
+    "question": "I'm dairy-free, what can I use instead of feta that still gives that salty tang?",
+    "category": "substitution",
+    "type": "substitution",
+    "recipe_id": 8,
+    "output": "I don't have a dairy-free feta substitute in my recipe collection. The only recipe that uses feta is the Greek Salad (recipe 8), and it doesn't mention a substitute.\n\nBased on general cooking knowledge, not my recipe data, you could try:\n\n- **Store-bought plant-based feta.** Brands made from tofu or nut bases are the closest match for crumbly texture and salty tang. Check the label, since some contain casein or other dairy derivatives.\n- **Kalamata olives or other briny olives.** They add salt and a tangy, savory bite.\n- **Capers.** They bring a briny, salty punch.\n- **Red wine vinegar or lemon juice.** A small splash adds the tang that feta provides.\n\nFor the Greek Salad specifically, you could leave out the feta and add extra Kalamata olives, plus a little more red wine vinegar or lemon juice. The rest of the recipe (cucumber, tomato, red onion, olive oil, oregano) is already dairy-free.",
+    "execution_time": 5.44,
+    "tokens": {
+      "input_tokens": 3574,
+      "output_tokens": 822,
+      "total_tokens": 4396
+    },
+    "cost": 0.000768
+  },
+  {
+    "question": "What's the difference between a Greek salad and a Turkish shepherd's salad?",
+    "category": "comparison",
+    "type": "comparison",
+    "recipe_id": 8,
+    "output": "I don't have a Turkish shepherd's salad (\u00e7oban salatas\u0131) in the collection, so I can't compare the two using your recipes. I can tell you about the Greek salad, which is in the collection, and describe the Turkish version from general knowledge.\n\n**Greek salad (in my collection):** Cucumber, tomato, red onion, Kalamata olives, and feta cheese, dressed with olive oil, oregano, and red wine vinegar. It's a no-cook, vegetarian salad that takes about 10 minutes to prepare and serves 4.\n\n**Turkish shepherd's salad (general knowledge, not from my collection):** It's typically made with finely diced tomato, cucumber, onion, and green pepper, often with parsley. It's dressed with olive oil, lemon juice or sumac, and salt. It usually doesn't include feta or olives, and the vegetables are chopped much smaller than in a Greek salad.\n\nThe main differences are that Greek salad includes feta, olives, and oregano and has chunkier vegetables, while Turkish shepherd's salad is a finely chopped vegetable salad that often has parsley and a lemony or sumac-based dressing. Check a dedicated Turkish source if you want an exact recipe.",
+    "execution_time": 4.15,
+    "tokens": {
+      "input_tokens": 2203,
+      "output_tokens": 648,
+      "total_tokens": 2851
+    },
+    "cost": 0.000544
+  },
+  {
+    "question": "What temperature does the oven need to be for these lava cakes?",
+    "category": "temperature",
+    "type": "factual",
+    "recipe_id": 9,
+    "output": "The oven should be preheated to **425\u00b0F** for the Chocolate Lava Cake in my collection. Bake for 12 to 14 minutes, until the edges are firm and the center is still soft. Then invert the cakes onto plates, dust them with powdered sugar, and serve right away.",
+    "execution_time": 2.71,
+    "tokens": {
+      "input_tokens": 2968,
+      "output_tokens": 239,
+      "total_tokens": 3207
+    },
+    "cost": 0.000416
+  },
+  {
+    "question": "How do I get the cakes out of the ramekins without them falling apart?",
+    "category": "method",
+    "type": "how-to",
+    "recipe_id": 9,
+    "output": "The recipe I have for this is the Chocolate Lava Cake. Its only instructions for getting the cakes out are: bake at 425\u00b0F for exactly 12 to 14 minutes, until the edges are firm but the center is soft, then invert the ramekins onto plates, dust with powdered sugar, and serve immediately.\n\nThe recipe doesn't include any tips on keeping them intact. The greasing step is the main thing it mentions, so grease the ramekins well before filling. Timing matters too. Pulling them out at the 12-minute mark gives a softer center that's less likely to break, while the full 14 minutes sets the edges more firmly.\n\nIf you want more detailed release tips, such as running a knife around the edge or resting time before inverting, those aren't in this recipe, so I can't confirm them from the collection.",
+    "execution_time": 4.5,
+    "tokens": {
+      "input_tokens": 3441,
+      "output_tokens": 528,
+      "total_tokens": 3969
+    },
+    "cost": 0.000608
+  },
+  {
+    "question": "How can I tell when they're done so the middle is still gooey and not overbaked?",
+    "category": "timing",
+    "type": "detail",
+    "recipe_id": 9,
+    "output": "Which recipe are you making? I don't have any earlier context about what you're baking, so I can't tell whether \"they\" are cookies, brownies, or something else. If you tell me the name, or ingredients like chocolate chips or flour, I can search the collection and give you the doneness cues from that recipe.",
+    "execution_time": 1.81,
+    "tokens": {
+      "input_tokens": 758,
+      "output_tokens": 229,
+      "total_tokens": 987
+    },
+    "cost": 0.00019
+  },
+  {
+    "question": "Can I use almond flour or a gluten-free flour instead of regular flour?",
+    "category": "substitution",
+    "type": "substitution",
+    "recipe_id": 9,
+    "output": "I can check, but I need to know which recipe you're making. Could you tell me the name, or paste the ingredient list? Substitutions depend on the recipe. Almond flour, for example, has no gluten and absorbs liquid differently than wheat flour, so it often changes the texture of baked goods. Once I have the recipe, I'll tell you whether the collection supports a swap and what adjustments it suggests. If the recipe doesn't address substitutions, I'll say so rather than guess.",
+    "execution_time": 2.23,
+    "tokens": {
+      "input_tokens": 758,
+      "output_tokens": 313,
+      "total_tokens": 1071
+    },
+    "cost": 0.000232
+  },
+  {
+    "question": "What's the difference between a lava cake and a regular flourless chocolate cake?",
+    "category": "comparison",
+    "type": "comparison",
+    "recipe_id": 9,
+    "output": "The collection has a Chocolate Lava Cake recipe but no flourless chocolate cake, so I can't compare them using your recipes.\n\nThe lava cake recipe (French, hard, serves 4) works like this:\n- It's made with dark chocolate, butter, eggs, sugar, a small amount of flour, and vanilla.\n- The batter is baked in greased ramekins at 425\u00b0F for 12 to 14 minutes. The edges set but the center stays soft.\n- It's inverted onto plates, dusted with powdered sugar, and served right away so the molten center stays warm and runny.\n\nFrom general cooking knowledge, a flourless chocolate cake is usually made mostly of chocolate, butter, and eggs with no flour at all. It's typically baked in a larger pan, such as a springform, for a longer time at a lower heat until it's set throughout. The result is denser and fudgier, and it's sliced rather than served as an individual molten dessert. The lava cake's small amount of flour is what gives it enough structure to hold its shape when inverted.\n\nI can take you through the full lava cake recipe if you'd like to make it, or search for other chocolate desserts in the collection.",
+    "execution_time": 5.77,
+    "tokens": {
+      "input_tokens": 3531,
+      "output_tokens": 863,
+      "total_tokens": 4394
+    },
+    "cost": 0.000785
+  },
+  {
+    "question": "What is dashi actually made from?",
+    "category": "ingredients",
+    "type": "factual",
+    "recipe_id": 10,
+    "output": "My recipe collection doesn't include a dashi recipe, so I can't tell you its exact preparation from my sources. The only match was a Miso Soup recipe that lists \"dashi stock\" as an ingredient without saying how to make it.\n\nFrom general knowledge, dashi is a Japanese stock usually made from **kombu** (dried kelp) and **katsuobushi** (dried, smoked, fermented bonito flakes). Kombu is typically steeped in water, and the bonito flakes are added and then strained out. Some versions skip the bonito, such as kombu-only or dried-shiitake dashi. The Miso Soup recipe's \"vegan-adaptable\" tag suggests a non-bonito version is an option there, but the recipe doesn't say what it uses.\n\nI can search the collection for other Japanese recipes if you want to find one that covers making dashi from scratch.",
+    "execution_time": 5.5,
+    "tokens": {
+      "input_tokens": 2930,
+      "output_tokens": 583,
+      "total_tokens": 3513
+    },
+    "cost": 0.000584
+  },
+  {
+    "question": "How do I rehydrate the wakame properly so it doesn't get slimy?",
+    "category": "method",
+    "type": "how-to",
+    "recipe_id": 10,
+    "output": "The Miso Soup recipe in my collection uses rehydrated wakame, but it doesn't say how to rehydrate it. It only says to add the wakame to the simmering dashi along with the tofu.\n\nHere's general guidance, not from the recipe:\n\n- **Soak in cold water**, not hot. Dried wakame usually takes about 5 to 10 minutes and expands a lot.\n- **Rinse and drain** well after soaking, then squeeze out the excess water.\n- **Don't over-soak.** Leaving it in water too long can make it slippery.\n- **Add it near the end** and heat it through briefly. Long boiling makes it soft and slimy.\n\nThe recipe says not to boil the soup once the miso is in, so keep the heat gentle at that stage too.",
+    "execution_time": 4.69,
+    "tokens": {
+      "input_tokens": 2949,
+      "output_tokens": 565,
+      "total_tokens": 3514
+    },
+    "cost": 0.000577
+  },
+  {
+    "question": "Why shouldn't the soup boil once the miso is in?",
+    "category": "temperature",
+    "type": "detail",
+    "recipe_id": 10,
+    "output": "The recipe says \"Do not boil after adding miso,\" but it doesn't give a reason. The collection's Miso Soup recipe is the only one I found, and its instructions are short.\n\nFrom general cooking knowledge, the usual explanation is that high heat dulls miso's delicate aroma and flavor and can kill the live cultures in unpasteurized miso. The recipe's method also helps: you dissolve the miso in a ladle of warm broth first, then stir it back into the pot, and keep the soup at a gentle heat rather than a boil.",
+    "execution_time": 4.8,
+    "tokens": {
+      "input_tokens": 2991,
+      "output_tokens": 459,
+      "total_tokens": 3450
+    },
+    "cost": 0.000529
+  },
+  {
+    "question": "I only have red miso at home, can I use that instead of white and should I change the amount?",
+    "category": "substitution",
+    "type": "substitution",
+    "recipe_id": 10,
+    "output": "Yes, you can probably use red miso, but the recipe doesn't give an amount or say anything about swapping miso types, so the adjustment advice below is general cooking knowledge rather than from the recipe.\n\nThe only miso recipe in my collection is **Miso Soup** (Japanese, easy, serves 4). It calls for dashi stock, white miso paste, silken tofu, wakame seaweed, and green onion. It doesn't specify a quantity of miso.\n\nRed miso is generally saltier and more intensely flavored than white miso. If you use it, start with less than the white miso amount, taste, and add more if needed. Dissolving it in some of the warm broth before adding it back to the pot, as the recipe directs, helps it blend in smoothly. The soup will also be darker and have a bolder, earthier flavor.\n\nAlso keep the recipe's warning in mind: don't let the soup boil after adding the miso.",
+    "execution_time": 4.39,
+    "tokens": {
+      "input_tokens": 2961,
+      "output_tokens": 523,
+      "total_tokens": 3484
+    },
+    "cost": 0.000558
+  },
+  {
+    "question": "How is miso soup different from Korean doenjang jjigae?",
+    "category": "comparison",
+    "type": "comparison",
+    "recipe_id": 10,
+    "output": "I found a miso soup recipe in the collection, but no doenjang jjigae recipe, so I can only describe the miso soup side from my recipe data.\n\n**Miso soup (from the collection):**\n- **Base:** dashi stock, a light Japanese broth.\n- **Miso:** white miso paste, which is mild and sweet.\n- **Ingredients:** silken tofu, wakame seaweed, and green onion.\n- **Method:** Simmer the dashi, add the tofu and rehydrated wakame, then dissolve the miso in a little broth before returning it to the pot. The recipe says not to boil the soup after the miso goes in.\n- **Time:** About 15 minutes, and it's easy to make vegan.\n\n**Doenjang jjigae (general knowledge, not from the collection):**\nFrom what I know, doenjang jjigae is a Korean stew. It uses doenjang, a fermented soybean paste that is stronger, saltier, and more pungent than white miso. It's usually made with a more robust base, often anchovy or beef stock, plus vegetables such as zucchini and onion, tofu, and sometimes chili pepper. It's typically simmered and served bubbling hot in a stone or earthenware pot, rather than being a light, brothy soup.\n\nIn short, miso soup is a light, delicate dashi broth with mild miso, while doenjang jjigae is a heartier, bolder stew built on a stronger fermented paste. If you want a Korean stew recipe, I can search the collection again with different terms, but nothing matching \"doenjang\" or \"jjigae\" came up.",
+    "execution_time": 5.9,
+    "tokens": {
+      "input_tokens": 3517,
+      "output_tokens": 970,
+      "total_tokens": 4487
+    },
+    "cost": 0.000837
+  },
+  {
+    "question": "How many ripe bananas do I need for a batch of these pancakes?",
+    "category": "ingredients",
+    "type": "factual",
+    "recipe_id": 11,
+    "output": "I'm not sure which pancakes you mean, but the closest match in my collection is **Banana Pancakes** (American, easy, serves 2).\n\nUnfortunately, the recipe doesn't say how many bananas to use. It only lists \"ripe bananas\" as an ingredient, with no quantity. The method is to mash the bananas in a bowl, then whisk in the eggs, milk, and vanilla before adding the flour and baking powder.\n\nIf you tell me which recipe you're making, I can check it for you. Otherwise, you'll need to go by your own judgment or another recipe for the amount.",
+    "execution_time": 3.52,
+    "tokens": {
+      "input_tokens": 3037,
+      "output_tokens": 387,
+      "total_tokens": 3424
+    },
+    "cost": 0.000497
+  },
+  {
+    "question": "How do I know when it's the right time to flip the pancakes so they don't fall apart?",
+    "category": "method",
+    "type": "how-to",
+    "recipe_id": 11,
+    "output": "The collection has one pancake recipe, Banana Pancakes, and its only flipping instruction is to \"cook until bubbles form on surface, flip.\" It doesn't give more detail on timing.\n\nSome things that may help with that recipe:\n- **Bubbles:** Look for bubbles that form across the surface and stay open, not just one or two. Those are the signal the bottom is set enough to flip.\n- **Edges:** The batter should look set around the edges and matte rather than wet.\n- **Batter:** The recipe says to stir only until just combined, with lumps fine. Overmixing makes pancakes tougher and can make them more fragile.\n- **Heat:** The recipe calls for medium heat. If the pan is too hot, the outside browns before the inside sets, which makes flipping harder.\n\nBanana pancakes can also be more delicate than standard ones because of the mashed banana, so I'd flip once the bubbles are established and lift gently with a thin spatula.",
+    "execution_time": 4.65,
+    "tokens": {
+      "input_tokens": 2996,
+      "output_tokens": 546,
+      "total_tokens": 3542
+    },
+    "cost": 0.000573
+  },
+  {
+    "question": "Why is it okay to leave lumps in the batter instead of mixing until smooth?",
+    "category": "method",
+    "type": "detail",
+    "recipe_id": 11,
+    "output": "Lumps are usually fine in batters like pancakes, muffins, quick breads, and waffles because of gluten development. When flour mixes with liquid and gets stirred, gluten proteins form stretchy networks. Overmixing makes those networks strong and elastic, which gives tough pancakes, dense muffins, and rubbery quick breads. Stopping when the flour is just moistened keeps the batter tender. The lumps are dry flour pockets that will hydrate as the batter rests or bake, and they're a sign you haven't overworked it.\n\nThere are a few other reasons:\n\n- **Air pockets:** Gentle mixing keeps some air in the batter, which helps leavening give a lighter rise.\n- **Less effort, same result:** Trying to eliminate every lump usually means overmixing the rest of the batter.\n- **Resting helps:** Letting the batter sit for 5 to 10 minutes lets the flour fully hydrate, and some lumps will disappear on their own.\n\nLumps are not always acceptable. Smooth batters are expected for some recipes, such as cr\u00eapes, thin cakes, and some custards or sauces, where the texture depends on a fully blended mixture. Check the specific recipe's instructions. If you tell me which recipe you're making, I can search the collection and look at its mixing directions.",
+    "execution_time": 4.67,
+    "tokens": {
+      "input_tokens": 760,
+      "output_tokens": 736,
+      "total_tokens": 1496
+    },
+    "cost": 0.000444
+  },
+  {
+    "question": "Can I use oat milk or almond milk instead of regular milk to make these dairy-free?",
+    "category": "substitution",
+    "type": "substitution",
+    "recipe_id": 11,
+    "output": "I don't have a recipe in our conversation yet, so I'm not sure which one you mean. Could you tell me the name of the recipe, or paste its ingredient list? I can check whether oat or almond milk would work in it and suggest any other swaps needed to make it fully dairy-free.",
+    "execution_time": 1.63,
+    "tokens": {
+      "input_tokens": 762,
+      "output_tokens": 173,
+      "total_tokens": 935
+    },
+    "cost": 0.000163
+  },
+  {
+    "question": "How are these different from regular buttermilk pancakes in texture and taste?",
+    "category": "comparison",
+    "type": "comparison",
+    "recipe_id": 11,
+    "output": "I don't see which recipes you're comparing. Could you tell me the names of the pancake recipes you have in mind, or paste their ingredient lists? If you'd like, I can search the collection for pancake recipes and compare them to the buttermilk version.",
+    "execution_time": 2.09,
+    "tokens": {
+      "input_tokens": 756,
+      "output_tokens": 256,
+      "total_tokens": 1012
+    },
+    "cost": 0.000204
+  },
+  {
+    "question": "How long does the lamb need to marinate before I can cook it?",
+    "category": "timing",
+    "type": "factual",
+    "recipe_id": 12,
+    "output": "The Lamb Shawarma Bowl recipe says to marinate the sliced lamb for **at least 30 minutes** before cooking it in a hot skillet. It doesn't give a longer maximum, so you can marinate it longer if you have the time.\n\nThis is the only lamb recipe that came up in my search. If you were thinking of a different lamb dish, tell me its name or main ingredients and I'll look it up.",
+    "execution_time": 4.44,
+    "tokens": {
+      "input_tokens": 3178,
+      "output_tokens": 379,
+      "total_tokens": 3557
+    },
+    "cost": 0.000507
+  },
+  {
+    "question": "How do I get the lamb sliced really thin? Should I freeze it a bit first?",
+    "category": "method",
+    "type": "how-to",
+    "recipe_id": 12,
+    "output": "The Lamb Shawarma Bowl in my collection says only \"Slice lamb thinly\" before marinating. It doesn't give a technique or mention freezing.\n\nFrom general cooking knowledge, the usual method is to partially freeze the lamb for 20 to 40 minutes, until it's firm but not rock-solid. Then use a sharp knife and cut across the grain, which shortens the muscle fibers and makes the meat more tender. For very thin slices, a long, sharp knife and steady strokes help. If the lamb is still too soft, return it to the freezer for a few more minutes.\n\nOnce sliced, the recipe says to marinate the lamb in cumin, coriander, paprika, turmeric, garlic, and lemon juice for at least 30 minutes, then cook it in a hot skillet until browned and cooked through.",
+    "execution_time": 4.19,
+    "tokens": {
+      "input_tokens": 3720,
+      "output_tokens": 540,
+      "total_tokens": 4260
+    },
+    "cost": 0.000642
+  },
+  {
+    "question": "How much water should I add to the tahini sauce to get a good drizzling consistency? Mine always seizes up and gets thick.",
+    "category": "sauce",
+    "type": "detail",
+    "recipe_id": 12,
+    "output": "I don't have a dedicated tahini sauce recipe in the collection, so I can't give you the exact amount of water it calls for. Two recipes use tahini sauce, the Lamb Shawarma Bowl and the Falafel Wrap. The shawarma bowl's recipe says only to \"mix tahini, lemon juice, garlic, and water,\" with no quantities.\n\nHere's general guidance, not from the collection:\n\n- **Add water gradually.** Tahini seizes when liquid goes in too fast. Start with a tablespoon of cold water, whisk until smooth, and keep adding in small splashes.\n- **Expect a stiff stage first.** Tahini often thickens sharply after the lemon juice goes in, then loosens as you add water. Keep whisking through that stage instead of adding a lot of water at once.\n- **Go slowly toward the end.** A drizzling consistency is usually reached with a few more tablespoons of water after it looks pourable.\n- **Use cold or room-temperature water.** Some people find this helps the sauce stay smooth.\n- **Check your tahini.** Some brands are much thicker than others, so the amount of water needed varies.\n\nIf you tell me how much tahini you're starting with, I can help you think through the proportions.",
+    "execution_time": 6.68,
+    "tokens": {
+      "input_tokens": 4207,
+      "output_tokens": 876,
+      "total_tokens": 5083
+    },
+    "cost": 0.000859
+  },
+  {
+    "question": "My family doesn't eat lamb. Could I use chicken thighs or beef instead, and would the cooking time change?",
+    "category": "substitution",
+    "type": "substitution",
+    "recipe_id": 12,
+    "output": "Which recipe do you have in mind? I don't have a record of the one you're looking at. If you give me the name, or tell me the dish, I'll pull up its full details and tell you how chicken thighs or beef would change the ingredients and cooking time.\n\nIf you're not sure which one it is, I can search the collection for lamb recipes and you can pick from those.",
+    "execution_time": 2.59,
+    "tokens": {
+      "input_tokens": 770,
+      "output_tokens": 282,
+      "total_tokens": 1052
+    },
+    "cost": 0.000218
+  },
+  {
+    "question": "What's the difference between this shawarma bowl and a gyro? Are the spices and sauce pretty different?",
+    "category": "comparison",
+    "type": "comparison",
+    "recipe_id": 12,
+    "output": "I found the **Lamb Shawarma Bowl**, but I don't have a gyro recipe in the collection, so I can't compare the two directly from your recipes.\n\n**The shawarma bowl's spices and sauce:**\n- **Spices:** cumin, coriander, paprika, turmeric, and garlic, with lemon juice in the marinade. The lamb marinates at least 30 minutes, then gets browned in a hot skillet.\n- **Sauce:** a tahini sauce made from tahini, lemon juice, garlic, and water, drizzled over the bowl.\n- **Other components:** hummus, pickled turnips, tomato, cucumber, and lettuce, served over rice or with pita.\n\nGyros are usually seasoned differently and served with tzatziki, a yogurt and cucumber sauce, but that's general knowledge, not something from this collection. If you want a gyro recipe to compare, you could paste one in and I can go through the differences, or I can look for other Greek recipes in the collection.",
+    "execution_time": 8.92,
+    "tokens": {
+      "input_tokens": 6328,
+      "output_tokens": 836,
+      "total_tokens": 7164
+    },
+    "cost": 0.001051
+  },
+  {
+    "question": "How long does the rice need to cook once I start adding the broth?",
+    "category": "timing",
+    "type": "factual",
+    "recipe_id": 13,
+    "output": "If you're making the **Mushroom Risotto**, the rice needs about **18\u201320 minutes** once you start adding the warm broth. Add it one ladle at a time, stirring frequently, until the rice is creamy and al dente.\n\nI'm assuming this is the risotto, since it was the only rice-and-broth recipe I found. If you meant a different dish, tell me which one.",
+    "execution_time": 4.0,
+    "tokens": {
+      "input_tokens": 3720,
+      "output_tokens": 468,
+      "total_tokens": 4188
+    },
+    "cost": 0.000606
+  },
+  {
+    "question": "How do I tell when my risotto is creamy and al dente and not overcooked or mushy?",
+    "category": "method",
+    "type": "how-to",
+    "recipe_id": 13,
+    "output": "The recipe in my collection (Mushroom Risotto) doesn't give detailed doneness cues. It says to add warm broth one ladle at a time, stirring often, until the rice is \"creamy and al dente,\" which takes about 18 to 20 minutes. It doesn't describe what that looks like, so these tips are general risotto technique rather than from the recipe:\n\n- **Taste it, starting around minute 16.** Al dente rice has a slight firmness at the center, with no chalky white core. If it's still hard and tastes raw, keep adding broth. If it's soft all the way through with no bite, it's overdone.\n- **Watch the texture of the sauce.** It should flow slowly from a spoon and spread a little on the plate, like thick porridge. It shouldn't be stiff or paste-like, and it shouldn't be soupy and separate with liquid pooling at the edges.\n- **Stop adding broth when the rice is almost done.** Risotto keeps cooking off the heat for a minute or two, and it thickens as it sits. Pull it when it's a bit looser than you want, then stir in the butter and Parmesan (the \"mantecatura\" step) and serve right away.\n- **Don't rely on the clock alone.** Heat, pan type, and rice brand change the timing. Use the taste test to decide.\n\nIf mushy is your main worry, the usual fixes are to add broth in smaller amounts, keep the heat at a gentle simmer rather than a hard boil, and stop cooking as soon as the rice tastes right.",
+    "execution_time": 5.84,
+    "tokens": {
+      "input_tokens": 3098,
+      "output_tokens": 753,
+      "total_tokens": 3851
+    },
+    "cost": 0.000686
+  },
+  {
+    "question": "Why do the mushrooms get cooked first and set aside instead of just simmering with the rice?",
+    "category": "method",
+    "type": "detail",
+    "recipe_id": 13,
+    "output": "I'm assuming you mean the **Mushroom Risotto** in my collection. The recipe itself doesn't say why the mushrooms are set aside, so the reasons below are general cooking principles, not the recipe author's stated rationale.\n\n- **Browning:** Mushrooms release a lot of water. Saut\u00e9ing them alone in a hot pan lets that water evaporate so they brown and develop deep, savory flavor. In a pot with rice and broth, they would mostly steam and stay pale and rubbery.\n- **Texture:** The rice cooks for about 18 to 20 minutes while you add broth. Mushrooms left in that whole time would soften further and lose their golden texture. Adding them back at the end keeps some bite.\n- **Flavor:** The mushrooms' browned bits stay in the pan, and the butter, onion, and garlic get cooked in that same pan, so the flavor carries into the rice.\n- **Control:** Setting them aside lets you stir them in at the end with the parmesan and thyme, so you control how much they're cooked.",
+    "execution_time": 5.53,
+    "tokens": {
+      "input_tokens": 3703,
+      "output_tokens": 756,
+      "total_tokens": 4459
+    },
+    "cost": 0.000748
+  },
+  {
+    "question": "I don't have any white wine. What can I use instead to deglaze the rice?",
+    "category": "substitution",
+    "type": "substitution",
+    "recipe_id": 13,
+    "output": "I found the recipe that uses white wine with arborio rice: the **Mushroom Risotto**. In it, the wine is added after the rice is toasted for 2 minutes, then stirred until absorbed, before the warm broth goes in a ladle at a time.\n\nThe recipe doesn't suggest a substitute, so I can't point you to one from the collection. From general cooking knowledge, you could:\n\n- **Use more vegetable broth** in place of the wine. This is the simplest option and keeps the risotto moist and savory, though it won't add the wine's acidity.\n- **Add a small splash of lemon juice or white wine vinegar** to the broth to bring back some brightness. Use it sparingly, since a little goes a long way.\n\nEither way, add the liquid to the toasted rice and stir until it's absorbed, then continue with the warm broth as the recipe describes.",
+    "execution_time": 5.06,
+    "tokens": {
+      "input_tokens": 3585,
+      "output_tokens": 599,
+      "total_tokens": 4184
+    },
+    "cost": 0.000658
+  },
+  {
+    "question": "How is making mushroom risotto different from making a mushroom pilaf?",
+    "category": "comparison",
+    "type": "comparison",
+    "recipe_id": 13,
+    "output": "I don't have a mushroom pilaf recipe in my collection, so I can't compare the two directly from recipe data. Searching for \"pilaf\" returned no results.\n\nHere's how the mushroom risotto in my collection is made:\n\n1. **Sear the mushrooms** in olive oil until golden, then set them aside.\n2. **Cook the onion and garlic** in butter in the same pan.\n3. **Toast the arborio rice** for about 2 minutes.\n4. **Deglaze with white wine** and stir until it's absorbed.\n5. **Add warm vegetable broth one ladle at a time**, stirring often, until the rice is creamy and al dente (about 18-20 minutes).\n6. **Finish** by stirring in the mushrooms, parmesan, and fresh thyme.\n\nThe key feature is the gradual addition of broth with constant stirring, which releases the rice's starch and makes it creamy. It takes about 35 minutes total.\n\nFrom general cooking knowledge, not from my collection, a pilaf usually differs in that the rice is toasted and then simmered in a measured amount of liquid rather than stirred in batches. The grains are meant to stay separate and fluffy, not creamy. If you want, I can look for other rice dishes in the collection that might be closer to a pilaf.",
+    "execution_time": 5.66,
+    "tokens": {
+      "input_tokens": 3664,
+      "output_tokens": 935,
+      "total_tokens": 4599
+    },
+    "cost": 0.000834
+  },
+  {
+    "question": "How long do I need to soak the potatoes before frying them?",
+    "category": "timing",
+    "type": "factual",
+    "recipe_id": 14,
+    "output": "The potatoes should soak in cold water for **30 minutes**. This comes from my Fish and Chips recipe, the only potato-frying recipe in my collection that calls for soaking.\n\nThe recipe's full method for the chips:\n1. Cut the potatoes into thick chips.\n2. Soak them in cold water for 30 minutes.\n3. Pat them dry.\n4. Fry at 325\u00b0F for 5 minutes, then drain.\n5. Later, re-fry at 375\u00b0F until crispy.",
+    "execution_time": 3.69,
+    "tokens": {
+      "input_tokens": 3396,
+      "output_tokens": 367,
+      "total_tokens": 3763
+    },
+    "cost": 0.000523
+  },
+  {
+    "question": "How do I keep the batter from falling off the fish when I put it in the oil?",
+    "category": "method",
+    "type": "how-to",
+    "recipe_id": 14,
+    "output": "The Fish and Chips recipe in my collection handles this with a two-step coating: **dip the fish in plain flour first, then in the batter**. The flour gives the batter something to grip, so it is less likely to slide off in the hot oil.\n\nThe recipe's other instructions are:\n- Whisk the flour, baking powder, and beer together until smooth.\n- Heat the oil to 375\u00b0F.\n- Dip the floured fish in the batter, then fry for 5 to 7 minutes until golden.\n\nThe recipe doesn't mention patting the fish dry, but that's a common tip for batter adhering well. Also, it doesn't say how thick to make the batter, so if yours is runny, it may be worth thickening it a bit.",
+    "execution_time": 5.9,
+    "tokens": {
+      "input_tokens": 3328,
+      "output_tokens": 504,
+      "total_tokens": 3832
+    },
+    "cost": 0.000585
+  },
+  {
+    "question": "Why do the chips get fried twice at two different temperatures instead of just once?",
+    "category": "temperature",
+    "type": "detail",
+    "recipe_id": 14,
+    "output": "The Fish and Chips recipe in my collection does fry the chips twice, but it doesn't explain why:\n\n1. Cut the potatoes into thick chips and soak them in cold water for 30 minutes.\n2. Pat them dry and fry at 325\u00b0F for 5 minutes, then drain.\n3. Later, re-fry them at 375\u00b0F until crispy.\n\nThe recipe doesn't say what each stage is for. Generally, the first, lower-temperature fry cooks the inside of the potato until it's soft and fluffy. The second, hotter fry drives off surface moisture and browns the outside into a crisp shell. Frying once at high heat often leaves the centre underdone or the outside burnt before the middle is cooked. The two stages also let you cook the chips ahead and finish them just before serving, while the fish is frying.",
+    "execution_time": 4.28,
+    "tokens": {
+      "input_tokens": 3066,
+      "output_tokens": 482,
+      "total_tokens": 3548
+    },
+    "cost": 0.000548
+  },
+  {
+    "question": "Can I make the batter without beer? What could I use instead, like for kids or someone who doesn't drink?",
+    "category": "substitution",
+    "type": "substitution",
+    "recipe_id": 14,
+    "output": "Yes, you can make this batter without beer. The Fish and Chips recipe (ID 14) doesn't list an alternative, so these suggestions are general cooking advice rather than part of the recipe:\n\n- **Sparkling water or club soda** is the closest swap. The bubbles keep the batter light and crisp, much like beer does. Use the same amount of beer called for.\n- **Plain cold water** also works. The batter will be a little less flavorful and may be a bit denser, but it will still fry up crispy.\n- **Ginger ale or lemon-lime soda** adds some sweetness and carbonation, which suits kids. They're not a good fit for everyone, though, so check whether the flavor works for your family.\n\nThe batter is just flour, baking powder, and liquid, so any of these should whisk up fine. Whichever you choose, mix until smooth and fry right away, since the carbonation fades as the batter sits.",
+    "execution_time": 6.78,
+    "tokens": {
+      "input_tokens": 3333,
+      "output_tokens": 766,
+      "total_tokens": 4099
+    },
+    "cost": 0.000716
+  },
+  {
+    "question": "How is this beer batter different from a Japanese tempura batter, and would the fish come out much different?",
+    "category": "comparison",
+    "type": "comparison",
+    "recipe_id": 14,
+    "output": "The beer batter is from the **Fish and Chips** recipe in my collection. I don't have a tempura recipe, so the comparison below uses general cooking knowledge rather than a recipe from the collection.\n\n**The beer batter (from the recipe):** Flour, baking powder, and beer are whisked until smooth. The fish gets a dusting of flour first, then goes into the batter and into 375\u00b0F oil for 5\u20137 minutes. The recipe doesn't give quantities.\n\n**Typical tempura batter (general knowledge):**\n- Uses very cold water or sparkling water, often with ice, plus flour (traditionally a low-protein flour) and sometimes egg yolk.\n- Has no baking powder, and is mixed only lightly, so it stays lumpy.\n- Is fried at a lower temperature, usually around 340\u2013360\u00b0F.\n\n**How the results differ:**\n- **Texture:** Tempura is light, lacy, and crisp, and it shatters. The beer batter, with its baking powder and beer, is thicker and puffier, with a more bready, substantial crust.\n- **Color and flavor:** Beer batter browns to a deeper golden color and tastes of the beer. Tempura stays pale and tastes mainly of the frying oil and the food inside.\n- **Fish:** Cod in beer batter gets a sturdy, heavier coating that holds up well to chips and vinegar. Fish in tempura is thinner and more delicate, and the coating is less likely to feel heavy.\n\nSo yes, the fish would come out noticeably different. The beer batter gives a hearty, golden, classic fish-and-chips crust, while tempura gives a lighter, more delicate one.",
+    "execution_time": 7.95,
+    "tokens": {
+      "input_tokens": 4030,
+      "output_tokens": 1236,
+      "total_tokens": 5266
+    },
+    "cost": 0.001021
+  },
+  {
+    "question": "What temperature should the oil be for frying falafel, and how long do they take?",
+    "category": "temperature",
+    "type": "factual",
+    "recipe_id": 15,
+    "output": "The falafel in my collection is the **Falafel Wrap** recipe (Middle Eastern, medium difficulty). It says to:\n\n- **Fry at 350\u00b0F (177\u00b0C)**\n- **Cook for 3\u20134 minutes**, until dark golden\n\nThe recipe calls for deep frying and uses dried chickpeas soaked overnight, not canned. The total cook time listed is 15 minutes, which covers frying the batches.",
+    "execution_time": 6.39,
+    "tokens": {
+      "input_tokens": 3002,
+      "output_tokens": 245,
+      "total_tokens": 3247
+    },
+    "cost": 0.000423
+  },
+  {
+    "question": "How do I shape falafel so they don't fall apart when I drop them in the oil?",
+    "category": "method",
+    "type": "how-to",
+    "recipe_id": 15,
+    "output": "The collection has one falafel recipe (Falafel Wrap), and it gives only brief shaping guidance. It says to soak dried chickpeas overnight (not canned), blend them with the onion, garlic, herbs, and spices until **coarse**, then add flour and baking powder and mix. Shape the mixture into balls or patties, and deep fry at 350\u00b0F for 3-4 minutes until dark golden.\n\nThe recipe's choices point toward the main fixes:\n- **Use dried, soaked chickpeas.** Canned chickpeas are wetter and softer, which makes the mixture more likely to fall apart.\n- **Keep the blend coarse.** A smooth pur\u00e9e holds less structure.\n- **Include the flour and baking powder.** The flour helps bind the mixture.\n\nThe recipe doesn't cover these, but they're common falafel practice:\n- Chill the mixture for 30 minutes or so before shaping, so it firms up.\n- Squeeze the mixture firmly in your hands, or press it into patties, so it holds together.\n- Make a test piece first. If it breaks in the oil, add a bit more flour.\n- Fry in batches so the oil temperature doesn't drop and the pieces don't crowd each other.",
+    "execution_time": 5.54,
+    "tokens": {
+      "input_tokens": 3087,
+      "output_tokens": 773,
+      "total_tokens": 3860
+    },
+    "cost": 0.000695
+  },
+  {
+    "question": "Why can't I just use canned chickpeas instead of soaking dried ones overnight?",
+    "category": "ingredients",
+    "type": "detail",
+    "recipe_id": 15,
+    "output": "The Falafel Wrap recipe in my collection specifically says to soak dried chickpeas overnight and not to use canned. It doesn't explain why, but the likely reason is texture. Falafel is blended raw and then fried, so the chickpeas need to stay firm and fairly dry. Canned chickpeas are fully cooked and soft, and they hold a lot of extra moisture. That makes the mixture pasty, so the balls or patties can fall apart or absorb too much oil. Dried chickpeas that have soaked overnight and are then blended stay coarse and hold their shape better when fried.\n\nIf you really want to use canned chickpeas, you would probably need to drain and dry them well and possibly add more flour, but I don't have a tested version of that in the collection, so I can't say how it would turn out.",
+    "execution_time": 5.03,
+    "tokens": {
+      "input_tokens": 3175,
+      "output_tokens": 614,
+      "total_tokens": 3789
+    },
+    "cost": 0.000625
+  },
+  {
+    "question": "I need these gluten-free. What can I use instead of the regular flour?",
+    "category": "substitution",
+    "type": "substitution",
+    "recipe_id": 15,
+    "output": "I don't have a recipe in our conversation yet, so I'm not sure which one you mean. Could you tell me the recipe name or what it is (for example, \"chocolate chip cookies\" or \"banana bread\")? Or, if you'd like, I can search the collection for gluten-free options.\n\nOnce I have the recipe, I'll check its ingredient list and tell you which flour it calls for and which gluten-free alternatives the recipe supports, if any.",
+    "execution_time": 2.43,
+    "tokens": {
+      "input_tokens": 755,
+      "output_tokens": 280,
+      "total_tokens": 1035
+    },
+    "cost": 0.000216
+  },
+  {
+    "question": "How is a falafel wrap different from a shawarma wrap in terms of flavor and how it's made?",
+    "category": "comparison",
+    "type": "comparison",
+    "recipe_id": 15,
+    "output": "I don't have a shawarma wrap in the collection. The closest match is a **Lamb Shawarma Bowl**, so I've compared the falafel wrap with that.\n\n**Flavor**\n- **Falafel wrap:** Vegetarian and vegan. The flavor comes from chickpeas blended with onion, garlic, parsley, cilantro, cumin, and coriander, then fried until dark golden. It's herbal and earthy, with a crisp exterior.\n- **Lamb shawarma bowl:** Meat-based. The lamb is marinated in cumin, coriander, paprika, turmeric, garlic, and lemon juice, so it's warmer and smokier from the paprika and turmeric, with a citrusy tang from the lemon.\n\n**How they're made**\n- **Falafel wrap:** Soak dried chickpeas overnight (canned won't work). Blend them with the aromatics and spices until coarse, mix in flour and baking powder, and shape into balls or patties. Deep-fry at 350\u00b0F for 3\u20134 minutes. Serve in pita with tahini sauce, lettuce, tomato, and pickles.\n- **Lamb shawarma bowl:** Slice the lamb thinly and marinate it for at least 30 minutes. Cook it in a hot skillet until browned and cooked through. Make a tahini sauce from tahini, lemon juice, garlic, and water. Assemble with rice or pita, lamb, hummus, vegetables (tomato, cucumber, lettuce), and pickled turnips, then drizzle with the tahini sauce.\n\nIn short, the falafel is a fried, plant-based patty made from ground chickpeas, while shawarma is seasoned, pan-cooked sliced meat. Both share tahini sauce and fresh vegetables. The falafel wrap is a true wrap in pita, while the shawarma recipe is a bowl.",
+    "execution_time": 6.12,
+    "tokens": {
+      "input_tokens": 4358,
+      "output_tokens": 1074,
+      "total_tokens": 5432
+    },
+    "cost": 0.000973
+  }
+]
