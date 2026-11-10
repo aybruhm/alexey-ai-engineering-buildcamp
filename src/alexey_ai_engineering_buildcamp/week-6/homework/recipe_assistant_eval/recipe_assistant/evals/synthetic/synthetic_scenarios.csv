@@ -1,0 +1,76 @@
+question,category,type,recipe_id,recipe_name
+What temperature should my oven be at for a margherita pizza?,temperature,factual,1,Classic Margherita Pizza
+How do I roll out pizza dough so it doesn't stick or tear?,method,how-to,1,Classic Margherita Pizza
+"Should I add the basil before or after baking, and why?",method,detail,1,Classic Margherita Pizza
+Can I use regular canned tomatoes if I can't find San Marzano?,substitution,substitution,1,Classic Margherita Pizza
+How is a margherita pizza different from a regular New York style cheese pizza?,comparison,comparison,1,Classic Margherita Pizza
+How long does the chicken need to marinate before I cook it?,timing,factual,2,Chicken Tikka Masala
+How do I get that charred look on the chicken if I don't have a grill?,method,how-to,2,Chicken Tikka Masala
+Should I cut the chicken into chunks before marinating or after it's cooked?,method,detail,2,Chicken Tikka Masala
+Can I use coconut milk instead of heavy cream to make this dairy-free?,substitution,substitution,2,Chicken Tikka Masala
+What's the difference between chicken tikka masala and butter chicken?,comparison,comparison,2,Chicken Tikka Masala
+Is Caesar salad actually American? I always assumed it was Italian because of the name.,origin,factual,3,Caesar Salad
+How do I whisk the dressing so it gets thick and creamy instead of staying oily and separated?,method,how-to,3,Caesar Salad
+How much anchovy paste should I use? I don't want the dressing to taste too fishy.,ingredients,detail,3,Caesar Salad
+I'm nervous about eating raw egg yolk. What can I use instead and still get a creamy dressing?,substitution,substitution,3,Caesar Salad
+How is a Caesar salad different from a regular garden salad with Italian dressing?,comparison,comparison,3,Caesar Salad
+What kind of cheese goes on these beef tacos?,ingredients,factual,4,Beef Tacos
+What's the best way to warm up hard taco shells so they don't break or get soggy?,method,how-to,4,Beef Tacos
+"How long should I simmer the beef after adding the seasoning and water, and how much water do I use?",timing,detail,4,Beef Tacos
+"Can I use ground turkey or chicken instead of ground beef, and will I need to change anything?",substitution,substitution,4,Beef Tacos
+How are these beef tacos different from Mexican street tacos like carne asada?,comparison,comparison,4,Beef Tacos
+What kind of oil do I heat in the wok for this stir fry?,ingredients,factual,5,Vegetable Stir Fry
+How do I make the cornstarch slurry so the sauce thickens without getting lumpy?,method,how-to,5,Vegetable Stir Fry
+"Why do the carrots and broccoli go in before the snap peas and bell pepper, and how long should I wait before adding the softer veggies?",timing,detail,5,Vegetable Stir Fry
+I need this to be gluten-free. What can I use instead of regular soy sauce?,substitution,substitution,5,Vegetable Stir Fry
+How is this veggie stir fry different from vegetable fried rice? Could I turn it into fried rice instead of serving it over plain rice?,comparison,comparison,5,Vegetable Stir Fry
+What region of Italy does carbonara originally come from?,origin,factual,6,Spaghetti Carbonara
+How do I keep the eggs from scrambling when I mix them into the hot pasta?,method,how-to,6,Spaghetti Carbonara
+"About how much pasta water should I save before draining, and when do I add it?",method,detail,6,Spaghetti Carbonara
+I can't find guanciale anywhere near me. Can I use pancetta or bacon instead?,substitution,substitution,6,Spaghetti Carbonara
+What's the difference between carbonara and cacio e pepe? They seem to use a lot of the same ingredients.,comparison,comparison,6,Spaghetti Carbonara
+What gives Thai green curry its green color?,ingredients,factual,7,Thai Green Curry
+How do I know when the coconut cream has 'cracked' and the oil has separated enough to fry the paste?,method,how-to,7,Thai Green Curry
+How long should the eggplant and bamboo shoots simmer before I add the fish sauce and sugar?,timing,detail,7,Thai Green Curry
+I can't find palm sugar at my store. What can I use instead?,substitution,substitution,7,Thai Green Curry
+What's the difference between green curry and red curry? Is one spicier than the other?,comparison,comparison,7,Thai Green Curry
+Is traditional Greek salad supposed to have lettuce in it?,ingredients,factual,8,Greek Salad
+How big should I cut the cucumber and tomato chunks so the salad doesn't get watery?,method,how-to,8,Greek Salad
+"Why do you let the salad sit for 5 minutes before serving, and can I make it further ahead?",timing,detail,8,Greek Salad
+"I'm dairy-free, what can I use instead of feta that still gives that salty tang?",substitution,substitution,8,Greek Salad
+What's the difference between a Greek salad and a Turkish shepherd's salad?,comparison,comparison,8,Greek Salad
+What temperature does the oven need to be for these lava cakes?,temperature,factual,9,Chocolate Lava Cake
+How do I get the cakes out of the ramekins without them falling apart?,method,how-to,9,Chocolate Lava Cake
+How can I tell when they're done so the middle is still gooey and not overbaked?,timing,detail,9,Chocolate Lava Cake
+Can I use almond flour or a gluten-free flour instead of regular flour?,substitution,substitution,9,Chocolate Lava Cake
+What's the difference between a lava cake and a regular flourless chocolate cake?,comparison,comparison,9,Chocolate Lava Cake
+What is dashi actually made from?,ingredients,factual,10,Miso Soup
+How do I rehydrate the wakame properly so it doesn't get slimy?,method,how-to,10,Miso Soup
+Why shouldn't the soup boil once the miso is in?,temperature,detail,10,Miso Soup
+"I only have red miso at home, can I use that instead of white and should I change the amount?",substitution,substitution,10,Miso Soup
+How is miso soup different from Korean doenjang jjigae?,comparison,comparison,10,Miso Soup
+How many ripe bananas do I need for a batch of these pancakes?,ingredients,factual,11,Banana Pancakes
+How do I know when it's the right time to flip the pancakes so they don't fall apart?,method,how-to,11,Banana Pancakes
+Why is it okay to leave lumps in the batter instead of mixing until smooth?,method,detail,11,Banana Pancakes
+Can I use oat milk or almond milk instead of regular milk to make these dairy-free?,substitution,substitution,11,Banana Pancakes
+How are these different from regular buttermilk pancakes in texture and taste?,comparison,comparison,11,Banana Pancakes
+How long does the lamb need to marinate before I can cook it?,timing,factual,12,Lamb Shawarma Bowl
+How do I get the lamb sliced really thin? Should I freeze it a bit first?,method,how-to,12,Lamb Shawarma Bowl
+How much water should I add to the tahini sauce to get a good drizzling consistency? Mine always seizes up and gets thick.,sauce,detail,12,Lamb Shawarma Bowl
+"My family doesn't eat lamb. Could I use chicken thighs or beef instead, and would the cooking time change?",substitution,substitution,12,Lamb Shawarma Bowl
+What's the difference between this shawarma bowl and a gyro? Are the spices and sauce pretty different?,comparison,comparison,12,Lamb Shawarma Bowl
+How long does the rice need to cook once I start adding the broth?,timing,factual,13,Mushroom Risotto
+How do I tell when my risotto is creamy and al dente and not overcooked or mushy?,method,how-to,13,Mushroom Risotto
+Why do the mushrooms get cooked first and set aside instead of just simmering with the rice?,method,detail,13,Mushroom Risotto
+I don't have any white wine. What can I use instead to deglaze the rice?,substitution,substitution,13,Mushroom Risotto
+How is making mushroom risotto different from making a mushroom pilaf?,comparison,comparison,13,Mushroom Risotto
+How long do I need to soak the potatoes before frying them?,timing,factual,14,Fish and Chips
+How do I keep the batter from falling off the fish when I put it in the oil?,method,how-to,14,Fish and Chips
+Why do the chips get fried twice at two different temperatures instead of just once?,temperature,detail,14,Fish and Chips
+"Can I make the batter without beer? What could I use instead, like for kids or someone who doesn't drink?",substitution,substitution,14,Fish and Chips
+"How is this beer batter different from a Japanese tempura batter, and would the fish come out much different?",comparison,comparison,14,Fish and Chips
+"What temperature should the oil be for frying falafel, and how long do they take?",temperature,factual,15,Falafel Wrap
+How do I shape falafel so they don't fall apart when I drop them in the oil?,method,how-to,15,Falafel Wrap
+Why can't I just use canned chickpeas instead of soaking dried ones overnight?,ingredients,detail,15,Falafel Wrap
+I need these gluten-free. What can I use instead of the regular flour?,substitution,substitution,15,Falafel Wrap
+How is a falafel wrap different from a shawarma wrap in terms of flavor and how it's made?,comparison,comparison,15,Falafel Wrap
