@@ -268,6 +268,76 @@ uv run pytest homework/duckdb_sql_agent/tests -q
 These tests call the model for real and need `ANTHROPIC_API_KEY`; the judge test adds a second model
 call. The `db/` directory is generated locally and is not committed.
 
+### Week 6 — Homework
+
+`week-6/homework/recipe_assistant_eval/` evaluates a recipe assistant that answers cooking questions
+from a fixed collection of 15 recipes. The agent searches the collection with `search_recipes`, reads
+a full recipe with `get_recipe`, and should answer only from that data, saying so when a recipe or a
+detail is missing.
+
+Like week 4, it is a standalone package with its own `pyproject.toml`, `uv.lock`, `.venv` and
+`.gitignore`, laid out the same way as `pulumi_docs_agent/`.
+
+| Module | Purpose |
+|---|---|
+| `recipe_assistant/__init__.py` | Loads `.env` and configures Phoenix tracing |
+| `recipe_assistant/entrypoint.py` | CLI entry point (`recipe-assistant`) |
+| `recipe_assistant/agent.py` | Pydantic AI agent on `claude-haiku-5-5` |
+| `recipe_assistant/prompts.py` | Agent instructions |
+| `recipe_assistant/tools.py` | minsearch index over the recipes, `search_recipes` and `get_recipe` |
+| `recipe_assistant/pricing.py` | Per-request cost, including Haiku 5.5's long-prompt tier |
+| `recipe_assistant/data/recipes.json` | The 15-recipe collection |
+
+Run it from the project directory:
+
+```bash
+cd src/alexey_ai_engineering_buildcamp/week-6/homework/recipe_assistant_eval
+uv sync
+uv run recipe-assistant
+```
+
+#### Evaluations
+
+`recipe_assistant/evals/` follows the week 4 layout: one folder per kind of evaluation behind a single
+entrypoint, with `make` targets in the project's own `Makefile`.
+
+```bash
+uv run python -m recipe_assistant.evals                      # list every command
+uv run python -m recipe_assistant.evals <group> <command> [options]
+```
+
+| Group | Command | What it does | `make` target |
+|---|---|---|---|
+| `scenarios` | `run` | Runs the 26 hand-designed scenarios in `scenarios.csv` and saves each response with tokens and cost | `make scenarios` |
+| `scenarios` | `label` | Streamlit app for labeling each response good / bad with a failure category, showing the matching recipe data alongside | `make label` |
+| `scenarios` | `csv` | Exports the results and labels to `results.csv` for Excel or Google Sheets | `make csv` |
+| `judge` | `run` | Labels every saved response with an LLM judge that is given the full recipe collection | `make judge` |
+| `judge` | `evaluate` | Compares the judge with the human labels: confusion matrix, accuracy, precision and recall | `make judge-eval` |
+| `synthetic` | `generate` | Generates 5 questions per recipe (factual, how-to, detail, substitution, comparison) | `make synthetic-generate` |
+| `synthetic` | `report` | Judge bad rate overall, by question type and by recipe | `make synthetic-report` |
+
+`make synthetic-run` and `make synthetic-judge` run the agent and the judge on the synthetic questions.
+They pass `--scenarios`, `--results` and `--output` so the synthetic results are written to
+`evals/synthetic/results/` and the hand-designed results are left alone.
+
+Every label is `good` or `bad`, and bad responses get one failure category: `hallucination`,
+`invented-advice`, `false-not-found`, `incorrect-details`, `incomplete`, `wrong-scope` or `other`.
+
+**Results** on the 26 hand-designed scenarios ("bad" is the positive class):
+
+| | Disagreements | Accuracy | Precision | Recall |
+|---|---|---|---|---|
+| First judge prompt (`results_judged_v1.json`) | 3 | 0.885 | 0.667 | 1.000 |
+| Judge with the recipe data and invented-advice rules | 1 | 0.962 | 0.857 | 1.000 |
+
+The human labels found 6 bad responses out of 26, five of them `invented-advice`: the agent says the
+recipe does not cover something, then gives general cooking tips anyway. On the 75 synthetic questions
+the judge labels 69.3% as bad, mostly the same failure, because most generated how-to, substitution and
+comparison questions cannot be answered from the recipe data.
+
+The scenarios, judge and synthetic generation call the model for real and need `ANTHROPIC_API_KEY`
+plus the Phoenix variables in the project's `.env`.
+
 ## Setup
 
 1. Install dependencies with [uv](https://docs.astral.sh/uv/):
@@ -365,80 +435,117 @@ call. The `db/` directory is generated locally and is not committed.
         │       └── 01-wikipedia-agent/
         │           ├── index.ipynb
         │           └── invoke_llm_trace.py
-        └── week-4/
-            ├── .env.template
-            ├── .gitignore
-            ├── .python-version
-            ├── pyproject.toml
-            ├── uv.lock
-            ├── homework/
-            │   └── duckdb_sql_agent/
-            │       ├── __init__.py
-            │       ├── agent.py
-            │       ├── entrypoint.py
-            │       ├── helpers.py
-            │       ├── models.py
-            │       ├── prompts.py
-            │       ├── tools.py
-            │       ├── utils.py
-            │       └── tests/
-            │           ├── __init__.py
-            │           ├── judge.py
-            │           ├── test_agent.py
-            │           ├── test_cases.py
-            │           └── utils.py
-            └── pulumi_docs_agent/
-                ├── __init__.py
-                ├── agent.py
-                ├── entrypoint.py
-                ├── helpers.py
-                ├── models.py
-                ├── pricing.py
-                ├── prompts.py
-                ├── retrieval.py
-                ├── evals/
-                │   ├── __main__.py
-                │   ├── common/
-                │   │   ├── agent_runner.py
-                │   │   ├── known_questions.py
-                │   │   ├── paths.py
-                │   │   ├── retrieval_replay.py
-                │   │   └── utils.py
-                │   ├── scenarios/
-                │   │   ├── scenarios.json
-                │   │   ├── run.py
-                │   │   ├── run_evals.py
-                │   │   ├── label.py
-                │   │   └── results/
-                │   ├── judge/
-                │   │   ├── judge.py
-                │   │   └── evaluate.py
-                │   ├── code_evaluators/
-                │   │   └── evaluators.py
-                │   ├── synthetic/
-                │   │   ├── generate.py
-                │   │   ├── run.py
-                │   │   ├── judges.py
-                │   │   ├── run_judges.py
-                │   │   ├── explore.py
-                │   │   └── data/
-                │   └── observability/
-                │       ├── client.py
-                │       ├── traces.py
-                │       ├── datasets.py
-                │       ├── experiments.py
-                │       ├── annotate.py
-                │       └── data/
-                ├── tests/
-                │   ├── __init__.py
-                │   ├── conftest.py
-                │   ├── llm_judge.py
-                │   ├── test_agent.py
-                │   ├── test_cases.py
-                │   ├── test_judge.py
-                │   └── utils.py
-                ├── tools.py
-                └── utils.py
+        ├── week-4/
+        │   ├── .env.template
+        │   ├── .gitignore
+        │   ├── .python-version
+        │   ├── pyproject.toml
+        │   ├── uv.lock
+        │   ├── homework/
+        │   │   └── duckdb_sql_agent/
+        │   │       ├── __init__.py
+        │   │       ├── agent.py
+        │   │       ├── entrypoint.py
+        │   │       ├── helpers.py
+        │   │       ├── models.py
+        │   │       ├── prompts.py
+        │   │       ├── tools.py
+        │   │       ├── utils.py
+        │   │       └── tests/
+        │   │           ├── __init__.py
+        │   │           ├── judge.py
+        │   │           ├── test_agent.py
+        │   │           ├── test_cases.py
+        │   │           └── utils.py
+        │   └── pulumi_docs_agent/
+        │       ├── __init__.py
+        │       ├── agent.py
+        │       ├── entrypoint.py
+        │       ├── helpers.py
+        │       ├── models.py
+        │       ├── pricing.py
+        │       ├── prompts.py
+        │       ├── retrieval.py
+        │       ├── evals/
+        │       │   ├── __main__.py
+        │       │   ├── common/
+        │       │   │   ├── agent_runner.py
+        │       │   │   ├── known_questions.py
+        │       │   │   ├── paths.py
+        │       │   │   ├── retrieval_replay.py
+        │       │   │   └── utils.py
+        │       │   ├── scenarios/
+        │       │   │   ├── scenarios.json
+        │       │   │   ├── run.py
+        │       │   │   ├── run_evals.py
+        │       │   │   ├── label.py
+        │       │   │   └── results/
+        │       │   ├── judge/
+        │       │   │   ├── judge.py
+        │       │   │   └── evaluate.py
+        │       │   ├── code_evaluators/
+        │       │   │   └── evaluators.py
+        │       │   ├── synthetic/
+        │       │   │   ├── generate.py
+        │       │   │   ├── run.py
+        │       │   │   ├── judges.py
+        │       │   │   ├── run_judges.py
+        │       │   │   ├── explore.py
+        │       │   │   └── data/
+        │       │   └── observability/
+        │       │       ├── client.py
+        │       │       ├── traces.py
+        │       │       ├── datasets.py
+        │       │       ├── experiments.py
+        │       │       ├── annotate.py
+        │       │       └── data/
+        │       ├── tests/
+        │       │   ├── __init__.py
+        │       │   ├── conftest.py
+        │       │   ├── llm_judge.py
+        │       │   ├── test_agent.py
+        │       │   ├── test_cases.py
+        │       │   ├── test_judge.py
+        │       │   └── utils.py
+        │       ├── tools.py
+        │       └── utils.py
+        └── week-6/
+            └── homework/
+                └── recipe_assistant_eval/
+                    ├── .env.template
+                    ├── .gitignore
+                    ├── .python-version
+                    ├── Makefile
+                    ├── pyproject.toml
+                    ├── uv.lock
+                    └── recipe_assistant/
+                        ├── __init__.py
+                        ├── agent.py
+                        ├── entrypoint.py
+                        ├── pricing.py
+                        ├── prompts.py
+                        ├── tools.py
+                        ├── data/
+                        │   └── recipes.json
+                        └── evals/
+                            ├── __main__.py
+                            ├── common/
+                            │   ├── labels.py
+                            │   └── paths.py
+                            ├── scenarios/
+                            │   ├── scenarios.csv
+                            │   ├── run.py
+                            │   ├── label.py
+                            │   ├── to_csv.py
+                            │   └── results/
+                            ├── judge/
+                            │   ├── judge.py
+                            │   └── evaluate.py
+                            └── synthetic/
+                                ├── generate.py
+                                ├── report.py
+                                ├── synthetic_scenarios.csv
+                                └── results/
 ```
 
 ## Requirements
