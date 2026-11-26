@@ -148,7 +148,7 @@ uv run python -m pulumi_docs_agent.evals <group> <command> [options]
 | `scenarios` | `run` | Runs the 24 hand-designed scenarios against the agent and saves each response | `make scenarios` |
 | `scenarios` | `label` | Streamlit app for labeling each response good / not good | `make label` |
 | `scenarios` | `evals` | Runs the agent, judges every response and reports the percentage that are good, with the change from the previous run | `make evals` |
-| `judge` | `evaluate` | Compares the LLM judge with the human labels (accuracy, precision and recall for the bad class) | `make judge` |
+| `judge` | `evaluate` | Compares the LLM judge with the human labels (accuracy, Cohen's kappa, precision/recall for the bad class, per-category recall, judge confidence) | `make judge` |
 | `code-evaluators` | `run` | Applies the deterministic code evaluator to saved runs | `make evaluators` |
 | `synthetic` | `generate` | Generates questions and reference answers from sampled documentation pages | `make questions` |
 | `synthetic` | `run` | Runs the agent on the generated questions, five at a time | `make synthetic` |
@@ -178,15 +178,36 @@ traced in Phoenix, `phoenix traces` brings real usage into the same pipeline and
 
 **Scenarios and the judge.** The scenarios cover each area of the docs with direct, vague and
 wrong-terminology phrasings, plus questions the docs cannot answer and a prompt-injection attempt. The
-judge sees the retrieved documents, rebuilt by replaying the saved tool calls, so it can check
-grounding. It is still a work in progress: on the 24 labeled scenarios it agrees with the human labels
-on about two thirds of them and catches only a quarter of the responses labeled bad, so treat the
-percentage from `scenarios evals` as a trend line, not an absolute score.
+judge sees the scenario expectation, the agent's tool calls, and the retrieved documents rebuilt by
+replaying those calls, so it can check both behavior and grounding. It returns a label, a
+confidence, and a step-by-step rationale.
+
+`make judge` reports accuracy, Cohen's kappa, precision and recall for the bad class, recall by human
+failure category, and the rows where the judge was least confident. That makes it easier to see
+whether a change improved the judge broadly or only moved one kind of case. Use
+`make judge ARGS="--ids <id> [<id> ...]"` to re-judge selected rows, and `--out <path>` to keep a
+separate CSV.
+
+The judge treats search and retrieval narration as expected behavior, because the agent prompt
+requires the agent to explain each search and `get_file` call. It only penalizes leaks of the system
+prompt, hidden instructions, tool schemas, raw logs, or internal code. Multi-turn rows include the
+tool calls from every turn, not just the last turn.
+
+The current label set has 5 bad examples and 19 good examples. The judge agrees on 21 of 24 scenarios
+(88%, Cohen's kappa 0.51), with 100% precision and 40% recall on the bad class. It makes no
+false-positive calls. The remaining errors are three bad examples it accepts: the Grafana near-miss,
+the chess off-topic answer, and the random-forest near-miss. In each case the agent gives a related
+alternative or an outside definition, and the judge is too willing to call the refusal good.
+
+The `edge-followup-changes-direction` row now comes from a fresh run with the fixed multi-turn tool
+capture, so the judge sees all eight tool calls across both turns. Accuracy alone is misleading here
+because 19 of the 24 human labels are good. Treat the score as a trend line, and treat the remaining
+three cases as judge-recall work rather than label cleanup.
 
 **Code evaluator.** The hard checks cover an empty answer, cited paths that do not exist in the corpus,
 duplicate references, `found_answer` without references, confidence out of range, a missing refusal when
-one is expected, a prompt leak and the tool-call budget. Cited-source and process-narration checks only
-lower the score. These checks find structural problems; they cannot judge whether an answer is correct.
+one is expected, a prompt leak and the tool-call budget. The cited-source check only lowers the score.
+These checks find structural problems; they cannot judge whether an answer is correct.
 
 **Synthetic data.** 204 questions are generated from 70 pages sampled evenly across the areas of `docs/`,
 using four user personas. Each comes with a reference answer and the lines it came from, and the line
