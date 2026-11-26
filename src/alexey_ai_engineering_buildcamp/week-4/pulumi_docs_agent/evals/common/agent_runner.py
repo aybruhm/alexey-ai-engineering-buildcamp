@@ -45,7 +45,8 @@ async def run_scenario(agent, scenario: dict, known_paths: set[str]) -> dict:
         history = result.all_messages()
         input_tokens += result.usage.input_tokens
         output_tokens += result.usage.output_tokens
-        all_tools = tool_summary(result.new_messages())  # tools of the last turn
+        # The judge must see every turn's retrieval, not just the last turn.
+        all_tools.extend(tool_summary(result.new_messages()))
 
     assert result is not None, "should have a result after all turns"
 

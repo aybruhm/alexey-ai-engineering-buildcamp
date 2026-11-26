@@ -5,13 +5,32 @@ from ...tools import SearchTools
 from ...utils import retrieve_documentation
 from .paths import DOCS_DIR
 
-MAX_DOC_CHARS = 15_000
+MAX_DOC_CHARS = 40_000
+
+
+def truncate_for_judge(text: str, limit: int = MAX_DOC_CHARS) -> str:
+    """Keep both ends of a long document so late sections remain visible.
+
+    A plain head slice hides content near the end of a file. That caused the judge to mark a documented claim as unsupported when the evidence was in the truncated part.
+    """
+    if len(text) <= limit:
+        return text
+    half = limit // 2
+    omitted = len(text) - limit
+    return (
+        f"{text[:half]}\n\n"
+        f"[...truncated for the judge: {omitted} chars omitted...]\n\n"
+        f"{text[-half:]}"
+    )
 
 
 def build_tools() -> SearchTools:
     documents = retrieve_documentation(
-        repo_owner="pulumi", repo_name="docs", branch_name="master",
-        docs_path="content", save_dir=str(DOCS_DIR),
+        repo_owner="pulumi",
+        repo_name="docs",
+        branch_name="master",
+        docs_path="content",
+        save_dir=str(DOCS_DIR),
     )
     return SearchTools(
         build_index(documents=documents),
@@ -30,9 +49,7 @@ def replay_retrieval(tools: SearchTools, row: dict) -> str:
         if call["name"] == "search":
             body = json.dumps(tools.search(args["query"]), indent=1)
         elif call["name"] == "get_file":
-            body = tools.get_file(args["filename"])
-            if len(body) > MAX_DOC_CHARS:
-                body = body[:MAX_DOC_CHARS] + "\n[...truncated for the judge...]"
+            body = truncate_for_judge(tools.get_file(args["filename"]))
         else:
             continue
         parts.append(f"--- tool call {i}: {call['name']}({args}) ---\n{body}")
