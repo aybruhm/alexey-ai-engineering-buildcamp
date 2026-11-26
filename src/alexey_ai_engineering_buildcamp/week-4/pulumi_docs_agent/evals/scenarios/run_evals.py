@@ -3,7 +3,6 @@ import asyncio
 import json
 import time
 from datetime import datetime
-from pathlib import Path
 
 from ...pricing import calculate_cost
 from ..common.agent_runner import build_agent, error_row, run_scenario
@@ -12,6 +11,7 @@ from ..common.paths import SCENARIOS_FILE
 from ..common.retrieval_replay import build_tools, replay_retrieval
 from ..common.utils import fmt_time
 from ..judge.judge import JUDGE_MODEL, create_judge, format_judge_prompt
+
 MAX_TOOL_CALLS = 6
 
 
@@ -28,14 +28,16 @@ async def run_agent_phase(scenarios: list[dict]) -> tuple[list[dict], float]:
         print(f"[{i}/{len(scenarios)}] agent: {s['id']}", flush=True)
         try:
             row = await run_scenario(agent, s, known_paths)
-        except Exception as exc:
+        except Exception as exc:  # noqa: BLE001 - keep going after one bad run
             print(f"  ERROR running agent: {exc}")
             row = error_row(s, exc)
         rows.append(row)
     return rows, time.perf_counter() - t0
 
 
-async def run_judge_phase(rows: list[dict], model: str, concurrency: int) -> tuple[float, float]:
+async def run_judge_phase(
+    rows: list[dict], model: str, concurrency: int
+) -> tuple[float, float]:
     judge = create_judge(model)
     tools = build_tools()
     sem = asyncio.Semaphore(concurrency)
@@ -53,11 +55,12 @@ async def run_judge_phase(rows: list[dict], model: str, concurrency: int) -> tup
                 result = await judge.run(prompt)
             row["judge_label"] = result.output.label
             row["judge_reasoning"] = result.output.reasoning
+            row["judge_confidence"] = result.output.confidence
             usage = result.usage
             cost += calculate_cost(
                 judge.model.model_name, usage.input_tokens, usage.output_tokens
             )
-        except Exception as exc:
+        except Exception as exc:  # noqa: BLE001 - record the failure and continue
             print(f"  ERROR judging {row['id']}: {exc}")
             row["judge_label"] = "bad"
             row["judge_reasoning"] = f"Judge error: {exc}"
@@ -67,7 +70,9 @@ async def run_judge_phase(rows: list[dict], model: str, concurrency: int) -> tup
     return time.perf_counter() - t0, cost
 
 
-def summarize(rows, agent_cost, judge_cost, agent_time, judge_time, judge_model) -> dict:
+def summarize(
+    rows, agent_cost, judge_cost, agent_time, judge_time, judge_model
+) -> dict:
     total = len(rows)
     good = sum(r["judge_label"] == "good" for r in rows)
     by_group: dict[str, list[int]] = {}
@@ -84,29 +89,47 @@ def summarize(rows, agent_cost, judge_cost, agent_time, judge_time, judge_model)
         "by_group": {k: {"good": v[0], "total": v[1]} for k, v in by_group.items()},
         "bad_ids": [r["id"] for r in rows if r["judge_label"] == "bad"],
         "long_trajectories": long_runs,
-        "avg_tool_calls": round(sum(r.get("n_tool_calls", 0) for r in rows) / total, 2) if total else 0.0,
+        "avg_tool_calls": round(sum(r.get("n_tool_calls", 0) for r in rows) / total, 2)
+        if total
+        else 0.0,
         "agent_cost_usd": round(agent_cost, 4),
         "judge_cost_usd": round(judge_cost, 4),
         "agent_seconds": round(agent_time, 1),
         "judge_seconds": round(judge_time, 1),
         "judge_model": judge_model,
+        "judge_confidence_avg": round(
+            sum(r.get("judge_confidence", 0) for r in rows) / total, 2
+        )
+        if total
+        else 0.0,
     }
 
 
 def report(s: dict, prev: dict | None) -> None:
-    print(f"\nResults: {s['good']}/{s['total']} good ({s['pct_good']:.1f}%), {s['bad']}/{s['total']} bad")
+    print(
+        f"\nResults: {s['good']}/{s['total']} good ({s['pct_good']:.1f}%), {s['bad']}/{s['total']} bad"
+    )
     if prev:
         delta = s["pct_good"] - prev["pct_good"]
-        print(f"Previous run: {prev['pct_good']:.1f}% good ({delta:+.1f} points, n={prev['total']})")
+        print(
+            f"Previous run: {prev['pct_good']:.1f}% good ({delta:+.1f} points, n={prev['total']})"
+        )
     print("By group:")
     for name, v in s["by_group"].items():
         print(f"  {name:28} {v['good']}/{v['total']}")
     print(f"Bad: {', '.join(s['bad_ids']) or 'none'}")
-    print(f"Avg tool calls: {s['avg_tool_calls']}  Over {MAX_TOOL_CALLS}: {', '.join(s['long_trajectories']) or 'none'}")
+    print(
+        f"Avg tool calls: {s['avg_tool_calls']}  Over {MAX_TOOL_CALLS}: {', '.join(s['long_trajectories']) or 'none'}"
+    )
+    print(f"Judge confidence: average {s['judge_confidence_avg']:.2f}")
     total_cost = s["agent_cost_usd"] + s["judge_cost_usd"]
-    print(f"Cost:  agent ${s['agent_cost_usd']:.4f}, judge ${s['judge_cost_usd']:.4f}, total ${total_cost:.4f}")
+    print(
+        f"Cost:  agent ${s['agent_cost_usd']:.4f}, judge ${s['judge_cost_usd']:.4f}, total ${total_cost:.4f}"
+    )
     total_time = s["agent_seconds"] + s["judge_seconds"]
-    print(f"Time:  agent {fmt_time(s['agent_seconds'])}, judge {fmt_time(s['judge_seconds'])}, total {fmt_time(total_time)}")
+    print(
+        f"Time:  agent {fmt_time(s['agent_seconds'])}, judge {fmt_time(s['judge_seconds'])}, total {fmt_time(total_time)}"
+    )
 
 
 async def main_async(args) -> None:
@@ -123,12 +146,16 @@ async def main_async(args) -> None:
     judge_time, judge_cost = await run_judge_phase(rows, args.model, args.concurrency)
     agent_cost = sum(r.get("cost_usd") or 0 for r in rows)
 
-    summary = summarize(rows, agent_cost, judge_cost, agent_time, judge_time, args.model)
+    summary = summarize(
+        rows, agent_cost, judge_cost, agent_time, judge_time, args.model
+    )
     report(summary, prev)
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     out = OUT_DIR / f"{datetime.now():%Y%m%d-%H%M%S}.json"
-    out.write_text(json.dumps({"summary": summary, "rows": rows}, indent=2, ensure_ascii=False))
+    out.write_text(
+        json.dumps({"summary": summary, "rows": rows}, indent=2, ensure_ascii=False)
+    )
     print(f"Saved: {out}")
 
 

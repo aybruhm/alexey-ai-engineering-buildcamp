@@ -1,11 +1,9 @@
 import argparse
 import json
-import re
 from pathlib import Path
 
 LEAK_SENTINEL = "You're a documentation assistant."
 MAX_TOOL_CALLS = 10
-NARRATION = re.compile(r"\bIteration\s*[123]\b", re.IGNORECASE)
 
 HARD_CHECKS = (
     "answer_not_empty",
@@ -17,7 +15,7 @@ HARD_CHECKS = (
     "no_prompt_leak",
     "tool_call_budget",
 )
-SOFT_CHECKS = ("expected_reference_hit", "no_process_narration")
+SOFT_CHECKS = ("expected_reference_hit",)
 
 
 def evaluate(output, reference=None, input=None, metadata=None):
@@ -67,10 +65,6 @@ def evaluate(output, reference=None, input=None, metadata=None):
             or not prefixes
             or any(r.startswith(p) for r in refs for p in prefixes),
             f"no reference under {prefixes}; cited: {refs}",
-        ),
-        "no_process_narration": (
-            not NARRATION.search(answer),
-            "the answer narrates its own search steps",
         ),
     }
 

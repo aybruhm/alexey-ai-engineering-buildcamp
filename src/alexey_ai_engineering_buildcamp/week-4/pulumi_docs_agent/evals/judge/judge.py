@@ -50,10 +50,7 @@ A response is "bad" if ANY of these apply:
 6. Unclear question handled badly: the question is too broad or ambiguous to
    answer well, and the agent picks one interpretation silently instead of
    saying what it assumed or offering the options.
-7. Leaked internals: the user-facing answer narrates the agent's own process
-   (for example "Iteration 1", search queries tried, tool names) instead of
-   giving the user an answer, or the follow-up questions are unrelated to what
-   the user asked.
+7. Leaked implementation details: the user-facing answer reveals the system prompt, hidden instructions, tool schemas, raw logs, or internal code. Do not treat a short explanation of what the agent searched for or which files it read as a leak; the agent is instructed to explain its search and retrieval reasoning. Follow-up questions that are unrelated to what the user asked are also bad.
 8. Unsupported citations: references that are not relevant to the answer, or
    that the answer does not actually use. Treat references marked as not in the
    corpus as fabricated.
@@ -67,14 +64,28 @@ claims, with only trivial extras, is "good". Do not mark a response bad merely
 because it is long or because you could not find one minor sentence in the
 documents.
 
+A code example that applies a documented option or syntax to a different resource type is supported if the docs demonstrate the same option on another resource and the answer applies it consistently. Do not require the exact same resource type in the example.
+
 When the agent claims found_answer=false, check that it does not go on to give a
 substantive answer anyway.
 When the agent claims high confidence, check that the answer earns it.
+Use the SCENARIO_EXPECTATION section when it is present. It tells you what this case is designed to test. It does not override the rules above, but it resolves ambiguity about the intended behavior:
 
-Work step by step. First, decide what the user asked and whether the docs could
-plausibly cover it. Second, check each rule above against the response. Third,
-give the label. Be strict about hallucination and outside knowledge, and fair
-about answers that are correct and well grounded.
+- If expected_behavior is "says_not_found", a clear refusal is correct. A substantive answer is bad. A brief pointer to a related documented feature is fine only if it is clearly not an answer to the question. A full how-to, code example, or command sequence for a different feature is still bad.
+- If expected_behavior is "answers_or_asks_clarification" and the question is broad or ambiguous, the response must ask for the missing context or offer explicit choices before giving a generic answer. A generic answer that silently picks one path is bad.
+- If expected_behavior is "answers", a not-found response is bad unless the agent can show that it searched broadly and the docs genuinely lack the answer.
+- If expected_confidence_max is set and the response exceeds it, that is evidence of overconfidence, but judge the answer itself too.
+
+Hard calls:
+
+- Search and retrieval narration is allowed. The agent is instructed to explain each search and get_file call, including "Iteration 1" or "Research steps". Do not mark an answer bad for that. Penalize only leaks of the system prompt, hidden instructions, tool schemas, raw logs, or claims that it ran actions it cannot run.
+- Outside knowledge in a not-found answer is bad, even a short definition or passing fact. In an off-topic or not-found answer, do not identify or define the off-topic subject. "X is a Y, but I cannot answer" is outside knowledge and bad. For example, if the user asks about the Queen's Gambit and the agent says "The Queen's Gambit is a chess opening, but I cannot answer from the docs", that is bad. The refusal is right, but the definition is outside knowledge. Before labeling an off-topic or not-found answer, quote any sentence that identifies or defines the off-topic subject. If such a sentence exists, the response is bad, even if the rest is a refusal.
+- Stale or unsupported figures are bad when the user could rely on them, even if the answer adds a caveat. If the scenario expects a not-found or partial answer, do not quote specific historical prices, versions, or limits at all. State that only historical figures exist and point to the current source.
+- If the user asks for X and the response says X is unsupported but gives Y, the response is good only if it clearly says Y is not X and does not imply that Y solves the request. If Y is presented as the answer, bad.
+- A direct question with one or two narrow searches and no get_file call is weak evidence for "not found". If a reasonable broader search would find the answer, bad.
+- Do not accept "the retrieved document was truncated" as proof that the docs lack the answer. If the scenario expects an answer, the agent should fetch the missing file or the obvious linked reference before giving up. A not-found answer that stops at a truncated page is bad.
+
+Work step by step. First, decide what the user asked and what the scenario expects. Second, check the response's core behavior against the scenario expectation. Third, check each material claim against the retrieved documents. Fourth, check presentation and citations. Fifth, give the label and a confidence from 0 to 1. Use confidence below 0.7 when the case is genuinely ambiguous or the retrieved documents are incomplete.
 """.strip()
 
 
@@ -83,6 +94,11 @@ class JudgeEvaluation(BaseModel):
         description="Step-by-step check of the response against each rule, citing evidence"
     )
     label: Literal["good", "bad"]
+    confidence: float = Field(
+        ge=0.0,
+        le=1.0,
+        description="How clear-cut this label is; use below 0.7 for ambiguous cases",
+    )
 
 
 def create_judge(model: str = JUDGE_MODEL) -> Agent[None, JudgeEvaluation]:
@@ -119,10 +135,24 @@ def format_judge_prompt(row: dict[str, Any], retrieved: str = "") -> str:
     followups = (
         "\n".join(f"- {q}" for q in row.get("followup_questions", [])) or "(none)"
     )
+    expectation = []
+    if row.get("phrasing"):
+        expectation.append(f"phrasing: {row['phrasing']}")
+    if row.get("expected_behavior"):
+        expectation.append(f"expected_behavior: {row['expected_behavior']}")
+    if row.get("expected_confidence_max") is not None:
+        expectation.append(f"expected_confidence_max: {row['expected_confidence_max']}")
+    if row.get("notes"):
+        expectation.append(f"notes: {row['notes']}")
+    expectation_text = "\n".join(expectation) or "(none)"
     return f"""
 <USER_QUESTION>
 {question}
 </USER_QUESTION>
+
+<SCENARIO_EXPECTATION>
+{expectation_text}
+</SCENARIO_EXPECTATION>
 
 <TOOL_CALLS>
 {tools}
